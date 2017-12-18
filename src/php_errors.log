@@ -1,0 +1,1 @@
+[18-Dec-2017 14:33:05 UTC] PHP Fatal error:  Class 'Symfony\Bundle\FrameworkBundle\Controller\Controller' not found in /home/ubuntu/workspace/projetBricabracs/src/Controller/VitrineController.php on line 10

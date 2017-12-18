@@ -1,0 +1,319 @@
+body, html {
+  color: #777;
+  font-family: 'Roboto', sans-serif;
+}
+figure img {
+  width:100px;
+  height: 100px;
+}
+
+ul, li {
+  list-style: none;
+}
+
+ul {
+  width:100%;
+  display:flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+a {
+  text-decoration: none;
+}
+
+header nav {
+  text-align:center;
+  background-color: #5e528a;
+}
+header nav li {
+  background-color: #f1e4fa;
+  padding: 2% 4%;
+  box-shadow: 10px 2px 10px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  margin:2%;
+  font-family: 'Philosopher', sans-serif;
+  font-size: 25px;
+  font-weight: normal;
+}
+
+header nav a, #ecrire a {
+ color: #5e528a;
+ vertical-align: middle;
+}
+
+h1 {
+  font-family: 'Philosopher', sans-serif;;
+  font-size: 40px;
+}
+h1, h2, h3 {
+  color: #5e528a;
+   text-align: center;
+  text-transform: uppercase;
+}
+
+h2, h3 {
+  font-family: 'Philosopher', sans-serif;
+  letter-spacing: 5px;
+}
+form{
+   margin: 3% auto;
+  width:80%;
+  } 
+input {
+  outline: none;
+  padding: 1% 2% 1% 0.3%;
+  border-radius:5px;
+  text-transform: uppercase;
+  width:70%;
+  background: transparent;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+  outline: none; 
+}
+
+button {
+  background-color:#4e4c56;
+  color:white;
+  padding: 1% 2%;
+  border-radius:5px;
+  text-transform: uppercase;
+}
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  background-attachment: fixed;
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity:0.9;
+
+}
+.bgimg-1 {
+  min-height: 80vh;
+  margin-right: 0;
+}
+
+.bgimg-2 {
+  background-image: url("../img/dessinEcole.jpg");
+  min-height: 500px;
+}
+
+.bgimg-3 {
+  background-image: url("../img/enfants.jpg");
+  min-height: 500px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+section {
+  width: 80%;
+  margin: 5% auto;
+}
+
+#recherche .search {
+  width:30%;
+  display:inline-block;
+}
+
+#recherche .cloud {
+  width: 65%;
+  display: inline-block;
+}
+#ecrire a {
+  position: relative;
+}
+
+/*XXXXXXXXXXX ARTICLES  XXXXXXXXXXXXX*/
+section#articles {
+  background-color: #c1f2f0;
+  width:100%;
+}
+.no-padding {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
+
+.circle-content h2 {
+  background: white;
+  padding:2% 0;
+  margin: 5% 0;
+  position: relative;
+}
+.circle-content article {
+    padding:1%;
+    border-radius: 50%;
+    display:table;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+}
+.circle-content article img {
+  background-position: center center;
+  width: 50%;
+ 
+}
+ .circle6 article{
+    position: absolute;  
+    top: 56%;
+    left: 0%;
+    padding: 7%;
+    background: rgba(235,44,59,0.7);
+    }
+    .circle5 article{
+    position: absolute;  
+    top: 71%;
+    left: 36%;
+    padding: 7%;
+    background: rgba(240,148,176,0.6);
+    }
+    .circle4 article{
+    position: absolute;  
+    top: 0%;
+    left: 77%;
+    padding: 8%;
+    background: rgba(237,17,100,0.6);
+    }
+    .circle1 article{
+    position: absolute;  
+    left: 23%;
+    top: 12%;
+    padding: 10%;
+    background: rgba(188,207,0,0.6);
+    }
+    .circle2 article{
+    position: absolute; 
+    left: 20%;
+    top: 46%;
+    padding: 7%;;
+    background: rgba(0,169,163,0.8);
+    }
+    .circle3 article{
+     position: absolute;
+    left: 43%;
+    top: -8%;
+    padding: 6%;
+    background: rgba(96,45,145,0.7);
+    }
+    .circle7 article{
+    position: absolute; 
+    left: 40%;
+    top: 40%;
+    padding: 7%;
+    background: rgba(244,120,59,0.7);
+    }
+    .circle8 article{
+    position: absolute;
+    top: 55%;
+    left: 73%;
+    padding: 8%;
+    background: rgba(0,166,81,0.7);
+    }
+    .circle9 article{
+    position: absolute;
+    top: 20%;
+    left: 58%;
+    padding: 6%;
+    background-color: rgba(46,49,146,0.6);
+    }
+    .circle10 article{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    padding: 7%;
+    background-color: rgba(255, 140, 153,0.6)
+    }
+    
+    /*#Calendar tr td, #Calendar table, #NavBar tr th, #NavBar tr td, #NavBar table{
+    font-size: 10px;
+    background: #F5E1FA;
+    border-radius: 10px;
+    text-align:center;
+    }
+    #calendrie{
+    padding-left: 17px;
+    }*/
+    
+    .circle11 article{
+    position: absolute;
+    top: 0%;
+    left: 90%;
+    
+    }
+    .circle11 article img{
+      border-radius:50%;
+      width: 50%;
+    }
+    .circle12 article {
+    position: absolute;
+    top: -6%;
+    left: 67%;
+    width: 9%;
+    background:#f1e4fa;
+    }
+    .circle13 article{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+     background: rgba(237,17,100,0.6);
+    padding: 7%;
+    }
+    .circle14 article{
+    position: absolute;
+    top: 19%;
+    left: 40%;
+    background: rgba(0,166,81,0.7);
+    padding: 7%;
+    }
+    .connecter{
+    font-family: 'Philosopher', sans-serif;
+    box-shadow:10px 2px 10px rgba(0, 0, 0, 0.6);
+    width:40%;
+    border-radius:10px;
+    padding-bottom: 25px;
+    margin-left:10%;
+}
+  .connecter h3{
+    text-align:center;
+    font-weight: bold;
+    margin-left:5%;
+}
+#form{
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+  margin:0 auto;
+  width: 60%;
+}
+#form input{
+  text-align:center;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+}
+#form button{
+  background-color:#f1e4fa;
+  color:#5e528a;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  cursor:pointer;
+}
+footer{
+  font-family: 'Philosopher', sans-serif;
+  background-color:#5e528a;
+  padding: 2% 5%;
+  color:white;
+  font-size:1.2em;
+}
+#menufooter li{
+  display: inline;
+}
+#menufooter a{
+  color:white;
+  margin-left:13.5%;
+}

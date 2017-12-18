@@ -1,0 +1,18 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>                
+# TEST SI LE MODULE mod_rewrite EST INSTALLE
+RewriteEngine On                        
+# ACTIVE LE MODULE
+RewriteBase /projetBricabracs/public/      
+# DONNE L'URL RACINE DU SITE
+# ATTENTION ON VA DEVOIR CHANGER CE PARAMETRE
+RewriteRule ^index\.php$ - [L]          
+# SI LE NAVIGATEUR DEMANDE index.php ALORS ON UTILISE index.php
+RewriteCond %{REQUEST_FILENAME} !-f     
+# SI L'URL NE CORRESPOND PAS A UN FICHIER
+RewriteCond %{REQUEST_FILENAME} !-d     
+# SI L'URL NE CORRESPOND PAS A UN DOSSIER
+RewriteRule . ./index.php [L]            
+# ALORS ON DELEGUE A index.php
+</IfModule>
+# END WordPress

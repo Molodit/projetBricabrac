@@ -1,0 +1,35 @@
+.circle1 article
+{
+     transition-property: padding, left, top, z-index, background, text-shadow;
+    /* La transition durera deux secondes. */
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+    
+}
+
+/* Style lors du passage de la souris*/
+.circle1 article:hover
+{   left: 30%;
+    padding: 15%;
+    top: 15%;
+    z-index:999;
+    background:#c1dc87;
+    box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
+}
+
+.circle8 article {
+    transition: box-shadow 0.7s ease infinite;
+}
+.circle8 article:hover
+{
+     animation: bounce 0.7s ease infinite;
+     box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
+    }
+
+/* Style lors du passage de la souris*/
+@keyframes bounce{
+     from {top: 60%;}
+     50%  {top: 55%;}
+     to   {top: 60%;}
+}
+
