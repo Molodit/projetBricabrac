@@ -23,7 +23,7 @@ $urlContact = $this->generateUrl("contact");
   </head>
   <body>
     <header>
-      <h1>La tanière bricabracs <figure><img src="img/oiseau.gif" alt="oiseau anime"/></h1>
+      <h1>La tanière bricabracs <figure><img src="<?php echo $urlAccueil ?>assets/img/oiseau.gif" alt="oiseau anime"/></h1>
       <nav>
         <ul>
           <li><a href="">Rhizome</a></li>
