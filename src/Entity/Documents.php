@@ -63,7 +63,7 @@ class Documents
     private $date_publication;
 
       /**
-     * @ORM\Column(name="maj", type="timestamp")
+     * @ORM\Column(name="maj", type="datetime")
      */
     
     private $maj;
