@@ -58,9 +58,9 @@ class Documents
     private $status;
     
     /**
-     * @ORM\Column(name="date", type="datetime")
+     * @ORM\Column(name="date_publication", type="datetime")
      */
-    private $date;
+    private $date_publication;
 
       /**
      * @ORM\Column(name="maj", type="timestamp")
