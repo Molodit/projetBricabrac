@@ -5,7 +5,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Table(name="Documents")
+ * @ORM\Table(name="documents")
  * @ORM\Entity(repositoryClass="App\Repository\DocumentsRepository")
  */
 class Documents
@@ -16,54 +16,56 @@ class Documents
      * @ORM\Column(name="id_document", type="integer")
      */
     
-    private $date;
+    private $id_document;
     /**
      * @ORM\Column(name="date", type="datetime")
      */
-    private $fichier;
+    private $date;
 
       /**
      * @ORM\Column(name="fichier", type="text", length=500)
      */
-    private $taille;
+    private $fichier;
 
     /**
      * @ORM\Column(name="taille", type="bigint")
      */
-    private $largeur;
+    private $taille;
 
     /**
      * @ORM\Column(name="largeur", type="int")
      */
-    private $hauteur;
+    private $largeur;
 
     /**
      * @ORM\Column(name="hauteur", type="int")
      */
-    private $media;
+    private $hauteur;
 
       /**
      * @ORM\Column(name="media", type="string", length=500)
      */
-    private $mode;
+    private $media;
 
       /**
      * @ORM\Column(name="mode", type="string", length=500)
      */
-    private $status;
+    private $mode;
 
       /**
      * @ORM\Column(name="status", type="string", length=500)
      */
-    private $date_publication;
+    private $status;
     
     /**
      * @ORM\Column(name="date", type="datetime")
      */
-    private $maj;
+    private $date;
 
       /**
      * @ORM\Column(name="maj", type="timestamp")
      */
+    
+    private $maj;
     
 }
