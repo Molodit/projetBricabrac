@@ -33,12 +33,12 @@ class Documents
     private $taille;
 
     /**
-     * @ORM\Column(name="largeur", type="int")
+     * @ORM\Column(name="largeur", type="integer")
      */
     private $largeur;
 
     /**
-     * @ORM\Column(name="hauteur", type="int")
+     * @ORM\Column(name="hauteur", type="integer")
      */
     private $hauteur;
 
