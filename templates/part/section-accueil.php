@@ -181,12 +181,3 @@
 
 <div class="bgimg-3">
 
-</div>
-<section class="connecter">
-  <h3> Connectez-vous </h3>
-    <form action="" method="POST" id="form">
-          <input type="email" name="email" required placeholder="Votre identifiant">
-          <input type="password" name="password" required placeholder="Votre mot de passe">
-          <button type="submit"> Se connecter <i class="fas fa-check-circle"></i> </button>
-    </form>
-</section>
