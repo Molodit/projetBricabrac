@@ -5,71 +5,54 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Table(name="articles")
- * @ORM\Entity(repositoryClass="App\Repository\ArticlesRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
  */
-class Articles
+class Article
 {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
-     * @ORM\Column(name="id_article", type="bigint")
+     * @ORM\Column(name ="idArticle", type="integer")
      */
-    private $id_article;
+    private $idArticle;
 
     // add your own fields
     /**
-     * @ORM\Column(name="titre", type="text")
+     * @ORM\Column(name ="ititre", type="string", length=200)
      */
     private $titre;
 
     /**
-     * @ORM\Column(name="id_rubrique", type="bigint")
+     * @ORM\Column(name ="contenu", type="text")
      */
-    private $id_rubrique;
-    
-     /**
-     * @ORM\Column(name="descriptif", type="text")
-     */
-    private $descriptif;
-    
-     /**
-     * @ORM\Column(name="texte", type="text")
-     */
-    private $texte;
-    
-     /**
-     * @ORM\Column(name="date", type="datetime")
-     */
-    private $date;
-    
+    private $contenu;
+
     /**
-     * @ORM\Column(name="statut", type="string", length=10)
+     * @ORM\Column(name ="rubrique", type="string", length=100)
      */
-    private $statut;
-    
+    private $rubrique;
     /**
-     * @ORM\Column(name="id_secteur", type="bigint")
+     * @ORM\Column(name ="cheminImage", type="string", length=400)
      */
-    private $id_secteur;
-    
+    private $cheminImage;
+
     /**
-     * @ORM\Column(name="maj", type="bigint")
+     * @ORM\Column(name ="mot_cle", type="string", length=100)
      */
-    private $maj;
-    
-     /**
-     * @ORM\Column(name="date_redac", type="datetime")
+    private $motCle;
+
+    /**
+     * @ORM\Column(name ="datePublication", type="datetime")
      */
-    private $date_redac;
-    
-     /**
-     * @ORM\Column(name="date_modif", type="datetime")
+    private $datePublication;
+
+    /**
+     * @ORM\Column(name ="dateModification", type="datetime")
      */
-    private $date_modif;
-    
-   
-    
-    
+    private $dateModification;
+    /**
+     * @ORM\Column(name ="auteur", type="string", length=200)
+     */
+    private $auteur;
     
 }
