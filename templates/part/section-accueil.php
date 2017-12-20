@@ -8,7 +8,7 @@
         <div class="article">
         <article>
 
-          <img src="#" alt="photo article 1"/>
+          <img src="assets/img/article3.jpg" alt="photo article 1"/>
          
         </article>
         </div>

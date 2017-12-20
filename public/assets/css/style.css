@@ -89,7 +89,8 @@ button {
 
 }
 .bgimg-1 {
-  min-height: 80vh;
+  background-image: url("../img/arbre-vert.png");
+  min-height: 100vh;
   margin-right: 0;
 }
 
@@ -128,7 +129,7 @@ section {
 
 /*XXXXXXXXXXX ARTICLES  XXXXXXXXXXXXX*/
 section#articles {
-  background-color: #c1f2f0;
+/*  background-color: #c1f2f0;*/
   width:100%;
 }
 .no-padding {
