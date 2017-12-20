@@ -27,6 +27,6 @@ class Mots
     /**
      * @ORM\Column(name="texte", type="text")
      */
-    private $texte
+    private $texte;
 
     }

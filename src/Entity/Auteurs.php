@@ -27,7 +27,7 @@ class Auteurs
     /**
      * @ORM\Column(name="email", type="text")
      */
-    private $email
+    private $email;
 
     /**
      * @ORM\Column(name="login", type="string")

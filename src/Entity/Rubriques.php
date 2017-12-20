@@ -16,7 +16,7 @@ class Rubriques
      * @ORM\Column(name="id_rubrique", type="bigint")
      */
     
-    private $id_rubrique
+    private $id_rubrique;
     
 
       /**
@@ -27,7 +27,7 @@ class Rubriques
     /**
      * @ORM\Column(name="descriptif", type="text")
      */
-    private $descriptif
+    private $descriptif;
 
     /**
      * @ORM\Column(name="texte", type="text")
