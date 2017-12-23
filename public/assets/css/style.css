@@ -238,7 +238,7 @@ section#articles {
       border-radius:50%;
       width: 50%;
     }
-    .circle12 article {
+    /*.circle12 article {
     position: absolute;
     top: -6%;
     left: 67%;
@@ -258,7 +258,7 @@ section#articles {
     left: 40%;
     background: rgba(0,166,81,0.7);
     padding: 7%;
-    }
+    }*/
 
 /*XXXXXXXXXXX LOGIN XXXXXXXXXXXXX*/
     .connecter{
@@ -310,5 +310,5 @@ footer{
 }
 #menufooter a{
   color:white;
-  margin-left:10%;
+  margin:10%;
 }

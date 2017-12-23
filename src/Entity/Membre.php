@@ -23,9 +23,9 @@ class Membre
     private $email;
 
     /**
-     * @ORM\Column(name ="pseudo", type="string", length=200)
+     * @ORM\Column(name ="auteur", type="string", length=200)
      */
-    private $pseudo;
+    private $auteur;
 
     /**
      * @ORM\Column(name ="password", type="string", length=200)
@@ -53,9 +53,9 @@ class Membre
         return $this->email;
     }
 
-    function getPseudo ()
+    function getAuteur ()
     {
-        return $this->pseudo;
+        return $this->auteur;
     }
     
 }

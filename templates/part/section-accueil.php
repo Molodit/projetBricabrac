@@ -149,7 +149,7 @@
         <div>
         <article>
          
-          <img src="img/siteon0-38e4a.jpg" alt="logo"/>
+          <img src="assets/img/siteon0-38e4a.jpg" alt="logo"/>
          
         </article>
         </div>
@@ -157,13 +157,6 @@
                   </div>
                   </div>
 
-            <div class="circle-link circle16 col-sm-3">
-                <div class="circle-content" >
-            <a href="#" target="_blank">
-        
-            </a>
-              </div>
-            </div>
     </div>
  
   

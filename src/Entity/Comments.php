@@ -15,6 +15,10 @@ class Comments
      * @ORM\Column(name ="idComment", type="integer")
      */
     private $idComment;
+    /**
+     * @ORM\Column(name ="auteur", type="string", length=200)
+     */
+    private $auteur;
 
     // add your own fields
     /**
@@ -34,7 +38,7 @@ class Comments
    
 
     /**
-     * @ORM\Column(name ="mot_cle", type="string", length=100)
+     * @ORM\Column(name ="motCle", type="string", length=100)
      */
     private $motCle;
 
@@ -43,9 +47,6 @@ class Comments
      */
     private $datePublication;
 
-    /**
-     * @ORM\Column(name ="auteur", type="string", length=200)
-     */
-    private $auteur;
+    
     
 }
