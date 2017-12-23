@@ -5,20 +5,20 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\CommentsRepository")
  */
-class Article
+class Comments
 {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
-     * @ORM\Column(name ="idArticle", type="integer")
+     * @ORM\Column(name ="idComment", type="integer")
      */
-    private $idArticle;
+    private $idComment;
 
     // add your own fields
     /**
-     * @ORM\Column(name ="ititre", type="string", length=200)
+     * @ORM\Column(name ="titre", type="string", length=200)
      */
     private $titre;
 
@@ -31,10 +31,7 @@ class Article
      * @ORM\Column(name ="rubrique", type="string", length=100)
      */
     private $rubrique;
-    /**
-     * @ORM\Column(name ="cheminImage", type="string", length=400)
-     */
-    private $cheminImage;
+   
 
     /**
      * @ORM\Column(name ="mot_cle", type="string", length=100)
@@ -46,10 +43,6 @@ class Article
      */
     private $datePublication;
 
-    /**
-     * @ORM\Column(name ="dateModification", type="datetime")
-     */
-    private $dateModification;
     /**
      * @ORM\Column(name ="auteur", type="string", length=200)
      */

@@ -2,15 +2,15 @@
 
 namespace App\Repository;
 
-use App\Entity\Articles;
+use App\Entity\MonArticles;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
-class ArticlesRepository extends ServiceEntityRepository
+class MonArticlesRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, Articles::class);
+        parent::__construct($registry, MonArticles::class);
     }
 
     /*
