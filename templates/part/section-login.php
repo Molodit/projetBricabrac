@@ -16,7 +16,7 @@
 if ($objetRequest->get("codebarre", "") == "login")
 {
     $objetTraitementForm = new App\Controller\TraitementForm;
-    $objetRespository = $this->getDoctrine()->getRepository(App\Entity\Auteurs::class);
+    $objetRespository = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
 
     $objetTraitementForm->traiterLogin( $objetRequest, 
                                         $objetConnection, 

@@ -103,7 +103,7 @@ class TraitementForm
         
     }
     
-    function traiterLogin ($objetRequest, $objetConnection, $objetRespository, $objetSession)
+    function traiterLogin ($objetRequest, $objetConnection, $objetRepository, $objetSession)
     {
         // RECUPERER LES INFOS DU FORMULAIRE
         // ->get("email", "")
@@ -120,8 +120,8 @@ class TraitementForm
             // CHERCHER DANS LA TABLE user SI IL Y A UNE LIGNE 
             // QUI CORRESPOND A L'EMAIL
             // http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityRepository.html
-            $objetUser  = $objetRespository->findOneBy([ "email" => $email ]);
-            if ($objetUser)
+            $objetMembre  = $objetRepository->findOneBy([ "email" => $email ]);
+            if ($objetMembre)
             {
                 // OK
                 // DEBUG
@@ -130,22 +130,23 @@ class TraitementForm
                 // RECUPERER LE PASSWORD HASHE POUR LE COMPARER 
                 // AVEC CELUI DU FORMULAIRE
                 // AJOUTER UN GETTER A L'ENTITE User POUR ACCEDER AUX PROPRIETES
-                $passwordHash = $objetUser->getPassword();
+                $passwordHash = $objetMembre->getPassword();
                 // http://php.net/manual/en/function.password-verify.php
                 if (password_verify($password, $passwordHash))
                 {
                     // OK
                     // LES MOTS DE PASSE CORRESPONDENT
-                    $pseudo = $objetUser->getPseudo();
-                    $niveau = $objetUser->getNiveau();
+                    $pseudo = $objetMembre->getPseudo();
+                    $niveau = $objetMembre->getNiveau();
+                    $idMembre = $objetMembre->getId();
                     echo "BIENVENUE $pseudo (niveau=$niveau)";
                     
                     // MEMORISER LES INFOS DANS UNE SESSION
                     // https://symfony.com/doc/current/controller.html#session-intro
+                    $objetSession->set("id", $idMembre);
                     $objetSession->set("niveau", $niveau);
                     $objetSession->set("pseudo", $pseudo);
                     $objetSession->set("email",  $email);
-                    
                     
                 }
                 else 

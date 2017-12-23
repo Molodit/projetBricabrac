@@ -5,8 +5,8 @@
                 <ul>
                   <li><a href=""> <i class="fas fa-home"></i> Accueil</a></li>
                   <li><a href=""> <i class="fas fa-book"></i> Tableau de bord</a></li>
-                  <li><a href=""> <i class="fas fa-address-card"></i> Connexion </a></li>
-                  <li><a href=""> <i class="fas fa-file-alt"></i> Conférences </a></li>
+                  <li><a href=""> <i class="fas fa-user"></i> Connexion </a></li>
+                  <li><a href="<?php echo $urlContact ?>"><i class="fas fa-address-card"></i> Contact </a></li>
                 </ul>
               </nav>
             <p>&copy; Tous droits réservés</p>

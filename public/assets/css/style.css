@@ -226,16 +226,7 @@ section#articles {
     padding: 7%;
     background-color: rgba(255, 140, 153,0.6)
     }
-    
-    /*#Calendar tr td, #Calendar table, #NavBar tr th, #NavBar tr td, #NavBar table{
-    font-size: 10px;
-    background: #F5E1FA;
-    border-radius: 10px;
-    text-align:center;
-    }
-    #calendrie{
-    padding-left: 17px;
-    }*/
+  
     
     .circle11 article{
     position: absolute;
@@ -268,6 +259,8 @@ section#articles {
     background: rgba(0,166,81,0.7);
     padding: 7%;
     }
+
+/*XXXXXXXXXXX LOGIN XXXXXXXXXXXXX*/
     .connecter{
     font-family: 'Philosopher', sans-serif;
     box-shadow:10px 2px 10px rgba(0, 0, 0, 0.6);
@@ -304,6 +297,7 @@ section#articles {
   padding-bottom: 2.5%;
   cursor:pointer;
 }
+/*XXXXXXXXXXX FOOTER  XXXXXXXXXXXXX*/
 footer{
   font-family: 'Philosopher', sans-serif;
   background-color:#5e528a;
@@ -316,5 +310,5 @@ footer{
 }
 #menufooter a{
   color:white;
-  margin-left:13.5%;
+  margin-left:10%;
 }

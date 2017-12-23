@@ -180,4 +180,5 @@
 </section>
 
 <div class="bgimg-3">
+</div>
 

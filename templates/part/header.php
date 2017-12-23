@@ -1,8 +1,13 @@
 <?php
 
 // JE RECUPERE LES URLS DES PAGES GRACE AU NOM DE LEUR ROUTE
-$urlAccueil = $this->generateUrl("accueil");
-$urlContact = $this->generateUrl("contact");
+$urlAccueil     = $this->generateUrl("accueil");
+//$urlActus       = $this->generateUrl("actus");
+$urlContact     = $this->generateUrl("contact");
+//$urlInscription = $this->generateUrl("inscription");
+$urlLogin       = $this->generateUrl("login");
+//$urlAdmin       = $this->generateUrl("admin");
+//$urlLogout      = $this->generateUrl("logout");
 
 ?>
 <!DOCTYPE html>
@@ -26,10 +31,10 @@ $urlContact = $this->generateUrl("contact");
       <h1>La tanière bricabracs <figure><img src="<?php echo $urlAccueil ?>assets/img/oiseau.gif" alt="oiseau anime"/></h1>
       <nav>
         <ul>
-          <li><a href="">Rhizome</a></li>
+          <li><a href="<?php echo $urlAccueil ?>">Rizhome</a></li>
           <li><a href="">CréaTexte</a></li>
           <li><a href="">Journal <em>La Tanière</em></a></li>
-          <li><a href="">Conférences</a></li><!--<img src="img/oiseau.gif" alt="oiseau anime"/>-->
+         
         </ul>
       </nav>
       <form action="" method="POST" id="recherche">
