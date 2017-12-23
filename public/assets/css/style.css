@@ -57,7 +57,7 @@ h2, h3 {
   letter-spacing: 5px;
 }
 form{
-   margin: 3% auto;
+  margin: 3% auto;
   width:80%;
   } 
 input {
@@ -123,9 +123,7 @@ section {
   width: 65%;
   display: inline-block;
 }
-#ecrire a {
-  position: relative;
-}
+
 
 /*XXXXXXXXXXX ARTICLES  XXXXXXXXXXXXX*/
 section#articles {
@@ -238,48 +236,49 @@ section#articles {
       border-radius:50%;
       width: 50%;
     }
-    /*.circle12 article {
-    position: absolute;
-    top: -6%;
-    left: 67%;
-    width: 9%;
-    background:#f1e4fa;
-    }
-    .circle13 article{
-    position: absolute;
-    top: 80%;
-    left: 50%;
-     background: rgba(237,17,100,0.6);
-    padding: 7%;
-    }
-    .circle14 article{
-    position: absolute;
-    top: 19%;
-    left: 40%;
-    background: rgba(0,166,81,0.7);
-    padding: 7%;
-    }*/
-
+    
 /*XXXXXXXXXXX LOGIN XXXXXXXXXXXXX*/
-    .connecter{
-    font-family: 'Philosopher', sans-serif;
-    box-shadow:10px 2px 10px rgba(0, 0, 0, 0.6);
-    width:40%;
-    border-radius:10px;
-    padding-bottom: 25px;
-    margin-left:10%;
+ .connecter{
+  font-family: 'Philosopher', sans-serif;
+  box-shadow:10px 2px 10px rgba(0, 0, 0, 0.6);
+  width:40%;
+  border-radius:10px;
+  padding-bottom: 25px;
+  margin-left:10%;
 }
-  .connecter h3{
+.ecrire{
+  font-family: 'Philosopher', sans-serif;
+  box-shadow:10px 2px 10px rgba(0, 0, 0, 0.6);
+  border-radius:10px;
+  padding-bottom: 25px;
+  
+}
+.ecrire #form input{
+  width:32%;
+}
+.ecrire h3,  .connecter h3{
     text-align:center;
     font-weight: bold;
     margin-left:5%;
 }
+.label-file {
+    cursor: pointer;
+    color: #5e528a;
+    font-weight: bold;
+    padding-bottom: 2%;
+}
+.label-file:hover {
+    color: #25a5c4;
+}
+.input-file {
+    display: none;
+}
 #form{
   text-align: center;
-  display:flex;
+  /*display:flex;*/
   flex-direction: column;
   margin:0 auto;
-  width: 60%;
+  width: 70%;
 }
 #form input{
   text-align:center;

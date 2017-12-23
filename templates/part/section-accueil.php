@@ -165,13 +165,5 @@
 
 </div>
 
-<section id="ecrire">
-  <article>
 
-    <a href="#">Ecrire un nouvel article</a>
-  </article>
-</section>
-
-<div class="bgimg-3">
-</div>
 
