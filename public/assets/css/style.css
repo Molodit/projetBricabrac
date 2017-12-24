@@ -238,7 +238,10 @@ section#articles {
     }
     
 /*XXXXXXXXXXX LOGIN XXXXXXXXXXXXX*/
- .connecter{
+.connection{
+  display: inline-flex;
+}
+ .inscription, .connecter{
   font-family: 'Philosopher', sans-serif;
   box-shadow:10px 2px 10px rgba(0, 0, 0, 0.6);
   width:40%;
@@ -256,7 +259,7 @@ section#articles {
 .ecrire #form input{
   width:32%;
 }
-.ecrire h3,  .connecter h3{
+.inscription h3, .ecrire h3,  .connecter h3{
     text-align:center;
     font-weight: bold;
     margin-left:5%;

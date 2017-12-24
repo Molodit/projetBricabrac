@@ -26,5 +26,11 @@ if ($objetRequest->get("codebarre", "") == "login")
 
 ?>
                     </div>
-                </form>
-            </section>
+      </form>
+
+  </section>
+
+</section>
+  <section class="article">
+    <a href="<?php echo $urlArticle ?>"><h2>Ecrire un nouvel article</h2></a>
+  </section>

@@ -25,11 +25,11 @@ class TraitementForm
         // ET SI L'INFO N'EST PAS PRESENTE 
         //  ALORS ON RETOURNE LA VALEUR PAR DEFAUT ""
         $email      = $objetRequest->get("email",       "");
-        $auteur     = $objetRequest->get("auteur",      "");
+        $membre     = $objetRequest->get("membre",      "");
         $password   = $objetRequest->get("password",    "");
         
         // UN PEU DE SECURITE (BASIQUE)
-        if ( ($email != "") && ($auteur != "") && ($password != ""))
+        if ( ($email != "") && ($membre != "") && ($password != ""))
         {
             // COMPLETER LES INFOS MANQUANTES
             $dateInscription = date("Y-m-d H:i:s"); // DATE AU FORMAT SQL DATETIME
@@ -43,60 +43,47 @@ class TraitementForm
             $objetConnection->insert("membre", 
                                         [   
                                     "email"             => $email, 
-                                    "auteur"            => $pauteur, 
+                                    "membre"            => $membre, 
                                     "password"          => $password, 
                                     "niveau"            => $niveau
                                         ]);
             
             // MESSAGE POUR LE VISITEUR
-            echo "MERCI DE VOTRE INSCRIPTION $pseudo ($email)";
+            echo "MERCI DE VOTRE INSCRIPTION $membre ($email)";
         }
         
     }
     
     function traiterLogin ($objetRequest, $objetConnection, $objetRepository, $objetSession)
     {
-        // RECUPERER LES INFOS DU FORMULAIRE
-        // ->get("email", "")
-        // VA CHERCHER L'INFO DANS LE FORMULAIRE HTML name="email"
-        // ET SI L'INFO N'EST PAS PRESENTE 
-        //  ALORS ON RETOURNE LA VALEUR PAR DEFAUT ""
+        
         $email      = $objetRequest->get("email",       "");
         $password   = $objetRequest->get("password",    "");
         
         // UN PEU DE SECURITE (BASIQUE)
         if ( ($email != "") && ($password != ""))
         {
-            // READ
-            // CHERCHER DANS LA TABLE user SI IL Y A UNE LIGNE 
-            // QUI CORRESPOND A L'EMAIL
-            // http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityRepository.html
+            
             $objetMembre  = $objetRepository->findOneBy([ "email" => $email ]);
             if ($objetMembre)
             {
-                // OK
-                // DEBUG
-                // echo "TROUVE: ";
-                // var_dump($objetUser);
-                // RECUPERER LE PASSWORD HASHE POUR LE COMPARER 
-                // AVEC CELUI DU FORMULAIRE
-                // AJOUTER UN GETTER A L'ENTITE User POUR ACCEDER AUX PROPRIETES
+                
                 $passwordHash = $objetMembre->getPassword();
-                // http://php.net/manual/en/function.password-verify.php
+               
                 if (password_verify($password, $passwordHash))
                 {
                     // OK
                     // LES MOTS DE PASSE CORRESPONDENT
-                    $auteur = $objetMe->getAuteur();
+                    $membre = $objetMembre->getMembre();
                     $niveau = $objetMembre->getNiveau();
                     $idMembre = $objetMembre->getIdMembre();
-                    echo "BIENVENUE $pseudo (niveau=$niveau)";
+                    echo "BIENVENUE $membre (niveau=$niveau)";
                     
                     // MEMORISER LES INFOS DANS UNE SESSION
-                    // https://symfony.com/doc/current/controller.html#session-intro
-                    $objetSession->set("idMembre", $idMembre);
+                    
+                    $objetSession->set("id_membre", $idMembre);
                     $objetSession->set("niveau", $niveau);
-                    $objetSession->set("auteur", $auteur);
+                    $objetSession->set("membre", $membre);
                     $objetSession->set("email",  $email);
                     
                 }

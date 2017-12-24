@@ -38,6 +38,10 @@ class Membre
     private $niveau;
     
     // METHODES GETTER ET SETTER
+    function getIdMembre ()
+    {
+        return $this->id_membre;
+    }
     function getPassword ()
     {
         return $this->password;

@@ -2,11 +2,11 @@
 
 // JE RECUPERE LES URLS DES PAGES GRACE AU NOM DE LEUR ROUTE
 $urlAccueil     = $this->generateUrl("accueil");
-//$urlActus       = $this->generateUrl("actus");
+$urlArticle     = $this->generateUrl("article");
 $urlContact     = $this->generateUrl("contact");
-//$urlInscription = $this->generateUrl("inscription");
+$urlInscription = $this->generateUrl("inscription");
 $urlLogin       = $this->generateUrl("login");
-//$urlAdmin       = $this->generateUrl("admin");
+$urlAdmin       = $this->generateUrl("admin");
 //$urlLogout      = $this->generateUrl("logout");
 
 ?>

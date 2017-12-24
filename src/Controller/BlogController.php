@@ -9,21 +9,16 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\DBAL\Driver\Connection;
 
 
-class VitrineController
+class BlogController
     extends Controller
+
 {
     /**
       * @Route("/", name="accueil")
       */   
    public function accueil (Request $objetRequest, Connection $objetConnection)
    {
-        // POUR RECUPERER LES INFOS DE FORMULAIRE
-        // ON DEMANDE A SYMFONY DE NOUS FOURNIR 
-        // UN OBJET DE LA CLASSE Request
-        // (INJECTION DE DEPENDANCE...)
-       
-        // JE VAIS METTRE EN CACHE LE CODE HTML
-        // http://php.net/manual/fr/function.ob-start.php
+        
         ob_start();
     
        // METHODE DE SYMFONY POUR OBTENIR LE CHEMIN DU DOSSIER symfony1        
@@ -33,21 +28,41 @@ class VitrineController
        require_once("$cheminTemplates/template-accueil.php");
         
        // RECUPERER LE CONTENU DU CACHE
-       // http://php.net/manual/fr/function.ob-get-clean.php
+       
        $contenuCache = ob_get_clean();
        
        return new Response($contenuCache);
        
    }
   
+  /**
+      * @Route("article", name="article")
+      */   
+   public function article (Request $objetRequest, Connection $objetConnection)
+   {
+        
+        ob_start();
+    
+       // METHODE DE SYMFONY POUR OBTENIR LE CHEMIN DU DOSSIER        
+        $cheminSymfony   = $this->getParameter('kernel.project_dir');
+       $cheminTemplates = "$cheminSymfony/templates"; 
+       $cheminPart      = "$cheminTemplates/part"; 
+       require_once("$cheminTemplates/template-nouvel-article.php");
+        
+       // RECUPERER LE CONTENU DU CACHE
+     
+       $contenuCache = ob_get_clean();
+       
+       return new Response($contenuCache);
+       
+   }
    
  /**
       * @Route("contact", name="contact")
       */   
    public function contact (Request $objetRequest, Connection $objectConnection)
    {
-        // JE VAIS METTRE EN CACHE LE CODE HTML
-        // http://php.net/manual/fr/function.ob-start.php
+        
         ob_start();
         
         // METHODE DE SYMFONY POUR OBTENIR LE CHEMIN DU DOSSIER symfony1        
@@ -56,14 +71,9 @@ class VitrineController
         $cheminPart      = "$cheminTemplates/part"; 
         require_once("$cheminTemplates/template-contact.php");
         
-        // RECUPERER LE CONTENU DU CACHE
-        // http://php.net/manual/fr/function.ob-get-clean.php
+      
         $contenuCache = ob_get_clean();
-        
-        // TEMPORISATION DE L'AFFICHAGE...
-        // JE NE FAIS PAS LE echo DE L'AFFICHAGE MOI MEME
-        // JE DONNE LE CONTENU HTML A LA CLASSE Response
-        // ET C'EST LA MECANIQUE DE SYMFONY QUI VA GERER L'AFFICHAGE DE CE CODE
+       
         return new Response($contenuCache);
    }
    
