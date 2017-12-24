@@ -12,13 +12,17 @@ class Comments
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
-     * @ORM\Column(name ="idComment", type="integer")
+     * @ORM\Column(name ="id_comment", type="integer")
      */
     private $idComment;
     /**
-     * @ORM\Column(name ="auteur", type="string", length=200)
+     * @ORM\Column(name ="id_article", type="string", length=200)
      */
-    private $auteur;
+    private $idArticle;
+    /**
+     * @ORM\Column(name ="membre", type="string", length=200)
+     */
+    private $membre;
 
     // add your own fields
     /**
@@ -32,18 +36,7 @@ class Comments
     private $contenu;
 
     /**
-     * @ORM\Column(name ="rubrique", type="string", length=100)
-     */
-    private $rubrique;
-   
-
-    /**
-     * @ORM\Column(name ="motCle", type="string", length=100)
-     */
-    private $motCle;
-
-    /**
-     * @ORM\Column(name ="datePublication", type="datetime")
+     * @ORM\Column(name ="date_publication", type="datetime")
      */
     private $datePublication;
 

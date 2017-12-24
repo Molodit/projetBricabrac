@@ -12,7 +12,7 @@ class Membre
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
-     * @ORM\Column(name ="idMembre", type="integer")
+     * @ORM\Column(name ="id_membre", type="integer")
      */
     private $idMembre;
 
@@ -23,9 +23,9 @@ class Membre
     private $email;
 
     /**
-     * @ORM\Column(name ="auteur", type="string", length=200)
+     * @ORM\Column(name ="membre", type="string", length=200)
      */
-    private $auteur;
+    private $membre;
 
     /**
      * @ORM\Column(name ="password", type="string", length=200)
@@ -53,9 +53,9 @@ class Membre
         return $this->email;
     }
 
-    function getAuteur ()
+    function getMembre ()
     {
-        return $this->auteur;
+        return $this->membre;
     }
     
 }

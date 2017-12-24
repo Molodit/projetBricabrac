@@ -13,13 +13,13 @@ class MonArticle
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
-     * @ORM\Column(name ="idArticle", type="integer")
+     * @ORM\Column(name ="id_article", type="integer")
      */
     private $idArticle;
     /**
-     * @ORM\Column(name ="auteur", type="string", length=200)
+     * @ORM\Column(name ="membre", type="string", length=200)
      */
-    private $auteur;
+    private $membre;
 
     // add your own fields
     /**
@@ -37,31 +37,35 @@ class MonArticle
      */
     private $rubrique;
     /**
-     * @ORM\Column(name ="cheminImage", type="string", length=400)
+     * @ORM\Column(name ="chemin_image", type="string", length=400)
      */
     private $cheminImage;
 
     /**
-     * @ORM\Column(name ="motCle", type="string", length=100)
+     * @ORM\Column(name ="mot_cle", type="string", length=100)
      */
     private $motCle;
 
     /**
-     * @ORM\Column(name ="datePublication", type="datetime")
+     * @ORM\Column(name ="date_publication", type="datetime")
      */
     private $datePublication;
 
     /**
-     * @ORM\Column(name ="dateModification", type="datetime")
+     * @ORM\Column(name ="date_modification", type="datetime")
      */
     private $dateModification;
     
 
     // METHODES
     // SETTERS
-     public function setAuteur ($auteur)
+    public function setIdArticle ($idArticle)
     {
-        $this->auteur = $auteur;
+        $this->id_article = $idArticle;
+    }
+     public function setMembre ($membre)
+    {
+        $this->membre = $membre;
     }
     
     public function setTitre ($titre)
@@ -75,7 +79,7 @@ class MonArticle
     }
     public function setMotCle ($motCle)
     {
-        $this->motCle = $motCle;
+        $this->mot_cle = $motCle;
     }
     
     public function setContenu ($contenu)
@@ -85,21 +89,21 @@ class MonArticle
 
     public function setCheminImage ($cheminImage)
     {
-        $this->cheminImage = $cheminImage;
+        $this->chemin_image = $cheminImage;
     }
 
     public function setDatePublication ($datePublication)
     {
         // ON DOIT CREER UN OBJET DATETIME A PARTIR
         // http://php.net/manual/fr/datetime.createfromformat.php
-        $this->datePublication = \DateTime::createfromformat("Y-m-d H:i:s", $datePublication);
+        $this->date_publication = \DateTime::createfromformat("Y-m-d H:i:s", $datePublication);
     }
  
     public function setDateModification ($dateModification)
     {
         // ON DOIT CREER UN OBJET DATETIME A PARTIR
         // http://php.net/manual/fr/datetime.createfromformat.php
-        $this->dateModification = \DateTime::createfromformat("Y-m-d H:i:s", $dateModification);
+        $this->date_modification = \DateTime::createfromformat("Y-m-d H:i:s", $dateModification);
     }
     
    
@@ -107,7 +111,7 @@ class MonArticle
     // GETTERS
     public function getIdArticle ()
     {
-        return $this->idArticle;
+        return $this->id_article;
     }
 
     public function getTitre ()
@@ -115,18 +119,18 @@ class MonArticle
         return $this->titre;
     }
     
-     public function getAuteur ()
+     public function getMembre ()
     {
-        return $this->auteur;
+        return $this->membre;
     }
     
     public function getRubrique()
     {
         return $this->rubrique;
     }
-      public function getMotCle ($motCle)
+      public function getMotCle ()
     {
-        $this->motCle = $motCle;
+        $this->mot_cle;
     }
     
     public function getContenu ()
@@ -136,21 +140,21 @@ class MonArticle
 
     public function getCheminImage ()
     {
-        return $this->cheminImage;
+        return $this->chemin_image;
     }
     
     public function getDatePublication ($format)
     {
         // CONVERTIR EN TEXTE
         // http://php.net/manual/fr/datetime.format.php
-        return $this->datePublication->format($format);
+        return $this->date_publication->format($format);
     }
     
     public function getDateModification ($format)
     {
         // CONVERTIR EN TEXTE
         // http://php.net/manual/fr/datetime.format.php
-        return $this->dateModification->format($format);
+        return $this->date_modification->format($format);
     }
         
 }
