@@ -74,9 +74,9 @@ class TraitementForm
                 {
                     // OK
                     // LES MOTS DE PASSE CORRESPONDENT
-                    $membre = $objetMembre->getMembre();
-                    $niveau = $objetMembre->getNiveau();
-                    $idMembre = $objetMembre->getIdMembre();
+                    $membre     = $objetMembre->getMembre();
+                    $niveau     = $objetMembre->getNiveau();
+                    $idMembre   = $objetMembre->getIdMembre();
                     echo "BIENVENUE $membre (niveau=$niveau)";
                     
                     // MEMORISER LES INFOS DANS UNE SESSION

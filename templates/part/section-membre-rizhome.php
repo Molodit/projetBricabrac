@@ -1,6 +1,6 @@
 <?php
 
-$verifPseudo = $objetSession->get("pseudo");
+$verifPseudo = $objetSession->get("membre");
 
 ?>
 <section>
