@@ -60,7 +60,7 @@ form{
   margin: 3% auto;
   width:80%;
   } 
-input {
+input, label, select {
   outline: none;
   padding: 1% 2% 1% 0.3%;
   border-radius:5px;

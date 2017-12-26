@@ -34,6 +34,7 @@ $urlAdmin       = $this->generateUrl("admin");
           <li><a href="<?php echo $urlAccueil ?>">Rizhome</a></li>
           <li><a href="">CréaTexte</a></li>
           <li><a href="">Journal <em>La Tanière</em></a></li>
+          <li><a href="<?php echo $urlAdmin ?>">Admin</a></li>
          
         </ul>
       </nav>

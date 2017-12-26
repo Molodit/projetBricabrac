@@ -13,6 +13,23 @@ class MonArticlesRepository extends ServiceEntityRepository
         parent::__construct($registry, MonArticles::class);
     }
 
+        // AJOUTER MES METHODES QUI ONT BESOIN DE JOINTURES
+        public function trouverArticleUser ($objetConnection)
+        {
+            $requeteSQL =
+    <<<CODESQL
+    
+    SELECT *, article.id as idArticle FROM article
+    LEFT JOIN membre
+    ON article.id_membre = membre.id_membre
+    ORDER BY date_modification DESC
+CODESQL;
+            // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#list-of-parameters-conversion
+            $objetStatement = $objetConnection->prepare($requeteSQL);
+            $objetStatement->execute();
+            
+            return $objetStatement;
+        }
     /*
     public function findBySomething($value)
     {

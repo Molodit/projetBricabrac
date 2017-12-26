@@ -24,27 +24,27 @@ class FormArticle
         $cheminImage    = $this->getUploadedFile("cheminImage", $objetRequest, $cheminSymfony);
         
         // SECURITE TRES BASIQUE
-        if (($titre != "") && ($rubrique != "") && ($contenu != ""))
+        if (($titre != "") && ($rubrique != "") && ($contenu != "") && ($motCle != ""))
         {
             // COMPLETER LES INFOS MANQUANTES
             $datePublication = date("Y-m-d H:i:s");
-            $dateModification = date("Y-m-d H:i:s");
-            $idAuteur           = $objetSession->get("idAuteur");
+            $idMembre        = $objetSession->get("id_membre");
             
             // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
             // ON VA UTILISER $objetConnection FOURNI PAR SYMFONY
             // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#insert
             $objetConnection->insert("article", 
                                     [   "titre"             => $titre, 
-                                        "idAuteur"          => $idAuteur,
+                                        "id_membre"         => $idMembre,
                                         "rubrique"          => $rubrique,
                                         "contenu"           => $contenu,
-                                        "datePublication"  => $datePublication,
-                                        "cheminImage"      => $cheminImage,
+                                        "date_publication"  => $datePublication,
+                                        "chemin_image"      => $cheminImage,
+                                        "mot_cle"           => $motCle, 
                                         ]);
             
             // MESSAGE RETOUR POUR LE VISITEUR
-            echo "ARTICLE PUBLIE";
+            echo "L'article $titre a été publié";
         }
         
     }

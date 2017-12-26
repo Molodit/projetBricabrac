@@ -1,12 +1,11 @@
 
 
-
 <section class="ecrire container">
 	 <article>
-			<a href="#"><h2>Ecrire un nouvel article</h2></a>
+			<h2>Ecrire un nouvel article</h2>
 			
 			<form id="form" method="POST" enctype="multipart/form-data">
-				<input  type="text" name="titre" placeholder="Nom de l'Article">
+				<input  type="text" name="titre" placeholder="Titre de l'article">
 				<input type="text" name="rubrique" maxlength="100" placeholder="Rubrique" required>
                 <input type="text" name="motCle" maxlength="80" placeholder="Mot Cle" required>
                 <label for="file" class="label-file">Choisir une image</label>
