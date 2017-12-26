@@ -20,7 +20,10 @@ if ($objetRequest->get("codebarre", "") == "article")
 {
     $objetFormArticle = new App\Controller\FormArticle;
     
-    $objetFormArticle->creer($objetRequest, $objetConnection, $cheminSymfony, $objetSession);
+    //$objetFormArticle->creer($objetRequest, $objetConnection, $cheminSymfony, $objetSession);
+
+    $objetEntityManager = $this->getDoctrine()->getManager();
+    $objetFormArticle->creerPersistence($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony);
     
 }
 ?>

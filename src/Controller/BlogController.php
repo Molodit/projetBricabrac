@@ -38,7 +38,7 @@ class BlogController
   /**
       * @Route("article/{id_article}", name="article")
       */   
-    public function article (App\Entity\MonArticle $objetArticle, Request $objetRequest, Connection $objetConnection)
+    public function article (\App\Entity\MonArticle $objetArticle, Request $objetRequest, Connection $objetConnection)
     {
         
         ob_start();

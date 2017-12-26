@@ -43,9 +43,9 @@ CODEHTML;
     // IL FAUT FOURNIR LA VALEUR DU PARAMETRE DANS L'URL
     //      * @Route("categorie/{cat}", name="categorie")
     $urlRubrique = $this->generateUrl("rubrique", [ "rubrique" => $rubrique ]);
-    $urlMotCle = $this->generateUrl("motCle", [ "motCle" => $motCle ]);
+    $urlMotCle = $this->generateUrl("mot_cle", [ "mot_cle" => $motCle ]);
     // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
-    $urlArticle = $this->generateUrl("article", [ "idArticle" => $idArticle ]);
+    $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
     
 
     echo

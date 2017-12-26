@@ -28,12 +28,10 @@ class FormArticle
         {
             // COMPLETER LES INFOS MANQUANTES
             $datePublication = date("Y-m-d H:i:s");
-<<<<<<< HEAD
+
             $dateModification = date("Y-m-d H:i:s");
             $idMembre         = $objetSession->get("id_membre");
-=======
-            $idMembre        = $objetSession->get("id_membre");
->>>>>>> 9a27950bdff9f4e44e35e15ecf8c85526d92c437
+
             
             // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
             // ON VA UTILISER $objetConnection FOURNI PAR SYMFONY
@@ -176,6 +174,52 @@ class FormArticle
         }
         
         return $cheminImage;
+    }
+
+
+    
+     function creerPersistence ($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony)
+    {
+        
+        $titre          = $objetRequest->get("titre", "");       
+        $rubrique       = $objetRequest->get("rubrique", ""); 
+        $motCle         = $objetRequest->get("mot_cle", "");       
+        $contenu        = $objetRequest->get("contenu", "");       
+        $cheminImage    = $this->getUploadedFile("chemin_image", $objetRequest, $cheminSymfony);
+        
+        // SECURITE TRES BASIQUE
+        if (($titre != "") && ($rubrique != "") && ($contenu != ""))
+        {
+            // COMPLETER LES INFOS MANQUANTES
+            $datePublication  = date("Y-m-d H:i:s");
+            $dateModification = date("Y-m-d H:i:s");
+            
+            // ON VA CREER UNE ENTITE
+            $objetArticle = new \App\Entity\MonArticle;
+            // ON VA UTILISER LES SETTERS POUR MEMORISER LES INFOS DANS L'ENTITE
+            // TODO: AJOUTER LES METHODE SETTERS DANS LA CLASSE ENTITE MonArticle
+            $objetArticle->setTitre($titre);
+            $objetArticle->setRubrique($rubrique);
+            $objetArticle->setMotCle($motCle);
+            $objetArticle->setContenu($contenu);
+            $objetArticle->setDatePublication($datePublication);
+            $objetArticle->setDateModification($dateModification);
+            $objetArticle->setCheminImage($cheminImage);
+            
+            // CA NE FAIT PAS LE STOCKAGE DANS SQL (UN PEU COMME PREPARE...)
+            $objetEntityManager->persist($objetArticle);
+            // ENVOIE L'OBJET DANS LA TABLE SQL (UN PEU COMME EXECUTE...)
+            $objetEntityManager->flush();
+            
+            // MESSAGE RETOUR POUR LE VISITEUR
+            echo "ARTICLE PUBLIE";
+        }
+        else
+        {
+            // KO
+            echo "INFOS MANQUANTES";
+        }
+        
     }
     
     
