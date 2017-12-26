@@ -40,7 +40,7 @@ class Membre
     // METHODES GETTER ET SETTER
     function getIdMembre ()
     {
-        return $this->id_membre;
+        return $this->idMembre;
     }
     function getPassword ()
     {

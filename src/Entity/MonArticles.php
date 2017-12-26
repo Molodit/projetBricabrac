@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Table(name="article")
- * @ORM\Entity(repositoryClass="App\Repository\MonArticleRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\MonArticlesRepository")
  */
-class MonArticle
+class MonArticles
 {
     /**
      * @ORM\Id
@@ -17,9 +17,9 @@ class MonArticle
      */
     private $idArticle;
     /**
-     * @ORM\Column(name ="id_membre", type="string", length=200)
+     * @ORM\Column(name ="id_membre", type="integer", length=200)
      */
-    private $IdMembre;
+    private $idMembre;
 
     // add your own fields
     /**
@@ -63,9 +63,9 @@ class MonArticle
     {
         $this->id_article = $idArticle;
     }
-     public function setIdMembre ($IdMembre)
+     public function setIdMembre ($idMembre)
     {
-        $this->id_membre = $IdMembre;
+        $this->id_membre = $idMembre;
     }
     
     public function setTitre ($titre)
@@ -111,7 +111,7 @@ class MonArticle
     // GETTERS
     public function getIdArticle ()
     {
-        return $this->id_article;
+        return $this->idArticle;
     }
 
     public function getTitre ()
@@ -121,7 +121,7 @@ class MonArticle
     
      public function getIdMembre ()
     {
-        return $this->id_membre;
+        return $this->idMembre;
     }
     
     public function getRubrique()
@@ -130,7 +130,7 @@ class MonArticle
     }
       public function getMotCle ()
     {
-        $this->mot_cle;
+        $this->motCle;
     }
     
     public function getContenu ()
@@ -140,21 +140,21 @@ class MonArticle
 
     public function getCheminImage ()
     {
-        return $this->chemin_image;
+        return $this->cheminImage;
     }
     
     public function getDatePublication ($format)
     {
         // CONVERTIR EN TEXTE
         // http://php.net/manual/fr/datetime.format.php
-        return $this->date_publication->format($format);
+        return $this->datePublication->format($format);
     }
     
     public function getDateModification ($format)
     {
         // CONVERTIR EN TEXTE
         // http://php.net/manual/fr/datetime.format.php
-        return $this->date_modification->format($format);
+        return $this->dateModification->format($format);
     }
         
 }

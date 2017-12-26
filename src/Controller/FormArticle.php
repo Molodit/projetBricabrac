@@ -24,12 +24,16 @@ class FormArticle
         $cheminImage    = $this->getUploadedFile("chemin_image", $objetRequest, $cheminSymfony);
         
         // SECURITE TRES BASIQUE
-        if (($titre != "") && ($rubrique != "") && ($contenu != ""))
+        if (($titre != "") && ($rubrique != "") && ($contenu != "") && ($motCle != ""))
         {
             // COMPLETER LES INFOS MANQUANTES
             $datePublication = date("Y-m-d H:i:s");
+<<<<<<< HEAD
             $dateModification = date("Y-m-d H:i:s");
             $idMembre         = $objetSession->get("id_membre");
+=======
+            $idMembre        = $objetSession->get("id_membre");
+>>>>>>> 9a27950bdff9f4e44e35e15ecf8c85526d92c437
             
             // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
             // ON VA UTILISER $objetConnection FOURNI PAR SYMFONY
@@ -41,10 +45,11 @@ class FormArticle
                                         "contenu"           => $contenu,
                                         "date_publication"  => $datePublication,
                                         "chemin_image"      => $cheminImage,
+                                        "mot_cle"           => $motCle, 
                                         ]);
             
             // MESSAGE RETOUR POUR LE VISITEUR
-            echo "ARTICLE PUBLIE";
+            echo "L'article $titre a été publié";
         }
         
     }
