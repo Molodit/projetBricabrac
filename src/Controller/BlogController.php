@@ -36,7 +36,7 @@ class BlogController
    }
   
   /**
-      * @Route("article/{id_article}", name="article")
+      * @Route("article", name="article")
       */   
     public function article (\App\Entity\MonArticle $objetArticle, Request $objetRequest, Connection $objetConnection)
     {

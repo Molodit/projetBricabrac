@@ -2,15 +2,15 @@
 
 namespace App\Repository;
 
-use App\Entity\MonArticles;
+use App\Entity\MonArticle;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
-class MonArticlesRepository extends ServiceEntityRepository
+class MonArticleRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, MonArticles::class);
+        parent::__construct($registry, MonArticle::class);
     }
 
         // AJOUTER MES METHODES QUI ONT BESOIN DE JOINTURES
@@ -19,7 +19,7 @@ class MonArticlesRepository extends ServiceEntityRepository
             $requeteSQL =
     <<<CODESQL
     
-    SELECT *, article.id as idArticle FROM article
+    SELECT *, article.id_article as idArticle FROM article
     LEFT JOIN membre
     ON article.id_membre = membre.id_membre
     ORDER BY date_modification DESC
