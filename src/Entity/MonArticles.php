@@ -17,9 +17,9 @@ class MonArticle
      */
     private $idArticle;
     /**
-     * @ORM\Column(name ="membre", type="string", length=200)
+     * @ORM\Column(name ="id_membre", type="string", length=200)
      */
-    private $membre;
+    private $IdMembre;
 
     // add your own fields
     /**
@@ -63,9 +63,9 @@ class MonArticle
     {
         $this->id_article = $idArticle;
     }
-     public function setMembre ($membre)
+     public function setIdMembre ($IdMembre)
     {
-        $this->membre = $membre;
+        $this->id_membre = $IdMembre;
     }
     
     public function setTitre ($titre)
@@ -119,9 +119,9 @@ class MonArticle
         return $this->titre;
     }
     
-     public function getMembre ()
+     public function getIdMembre ()
     {
-        return $this->membre;
+        return $this->id_membre;
     }
     
     public function getRubrique()

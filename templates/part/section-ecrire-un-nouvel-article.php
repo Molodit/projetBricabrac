@@ -13,11 +13,11 @@
 				<input id="file" class="input-file" type="file"  name="cheminImage">
 				<textarea id="editor1" type="text" name="contenu" rows="10" cols="40" placeholder="Description"></textarea>
 				<button class="submit" type="submit" name="button">Envoyer</button>
-				<input type="hidden" name="codebarre" value="Article">
+				<input type="hidden" name="codebarre" value="article">
 			<div class="response">
 <?php
 // TRAITER LE FORMULAIRE
-if ($objetRequest->get("codebarre", "") == "Article")
+if ($objetRequest->get("codebarre", "") == "article")
 {
     $objetFormArticle = new App\Controller\FormArticle;
     
