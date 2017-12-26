@@ -19,9 +19,9 @@ class FormArticle
         //  ALORS ON RETOURNE LA VALEUR PAR DEFAUT ""
         $titre          = $objetRequest->get("titre", "");       
         $rubrique       = $objetRequest->get("rubrique", "");   
-        $motCle         = $objetRequest->get("motCle", "");    
+        $motCle         = $objetRequest->get("mot_cle", "");    
         $contenu        = $objetRequest->get("contenu", "");       
-        $cheminImage    = $this->getUploadedFile("cheminImage", $objetRequest, $cheminSymfony);
+        $cheminImage    = $this->getUploadedFile("chemin_image", $objetRequest, $cheminSymfony);
         
         // SECURITE TRES BASIQUE
         if (($titre != "") && ($rubrique != "") && ($contenu != "") && ($motCle != ""))
@@ -80,7 +80,7 @@ class FormArticle
         $idUpdate       = $objetRequest->get("idUpdate", "");       
         $titre          = $objetRequest->get("titre", "");       
         $rubrique       = $objetRequest->get("rubrique", "");    
-        $motCle         = $objetRequest->get("motCle", "");    
+        $motCle         = $objetRequest->get("mot_cle", "");    
         $contenu        = $objetRequest->get("contenu", "");       
         // $cheminImage    = $this->getUploadedFile("cheminImage", $objetRequest, $cheminSymfony);
         
@@ -93,18 +93,18 @@ class FormArticle
             // COMPLETER LES INFOS MANQUANTES
             $dateModification = date("Y-m-d H:i:s");
             // ON MET AUSSI A JOUR L'AUTEUR DE L'ARTICLE
-            $idAuteur           = $objetSession->get("idAuteur");
+            $idMembre           = $objetSession->get("id_membre");
             
             // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
             // ON VA UTILISER $objetConnection FOURNI PAR SYMFONY
             // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#insert
             $objetConnection->update("article", 
                                     [   "titre"             => $titre, 
-                                        "idAuteur"          => $idAuteur,
+                                        "id_membre"          => $idMembre,
                                         "rubrique"          => $rubrique,
-                                        "motCle"            => $motCle,
+                                        "mot_cle"            => $motCle,
                                         "contenu"           => $contenu,
-                                        "dateModification" => $dateModification,
+                                        "date_modification" => $dateModification,
                                         // "chemin_image"      => $cheminImage,
                                         ],
                                         [ "id" => $idUpdate ]);
