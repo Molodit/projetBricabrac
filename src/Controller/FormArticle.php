@@ -29,17 +29,17 @@ class FormArticle
             // COMPLETER LES INFOS MANQUANTES
             $datePublication = date("Y-m-d H:i:s");
             $dateModification = date("Y-m-d H:i:s");
-            $idMembre           = $objetSession->get("id_membre");
+            $idMembre         = $objetSession->get("id_membre");
             
             // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
             // ON VA UTILISER $objetConnection FOURNI PAR SYMFONY
-            // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#insert
+            
             $objetConnection->insert("article", 
                                     [   "titre"             => $titre, 
-                                        "id_membre"          => $idMembre,
+                                        "id_membre"         => $idMembre,
                                         "rubrique"          => $rubrique,
                                         "contenu"           => $contenu,
-                                        "date_publication"   => $datePublication,
+                                        "date_publication"  => $datePublication,
                                         "chemin_image"      => $cheminImage,
                                         ]);
             
