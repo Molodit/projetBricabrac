@@ -20,9 +20,9 @@ class Comments
      */
     private $idArticle;
     /**
-     * @ORM\Column(name ="membre", type="string", length=200)
+     * @ORM\Column(name ="id_membre", type="integer", length=200)
      */
-    private $membre;
+    private $idMembre;
 
     // add your own fields
     /**
