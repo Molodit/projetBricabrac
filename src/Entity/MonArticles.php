@@ -63,9 +63,9 @@ class MonArticle
     {
         $this->id_article = $idArticle;
     }
-     public function setMembre ($membre)
+     public function setIdMembre ($idMembre)
     {
-        $this->membre = $membre;
+        $this->id_membre = $idMembre;
     }
     
     public function setTitre ($titre)
@@ -119,9 +119,9 @@ class MonArticle
         return $this->titre;
     }
     
-     public function getMembre ()
+     public function getIdMembre ()
     {
-        return $this->membre;
+        return $this->idMembre;
     }
     
     public function getRubrique()
