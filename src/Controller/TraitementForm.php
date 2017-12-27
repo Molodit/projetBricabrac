@@ -1,5 +1,5 @@
 <?php
-
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 namespace App\Controller;
 // DANS LA MECANIQUE DE SYMFONY
 // App              => src
@@ -77,14 +77,14 @@ class TraitementForm
                     $membre     = $objetMembre->getMembre();
                     $niveau     = $objetMembre->getNiveau();
                     $idMembre   = $objetMembre->getIdMembre();
-                    echo "BIENVENUE $membre (niveau=$niveau)";
+                    echo "BIENVENUE $membre (niveau= $niveau)";
                     
                     // MEMORISER LES INFOS DANS UNE SESSION
                     
                     $objetSession->set("id_membre", $idMembre);
                     $objetSession->set("niveau", $niveau);
-                     $objetSession->set("id_membre", $idMembre);
                     $objetSession->set("email",  $email);
+                    $objetSession->set("membre", $membre);
                     
                 }
                 else 

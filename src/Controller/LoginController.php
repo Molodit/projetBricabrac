@@ -65,10 +65,10 @@ class LoginController
             return new RedirectResponse($urlAdmin);
         }
 
-        else if ($verifNiveau >= 7)
-        {
-            require_once("$cheminTemplates/template-admin.php");
-        }
+        // else if ($verifNiveau >= 7)
+        // {
+        //     require_once("$cheminTemplates/template-admin.php");
+        // }
         else
         {
             // ON RESTE SUR LA PAGE 
@@ -127,6 +127,7 @@ class LoginController
         $objetSession->set("niveau", 0);
         $objetSession->set("membre", "");
         $objetSession->set("email",  "");
+        $objetSession->set("id_membre",  "");
         
         // REDIRIGER VERS LA PAGE login
         $urlLogin = $this->generateUrl("login");

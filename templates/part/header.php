@@ -7,7 +7,7 @@ $urlContact     = $this->generateUrl("contact");
 $urlInscription = $this->generateUrl("inscription");
 $urlLogin       = $this->generateUrl("login");
 $urlAdmin       = $this->generateUrl("admin");
-//$urlLogout      = $this->generateUrl("logout");
+$urlLogout      = $this->generateUrl("logout");
 
 ?>
 <!DOCTYPE html>
@@ -28,13 +28,20 @@ $urlAdmin       = $this->generateUrl("admin");
   </head>
   <body>
     <header>
+      <ul>
+        <li><a href="<?php echo $urlInscription ?>">Inscription</a></li>
+        <li><a href="<?php echo $urlLogin ?>">Login</a></li>
+        <li><a href="<?php echo $urlAdmin ?>">Admin</a></li>
+        <li><a href="<?php echo $urlLogout ?>">Logout</a></li>
+      </ul>
+
       <h1>La tanière bricabracs <figure><img src="<?php echo $urlAccueil ?>assets/img/oiseau.gif" alt="oiseau anime"/></h1>
       <nav>
         <ul>
           <li><a href="<?php echo $urlAccueil ?>">Rizhome</a></li>
           <li><a href="">CréaTexte</a></li>
           <li><a href="">Journal <em>La Tanière</em></a></li>
-          <li><a href="<?php echo $urlAdmin ?>">Admin</a></li>
+          
          
         </ul>
       </nav>

@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\DBAL\Driver\Connection;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 
 class BlogController
