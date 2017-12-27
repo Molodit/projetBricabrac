@@ -7,7 +7,7 @@ $urlContact     = $this->generateUrl("contact");
 $urlInscription = $this->generateUrl("inscription");
 $urlLogin       = $this->generateUrl("login");
 $urlAdmin       = $this->generateUrl("admin");
-$urlLogout      = $this->generateUrl("logout");
+//$urlLogout      = $this->generateUrl("logout");
 
 ?>
 <!DOCTYPE html>
@@ -35,7 +35,6 @@ $urlLogout      = $this->generateUrl("logout");
           <li><a href="">CréaTexte</a></li>
           <li><a href="">Journal <em>La Tanière</em></a></li>
           <li><a href="<?php echo $urlAdmin ?>">Admin</a></li>
-          <li><a href="<?php echo $urlLogout ?>">Logout</a></li>
          
         </ul>
       </nav>

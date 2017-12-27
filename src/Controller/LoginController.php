@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 use ORM\EntityManager;
-use App\Entity\MonArticles;
+use App\Entity\MonArticle;
 
 
 class LoginController
@@ -65,7 +65,10 @@ class LoginController
             return new RedirectResponse($urlAdmin);
         }
 
-        
+        else if ($verifNiveau >= 7)
+        {
+            require_once("$cheminTemplates/template-admin.php");
+        }
         else
         {
             // ON RESTE SUR LA PAGE 
