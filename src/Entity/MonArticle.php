@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Table(name="article")
- * @ORM\Entity(repositoryClass="App\Repository\MonArticlesRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\MonArticleRepository")
  */
-class MonArticles
+class MonArticle
 {
     /**
      * @ORM\Id

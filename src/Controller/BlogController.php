@@ -38,24 +38,24 @@ class BlogController
   /**
       * @Route("article", name="article")
       */   
-   public function article (Request $objetRequest, Connection $objetConnection)
-   {
+    public function article (\App\Entity\MonArticle $objetArticle, Request $objetRequest, Connection $objetConnection)
+    {
         
         ob_start();
-    
-       // METHODE DE SYMFONY POUR OBTENIR LE CHEMIN DU DOSSIER        
-        $cheminSymfony   = $this->getParameter('kernel.project_dir');
-       $cheminTemplates = "$cheminSymfony/templates"; 
-       $cheminPart      = "$cheminTemplates/part"; 
-       require_once("$cheminTemplates/template-nouvel-article.php");
         
-       // RECUPERER LE CONTENU DU CACHE
-     
-       $contenuCache = ob_get_clean();
-       
-       return new Response($contenuCache);
-       
-   }
+        // METHODE DE SYMFONY POUR OBTENIR LE CHEMIN DU DOSSIER symfony1        
+        $cheminSymfony   = $this->getParameter('kernel.project_dir');
+        $cheminTemplates = "$cheminSymfony/templates"; 
+        $cheminPart      = "$cheminTemplates/part"; 
+        require_once("$cheminTemplates/template-nouvel-article.php");
+        
+        
+        $contenuCache = ob_get_clean();
+        
+        
+        return new Response($contenuCache);
+    }   
+   
    
  /**
       * @Route("contact", name="contact")
