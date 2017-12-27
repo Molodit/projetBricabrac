@@ -19,7 +19,7 @@ if ($objetRequest->get("codebarre", "") == "delete")
 
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
 // $objetRepository = $this->getDoctrine()->getRepository("App\Entity\MonArticle");
-$objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticles::class);
+$objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
 
 // PLUS PRATIQUE => findBy
 // http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityRepository.html
