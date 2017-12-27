@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 use ORM\EntityManager;
-use App\Entity\MonArticle;
+use App\Entity\MonArticles;
 
 
 class LoginController
@@ -64,6 +64,8 @@ class LoginController
             $urlAdmin = $this->generateUrl("admin");
             return new RedirectResponse($urlAdmin);
         }
+
+        
         else
         {
             // ON RESTE SUR LA PAGE 
