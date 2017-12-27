@@ -10,8 +10,8 @@ if ($objetRequest->get("codebarre", "") == "delete")
 }
 ?>
 
-<section>
-    <h3>SECTION READ Article</h3>
+<section class="article-list">
+    <h3>Liste des articles</h3>
         <table>
             <tbody>
             
@@ -72,6 +72,7 @@ CODEHTML;
         <td>$rubrique</td>
         <td>$contenu</td>
         <td>$htmlImage</td>
+        <td>$motCle</td>
         <td>$datePublication</td>
         <td>
             <!-- ETAPE 1: AFFICHER LE FORMULAIRE POUR UN UPDATE -->
