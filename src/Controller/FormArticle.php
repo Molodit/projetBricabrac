@@ -21,7 +21,7 @@ class FormArticle
         $rubrique       = $objetRequest->get("rubrique", "");   
         $motCle         = $objetRequest->get("mot_cle", "");    
         $contenu        = $objetRequest->get("contenu", "");       
-        $cheminImage    = $this->getUploadedFile("chemin_image", $objetRequest, $cheminSymfony);
+        $cheminImage    = $this->getUploadedFile("cheminImage", $objetRequest, $cheminSymfony);
         
         // SECURITE TRES BASIQUE
         if (($titre != "") && ($rubrique != "") && ($contenu != "") && ($motCle != ""))
