@@ -21,7 +21,6 @@ class MonArticle
      */
     private $idMembre;
 
-    // add your own fields
     /**
      * @ORM\Column(name ="titre", type="string", length=200)
      */

@@ -1,10 +1,10 @@
 <section>
-    <h3>FORMULAIRE CREATE Article</h3>
+    <h3>Ecrire un nouvel article</h3>
     <!-- NE PAS OUBLIER: POUR UPLOADER UN FICHIER -->
     <!-- method="POST" enctype="multipart/form-data" -->
     <form method="POST" enctype="multipart/form-data">
         <input type="text" name="titre" required placeholder="titre">
-        <input type="text" name="motCle" required placeholder="mot-clé">
+        <input type="text" name="mot_cle" required placeholder="mot-clé">
         <select name="rubrique" required>
           <option value="">-- Choisissez une rubrique --</option>
           <option value="Rhizome">Rhizome</option>
@@ -20,13 +20,13 @@
 // TRAITER LE FORMULAIRE
 if ($objetRequest->get("codebarre", "") == "article")
 {
-    $objetFormArticle = new App\Controller\FormArticle;
+     $objetFormArticle = new App\Controller\FormArticle;
     
     $objetFormArticle->creer($objetRequest, $objetConnection, $cheminSymfony, $objetSession);
     
     // https://symfony.com/doc/current/doctrine.html#persisting-objects-to-the-database
-    //$objetEntityManager = $this->getDoctrine()->getManager();
-    //$objetFormArticle->creerPersistence($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession);
+    // $objetEntityManager = $this->getDoctrine()->getManager();
+    // $objetFormArticle->creerPersistence($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession);
 }
 ?>
         </div>

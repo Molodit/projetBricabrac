@@ -28,6 +28,7 @@ $urlLogout      = $this->generateUrl("logout");
   </head>
   <body>
     <header>
+    
       <ul>
         <li><a href="<?php echo $urlInscription ?>">Inscription</a></li>
         <li><a href="<?php echo $urlLogin ?>">Login</a></li>

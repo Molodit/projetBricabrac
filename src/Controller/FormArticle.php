@@ -24,18 +24,15 @@ class FormArticle
         $cheminImage    = $this->getUploadedFile("cheminImage", $objetRequest, $cheminSymfony);
         
         // SECURITE TRES BASIQUE
-        if (($titre != "") && ($rubrique != "") && ($contenu != "") && ($motCle != ""))
-        {
+        
             // COMPLETER LES INFOS MANQUANTES
             $datePublication = date("Y-m-d H:i:s");
-
-            $dateModification = date("Y-m-d H:i:s");
             $idMembre         = $objetSession->get("id_membre");
 
             
             // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
-            // ON VA UTILISER $objetConnection FOURNI PAR SYMFONY
-            
+            if (($titre != "") && ($rubrique != "") && ($contenu != "") && ($motCle != ""))
+            { 
             $objetConnection->insert("article", 
                                     [   "titre"             => $titre, 
                                         "id_membre"         => $idMembre,
@@ -48,7 +45,12 @@ class FormArticle
             
             // MESSAGE RETOUR POUR LE VISITEUR
             echo "L'article $titre a été publié";
-        }
+            }
+
+            else {
+                echo "Tous les champs doivent être remplis";
+            }
+        
         
     }
     
@@ -178,7 +180,7 @@ class FormArticle
 
 
     
-     function creerPersistence ($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony)
+     function creerPersistence ($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession)
     {
         
         $titre          = $objetRequest->get("titre", "");       
@@ -192,18 +194,18 @@ class FormArticle
         {
             // COMPLETER LES INFOS MANQUANTES
             $datePublication  = date("Y-m-d H:i:s");
-            $dateModification = date("Y-m-d H:i:s");
+            $idMembre         = $objetSession->get("id_membre");
             
             // ON VA CREER UNE ENTITE
             $objetArticle = new \App\Entity\MonArticle;
             // ON VA UTILISER LES SETTERS POUR MEMORISER LES INFOS DANS L'ENTITE
             // TODO: AJOUTER LES METHODE SETTERS DANS LA CLASSE ENTITE MonArticle
             $objetArticle->setTitre($titre);
+            $objetArticle->setIdMembre($idMembre);
             $objetArticle->setRubrique($rubrique);
             $objetArticle->setMotCle($motCle);
             $objetArticle->setContenu($contenu);
             $objetArticle->setDatePublication($datePublication);
-            $objetArticle->setDateModification($dateModification);
             $objetArticle->setCheminImage($cheminImage);
             
             // CA NE FAIT PAS LE STOCKAGE DANS SQL (UN PEU COMME PREPARE...)

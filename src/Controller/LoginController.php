@@ -65,13 +65,15 @@ class LoginController
             return new RedirectResponse($urlAdmin);
         }
 
-        // else if ($verifNiveau >= 7)
-        // {
-        //     require_once("$cheminTemplates/template-admin.php");
-        // }
+        elseif ($verifNiveau == 1) {
+            $urlAccueil = $this->generateUrl("accueil");
+            return new RedirectResponse($urlAccueil);
+        }
+
         else
         {
-            // ON RESTE SUR LA PAGE 
+            // ON VA SUR LA PAGE D'ACCUEIL 
+            
             return new Response($contenuCache);
         }
         
