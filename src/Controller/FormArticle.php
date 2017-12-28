@@ -62,15 +62,16 @@ class FormArticle
         // SECURITE TRES BASIQUE
         if ($idDelete > 0)
         {
-            // COMPLETER LES INFOS MANQUANTES
-
-            // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
-            // ON VA UTILISER $objetConnection FOURNI PAR SYMFONY
+            
             // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#delete
+
             $objetConnection->delete("article", [ "id" => $idDelete ]);
+
+            $objetConnection->delete("article", [ "id_article" => $idDelete ]);
+
             
             // MESSAGE RETOUR POUR LE VISITEUR
-            echo "ARTICLE SUPPRIME";
+            echo "l'article a été supprimé";
         }
         
     }
