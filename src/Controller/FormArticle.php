@@ -67,7 +67,7 @@ class FormArticle
             // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
             // ON VA UTILISER $objetConnection FOURNI PAR SYMFONY
             // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#delete
-            $objetConnection->delete("article", [ "idArticle" => $idDelete ]);
+            $objetConnection->delete("article", [ "id" => $idDelete ]);
             
             // MESSAGE RETOUR POUR LE VISITEUR
             echo "ARTICLE SUPPRIME";
