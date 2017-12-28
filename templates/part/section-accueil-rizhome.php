@@ -1,14 +1,16 @@
 <section class="bgimg-1" id="articles">
-        
-  <div class="circles-container no-padding container">
 
-                  <div class="circle-link circle1 col-sm-5">
+   
+<div class="circles-container no-padding container">
+
+                  <div class="circle-link circle1">
                   <div class="circle-content" >
             <a href="#" target="_blank">
         <div class="article">
         <article>
+          
 
-          <img src="assets/img/article3.jpg" alt="photo article 1"/>
+          <img src="$htmlImage" alt="photo"/>
          
         </article>
         </div>
@@ -158,9 +160,14 @@
                   </div>
 
     </div>
+
+
+</section>
+        
+  
  
   
-</section>
+
 <div class="bgimg-2">
 
 </div>
