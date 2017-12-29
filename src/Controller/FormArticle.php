@@ -65,7 +65,7 @@ class FormArticle
             
             // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#delete
 
-            $objetConnection->delete("article", [ "id" => $idDelete ]);
+            
 
             $objetConnection->delete("article", [ "id_article" => $idDelete ]);
 
