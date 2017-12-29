@@ -2,13 +2,12 @@
 
 <section>
 
-    <!-- <h3>LISTE DES ARTICLES DE CREATEXTE</h3> -->
+    <h3>LISTE DES ARTICLES DE CREATEXTE</h3> 
 
 <?php
 // ALLER CHERCHER LA LISTE DES ARTICLES DANS LA CATEGORIE $createxte
 
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
-// $objetRepository = $this->getDoctrine()->getRepository("App\Entity\MonArticle");
 $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
 
 
@@ -18,7 +17,7 @@ $tabResultat = $objetRepository->findBy([], [ "datePublication" => "DESC" ]);
 // ON A UN TABLEAU D'OBJETS DE CLASSE Article
 foreach($tabResultat as $objetArticle)
 {
-    // METHODES "GETTER" A RAJOUTER DANS LA CLASSE Article
+    // METHODES "GETTER" A RAJOUTER DANS LA CLASSE MonArticle
     $idArticle       = $objetArticle->getIdArticle();
     $titre           = $objetArticle->getTitre();
     $contenu         = $objetArticle->getContenu();
@@ -39,9 +38,9 @@ foreach($tabResultat as $objetArticle)
 CODEHTML;
     }
     
-    // $urlRubrique = $this->generateUrl("rubrique", [ "rubrique" => $rub ]);
+   // $urlRubrique = $this->generateUrl("rubrique", [ "rubrique" => $rub ]);
     // // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
-    // $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
+    //$urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
     
     echo
 <<<CODEHTML

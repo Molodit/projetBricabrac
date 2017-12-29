@@ -55,10 +55,11 @@ class BlogController
         
         return new Response($contenuCache);
     }   
+    
    /**
       * @Route("rubrique/{rub}", name="rubrique")
       */   
-    public function rubrique (\App\Entity\MonArticle $objetArticle, Request $objetRequest, Connection $objetConnection)
+    public function rubrique ($rub, Request $objetRequest, Connection $objetConnection)
     {
         
         ob_start();

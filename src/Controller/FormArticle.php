@@ -143,7 +143,7 @@ class FormArticle
                 // OK
                 $extensionFichier = $objetUploadedFile->getClientOriginalExtension();
                 $extensionFichier = strtolower($extensionFichier);
-                if (in_array($extensionFichier, [ "jpg", "jpeg", "png", "gif", "svg" ]))
+                if (in_array($extensionFichier, [ "jpg", "jpeg", "png", "gif", "svg", "pdf" ]))
                 {
                     // OK
                     // http://php.net/manual/fr/splfileinfo.getsize.php

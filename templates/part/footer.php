@@ -5,7 +5,7 @@
                 <ul>
                   <li><a href=""> <i class="fas fa-home"></i>  Rhizome </a></li>
                   <li><a href=""> <i class="fas fa-book"></i>  CréaTexte</a></li>
-                  <li><a href=""> <i class="fas fa-book"></i>  Contact </a></li>
+                  <li><a href="<?php echo $urlContact ?>"> <i class="fas fa-book"></i>  Contact </a></li>
                   <li><a href=""> <i class="far fa-edit"></i> Journal <em>La Tanière</em></a></li>
                   <!--<li><a href=""> <i class="fas fa-user-times"></i> Déconnexion </a></li>-->
                 </ul>
