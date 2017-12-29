@@ -10,7 +10,7 @@
                 </ul>
               </nav>
             <div class="contact">
-                   <p> Nous contactez : lesbricabracs@bricabracs.org / 68 chemin de Baumillon 13015 Marseille</p>
+                   <p> Nous contacter : lesbricabracs@bricabracs.org / 68 chemin de Baumillon 13015 Marseille</p>
             </div>
 
     </footer>

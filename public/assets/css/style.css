@@ -309,7 +309,6 @@ section#articles {
 footer{
   font-family: 'Philosopher', sans-serif;
   background-color:#5e528a;
-  padding: 2% ;
   color:white;
   font-size:1.2em;
 }
@@ -318,16 +317,16 @@ footer{
 }
 #menufooter li{
   display: inline;
-   margin-right: 10px;
+  margin-right: 10px;
+  margin-top: 15px;
 }
 #menufooter a{
   color:white;
-  margin:5%;
   margin-left:10px;
 }
 .contact{
   font-size: 1.2em;
-  margin-top:auto;
+  margin-top:0;
   display: inline;
   text-align: center;
   margin-right: 30px;
