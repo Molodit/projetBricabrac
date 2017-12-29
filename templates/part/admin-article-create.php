@@ -32,16 +32,5 @@ if ($objetRequest->get("codebarre", "") == "article")
         </div>
     </form>
     
-    <!-- https://sdk.ckeditor.com/samples/autogrow.html# -->
-	<script src="https://cdn.ckeditor.com/4.8.0/standard-all/ckeditor.js"></script>
-    <script>
-    CKEDITOR.replace( 'editor1', {
-			extraPlugins: 'autogrow',
-			autoGrow_minHeight: 200,
-			autoGrow_maxHeight: 600,
-			autoGrow_bottomSpace: 50,
-			removePlugins: 'resize'
-		} );
-    </script>
     
 </section>

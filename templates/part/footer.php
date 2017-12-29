@@ -12,6 +12,8 @@
             <p>&copy; Tous droits réservés</p>
 
     </footer>
+        <!-- https://sdk.ckeditor.com/samples/autogrow.html# -->
+	    <script src="https://cdn.ckeditor.com/4.8.0/standard-all/ckeditor.js"></script>
         <script type="text/javascript" src="<?php echo $urlAccueil ?>assets/js/script.js"></script>
     </body>
 </html>
