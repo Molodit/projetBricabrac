@@ -11,12 +11,12 @@
 ob_start();
 
 // TRAITER LE FORMULAIRE
-if ($objetRequest->get("codebarre", "") == "update")
+if ($objetRequest->get("afficher", "") == "update")
 {
     $objetFormArticle = new App\Controller\FormArticle;
     
-    $objetEntityManager = $this->getDoctrine()->getManager();
-    $objetFormArticle->update($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession);
+   
+    $objetFormArticle->update($objetRequest, $objetConnection,  $cheminSymfony, $objetSession);
 }
 
 $messageUpdate = ob_get_clean();

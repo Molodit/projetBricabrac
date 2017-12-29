@@ -85,7 +85,7 @@ CODEHTML;
         <td>$datePublication</td>
         <td>
             <!-- ETAPE 1: AFFICHER LE FORMULAIRE POUR UN UPDATE -->
-            <form method="POST" action="">
+            <form method="GET" action="">
                 <input type="hidden" name="afficher" value="update">
                 <input type="hidden" name="idUpdate" value="$idArticle">
                 <button type="submit">modifier</button>
