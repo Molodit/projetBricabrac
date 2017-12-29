@@ -76,7 +76,7 @@ class FormArticle
         
     }
     
-      function update ($objetRequest, $objetConnection, $cheminSymfony, $objetSession)
+      function update ($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession)
     {
         // RECUPERER LES INFOS DU FORMULAIRE
         // ->get("email", "")
@@ -88,7 +88,7 @@ class FormArticle
         $rubrique       = $objetRequest->get("rubrique", "");    
         $motCle         = $objetRequest->get("mot_cle", "");    
         $contenu        = $objetRequest->get("contenu", "");       
-        // $cheminImage    = $this->getUploadedFile("cheminImage", $objetRequest, $cheminSymfony);
+        $cheminImage    = $this->getUploadedFile("chemin_image", $objetRequest, $cheminSymfony);
         
         // CONVERTIR $idUpdate EN NOMBRE
         $idUpdate = intval($idUpdate);
@@ -99,21 +99,27 @@ class FormArticle
             // COMPLETER LES INFOS MANQUANTES
             $dateModification = date("Y-m-d H:i:s");
             // ON MET AUSSI A JOUR L'AUTEUR DE L'ARTICLE
-            $idMembre           = $objetSession->get("id_membre");
+            $idMembre         = $objetSession->get("id_membre");
             
             // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
             // ON VA UTILISER $objetConnection FOURNI PAR SYMFONY
             // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#insert
-            $objetConnection->update("article", 
-                                    [   "titre"             => $titre, 
-                                        "id_membre"          => $idMembre,
+            $tabLigneUpdate = [   "titre"             => $titre, 
+                                        "id_membre"         => $idMembre,
                                         "rubrique"          => $rubrique,
-                                        "mot_cle"            => $motCle,
+                                        "mot_cle"           => $motCle,
                                         "contenu"           => $contenu,
                                         "date_modification" => $dateModification,
-                                        // "chemin_image"      => $cheminImage,
-                                        ],
-                                        [ "id" => $idUpdate ]);
+                                        
+                                    ];
+                                    if ($cheminImage != "")
+                                    {
+                                        // SI IL Y A UNE IMAGE UPLOADE
+                                        // ON MET A JOUR LA VALEUR DANS LA TABLE SQL
+                                        $tabLigneUpdate["chemin_image"] = $cheminImage;
+                                    }
+                                    
+                                    $objetConnection->update("article", $tabLigneUpdate, [ "id_article" => $idUpdate ]);
             
             // MESSAGE RETOUR POUR LE VISITEUR
             echo "ARTICLE MODIFIE";
@@ -142,7 +148,7 @@ class FormArticle
                     // OK
                     // http://php.net/manual/fr/splfileinfo.getsize.php
                     $tailleFichier = $objetUploadedFile->getSize();
-                    if ($tailleFichier <= 10 * 1024 * 1024) // 10 Mo
+                    if ($tailleFichier <= 2 * 1024 * 1024) // 2 Mo
                     {
                         // OK
                         // https://api.symfony.com/master/Symfony/Component/HttpFoundation/File/UploadedFile.html#method_getClientOriginalName

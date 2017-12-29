@@ -30,23 +30,32 @@ $tabResultat = $objetRepository->findBy([], [ "datePublication" => "DESC" ]);
 foreach($tabResultat as $objetArticle)
 {
     // METHODES "GETTER" A RAJOUTER DANS LA CLASSE Article
-    $idArticle       = $objetArticle->getIdArticle();
-    $idMembre        = $objetArticle->getIdMembre();
-    $titre           = $objetArticle->getTitre();
-    $motCle          = $objetArticle->getMotCle();
-    $rubrique        = $objetArticle->getRubrique();
-    $contenu         = $objetArticle->getContenu();
-    $cheminImage     = $objetArticle->getCheminImage();
-    $datePublication = $objetArticle->getDatePublication("d/m/Y H:i:s");
-    
+    $idArticle        = $objetArticle->getIdArticle();
+    $idMembre         = $objetArticle->getIdMembre();
+    $titre            = $objetArticle->getTitre();
+    $motCle           = $objetArticle->getMotCle();
+    $rubrique         = $objetArticle->getRubrique();
+    $contenu          = $objetArticle->getContenu();
+    $cheminImage      = $objetArticle->getCheminImage();
+    $datePublication  = $objetArticle->getDatePublication("d/m/Y H:i:s");
+    $dateModification = $objetArticle->getDateModification("d/m/Y H:i:s");
     
     $htmlImage = "";
     if ($cheminImage)
     {
         $htmlImage = 
-<<<CODEHTML
+    <<<CODEHTML
 
     <img src="$cheminImage" title="$cheminImage">
+CODEHTML;
+    }
+
+    $Modif = "";
+    if ($dateModification)
+    {
+        $Modif = 
+    <<<CODEHTML
+    <td>$dateModification</td>
 CODEHTML;
     }
     
@@ -76,7 +85,7 @@ CODEHTML;
         <td>$datePublication</td>
         <td>
             <!-- ETAPE 1: AFFICHER LE FORMULAIRE POUR UN UPDATE -->
-            <form method="GET" action="">
+            <form method="POST" action="">
                 <input type="hidden" name="afficher" value="update">
                 <input type="hidden" name="idUpdate" value="$idArticle">
                 <button type="submit">modifier</button>
