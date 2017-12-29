@@ -3,6 +3,7 @@
 // JE RECUPERE LES URLS DES PAGES GRACE AU NOM DE LEUR ROUTE
 $urlAccueil     = $this->generateUrl("accueil");
 $urlArticle     = $this->generateUrl("article");
+$urlRubrique   = $this->generateUrl("rubrique");
 $urlContact     = $this->generateUrl("contact");
 $urlInscription = $this->generateUrl("inscription");
 $urlLogin       = $this->generateUrl("login");
@@ -40,7 +41,7 @@ $urlLogout      = $this->generateUrl("logout");
       <nav>
         <ul>
           <li><a href="<?php echo $urlAccueil ?>">Rizhome</a></li>
-          <li><a href="">CréaTexte</a></li>
+          <li><a href="<?php echo $urlRubrique ?>">CréaTexte</a></li>
           <li><a href="">Journal <em>La Tanière</em></a></li>
           
          
