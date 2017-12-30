@@ -12,9 +12,21 @@ if ($objetRequest->get("codebarre", "") == "delete")
 
 <section class="article-list">
     <h3>Liste des articles</h3>
-        <table>
+        <table  id="dataTables" class="display" cellspacing="0" width="80%">
             <tbody>
-            
+            <thead>
+            <tr>
+                <th>N° Article</th>
+                <th>N° Auteur</th>
+                <th>Titre</th>
+                <th>Rubrique</th>
+                <th>Contenu</th>
+                <th>Images</th>
+                <th>Mots-clés</th>
+                <th>Date de publication</th>
+                <th>Date de modification</th>
+            </tr>
+        </thead>
 <?php
 
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
@@ -49,13 +61,13 @@ foreach($tabResultat as $objetArticle)
     <img src="$cheminImage" title="$cheminImage">
 CODEHTML;
     }
-
+    // Si l'article a été modifié
     $Modif = "";
     if ($dateModification)
     {
         $Modif = 
     <<<CODEHTML
-    <td>$dateModification</td>
+    $dateModification
 CODEHTML;
     }
     
@@ -83,6 +95,8 @@ CODEHTML;
         <td>$htmlImage</td>
         <td>$motCle</td>
         <td>$datePublication</td>
+        <td>$Modif</td>
+        
         <td>
             <!-- ETAPE 1: AFFICHER LE FORMULAIRE POUR UN UPDATE -->
             <form method="GET" action="">
