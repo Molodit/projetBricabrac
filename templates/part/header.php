@@ -18,7 +18,6 @@ $urlLogout      = $this->generateUrl("logout");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>La tanière bricabracs</title>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">

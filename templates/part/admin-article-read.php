@@ -12,8 +12,8 @@ if ($objetRequest->get("codebarre", "") == "delete")
 
 <section class="article-list">
     <h3>Liste des articles</h3>
-        <table  id="dataTables" class="display" cellspacing="0" width="80%">
-            <tbody>
+    
+        <table id="tableListe" class="display" width="80%">
             <thead>
             <tr>
                 <th>N° Article</th>
@@ -25,8 +25,26 @@ if ($objetRequest->get("codebarre", "") == "delete")
                 <th>Mots-clés</th>
                 <th>Date de publication</th>
                 <th>Date de modification</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
             </tr>
         </thead>
+        <tfoot>
+            <tr>
+                <th>N° Article</th>
+                <th>N° Auteur</th>
+                <th>Titre</th>
+                <th>Rubrique</th>
+                <th>Contenu</th>
+                <th>Images</th>
+                <th>Mots-clés</th>
+                <th>Date de publication</th>
+                <th>Date de modification</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+        </tfoot>
+        <tbody>
 <?php
 
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
@@ -52,6 +70,9 @@ foreach($tabResultat as $objetArticle)
     $datePublication  = $objetArticle->getDatePublication("d/m/Y H:i:s");
     $dateModification = $objetArticle->getDateModification("d/m/Y H:i:s");
     
+    // On ne prend que les 100 premiers caractères du texte de $contenu
+    $contenu = mb_strimwidth($contenu, 0, 100, '...');
+    // S'il y a une image
     $htmlImage = "";
     if ($cheminImage)
     {
@@ -98,28 +119,27 @@ CODEHTML;
         <td>$Modif</td>
         
         <td>
-            <!-- ETAPE 1: AFFICHER LE FORMULAIRE POUR UN UPDATE -->
             <form method="GET" action="">
                 <input type="hidden" name="afficher" value="update">
                 <input type="hidden" name="idUpdate" value="$idArticle">
-                <button type="submit">modifier</button>
+                <button type="submit"><i class="far fa-edit"></i></button>
             </form>
         </td>
         <td>
             <form method="POST" action="">
                 <input type="hidden" name="codebarre" value="delete">
                 <input type="hidden" name="idDelete" value="$idArticle">
-                <button type="submit">supprimer</button>
+                <button type="submit"><i class="far fa-trash-alt"></i></button>
             </form>
         </td>
     </tr>
-    
 CODEHTML;
     
 }
 
 ?>
             </tbody>
+           
         </table>
 
 
