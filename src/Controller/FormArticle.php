@@ -21,7 +21,7 @@ class FormArticle
         $rubrique       = $objetRequest->get("rubrique", "");   
         $motCle         = $objetRequest->get("mot_cle", "");    
         $contenu        = $objetRequest->get("contenu", "");       
-        $cheminImage    = $this->getUploadedFile("cheminImage", $objetRequest, $cheminSymfony);
+        $cheminImage    = $this->getUploadedFile("chemin_image", $objetRequest, $cheminSymfony);
         
         // SECURITE TRES BASIQUE
         
@@ -31,7 +31,7 @@ class FormArticle
 
             
             // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
-            if (($titre != "") && ($rubrique != "") && ($contenu != "") && ($motCle != ""))
+            if (($titre != "") && ($rubrique != "") && ($contenu != "") && ($motCle != "") && ($cheminImage != ""))
             { 
             $objetConnection->insert("article", 
                                     [   "titre"             => $titre, 
@@ -103,7 +103,7 @@ class FormArticle
             
             // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
             // ON VA UTILISER $objetConnection FOURNI PAR SYMFONY
-            // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#insert
+            
             $tabLigneUpdate = [   "titre"             => $titre, 
                                         "id_membre"         => $idMembre,
                                         "rubrique"          => $rubrique,
@@ -150,13 +150,12 @@ class FormArticle
                     $tailleFichier = $objetUploadedFile->getSize();
                     if ($tailleFichier <= 2 * 1024 * 1024) // 2 Mo
                     {
-                        // OK
-                        // https://api.symfony.com/master/Symfony/Component/HttpFoundation/File/UploadedFile.html#method_getClientOriginalName
+                        
                         $nomOriginal = $objetUploadedFile->getClientOriginalName();
                         // SORTIR LE FICHIER DE SA QUARANTAINE
                         // ATTENTION: NE PAS OUBLIER DE CREER LE DOSSIER upload...
                         $dossierCible = "$cheminSymfony/public/assets/upload/";
-                        // https://api.symfony.com/2.8/Symfony/Component/HttpFoundation/File/UploadedFile.html#method_move
+                       
                         $objetUploadedFile->move($dossierCible, $nomOriginal);
                         
                         // POUR LE STOCKAGE DANS SQL

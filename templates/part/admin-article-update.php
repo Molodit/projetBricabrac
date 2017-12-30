@@ -15,8 +15,8 @@ if ($objetRequest->get("afficher", "") == "update")
 {
     $objetFormArticle = new App\Controller\FormArticle;
     
-   
-    $objetFormArticle->update($objetRequest, $objetConnection,  $cheminSymfony, $objetSession);
+    $objetEntityManager = $this->getDoctrine()->getManager();
+    $objetFormArticle->update($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession);
 }
 
 $messageUpdate = ob_get_clean();
