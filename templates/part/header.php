@@ -28,24 +28,20 @@ $urlLogout      = $this->generateUrl("logout");
   </head>
   <body>
     <header>
-    
+      <nav>
+        <ul>
+          <li><a href="<?php echo $urlAccueil ?>">Rizhome</a></li>
+          <li><a href="<?php //echo $urlRubrique ?>">CréaTexte</a></li>
+          <li><a href="">Journal <em>La Tanière</em></a></li>        
+        </ul>
+      </nav>
+       <h1>La tanière bricabracs <figure><img src="<?php echo $urlAccueil ?>assets/img/oiseau.gif" alt="oiseau anime"/></h1>
       <ul>
         <li><a href="<?php echo $urlInscription ?>">Inscription</a></li>
         <li><a href="<?php echo $urlLogin ?>">Login</a></li>
         <li><a href="<?php echo $urlAdmin ?>">Admin</a></li>
         <li><a href="<?php echo $urlLogout ?>">Logout</a></li>
       </ul>
-
-      <h1>La tanière bricabracs <figure><img src="<?php echo $urlAccueil ?>assets/img/oiseau.gif" alt="oiseau anime"/></h1>
-      <nav>
-        <ul>
-          <li><a href="<?php echo $urlAccueil ?>">Rizhome</a></li>
-          <li><a href="<?php //echo $urlRubrique ?>">CréaTexte</a></li>
-          <li><a href="">Journal <em>La Tanière</em></a></li>
-          
-         
-        </ul>
-      </nav>
       <form action="" method="POST" id="recherche">
           <input type="text" name="recherche" placeholder="Recherche"/>
           <button type="submit">Envoyer</button>

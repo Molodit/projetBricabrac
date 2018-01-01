@@ -16,7 +16,7 @@ ul {
   display:flex;
   flex-direction:row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
 }
 a {
   text-decoration: none;
@@ -24,21 +24,15 @@ a {
 
 header nav {
   text-align:center;
-  background-color: #5e528a;
+  background-color: #C0C0C0;
 }
 header nav li {
-  background-color: #f1e4fa;
-  padding: 2% 4%;
-  box-shadow: 10px 2px 10px rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-  margin:2%;
   font-family: 'Philosopher', sans-serif;
   font-size: 25px;
   font-weight: normal;
 }
 
 header nav a, #ecrire a {
- color: #5e528a;
  vertical-align: middle;
 }
 
