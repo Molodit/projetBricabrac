@@ -72,10 +72,6 @@ class LoginController
 
         // Test pour l'admin enfant
 
-         elseif ($verifNiveau == 7) {
-        //     $urlAccueil = $this->generateUrl("accueil");
-        //     return new RedirectResponse($urlAccueil);
-        }     
         else
         {
             // ON VA SUR LA PAGE D'ACCUEIL 

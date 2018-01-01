@@ -24,7 +24,7 @@ a {
 
 header nav {
   text-align:center;
-  background-color: #C0C0C0;
+  background-color: #D3D3D3;
 }
 header nav li {
   font-family: 'Philosopher', sans-serif;
@@ -42,7 +42,7 @@ h1 {
 }
 h1, h2, h3 {
   color: #5e528a;
-   text-align: center;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -56,9 +56,9 @@ form{
   } 
 input, label, select {
   outline: none;
-  padding: 1% 2% 1% 0.3%;
+  padding: 1% 1% 1% 0.3%;
   border-radius:5px;
-  width:70%;
+  width:50%;
   background: transparent;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
   box-sizing: border-box;
@@ -87,9 +87,9 @@ button {
   margin-right: 0;
 }
 
-.bgimg-2 {
+/*.bgimg-2 {
   background-image: url("../img/dessinEcole.jpg");
-  min-height: 500px;
+  min-height: 500px;*/
 }
 
 .bgimg-3 {
@@ -302,7 +302,7 @@ section#articles {
 /*XXXXXXXXXXX FOOTER  XXXXXXXXXXXXX*/
 footer{
   font-family: 'Philosopher', sans-serif;
-  background-color:#5e528a;
+  background-color:#D3D3D3;
   color:white;
   font-size:1.2em;
 }
