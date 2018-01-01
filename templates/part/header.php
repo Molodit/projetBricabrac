@@ -1,14 +1,15 @@
 <?php
 
 // JE RECUPERE LES URLS DES PAGES GRACE AU NOM DE LEUR ROUTE
-$urlAccueil     = $this->generateUrl("accueil");
-$urlArticle     = $this->generateUrl("article");
+$urlAccueil           = $this->generateUrl("accueil");
+$urlAccueilEnfant     = $this->generateUrl("accueil-enfant");
+$urlArticle           = $this->generateUrl("article");
 //$urlRubrique   = $this->generateUrl("rubrique", [ "rubrique" => $rub ]);
-$urlContact     = $this->generateUrl("contact");
-$urlInscription = $this->generateUrl("inscription");
-$urlLogin       = $this->generateUrl("login");
-$urlAdmin       = $this->generateUrl("admin");
-$urlLogout      = $this->generateUrl("logout");
+$urlContact           = $this->generateUrl("contact");
+$urlInscription       = $this->generateUrl("inscription");
+$urlLogin             = $this->generateUrl("login");
+$urlAdmin             = $this->generateUrl("admin");
+$urlLogout            = $this->generateUrl("logout");
 
 ?>
 <!DOCTYPE html>
