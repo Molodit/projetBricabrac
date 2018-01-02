@@ -2,7 +2,7 @@
 
 // JE RECUPERE LES URLS DES PAGES GRACE AU NOM DE LEUR ROUTE
 $urlAccueil           = $this->generateUrl("accueil");
-$urlAccueilEnfant     = $this->generateUrl("accueil-enfant");
+//$urlAccueilEnfant     = $this->generateUrl("accueil-enfant");
 $urlArticle           = $this->generateUrl("article");
 //$urlRubrique   = $this->generateUrl("rubrique", [ "rubrique" => $rub ]);
 $urlContact           = $this->generateUrl("contact");
@@ -48,4 +48,4 @@ $urlLogout            = $this->generateUrl("logout");
           <button type="submit">Envoyer</button>
         </form>
     </header>
-    <main>
+<main>

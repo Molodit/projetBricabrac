@@ -50,8 +50,8 @@ CODEHTML;
     //     $urlCategorie = $this->generateUrl("categorie", [ "cat" => $categorie ]);
     // }
     
-    // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
-    $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle, "id_membre" => $idMembre ]);
+   // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
+   // $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle, "id_membre" => $idMembre ]);
     
     echo
 <<<CODEHTML

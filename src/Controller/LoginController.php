@@ -86,7 +86,7 @@ class LoginController
     /**
       * @Route("/accueil-enfant", name="accueil-enfant")
       */   
-   public function loginEnfant (Request $objetRequest, Connection $objetConnection, SessionInterface $objetSession)
+  /* public function loginEnfant (Request $objetRequest, Connection $objetConnection, SessionInterface $objetSession)
    {
        
         ob_start();
@@ -115,7 +115,7 @@ class LoginController
         }
 
         // Test pour l'admin enfant
-          elseif ($verifNiveau == 7) {
+        /*  elseif ($verifNiveau == 7) {
             $urlAccueilEnfant = $this->generateUrl("accueil-enfant");
             return new RedirectResponse($urlAccueilEnfant);
         }
@@ -126,7 +126,8 @@ class LoginController
             return new Response($contenuCache);
         }
         
-   }
+   }*/
+   
     /**
       * @Route("/admin", name="admin")
       */   

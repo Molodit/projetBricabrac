@@ -25,6 +25,9 @@ a {
 header nav {
   text-align:center;
   background-color: #D3D3D3;
+  width:100%;
+  margin:0 auto;
+  padding:1%;
 }
 header nav li {
   font-family: 'Philosopher', sans-serif;
@@ -34,6 +37,7 @@ header nav li {
 
 header nav a, #ecrire a {
  vertical-align: middle;
+ margin: 10px 20px;
 }
 
 h1 {
@@ -100,7 +104,7 @@ button {
 .caption {
   position: absolute;
   left: 0;
-  width: 100%;
+  width: 80%;
 }
 section {
   width: 80%;
@@ -113,7 +117,7 @@ section {
 }
 
 #recherche .cloud {
-  width: 65%;
+  width: 45%;
   display: inline-block;
 }
 
