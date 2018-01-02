@@ -1,14 +1,15 @@
 <?php
 
 // JE RECUPERE LES URLS DES PAGES GRACE AU NOM DE LEUR ROUTE
-$urlAccueil     = $this->generateUrl("accueil");
-$urlArticle     = $this->generateUrl("article");
+$urlAccueil           = $this->generateUrl("accueil");
+//$urlAccueilEnfant     = $this->generateUrl("accueil-enfant");
+$urlArticle           = $this->generateUrl("article");
 //$urlRubrique   = $this->generateUrl("rubrique", [ "rubrique" => $rub ]);
-$urlContact     = $this->generateUrl("contact");
-$urlInscription = $this->generateUrl("inscription");
-$urlLogin       = $this->generateUrl("login");
-$urlAdmin       = $this->generateUrl("admin");
-$urlLogout      = $this->generateUrl("logout");
+$urlContact           = $this->generateUrl("contact");
+$urlInscription       = $this->generateUrl("inscription");
+$urlLogin             = $this->generateUrl("login");
+$urlAdmin             = $this->generateUrl("admin");
+$urlLogout            = $this->generateUrl("logout");
 
 ?>
 <!DOCTYPE html>
@@ -18,7 +19,6 @@ $urlLogout      = $this->generateUrl("logout");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>La tanière bricabracs</title>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -29,27 +29,18 @@ $urlLogout      = $this->generateUrl("logout");
   </head>
   <body>
     <header>
-    
-      <ul>
-        <li><a href="<?php echo $urlInscription ?>">Inscription</a></li>
-        <li><a href="<?php echo $urlLogin ?>">Login</a></li>
-        <li><a href="<?php echo $urlAdmin ?>">Admin</a></li>
-        <li><a href="<?php echo $urlLogout ?>">Logout</a></li>
-      </ul>
-
-      <h1>La tanière bricabracs <figure><img src="<?php echo $urlAccueil ?>assets/img/oiseau.gif" alt="oiseau anime"/></h1>
       <nav>
         <ul>
           <li><a href="<?php echo $urlAccueil ?>">Rizhome</a></li>
           <li><a href="<?php //echo $urlRubrique ?>">CréaTexte</a></li>
-          <li><a href="">Journal <em>La Tanière</em></a></li>
-          
-         
+          <li><a href="">Journal <em>La Tanière</em></a></li> 
+          <li><a href="<?php echo $urlLogin ?>">Login</a></li>
+          <li class="menu2"><a href="<?php echo $urlInscription ?>">Inscription</a></li>
+          <li class="menu2"><a href="<?php echo $urlAdmin ?>">Admin</a></li>
+          <li class="menu2"><a href="<?php echo $urlLogout ?>">Logout</a></li>      
         </ul>
       </nav>
-      <form action="" method="POST" id="recherche">
-          <input type="text" name="recherche" placeholder="Recherche"/>
-          <button type="submit">Envoyer</button>
-        </form>
+       <h1>La tanière bricabracs <figure><img src="<?php echo $urlAccueil ?>assets/img/oiseau.gif" alt="oiseau anime"/></h1>
+       
     </header>
-    <main>
+<main>
