@@ -10,10 +10,8 @@
                   <!--<li><a href=""> <i class="fas fa-user-times"></i> Déconnexion </a></li>-->
                 </ul>
               </nav>
-            <div class="contact">
-                   <p> Nous contacter : lesbricabracs@bricabracs.org / 68 chemin de Baumillon 13015 Marseille</p>
-            </div>
-
+                               <p> Nous contacter : lesbricabracs@bricabracs.org / 68 chemin de Baumillon 13015 Marseille</p>
+ 
     </footer>
         <!-- https://sdk.ckeditor.com/samples/autogrow.html# -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
