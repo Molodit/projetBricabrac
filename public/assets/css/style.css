@@ -46,6 +46,15 @@ header nav a, #ecrire a {
  border: solid 1px #5e528;
  border-radius: 10px 10px;
 }
+#menu2{
+ text-align:rigth;
+ margin: 10px 20px;
+ background-color:#5e528a;
+ color:white;
+ padding: 3% 4%;
+ border: solid 1px #5e528;
+ border-radius: 10px 10px;
+}
 
 h1 {
   font-family: 'Philosopher', sans-serif;;
