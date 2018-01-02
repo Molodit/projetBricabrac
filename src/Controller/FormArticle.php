@@ -31,7 +31,7 @@ class FormArticle
 
             
             // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
-            if (($titre != "") && ($rubrique != "") && ($contenu != "") && ($motCle != "") && ($cheminImage != ""))
+            if (($titre != "") && ($rubrique != "") && ($contenu != "") && ($motCle != "") )
             { 
             $objetConnection->insert("article", 
                                     [   "titre"             => $titre, 
@@ -128,8 +128,6 @@ class FormArticle
     }
 
     
-    // SI ON VEUT GERER L'UPLOAD DE FICHIER
-    // https://symfony.com/doc/current/controller/upload_file.html
     function getUploadedFile ($nameInput, $objetRequest, $cheminSymfony)
     {
         $cheminImage = "";
@@ -143,19 +141,20 @@ class FormArticle
                 // OK
                 $extensionFichier = $objetUploadedFile->getClientOriginalExtension();
                 $extensionFichier = strtolower($extensionFichier);
-                if (in_array($extensionFichier, [ "jpg", "jpeg", "png", "gif", "svg", "pdf" ]))
+                if (in_array($extensionFichier, [ "jpg", "jpeg", "png", "gif", "svg" ]))
                 {
                     // OK
-                    // http://php.net/manual/fr/splfileinfo.getsize.php
+                   
                     $tailleFichier = $objetUploadedFile->getSize();
-                    if ($tailleFichier <= 2 * 1024 * 1024) // 2 Mo
+                    if ($tailleFichier <= 10 * 1024 * 1024) // 10 Mo
                     {
+                        // OK
                         
                         $nomOriginal = $objetUploadedFile->getClientOriginalName();
                         // SORTIR LE FICHIER DE SA QUARANTAINE
                         // ATTENTION: NE PAS OUBLIER DE CREER LE DOSSIER upload...
                         $dossierCible = "$cheminSymfony/public/assets/upload/";
-                       
+                      
                         $objetUploadedFile->move($dossierCible, $nomOriginal);
                         
                         // POUR LE STOCKAGE DANS SQL
@@ -183,8 +182,6 @@ class FormArticle
         
         return $cheminImage;
     }
-
-
     
      function creerPersistence ($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession)
     {
