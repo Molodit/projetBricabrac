@@ -36,9 +36,9 @@ class BlogController
    }
    
    /**
-      * @Route("article", name="article")
+      * @Route("article/{id}", name="article")
       */   
-    public function article (\App\Entity\MonArticle $objetArticle, Request $objetRequest, Connection $objetConnection)
+    public function article ( Request $objetRequest, Connection $objetConnection, \App\Entity\MonArticle $objetArticle)
     {
         
         ob_start();
@@ -47,7 +47,7 @@ class BlogController
         $cheminSymfony   = $this->getParameter('kernel.project_dir');
         $cheminTemplates = "$cheminSymfony/templates"; 
         $cheminPart      = "$cheminTemplates/part"; 
-        require_once("$cheminTemplates/template-accueil.php");
+        require_once("$cheminTemplates/template-article.php");
         
         
         $contenuCache = ob_get_clean();
