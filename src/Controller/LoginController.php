@@ -71,12 +71,10 @@ class LoginController
         }
 
         // Test pour l'admin enfant
-
-        // elseif ($verifNiveau == 7) {
-        //     $urlAccueil = $this->generateUrl("accueil");
-        //     return new RedirectResponse($urlAccueil);
-        // }
-
+          elseif ($verifNiveau == 7) {
+            $urlAccueilEnfant = $this->generateUrl("accueil-enfant");
+            return new RedirectResponse($urlAccueilEnfant);
+        }
         else
         {
             // ON VA SUR LA PAGE D'ACCUEIL 
@@ -85,8 +83,51 @@ class LoginController
         }
         
    }
+    /**
+      * @Route("/accueil-enfant", name="accueil-enfant")
+      */   
+  /* public function loginEnfant (Request $objetRequest, Connection $objetConnection, SessionInterface $objetSession)
+   {
+       
+        ob_start();
 
+        // METHODE DE SYMFONY POUR OBTENIR LE CHEMIN DU DOSSIER         
+        $cheminSymfony   = $this->getParameter('kernel.project_dir');
+        $cheminTemplates = "$cheminSymfony/templates"; 
+        $cheminPart      = "$cheminTemplates/part"; 
+        require_once("$cheminTemplates/template-accueil-enfant.php");
+        
+        
+        $contenuCache = ob_get_clean();
+        
+        
+        $verifNiveau = $objetSession->get("niveau");
+        if ($verifNiveau >= 9)
+        {
+            // ON VA VERS LA PAGE admin
+            $urlAccueil = $this->generateUrl("accueil");
+            return new RedirectResponse($urlAccueil);
+        }
 
+        elseif ($verifNiveau == 1) {
+            $urlAccueil = $this->generateUrl("accueil");
+            return new RedirectResponse($urlAccueil);
+        }
+
+        // Test pour l'admin enfant
+        /*  elseif ($verifNiveau == 7) {
+            $urlAccueilEnfant = $this->generateUrl("accueil-enfant");
+            return new RedirectResponse($urlAccueilEnfant);
+        }
+        else
+        {
+            // ON VA SUR LA PAGE D'ACCUEIL 
+            
+            return new Response($contenuCache);
+        }
+        
+   }*/
+   
     /**
       * @Route("/admin", name="admin")
       */   

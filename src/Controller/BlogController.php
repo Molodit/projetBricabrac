@@ -68,7 +68,7 @@ class BlogController
         $cheminSymfony   = $this->getParameter('kernel.project_dir');
         $cheminTemplates = "$cheminSymfony/templates"; 
         $cheminPart      = "$cheminTemplates/part"; 
-        require_once("$cheminTemplates/template-createxte.php");
+        require_once("$cheminTemplates/template-rubrique.php");
         
         
         $contenuCache = ob_get_clean();

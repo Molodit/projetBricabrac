@@ -16,7 +16,7 @@ ul {
   display:flex;
   flex-direction:row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
 }
 a {
   text-decoration: none;
@@ -24,22 +24,36 @@ a {
 
 header nav {
   text-align:center;
-  background-color: #5e528a;
+  background-color: #D3D3D3;
+  color:#5e528a;
+  width:100%;
+  margin:0 auto;
+  padding:1%;
 }
 header nav li {
-  background-color: #f1e4fa;
-  padding: 2% 4%;
-  box-shadow: 10px 2px 10px rgba(0, 0, 0, 0.6);
-  border-radius: 10px;
-  margin:2%;
   font-family: 'Philosopher', sans-serif;
   font-size: 25px;
   font-weight: normal;
+  
 }
 
 header nav a, #ecrire a {
- color: #5e528a;
  vertical-align: middle;
+ margin: 10px 20px;
+ background-color:#5e528a;
+ color:white;
+ padding: 3% 4%;
+ border: solid 1px #5e528;
+ border-radius: 10px 10px;
+}
+#menu2{
+ text-align:rigth;
+ margin: 10px 20px;
+ background-color:#5e528a;
+ color:white;
+ padding: 3% 4%;
+ border: solid 1px #5e528;
+ border-radius: 10px 10px;
 }
 
 h1 {
@@ -48,7 +62,7 @@ h1 {
 }
 h1, h2, h3 {
   color: #5e528a;
-   text-align: center;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -58,13 +72,13 @@ h2, h3 {
 }
 form{
   margin: 3% auto;
-  width:80%;
+  width:50%;
   } 
 input, label, select {
   outline: none;
-  padding: 1% 2% 1% 0.3%;
-  border-radius:5px;
-  width:70%;
+  padding: 1% 1% 1% 0.3%;
+  border-radius:2px;
+  width:50%;
   background: transparent;
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
   box-sizing: border-box;
@@ -75,7 +89,7 @@ button {
   background-color:#4e4c56;
   color:white;
   padding: 1% 2%;
-  border-radius:5px;
+  border-radius:3px;
   text-transform: uppercase;
 }
 .bgimg-1, .bgimg-2, .bgimg-3 {
@@ -93,9 +107,9 @@ button {
   margin-right: 0;
 }
 
-.bgimg-2 {
+/*.bgimg-2 {
   background-image: url("../img/dessinEcole.jpg");
-  min-height: 500px;
+  min-height: 500px;*/
 }
 
 .bgimg-3 {
@@ -106,7 +120,7 @@ button {
 .caption {
   position: absolute;
   left: 0;
-  width: 100%;
+  width: 80%;
 }
 section {
   width: 80%;
@@ -119,7 +133,7 @@ section {
 }
 
 #recherche .cloud {
-  width: 65%;
+  width: 45%;
   display: inline-block;
 }
 
@@ -308,8 +322,8 @@ section#articles {
 /*XXXXXXXXXXX FOOTER  XXXXXXXXXXXXX*/
 footer{
   font-family: 'Philosopher', sans-serif;
-  background-color:#5e528a;
-  color:white;
+  background-color:#D3D3D3;
+  color:#5e528a;
   font-size:1.2em;
 }
 .deconnecter{
@@ -319,20 +333,24 @@ footer{
   display: inline;
   margin-right: 10px;
   margin-top: 30px;
+  text-align:center;
+  margin-bottom:10px;
 }
 #menufooter a{
-  color:white;
-  margin-left:10px;
+ vertical-align: middle;
+ margin: 10px 20px;
+ background-color:#5e528a;
+ color:white;
+ padding: 3% 4%;
+ border: solid 1px #5e528;
+ border-radius: 10px 10px;
 }
-.contact{
+p{
   font-size: 1.2em;
   margin-top:0;
   display: inline;
   text-align: center;
   margin-right: 30px;
-  text-shadow: 1px 1px 1px black;
+  text-shadow: 1px 1px 1px white;
 }
-.contact p{
-  text-align:center;
-  margin-left:8%;
-}
+

@@ -165,7 +165,10 @@
 </section>
         
   
- 
+<form action="" method="POST" id="recherche">
+    <input type="text" name="recherche" placeholder="Recherche"/>
+    <button type="submit">Envoyer</button>
+</form>
   
 
 <div class="bgimg-2">
