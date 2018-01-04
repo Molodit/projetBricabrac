@@ -12,7 +12,7 @@ $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::cl
 
 
 // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
-$tabResultat = $objetRepository->findBy([], [ "datePublication" => "DESC" ]);
+$tabResultat = $objetRepository->findBy([ "rub" => "CreaTexte" ], [ "datePublication" => "DESC" ]);
 
 // ON A UN TABLEAU D'OBJETS DE CLASSE Article
 foreach($tabResultat as $objetArticle)
@@ -38,7 +38,7 @@ foreach($tabResultat as $objetArticle)
 CODEHTML;
     }
     
-    $urlRubrique = $this->generateUrl("rubrique", [ "rubrique" => $rub ]);
+    $urlCreaTexte         = $this->generateUrl("rubrique", [ "rub" => "CreaTexte" ]);
     // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
     $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
     

@@ -8,7 +8,7 @@
         <select name="rubrique" required>
           <option value="">-- Choisissez une rubrique --</option>
           <option value="Rhizome">Rhizome</option>
-          <option value="CréaTexte">Créatexte</option>
+          <option value="CreaTexte">CréaTexte</option>
           <option value="Journal">Journal La Tanière</option>
      </select>
         <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30"></textarea>

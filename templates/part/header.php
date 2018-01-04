@@ -4,7 +4,9 @@
 $urlAccueil           = $this->generateUrl("accueil");
 //$urlAccueilEnfant     = $this->generateUrl("accueil-enfant");
 $urlArticle           = $this->generateUrl("article");
-//$urlRubrique   = $this->generateUrl("rubrique", [ "rubrique" => $rub ]);
+$urlCreaTexte         = $this->generateUrl("rubrique", [ "rub" => "CreaTexte" ]);
+$urlRhizome           = $this->generateUrl("rubrique", [ "rub" => "Rhizome"]);
+$urlJournal           = $this->generateUrl("rubrique", [ "rub" => "Journal" ]);
 $urlContact           = $this->generateUrl("contact");
 $urlInscription       = $this->generateUrl("inscription");
 $urlLogin             = $this->generateUrl("login");
@@ -31,9 +33,10 @@ $urlLogout            = $this->generateUrl("logout");
     <header>
       <nav>
         <ul>
-          <li><a href="<?php echo $urlAccueil ?>">Rizhome</a></li>
-          <li><a href="<?php //echo $urlRubrique ?>">CréaTexte</a></li>
-          <li><a href="">Journal <em>La Tanière</em></a></li> 
+          <li><a href="<?php echo $urlAccueil ?>">Accueil</a></li>
+          <li><a href="<?php echo $urlRhizome ?>">Rizhome</a></li>
+          <li><a href="<?php echo $urlCreaTexte ?>">CréaTexte</a></li>
+          <li><a href="<?php echo $urlJournal ?>">Journal <em>La Tanière</em></a></li> 
           <li><a href="<?php echo $urlLogin ?>">Login</a></li>
           <li class="menu2"><a href="<?php echo $urlInscription ?>">Inscription</a></li>
           <li class="menu2"><a href="<?php echo $urlAdmin ?>">Admin</a></li>
