@@ -84,9 +84,9 @@ class LoginController
         
    }
     /**
-      * @Route("/accueil-enfant", name="accueil-enfant")
+      * @Route("/admin-enfant", name="admin-enfant")
       */   
-   public function accueilEnfant (Request $objetRequest, Connection $objetConnection, SessionInterface $objetSession)
+   public function adminEnfant (Request $objetRequest, Connection $objetConnection, SessionInterface $objetSession)
    {
        
         ob_start();
@@ -98,7 +98,7 @@ class LoginController
         $cheminSymfony   = $this->getParameter('kernel.project_dir');
         $cheminTemplates = "$cheminSymfony/templates"; 
         $cheminPart      = "$cheminTemplates/part"; 
-        require_once("$cheminTemplates/template-accueil-enfant.php");
+        require_once("$cheminTemplates/template-admin-enfant.php");
         
         
         $contenuCache = ob_get_clean();
@@ -119,8 +119,8 @@ class LoginController
 
         // Test pour l'admin enfant
          elseif ($verifNiveau == 7) {
-            $urlAccueilEnfant = $this->generateUrl("accueil-enfant");
-            return new RedirectResponse($urlAccueilEnfant);
+            $urlAccueilEnfant = $this->generateUrl("admin-enfant");
+            return new RedirectResponse($urlAdminEnfant);
         }
         else
         {
