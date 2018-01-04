@@ -24,9 +24,6 @@ if ($objetRequest->get("codebarre", "") == "article")
     
     $objetFormArticle->creer($objetRequest, $objetConnection, $cheminSymfony, $objetSession);
     
-    // https://symfony.com/doc/current/doctrine.html#persisting-objects-to-the-database
-    // $objetEntityManager = $this->getDoctrine()->getManager();
-    // $objetFormArticle->creerPersistence($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession);
 }
 ?>
         </div>

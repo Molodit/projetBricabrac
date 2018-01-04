@@ -73,35 +73,35 @@ foreach($tabResultat as $objetArticle)
     // On ne prend que les 100 premiers caractères du texte de $contenu
     $contenu = mb_strimwidth($contenu, 0, 100, '...');
     // S'il y a une image
+    
     $htmlImage = "";
     if ($cheminImage)
     {
-        $htmlImage = 
-    <<<CODEHTML
-
-    <img src="$cheminImage" title="$cheminImage">
-CODEHTML;
-    }
-    // Si l'article a été modifié
-    $Modif = "";
-    if ($dateModification)
+        $objetExtension = new SplFileInfo($cheminImage);
+        $extension = $objetExtension->getExtension();
+        if ($extension == "pdf")
     {
-        $Modif = 
-    <<<CODEHTML
-    $dateModification
+        $htmlImage = 
+        <<<CODEHTML
+        <iframe src="$cheminImage"></iframe>
 CODEHTML;
     }
+
+    else {
+        $htmlImage = 
+        <<<CODEHTML
     
-    // $urlCategorie = "#";
-    // if ($categorie)
-    // {
-    //     // POUR CONSTRUIRE UNE URL POUR UNE ROUTE DYNAMIQUE
-    //     // IL FAUT FOURNIR LA VALEUR DU PARAMETRE DANS L'URL
-    //     //      * @Route("categorie/{cat}", name="categorie")
-    //     $urlCategorie = $this->generateUrl("categorie", [ "cat" => $categorie ]);
-    // }
+        <img src="$cheminImage" title="$cheminImage">
+CODEHTML;
+        }
+    }
+
+       
+    // Si l'image est un pdf
+   
     
-    // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
+    
+    
     $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
     
     echo
@@ -116,7 +116,7 @@ CODEHTML;
         <td>$htmlImage</td>
         <td>$motCle</td>
         <td>$datePublication</td>
-        <td>$Modif</td>
+        <td>$dateModification</td>
         
         <td>
             <form method="GET" action="">

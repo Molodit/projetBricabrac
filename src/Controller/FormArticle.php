@@ -19,7 +19,7 @@ class FormArticle
         //  ALORS ON RETOURNE LA VALEUR PAR DEFAUT ""
         $titre          = $objetRequest->get("titre", "");       
         $rubrique       = $objetRequest->get("rubrique", "");   
-        $motCle         = $objetRequest->get("motCle", "");    
+        $motCle         = $objetRequest->get("mot_cle", "");    
         $contenu        = $objetRequest->get("contenu", "");       
         $cheminImage    = $this->getUploadedFile("cheminImage", $objetRequest, $cheminSymfony);
         
@@ -40,7 +40,7 @@ class FormArticle
                                         "contenu"           => $contenu,
                                         "date_publication"  => $datePublication,
                                         "chemin_image"      => $cheminImage,
-                                        "mot_cle"           => $motCle, 
+                                        "mot_cle"           => $motCle
                                         ]);
             
             // MESSAGE RETOUR POUR LE VISITEUR
@@ -141,12 +141,12 @@ class FormArticle
                 // OK
                 $extensionFichier = $objetUploadedFile->getClientOriginalExtension();
                 $extensionFichier = strtolower($extensionFichier);
-                if (in_array($extensionFichier, [ "jpg", "jpeg", "png", "gif", "svg" ]))
+                if (in_array($extensionFichier, [ "jpg", "jpeg", "png", "gif", "svg", "pdf" ]))
                 {
                     // OK
                    
                     $tailleFichier = $objetUploadedFile->getSize();
-                    if ($tailleFichier <= 2 * 1024 * 1024) // 2 Mo
+                    if ($tailleFichier <= 10 * 1024 * 1024) // 10 Mo
                     {
                         // OK
                         
@@ -160,12 +160,16 @@ class FormArticle
                         // POUR LE STOCKAGE DANS SQL
                         $cheminImage = "assets/upload/$nomOriginal";
                     }
+
+
                     else
                     {
                         // KO
                         // TAILLE TROP GRANDE
                     }
                 }
+
+
                 else
                 {
                     // KO
@@ -182,51 +186,7 @@ class FormArticle
         
         return $cheminImage;
     }
-    
-     function creerPersistence ($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession)
-    {
-        
-        $titre          = $objetRequest->get("titre", "");       
-        $rubrique       = $objetRequest->get("rubrique", ""); 
-        $motCle         = $objetRequest->get("mot_cle", "");       
-        $contenu        = $objetRequest->get("contenu", "");       
-        $cheminImage    = $this->getUploadedFile("chemin_image", $objetRequest, $cheminSymfony);
-        
-        // SECURITE TRES BASIQUE
-        if (($titre != "") && ($rubrique != "") && ($contenu != ""))
-        {
-            // COMPLETER LES INFOS MANQUANTES
-            $datePublication  = date("Y-m-d H:i:s");
-            $idMembre         = $objetSession->get("id_membre");
-            
-            // ON VA CREER UNE ENTITE
-            $objetArticle = new \App\Entity\MonArticle;
-            // ON VA UTILISER LES SETTERS POUR MEMORISER LES INFOS DANS L'ENTITE
-            // TODO: AJOUTER LES METHODE SETTERS DANS LA CLASSE ENTITE MonArticle
-            $objetArticle->setTitre($titre);
-            $objetArticle->setIdMembre($idMembre);
-            $objetArticle->setRubrique($rubrique);
-            $objetArticle->setMotCle($motCle);
-            $objetArticle->setContenu($contenu);
-            $objetArticle->setDatePublication($datePublication);
-            $objetArticle->setCheminImage($cheminImage);
-            
-            // CA NE FAIT PAS LE STOCKAGE DANS SQL (UN PEU COMME PREPARE...)
-            $objetEntityManager->persist($objetArticle);
-            // ENVOIE L'OBJET DANS LA TABLE SQL (UN PEU COMME EXECUTE...)
-            $objetEntityManager->flush();
-            
-            // MESSAGE RETOUR POUR LE VISITEUR
-            echo "ARTICLE PUBLIE";
-        }
-        else
-        {
-            // KO
-            echo "INFOS MANQUANTES";
-        }
-        
-    }
-    
+
     
     
 }
