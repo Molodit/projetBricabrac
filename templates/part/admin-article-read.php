@@ -72,23 +72,25 @@ foreach($tabResultat as $objetArticle)
     
     // On ne prend que les 100 premiers caractères du texte de $contenu
     $contenu = mb_strimwidth($contenu, 0, 100, '...');
-    // S'il y a une image
     
-    $htmlImage = "";
+    $htmlFile = "";
+    // S'il y a un fichier (image ou pdf)
     if ($cheminImage)
     {
         $objetExtension = new SplFileInfo($cheminImage);
         $extension = $objetExtension->getExtension();
+
+        // Si le fichier est un pdf
         if ($extension == "pdf")
     {
-        $htmlImage = 
+        $htmlFile = 
         <<<CODEHTML
         <iframe src="$cheminImage"></iframe>
 CODEHTML;
     }
 
     else {
-        $htmlImage = 
+        $htmlFile = 
         <<<CODEHTML
     
         <img src="$cheminImage" title="$cheminImage">
@@ -97,7 +99,7 @@ CODEHTML;
     }
 
        
-    // Si l'image est un pdf
+    
    
     
     
@@ -113,7 +115,7 @@ CODEHTML;
         <td><a href="$urlArticle">$titre</a></td>
         <td>$rubrique</td>
         <td>$contenu</td>
-        <td>$htmlImage</td>
+        <td>$htmlFile</td>
         <td>$motCle</td>
         <td>$datePublication</td>
         <td>$dateModification</td>
