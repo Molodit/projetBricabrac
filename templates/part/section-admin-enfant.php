@@ -1,11 +1,6 @@
- <?php
 
-//J'appelle la section read
-require_once("$cheminPart/section-admin-enfant-read.php");
 
-?>
-
-<section>
+<section id="adminEnfant">
     <h3>Ecrire un nouvel article</h3>
     <!-- NE PAS OUBLIER: POUR UPLOADER UN FICHIER -->
     <!-- method="POST" enctype="multipart/form-data" -->
@@ -13,11 +8,11 @@ require_once("$cheminPart/section-admin-enfant-read.php");
         <input type="text" name="titre" required placeholder="titre">
         <input type="text" name="mot_cle" required placeholder="mot-clé">
         <select name="rubrique" required>
-          <option value="">-- Choisissez une rubrique --</option>
-          <option value="Rhizome">Rhizome</option>
-          <option value="CréaTexte">Créatexte</option>
-          <option value="Journal">Journal La Tanière</option>
-     </select>
+            <option value="">-- Choisissez une rubrique --</option>
+            <option value="Rhizome">Rhizome</option>
+            <option value="CréaTexte">Créatexte</option>
+            <option value="Journal">Journal La Tanière</option>
+        </select>
         <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30"></textarea>
         <input type="file" name="cheminImage" placeholder="insérer une image">
         <button type="submit">Publier l'article</button>
@@ -39,6 +34,13 @@ if ($objetRequest->get("codebarre", "") == "article")
     
     
 </section>
+
+<?php
+
+//J'appelle la section read
+require_once("$cheminPart/section-admin-enfant-read.php");
+
+?>
 
 
 

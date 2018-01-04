@@ -5,6 +5,7 @@ $verifMembre = $objetSession->get("membre");
 ?>
  <h2>BIENVENUE <?php echo $verifMembre ?></h2>
 
+	<h3> Mes Articles :</h3>
 <section>
 
 <?php
@@ -48,53 +49,44 @@ CODEHTML;
     
     echo
 <<<CODEHTML
-
+<section id="balle">
 <div class="circles-container no-padding container">
 
 	<div class="circle-link circle1">
 		<div class="circle-content" >
-    		<a href="#" target="_blank">
-        	<div class="article">
+         	<div class="article">
 				<article>
-		             <h2>$titre</h2>
-		             <p>$contenu</p>
-		             <img src="$htmlImage" title="$htmlImage">         
+					<a href="$urlArticle" target="_blank"><h2>$titre</h2></a>
+		            <img src="$htmlImage" title="$htmlImage"/>         
 		        </article>
 	        </div>
         	</a>
         </div>
     </div>
- 
 	<div class="circle-link circle2 col-sm-3">
 		<div class="circle-content">
-			<a href="#" target="_blank">
 			<div class="article">
 				<article>
- 				<h2>$titre</h2>
- 				<p>$contenu</p>
- 				<img src="$htmlImage" title="$htmlImage">         
+					<a href="$urlArticle" target="_blank"><h2>$titre</h2></a>
+					<img src="$htmlImage" title="$htmlImage"/>         
 				</article>
 			</div>
 			</a>
 		</div>
 	</div>
-    
-  
 	<div class="circle-link circle3 col-sm-2">
-		<div class="circle-content" >
-			<a href="#" target="_blank">
+		<div class="circle-content">
+			
 			<div>
 				<article>
-				<h2>$titre</h2>
- 				<p>$contenu</p>
- 				<img src="$htmlImage" title="$htmlImage"> 
+					<a href="$urlArticle" target="_blank"><h2>$titre</h2></a>
+					<img src="$htmlImage" title="$htmlImage"/> 
 				</article>
 			</div>
-			</a>
 		</div>
 	</div>
-	</div>
 </div>
+</section>
 CODEHTML;
 	}
 }
