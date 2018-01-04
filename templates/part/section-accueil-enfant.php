@@ -22,16 +22,16 @@
         <div class="response">
 <?php
 // TRAITER LE FORMULAIRE
-/*if ($objetRequest->get("codebarre", "") == "article")
+if ($objetRequest->get("codebarre", "") == "article")
 {
      $objetFormArticle = new App\Controller\FormArticle;
     
     $objetFormArticle->creer($objetRequest, $objetConnection, $cheminSymfony, $objetSession);
     
     // https://symfony.com/doc/current/doctrine.html#persisting-objects-to-the-database
-    // $objetEntityManager = $this->getDoctrine()->getManager();
-    // $objetFormArticle->creerPersistence($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession);
-}*/
+    $objetEntityManager = $this->getDoctrine()->getManager();
+    $objetFormArticle->creerPersistence($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession);
+}
 ?>
         </div>
     </form>
