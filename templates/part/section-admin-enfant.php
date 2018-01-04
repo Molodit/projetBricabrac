@@ -1,19 +1,9 @@
-<?php
-$verifMembre = $objetSession->get("membre");
-
-
-?>
- <h2>BIENVENUE <?php echo $verifMembre ?></h2>
-
  <?php
 
 //J'appelle la section read
 require_once("$cheminPart/section-admin-enfant-read.php");
 
 ?>
-
-
-
 
 <section>
     <h3>Ecrire un nouvel article</h3>
@@ -40,10 +30,8 @@ if ($objetRequest->get("codebarre", "") == "article")
      $objetFormArticle = new App\Controller\FormArticle;
     
     $objetFormArticle->creer($objetRequest, $objetConnection, $cheminSymfony, $objetSession);
-    
-    // https://symfony.com/doc/current/doctrine.html#persisting-objects-to-the-database
-    $objetEntityManager = $this->getDoctrine()->getManager();
-    $objetFormArticle->creerPersistence($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession);
+
+
 }
 ?>
         </div>

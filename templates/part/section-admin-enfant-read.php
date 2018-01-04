@@ -104,47 +104,6 @@ CODEHTML;
 			</a>
 		</div>
 	</div>
-
-	<div class="circle-link circle4 col-sm-4">
-		<div class="circle-content" >
-			<a href="#" target="_blank">
-			<div>
-				<article>
-				<h2>$titre</h2>
- 				<p>$contenu</p>
- 				<img src="$htmlImage" title="$htmlImage"> 
-				</article>
-			</div>
-			</a>
-		</div>
-	</div>
-
-	<div class="circle-link circle5 col-sm-3">
-		<div class="circle-content" >
-			<a href="#" target="_blank">
-			<div>
-				<article>
-				<h2>$titre</h2>
- 				<p>$contenu</p>
- 				<img src="$htmlImage" title="$htmlImage"> 
-				</article>
-			</div>
-			</a>
-		</div>
-	</div>
-
-	<div class="circle-link circle6 col-sm-3">
-		<div class="circle-content" >
-			<a href="#" target="_blank">
-			<div>
-				<article>
-				<h2>$titre</h2>
- 				<p>$contenu</p>
- 				<img src="$htmlImage" title="$htmlImage"> 
-				</article>
-			</div>
-			</a>
-		</div>
 	</div>
 </div>
 CODEHTML;
