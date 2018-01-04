@@ -21,7 +21,7 @@ class FormArticle
         $rubrique       = $objetRequest->get("rubrique", "");   
         $motCle         = $objetRequest->get("mot_cle", "");    
         $contenu        = $objetRequest->get("contenu", "");       
-        $cheminImage    = $this->getUploadedFile("chemin_image", $objetRequest, $cheminSymfony);
+        $cheminImage    = $this->getUploadedFile("cheminImage", $objetRequest, $cheminSymfony);
         
         // SECURITE TRES BASIQUE
         
@@ -31,7 +31,7 @@ class FormArticle
 
             
             // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
-            if (($titre != "") && ($rubrique != "") && ($contenu != "") && ($motCle != "") )
+            if (($titre != "") && ($rubrique != "") && ($contenu != "") && ($motCle != ""))
             { 
             $objetConnection->insert("article", 
                                     [   "titre"             => $titre, 
@@ -146,7 +146,7 @@ class FormArticle
                     // OK
                    
                     $tailleFichier = $objetUploadedFile->getSize();
-                    if ($tailleFichier <= 10 * 1024 * 1024) // 10 Mo
+                    if ($tailleFichier <= 2 * 1024 * 1024) // 2 Mo
                     {
                         // OK
                         
