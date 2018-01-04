@@ -43,21 +43,22 @@ header nav a, #ecrire a {
  background-color:#5e528a;
  color:white;
  padding: 3% 4%;
- border: solid 1px #5e528;
+ border: solid 1px #5e528a;
  border-radius: 10px 10px;
 }
-.menu2{
- text-align:rigth;
+
+#menuLogin{
+ text-align:right;
  margin: 10px 20px;
  background-color:#5e528a;
  color:white;
  padding: 3% 4%;
- border: solid 1px #5e528;
+ border: solid 1px #5e528a;
  border-radius: 10px 10px;
 }
 
 h1 {
-  font-family: 'Philosopher', sans-serif;;
+  font-family: 'Philosopher', sans-serif;
   font-size: 40px;
 }
 h1, h2, h3 {
@@ -74,7 +75,7 @@ form{
   margin: 3% auto;
   width:50%;
   } 
-input, label, select {
+input, select {
   outline: none;
   padding: 1% 1% 1% 0.3%;
   border-radius:2px;
@@ -105,11 +106,6 @@ button {
   background-image: url("../img/arbre-vert.png");
   min-height: 100vh;
   margin-right: 0;
-}
-
-/*.bgimg-2 {
-  background-image: url("../img/dessinEcole.jpg");
-  min-height: 500px;*/
 }
 
 .bgimg-3 {

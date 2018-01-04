@@ -37,12 +37,15 @@ $urlLogout            = $this->generateUrl("logout");
           <li><a href="<?php echo $urlCreaTexte ?>">CréaTexte</a></li>
           <li><a href="<?php echo $urlJournal ?>">Journal <em>La Tanière</em></a></li> 
           <li><a href="<?php echo $urlLogin ?>">Login</a></li>
-          <li class="menu2"><a href="<?php echo $urlInscription ?>">Inscription</a></li>
-          <li class="menu2"><a href="<?php echo $urlAdmin ?>">Admin</a></li>
-          <li class="menu2"><a href="<?php echo $urlLogout ?>">Logout</a></li>      
+          <li class="menuLogin"><a href="<?php echo $urlInscription ?>">Inscription</a></li>
+          <li class="menuLogin"><a href="<?php echo $urlAdmin ?>">Admin</a></li>
+          <li class="menuLogin"><a href="<?php echo $urlLogout ?>">Logout</a></li>      
         </ul>
       </nav>
-       <h1>La tanière bricabracs <figure><img src="<?php echo $urlAccueil ?>assets/img/oiseau.gif" alt="oiseau anime"/></h1>
+       <h1>La tanière bricabracs 
+         <figure><img src="<?php echo $urlAccueil ?>assets/img/oiseau.gif" alt="oiseau anime"/>
+          </figure>
+        </h1>
        
     </header>
 <main>
