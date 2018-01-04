@@ -12,7 +12,7 @@ $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::cl
 
 
 // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
-$tabResultat = $objetRepository->findBy([ "rub" => "CreaTexte" ], [ "datePublication" => "DESC" ]);
+$tabResultat = $objetRepository->findBy([ "rubrique" => "CreaTexte" ], [ "datePublication" => "DESC" ]);
 
 // ON A UN TABLEAU D'OBJETS DE CLASSE Article
 foreach($tabResultat as $objetArticle)

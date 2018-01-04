@@ -2,18 +2,16 @@
 
 require_once("$cheminPart/header.php");
 
-if (isset($_REQUEST["section"]) 
-        && ($_REQUEST["section"] == "rhizome"))
+if ($rub == "Rhizome") 
+        
 {
     require_once("$cheminPart/section-rhizome.php");
 }
-elseif (isset($_REQUEST["section"]) 
-        && ($_REQUEST["section"] == "createxte")) 
+elseif ($rub == "CreaTexte") 
 {
 	require_once("$cheminPart/section-createxte.php");
  } 
-elseif (isset($_REQUEST["section"]) 
-        && ($_REQUEST["section"] == "journal")) 
+elseif ($rub == "Journal") 
 {
    
     require_once("$cheminPart/section-journal.php");
