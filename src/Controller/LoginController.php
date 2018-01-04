@@ -72,8 +72,8 @@ class LoginController
 
         // Test pour l'admin enfant
           elseif ($verifNiveau == 7) {
-            $urlAccueilEnfant = $this->generateUrl("accueil-enfant");
-            return new RedirectResponse($urlAccueilEnfant);
+            $urlAdminEnfant = $this->generateUrl("admin-enfant");
+            return new RedirectResponse($urlAdminEnfant);
         }
         else
         {
@@ -93,7 +93,7 @@ class LoginController
 
         $verifNiveau = $objetSession->get("niveau");
         $verifMembre = $objetSession->get("membre");
-
+        if($verifNiveau == 7){
         // METHODE DE SYMFONY POUR OBTENIR LE CHEMIN DU DOSSIER         
         $cheminSymfony   = $this->getParameter('kernel.project_dir');
         $cheminTemplates = "$cheminSymfony/templates"; 
@@ -102,34 +102,17 @@ class LoginController
         
         
         $contenuCache = ob_get_clean();
+         
+               
+        return new Response($contenuCache);
+    }
+    else{
         
+        $urlLogin = $this->generateUrl("login");
+        return new RedirectResponse($urlLogin);
+    }
+} 
         
-        $verifNiveau = $objetSession->get("niveau");
-        if ($verifNiveau >= 9)
-        {
-            // ON VA VERS LA PAGE admin
-            $urlAccueil = $this->generateUrl("accueil");
-            return new RedirectResponse($urlAccueil);
-        }
-
-        elseif ($verifNiveau == 1) {
-            $urlAccueil = $this->generateUrl("accueil");
-            return new RedirectResponse($urlAccueil);
-        }
-
-        // Test pour l'admin enfant
-         elseif ($verifNiveau == 7) {
-            $urlAccueilEnfant = $this->generateUrl("admin-enfant");
-            return new RedirectResponse($urlAdminEnfant);
-        }
-        else
-        {
-            // ON VA SUR LA PAGE D'ACCUEIL 
-            
-            return new Response($contenuCache);
-        }
-        
-   }
    
     /**
       * @Route("/admin", name="admin")
