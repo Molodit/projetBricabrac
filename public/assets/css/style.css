@@ -46,9 +46,14 @@ header nav a, #ecrire a {
  border: solid 1px #5e528;
  border-radius: 10px 10px;
 }
+<<<<<<< HEAD
 
 #menuLogin{
  text-align:right;
+=======
+.menu2{
+ text-align:rigth;
+>>>>>>> 9a7b23327f2773fd3e38f3b561abbad735da7a61
  margin: 10px 20px;
  background-color:#5e528a;
  color:white;

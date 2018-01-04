@@ -27,18 +27,31 @@ foreach($tabResultat as $objetArticle)
     $datePublication = $objetArticle->getDatePublication("d/m/Y H:i:s");
     
     
-    $htmlImage = "";
+    $htmlFile = "";
+    // S'il y a un fichier (image ou pdf)
     if ($cheminImage)
     {
-        $htmlImage = 
-<<<CODEHTML
+        $objetExtension = new SplFileInfo($cheminImage);
+        $extension = $objetExtension->getExtension();
 
-    <img src="$urlAccueil/$cheminImage" title="$cheminImage">
-
+        // Si le fichier est un pdf
+        if ($extension == "pdf")
+    {
+        $htmlFile = 
+        <<<CODEHTML
+        <iframe src="$urlAccueil/$cheminImage"></iframe>
 CODEHTML;
     }
+
+    else {
+        $htmlFile = 
+        <<<CODEHTML
     
-   
+        <img src="$urlAccueil/$cheminImage" title="$cheminImage">
+CODEHTML;
+        }
+    
+ }  
     // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
     $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
     
@@ -50,7 +63,7 @@ CODEHTML;
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
         <div>$rubrique</div>
         <p>$contenu</p>
-        <div>$htmlImage</div>
+        <div>$htmlFile</div>
         <div>$datePublication</div>
     </article>
     
