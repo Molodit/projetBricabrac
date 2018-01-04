@@ -30,10 +30,15 @@ if ($objetRequest->get("codebarre", "") == "article")
      $objetFormArticle = new App\Controller\FormArticle;
     
     $objetFormArticle->creer($objetRequest, $objetConnection, $cheminSymfony, $objetSession);
-    
+
+
+}
 ?>
         </div>
     </form>
     
     
 </section>
+
+
+
