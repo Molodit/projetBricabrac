@@ -3,7 +3,6 @@
 // JE RECUPERE LES URLS DES PAGES GRACE AU NOM DE LEUR ROUTE
 $urlAccueil           = $this->generateUrl("accueil");
 $urlAdminEnfant       = $this->generateUrl("admin-enfant");
-$urlArticle           = $this->generateUrl("article");
 $urlCreaTexte         = $this->generateUrl("rubrique", [ "rub" => "CreaTexte" ]);
 $urlRhizome           = $this->generateUrl("rubrique", [ "rub" => "Rhizome"]);
 $urlJournal           = $this->generateUrl("rubrique", [ "rub" => "Journal" ]);

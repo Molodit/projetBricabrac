@@ -38,7 +38,7 @@ foreach($tabResultat as $objetArticle)
 CODEHTML;
     }
     
-    $urlCreaTexte         = $this->generateUrl("rubrique", [ "rub" => "CreaTexte" ]);
+   
     // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
     $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
     

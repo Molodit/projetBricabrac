@@ -2,7 +2,7 @@
 
 <section>
 
-    <h3>LISTE DES ARTICLES DE CREATEXTE</h3> 
+    <h3>LISTE DES ARTICLES DE RHIZOME</h3> 
 
 <?php
 // ALLER CHERCHER LA LISTE DES ARTICLES DANS LA CATEGORIE $createxte
@@ -38,7 +38,7 @@ foreach($tabResultat as $objetArticle)
 CODEHTML;
     }
     
-    $urlRhizome         = $this->generateUrl("rubrique", [ "rub" => "Rhizome" ]);
+  
     // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
     $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
     
