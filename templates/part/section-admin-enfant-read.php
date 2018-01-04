@@ -1,7 +1,11 @@
+<?php
+$verifMembre = $objetSession->get("membre");
 
- <h2>BIENVENUE <?php echo $verifPseudo ?></h2>
 
- <section>
+?>
+ <h2>BIENVENUE <?php echo $verifMembre ?></h2>
+
+<section>
 
 <?php
 
