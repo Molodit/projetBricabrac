@@ -3,7 +3,7 @@
 # TEST SI LE MODULE mod_rewrite EST INSTALLE
 RewriteEngine On                        
 # ACTIVE LE MODULE
-RewriteBase /projetbricabrac/public/      
+RewriteBase /projetBricabrac/public/      
 # DONNE L'URL RACINE DU SITE
 # ATTENTION ON VA DEVOIR CHANGER CE PARAMETRE
 RewriteRule ^index\.php$ - [L]          
