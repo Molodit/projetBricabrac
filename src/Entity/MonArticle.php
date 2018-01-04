@@ -129,7 +129,7 @@ class MonArticle
     }
       public function getMotCle ()
     {
-        $this->motCle;
+       return $this->motCle;
     }
     
     public function getContenu ()

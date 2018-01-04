@@ -19,7 +19,7 @@ class FormArticle
         //  ALORS ON RETOURNE LA VALEUR PAR DEFAUT ""
         $titre          = $objetRequest->get("titre", "");       
         $rubrique       = $objetRequest->get("rubrique", "");   
-        $motCle         = $objetRequest->get("mot_cle", "");    
+        $motCle         = $objetRequest->get("motCle", "");    
         $contenu        = $objetRequest->get("contenu", "");       
         $cheminImage    = $this->getUploadedFile("cheminImage", $objetRequest, $cheminSymfony);
         
