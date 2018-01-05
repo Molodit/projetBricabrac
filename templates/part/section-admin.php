@@ -21,5 +21,5 @@ else
     require_once("$cheminPart/admin-article-create.php");
 }
 
-    require_once("$cheminPart/admin-article-read.php");
+    require_once("$cheminPart/admin-read.php");
 ?>

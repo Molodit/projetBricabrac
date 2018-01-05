@@ -1,11 +1,12 @@
 $(document).ready(function() {
-    $('#tableListe').DataTable ( {
+    $('table[id^="tableListe"]').DataTable ( {
+        
         "order": [[ 0, 'desc' ]] ,
         responsive: true,
         language: {
             processing:     "Traitement en cours...",
             search:         "Rechercher&nbsp;:",
-            lengthMenu:    "Afficher \n &nbsp;_MENU_\n &nbsp; &eacute;l&eacute;ments ",
+            lengthMenu:    "Afficher &nbsp;_MENU_ &nbsp; &eacute;l&eacute;ments ",
             info:           "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
             infoEmpty:      "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
             infoFiltered:   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
