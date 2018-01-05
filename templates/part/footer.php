@@ -3,10 +3,11 @@
         <footer>
             <nav id="menufooter">
                 <ul>
-                  <li><a href="<?php echo $urlAccueil ?>"> <i class="fas fa-home"></i>  Rhizome </a></li>
-                  <li><a href=""> <i class="fas fa-book"></i>  CréaTexte</a></li>
-                  <li><a href="<?php echo $urlContact ?>"> <i class="fas fa-comment-alt"></i>  Contact </a></li>
-                  <li><a href=""> <i class="far fa-edit"></i> Journal <em>La Tanière</em></a></li>
+                  <li><a href="<?php echo $urlAccueil ?>"><i class="fas fa-home"></i>  Accueil </a></li>
+                  <li><a href="<?php echo $urlRhizome ?>"><i class="far fa-newspaper"></i>  Rhizome </a></li>
+                  <li><a href="<?php echo $urlCreaTexte ?>"><i class="fas fa-book"></i>  CréaTexte</a></li>
+                  <li><a href="<?php echo $urlJournal ?>"><i class="far fa-edit"></i> Journal <em>La Tanière</em></a></li>
+                  <li><a href="<?php echo $urlContact ?>"><i class="fas fa-comment-alt"></i>  Contact </a></li>
                 </ul>
               </nav>
     </footer>

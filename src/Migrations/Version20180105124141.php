@@ -8,13 +8,14 @@ use Doctrine\DBAL\Schema\Schema;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-class Version20180104095739 extends AbstractMigration
+class Version20180105124141 extends AbstractMigration
 {
     public function up(Schema $schema)
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
+        $this->addSql('ALTER TABLE membre ADD date_inscription DATETIME NOT NULL');
         $this->addSql('DROP INDEX id_rubrique ON article');
         $this->addSql('DROP INDEX id_secteur ON article');
         $this->addSql('DROP INDEX statut ON article');
@@ -30,5 +31,6 @@ class Version20180104095739 extends AbstractMigration
         $this->addSql('CREATE INDEX id_rubrique ON article (rubrique)');
         $this->addSql('CREATE INDEX id_secteur ON article (mot_cle)');
         $this->addSql('CREATE INDEX statut ON article (date_publication)');
+        $this->addSql('ALTER TABLE membre DROP date_inscription');
     }
 }

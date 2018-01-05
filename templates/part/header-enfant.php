@@ -27,8 +27,6 @@ $urlAccueil           = $this->generateUrl("accueil");
         <ul>
             <li><a href="<?php echo $urlAdminEnfant ?>">Accueil</a></li>
             <li><a href="<?php echo $urlLogout ?>">Se Déconnecter </a></li>
-          <!--<li><a href="<//?php echo $urlRhizome ?>">Rizhome</a></li>-->
-          <!--<li><a href="<//?php //echo $urlCreaTexte ?>">CréaTexte</a></li>-->
         </ul>
     </nav>
     <h1>La tanière bricabracs <figure><img src="<?php echo $urlAccueil ?>/assets/img/oiseau.gif" alt="oiseau anime"/></h1>
