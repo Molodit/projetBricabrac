@@ -1,6 +1,10 @@
 body, html {
   color: #777;
   font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
+}
+header{
+  width:100%;
 }
 figure img {
   width:100px;
@@ -12,11 +16,10 @@ ul, li {
 }
 
 ul {
-  width:100%;
   display:flex;
   flex-direction:row;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: flex-end;
 }
 a {
   text-decoration: none;
@@ -26,7 +29,6 @@ header nav {
   text-align:center;
   background-color: #D3D3D3;
   color:#5e528a;
-  width:100%;
   margin:0 auto;
   padding:1%;
 }
@@ -38,7 +40,6 @@ header nav li {
 }
 
 header nav a, #ecrire a {
- vertical-align: middle;
  margin: 10px 20px;
  background-color:#5e528a;
  color:white;
@@ -48,12 +49,13 @@ header nav a, #ecrire a {
 }
 h1 {
   font-family: 'Philosopher', sans-serif;;
-  font-size: 40px;
+  font-size: 2em;
 }
 h1, h2, h3 {
   color: #5e528a;
   text-align: center;
   text-transform: uppercase;
+  margin-bottom:1.5%;
 }
 
 h2, h3 {
@@ -99,6 +101,8 @@ button {
 /*XXXXXXXXXXX ADMIN ENFANT ET READ ADMIN ENFANT XXXXXXXXXXXXX*/
 #balle{
   width:35%;
+  border-radius: 10px 10px;
+  border: solid 2px color:#5e528a;
 }
 .circle-content h2 {
   background: white;
@@ -143,6 +147,14 @@ button {
     padding: 6%;
     background: rgba(96,45,145,0.7);
     }
+
+/************ DIV REPONSE ***************/
+.response{
+  font-family: 'Philosopher', sans-serif;
+  margin-top:2%;
+  font-size:1.4em;
+  color:#32a1f7;
+}
 
 /*XXXXXXXXXXX FOOTER  XXXXXXXXXXXXX*/
 footer{

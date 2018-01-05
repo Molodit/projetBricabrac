@@ -50,8 +50,6 @@ CODEHTML;
     echo
 <<<CODEHTML
 <section id="balle">
-<div class="circles-container no-padding container">
-
 	<div class="circle-link circle1">
 		<div class="circle-content" >
          	<div class="article">
@@ -60,10 +58,14 @@ CODEHTML;
 		            <img src="$htmlImage" title="$htmlImage"/>         
 		        </article>
 	        </div>
-        	</a>
         </div>
     </div>
-	<div class="circle-link circle2 col-sm-3">
+	
+</section>
+CODEHTML;
+	}
+}
+/*<div class="circle-link circle2 col-sm-3">
 		<div class="circle-content">
 			<div class="article">
 				<article>
@@ -71,7 +73,6 @@ CODEHTML;
 					<img src="$htmlImage" title="$htmlImage"/>         
 				</article>
 			</div>
-			</a>
 		</div>
 	</div>
 	<div class="circle-link circle3 col-sm-2">
@@ -84,12 +85,7 @@ CODEHTML;
 				</article>
 			</div>
 		</div>
-	</div>
-</div>
-</section>
-CODEHTML;
-	}
-}
+	</div>*/
 ?>
 
 </section>
