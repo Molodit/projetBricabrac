@@ -135,9 +135,17 @@ section {
 
 
 /*XXXXXXXXXXX ARTICLES  XXXXXXXXXXXXX*/
-section#articles {
+#accueil-articles {
 /*  background-color: #c1f2f0;*/
-  width:100%;
+  width:90%;
+  margin: 0 auto;
+}
+
+#accueil-articles h3 {
+  font-size: 12px;
+  width:50%;
+  text-align: center;
+  margin:0 auto;
 }
 
 

@@ -16,16 +16,11 @@
   .circle-content article {
       padding:1%;
       border-radius: 50%;
-      display:table;
       overflow: hidden;
       text-align: center;
       vertical-align: middle;
   }
-  .circle-content article img {
-    background-position: center center;
-    width: 50%;
-   
-  }
+ 
    .circle6 article{
       position: absolute;  
       top: 56%;
@@ -51,7 +46,7 @@
       position: absolute;  
       left: 23%;
       top: 12%;
-      padding: 2%;
+      padding: 4% 0%;
       background: rgba(188,207,0,0.6);
       }
       .circle2 article{
@@ -111,21 +106,32 @@
 
 .circle1 article
 {
-     transition-property: padding, left, top, z-index, background, text-shadow;
+    transition-property:z-index, background, text-shadow;
     /* La transition durera deux secondes. */
     transition-duration: 2s;
-    transition-timing-function: ease-in-out;
-    
+    transition-timing-function: ease-in;
+} 
+
+.circle1 article .noDisplay
+{
+    transition-property: max-width, max-height;
+    /* La transition durera deux secondes. */
+    transition-duration: 2s;
+    transition-timing-function: ease-in;
 }
 
 /* Style lors du passage de la souris*/
 .circle1 article:hover
-{   left: 30%;
-    padding: 15%;
-    top: 15%;
+{  
     z-index:999;
     background:#c1dc87;
     box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
+}
+
+.circle1 article:hover .noDisplay {
+    max-width: 30%;
+    max-height:30%;
+    object-fit: cover;
 }
 
 .circle8 article {

@@ -1,4 +1,4 @@
-<section class="bgimg-1" id="articles">
+<section class="bgimg-1" id="accueil-articles">
 
    
 <div class="circles-container container">
