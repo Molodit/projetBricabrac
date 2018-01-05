@@ -99,7 +99,7 @@ button {
   width: 80%;
 }
 /*XXXXXXXXXXX ADMIN ENFANT ET READ ADMIN ENFANT XXXXXXXXXXXXX*/
-div{
+#balle{
   top:100%;
   width:35%;
   border-radius: 10px 10px;
@@ -130,7 +130,7 @@ div{
     left: 37.5%;
     top: 135%;
     padding: 6%;
-    background: rgba(188,207,0,0.6);
+    background:  rgba(240,148,176,0.6);
     }
     .circle2 article{
     position: absolute;

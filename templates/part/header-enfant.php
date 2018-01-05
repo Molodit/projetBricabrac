@@ -2,7 +2,7 @@
 
 $urlAdminEnfant  = $this->generateUrl("admin-enfant");
 $urlLogout       = $this->generateUrl("logout");
-$urlAccueil           = $this->generateUrl("accueil");
+$urlAccueil      = $this->generateUrl("accueil");
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +19,9 @@ $urlAccueil           = $this->generateUrl("accueil");
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>/assets/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>/assets/css/style-enfant.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>/assets/css/animBalles.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/rhizome.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/admin-formateur.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/style-formulaire.css"/>
 </head>
 <body>
     <header>
