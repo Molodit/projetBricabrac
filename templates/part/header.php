@@ -7,7 +7,6 @@ $urlCreaTexte         = $this->generateUrl("rubrique", [ "rub" => "CreaTexte" ])
 $urlRhizome           = $this->generateUrl("rubrique", [ "rub" => "Rhizome"]);
 $urlJournal           = $this->generateUrl("rubrique", [ "rub" => "Journal" ]);
 $urlContact           = $this->generateUrl("contact");
-$urlInscription       = $this->generateUrl("inscription");
 $urlLogin             = $this->generateUrl("login");
 $urlAdmin             = $this->generateUrl("admin");
 $urlLogout            = $this->generateUrl("logout");
@@ -39,8 +38,7 @@ $urlLogout            = $this->generateUrl("logout");
           <li><a href="<?php echo $urlRhizome ?>">Rizhome</a></li>
           <li><a href="<?php echo $urlCreaTexte ?>">CréaTexte</a></li>
           <li><a href="<?php echo $urlJournal ?>">Journal <em>La Tanière</em></a></li> 
-          <li><a href="<?php echo $urlLogin ?>">Login</a></li>
-          <li class="menuLogin"><a href="<?php echo $urlInscription ?>">Inscription</a></li>
+          <li><a href="<?php echo $urlLogin ?>">S'inscrire / Se Connecter</a></li>
           <li class="menuLogin"><a href="<?php echo $urlAdmin ?>">Admin</a></li>
           <li class="menuLogin"><a href="<?php echo $urlLogout ?>">Logout</a></li>      
         </ul>
