@@ -136,7 +136,6 @@ section {
 
 /*XXXXXXXXXXX ARTICLES  XXXXXXXXXXXXX*/
 #accueil-articles {
-/*  background-color: #c1f2f0;*/
   width:90%;
   margin: 0 auto;
 }
@@ -242,7 +241,7 @@ footer{
  background-color:#5e528a;
  color:white;
  padding: 3% 4%;
- border: solid 1px #5e528;
+ border: solid 1px #5e528a;
  border-radius: 10px 10px;
 }
 p{

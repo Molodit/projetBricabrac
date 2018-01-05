@@ -27,6 +27,7 @@ $urlLogout            = $this->generateUrl("logout");
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/style.css"/>
      <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/rhizome.css"/>
+     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/admin-formateur.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/animBalles.css"/>
   </head>
   <body>
