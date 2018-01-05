@@ -1,20 +1,21 @@
-<section class="bgimg-1" id="articles">
+<section class="bgimg-1" id="accueil-articles">
 
    
-<div class="circles-container no-padding container">
+<div class="circles-container container">
 
                   <div class="circle-link circle1">
                   <div class="circle-content" >
-            <a href="#" target="_blank">
-        <div class="article">
+            
+        
         <article>
-          
-
-          <img src="$htmlImage" alt="photo"/>
+        <h3>Titre de l'article</h3>
+        
+         <img src="<?php echo 'assets/upload/photo3.jpeg' ?>" alt="photo" class="noDisplay"/>
+        
          
         </article>
-        </div>
-            </a>
+        
+            
                   </div>
                   </div>
  

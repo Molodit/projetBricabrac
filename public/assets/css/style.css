@@ -135,116 +135,19 @@ section {
 
 
 /*XXXXXXXXXXX ARTICLES  XXXXXXXXXXXXX*/
-section#articles {
-/*  background-color: #c1f2f0;*/
-  width:100%;
-}
-.no-padding {
-    padding-left: 0!important;
-    padding-right: 0!important;
+#accueil-articles {
+  width:90%;
+  margin: 0 auto;
 }
 
-.circle-content h2 {
-  background: white;
-  padding:2% 0;
-  margin: 5% 0;
-  position: relative;
+#accueil-articles h3 {
+  font-size: 12px;
+  width:50%;
+  text-align: center;
+  margin:0 auto;
 }
-.circle-content article {
-    padding:1%;
-    border-radius: 50%;
-    display:table;
-    overflow: hidden;
-    text-align: center;
-    vertical-align: middle;
-}
-.circle-content article img {
-  background-position: center center;
-  width: 50%;
- 
-}
- .circle6 article{
-    position: absolute;  
-    top: 56%;
-    left: 0%;
-    padding: 7%;
-    background: rgba(235,44,59,0.7);
-    }
-    .circle5 article{
-    position: absolute;  
-    top: 71%;
-    left: 36%;
-    padding: 7%;
-    background: rgba(240,148,176,0.6);
-    }
-    .circle4 article{
-    position: absolute;  
-    top: 0%;
-    left: 77%;
-    padding: 8%;
-    background: rgba(237,17,100,0.6);
-    }
-    .circle1 article{
-    position: absolute;  
-    left: 23%;
-    top: 12%;
-    padding: 10%;
-    background: rgba(188,207,0,0.6);
-    }
-    .circle2 article{
-    position: absolute; 
-    left: 20%;
-    top: 46%;
-    padding: 7%;;
-    background: rgba(0,169,163,0.8);
-    }
-    .circle3 article{
-     position: absolute;
-    left: 43%;
-    top: -8%;
-    padding: 6%;
-    background: rgba(96,45,145,0.7);
-    }
-    .circle7 article{
-    position: absolute; 
-    left: 40%;
-    top: 40%;
-    padding: 7%;
-    background: rgba(244,120,59,0.7);
-    }
-    .circle8 article{
-    position: absolute;
-    top: 55%;
-    left: 73%;
-    padding: 8%;
-    background: rgba(0,166,81,0.7);
-    }
-    .circle9 article{
-    position: absolute;
-    top: 20%;
-    left: 58%;
-    padding: 6%;
-    background-color: rgba(46,49,146,0.6);
-    }
-    .circle10 article{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    padding: 7%;
-    background-color: rgba(255, 140, 153,0.6)
-    }
-  
-    
-    .circle11 article{
-    position: absolute;
-    top: 0%;
-    left: 90%;
-    
-    }
-    .circle11 article img{
-      border-radius:50%;
-      width: 50%;
-    }
+
+
     
 /* XXXXXXXXXXX SECTION LISTE ARTICLE READ XXXXXXXXXXXXXX */
 
@@ -339,12 +242,13 @@ ul {
   margin-top: 30px;
 }
 #menufooter a{
- vertical-align: middle;
- margin: 10px 20px;
- background-color:#5e528a;
- color:white;
- padding: 3% 4%;
- border-radius: 10px 10px;
+  vertical-align: middle;
+  margin: 10px 20px;
+  background-color:#5e528a;
+  color:white;
+  padding: 3% 4%;
+  border: solid 1px #5e528a;
+  border-radius: 10px 10px;
 }
 p{
   font-size: 1.2em;
