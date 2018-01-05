@@ -32,7 +32,7 @@ class TraitementForm
         if ( ($email != "") && ($membre != "") && ($password != ""))
         {
             // COMPLETER LES INFOS MANQUANTES
-            
+            $dateInscription = date("Y-m-d H:i:s"); // DATE AU FORMAT SQL DATETIME
             $niveau          = 1;                   // DIRECTEMENT ACTIF
             
             // http://php.net/manual/en/function.password-hash.php
@@ -45,7 +45,8 @@ class TraitementForm
                                     "email"             => $email, 
                                     "membre"            => $membre, 
                                     "password"          => $password, 
-                                    "niveau"            => $niveau
+                                    "niveau"            => $niveau,
+                                    "date_inscription"  => $dateInscription
                                         ]);
             
             // MESSAGE POUR LE VISITEUR

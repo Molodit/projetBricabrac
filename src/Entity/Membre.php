@@ -36,6 +36,11 @@ class Membre
      * @ORM\Column(name ="niveau", type="integer")
      */
     private $niveau;
+
+    /**
+     * @ORM\Column(name ="date_inscription", type="datetime")
+     */
+    private $dateInscription;
     
     // METHODES GETTER ET SETTER
     function getIdMembre ()
@@ -60,6 +65,11 @@ class Membre
     function getMembre ()
     {
         return $this->membre;
+    }
+
+    function getDateInscription ($format)
+    {
+        return $this->dateInscription->format($format);
     }
     
 }
