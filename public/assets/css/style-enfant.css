@@ -99,12 +99,7 @@ button {
   width: 80%;
 }
 /*XXXXXXXXXXX ADMIN ENFANT ET READ ADMIN ENFANT XXXXXXXXXXXXX*/
-#balle{
-  top:100%;
-  width:35%;
-  border-radius: 10px 10px;
-  border: solid 2px color #5e528a;
-}
+
 .circle-content h2 {
   background: white;
   padding:1% 0;
@@ -122,9 +117,10 @@ button {
 .circle-content article img {
   background-position: center center;
   width: 40%;
+  
  
 }
-    .circle1 article{
+    .circle1{
     position: absolute; 
     width:10%;
     left: 37.5%;
@@ -132,7 +128,7 @@ button {
     padding: 6%;
     background:  rgba(240,148,176,0.6);
     }
-    .circle2 article{
+    .circle2{
     position: absolute;
     width:10%;
     left:2.5%;
@@ -140,7 +136,7 @@ button {
     padding: 6%;;
     background: rgba(0,169,163,0.8);
     }
-    .circle3 article{
+    .circle3{
     position: absolute;
     width:15%;
     left: 70%;
