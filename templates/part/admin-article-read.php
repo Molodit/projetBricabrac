@@ -9,140 +9,140 @@ if ($objetRequest->get("codebarre", "") == "delete")
     
 }
 ?>
-
-<section class="article-list">
-    <h3>Liste des articles</h3>
-    
-        <table id="tableListe" class="display" width="80%">
-            <thead>
-            <tr>
-                <th>N° Article</th>
-                <th>N° Auteur</th>
-                <th>Titre</th>
-                <th>Rubrique</th>
-                <th>Contenu</th>
-                <th>Images</th>
-                <th>Mots-clés</th>
-                <th>Date de publication</th>
-                <th>Date de modification</th>
-                <th>Modifier</th>
-                <th>Supprimer</th>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <th>N° Article</th>
-                <th>N° Auteur</th>
-                <th>Titre</th>
-                <th>Rubrique</th>
-                <th>Contenu</th>
-                <th>Images</th>
-                <th>Mots-clés</th>
-                <th>Date de publication</th>
-                <th>Date de modification</th>
-                <th>Modifier</th>
-                <th>Supprimer</th>
-            </tr>
-        </tfoot>
-        <tbody>
-<?php
-
-// JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
-// $objetRepository = $this->getDoctrine()->getRepository("App\Entity\MonArticle");
-$objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
-
-// PLUS PRATIQUE => findBy
-// http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityRepository.html
-// ATTENTION: ON UTILISE LE NOM DES PROPRIETES
-$tabResultat = $objetRepository->findBy([], [ "datePublication" => "DESC" ]);
-
-// ON A UN TABLEAU D'OBJETS DE CLASSE Article
-foreach($tabResultat as $objetArticle)
-{
-    // METHODES "GETTER" A RAJOUTER DANS LA CLASSE Article
-    $idArticle        = $objetArticle->getIdArticle();
-    $idMembre         = $objetArticle->getIdMembre();
-    $titre            = $objetArticle->getTitre();
-    $motCle           = $objetArticle->getMotCle();
-    $rubrique         = $objetArticle->getRubrique();
-    $contenu          = $objetArticle->getContenu();
-    $cheminImage      = $objetArticle->getCheminImage();
-    $datePublication  = $objetArticle->getDatePublication("d/m/Y H:i:s");
-    $dateModification = $objetArticle->getDateModification("d/m/Y H:i:s");
-    
-    // On ne prend que les 100 premiers caractères du texte de $contenu
-    $contenu = mb_strimwidth($contenu, 0, 100, '...');
-    
-    $htmlFile = "";
-    // S'il y a un fichier (image ou pdf)
-    if ($cheminImage)
-    {
-        $objetExtension = new SplFileInfo($cheminImage);
-        $extension = $objetExtension->getExtension();
-
-        // Si le fichier est un pdf
-        if ($extension == "pdf")
-    {
-        $htmlFile = 
-        <<<CODEHTML
-        <iframe src="$cheminImage"></iframe>
+<div>
+    <ul class="tabs">
+                    <li class="active"><a href="#articles">Articles</a></li>
+                    <li><a href="#membres">Membres</a></li>
+                </ul>
+    <div class="tabs-content">
+        <section class="article-list tab-content active" id="articles">
+            <h3>Liste des articles</h3>
+            
+                <table id="tableListeArticles" class="display" width="80%">
+                <thead>
+                    <tr>
+                <!--Création de l'entête et pied du tableau avec les balises TH-->
+                        <?php
+                        
+                        $tabMembreTH = ["N° article", "Auteur", "Titre", "Mot-clé", "Rubrique",
+                                        "Contenu", "Images", "date de publication", "date de modification",
+                                        "Modifier", "Supprimer"];
+                        
+                        foreach ($tabMembreTH as $element) {
+                            echo
+                        <<<CODEHTML
+                            <th>$element</th>
+                
 CODEHTML;
-    }
-
-    else {
-        $htmlFile = 
-        <<<CODEHTML
-    
-        <img src="$cheminImage" title="$cheminImage">
+            }
+            ?>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                            <?php
+                            foreach ($tabMembreTH as $element) {
+                                echo
+                            <<<CODEHTML
+                                <th>$element</th>
 CODEHTML;
+            }
+            ?>
+                </tr>
+            </tfoot>
+            <tbody>
+        <?php
+
+        // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
+        // $objetRepository = $this->getDoctrine()->getRepository("App\Entity\MonArticle");
+        $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
+
+        // PLUS PRATIQUE => findBy
+        // http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityRepository.html
+        // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
+        $tabResultat = $objetRepository->findBy([], [ "datePublication" => "DESC" ]);
+
+        // ON A UN TABLEAU D'OBJETS DE CLASSE Article
+        foreach($tabResultat as $objetArticle)
+        {
+            // METHODES "GETTER" A RAJOUTER DANS LA CLASSE Article
+            $idArticle        = $objetArticle->getIdArticle();
+            $idMembre         = $objetArticle->getIdMembre();
+            $titre            = $objetArticle->getTitre();
+            $motCle           = $objetArticle->getMotCle();
+            $rubrique         = $objetArticle->getRubrique();
+            $contenu          = $objetArticle->getContenu();
+            $cheminImage      = $objetArticle->getCheminImage();
+            $datePublication  = $objetArticle->getDatePublication("d/m/Y H:i:s");
+            $dateModification = $objetArticle->getDateModification("d/m/Y H:i:s");
+            
+            // On ne prend que les 100 premiers caractères du texte de $contenu
+            $contenu = mb_strimwidth($contenu, 0, 100, '...');
+            
+            $htmlFile = "";
+            // S'il y a un fichier (image ou pdf)
+            if ($cheminImage)
+            {
+                $objetExtension = new SplFileInfo($cheminImage);
+                $extension = $objetExtension->getExtension();
+
+                // Si le fichier est un pdf
+                if ($extension == "pdf")
+            {
+                $htmlFile = 
+                <<<CODEHTML
+                <iframe src="$cheminImage"></iframe>
+CODEHTML;
+            }
+
+            else {
+                $htmlFile = 
+                <<<CODEHTML
+            
+                <img src="$cheminImage" title="$cheminImage">
+CODEHTML;
+                }
+            }
+            
+            $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
+            
+            echo
+        <<<CODEHTML
+
+            <tr>
+                <td>$idArticle</td>
+                <td>$idMembre</td>
+                <td><a href="$urlArticle">$titre</a></td>
+                <td>$rubrique</td>
+                <td>$contenu</td>
+                <td>$htmlFile</td>
+                <td>$motCle</td>
+                <td>$datePublication</td>
+                <td>$dateModification</td>
+                
+                <td>
+                    <form method="GET" action="">
+                        <input type="hidden" name="afficher" value="update">
+                        <input type="hidden" name="idUpdate" value="$idArticle">
+                        <button type="submit"><i class="far fa-edit"></i></button>
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="">
+                        <input type="hidden" name="codebarre" value="delete">
+                        <input type="hidden" name="idDelete" value="$idArticle">
+                        <button type="submit"><i class="far fa-trash-alt"></i></button>
+                    </form>
+                </td>
+            </tr>
+CODEHTML;
+            
         }
-    }
 
-       
-    
-   
-    
-    
-    
-    $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
-    
-    echo
-<<<CODEHTML
-
-    <tr>
-        <td>$idArticle</td>
-        <td>$idMembre</td>
-        <td><a href="$urlArticle">$titre</a></td>
-        <td>$rubrique</td>
-        <td>$contenu</td>
-        <td>$htmlFile</td>
-        <td>$motCle</td>
-        <td>$datePublication</td>
-        <td>$dateModification</td>
-        
-        <td>
-            <form method="GET" action="">
-                <input type="hidden" name="afficher" value="update">
-                <input type="hidden" name="idUpdate" value="$idArticle">
-                <button type="submit"><i class="far fa-edit"></i></button>
-            </form>
-        </td>
-        <td>
-            <form method="POST" action="">
-                <input type="hidden" name="codebarre" value="delete">
-                <input type="hidden" name="idDelete" value="$idArticle">
-                <button type="submit"><i class="far fa-trash-alt"></i></button>
-            </form>
-        </td>
-    </tr>
-CODEHTML;
-    
-}
-
-?>
-            </tbody>
-           
-        </table>
+        ?>
+                    </tbody>
+                
+                </table>
 
 
-</section>
+        </section>
