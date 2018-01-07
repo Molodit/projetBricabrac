@@ -1,3 +1,4 @@
+// Initialisation de l'éditeur WYSIWYG pour l'insertion des articles
 CKEDITOR.replace( 'editor1', {
     extraPlugins: 'autogrow',
     autoGrow_minHeight: 200,
@@ -5,6 +6,8 @@ CKEDITOR.replace( 'editor1', {
     autoGrow_bottomSpace: 50,
     removePlugins: 'resize'
 } );
+
+// Script d'affichage par onglets des tableaux des articles, membres et commentaires
 
 (function(){
     var afficherOnglet = function (a, animations) {
@@ -24,12 +27,13 @@ CKEDITOR.replace( 'editor1', {
         div.querySelector('.tabs .active').classList.remove('active');
         // J'ajoute la classe active à l'onglet actuel
         li.classList.add('active');
-    
-        //div.querySelector('.tab-content.active').classList.remove('active')
-    
-        //div.querySelector(a.getAttribute('href')).classList.add('active')
         
        if (animations) {
+           // On ajoute la classe fade sur l'élément actif
+        // A la fin de l'animation 
+        //          on retire la class fade et active
+        //          on ajoute la classe active et fade à l'élément à afficher
+        //          on ajoute la classe in
         activeTab.classList.add('fade')
         activeTab.classList.remove('in')
         var transitionend = function() {
@@ -52,11 +56,7 @@ CKEDITOR.replace( 'editor1', {
            aAfficher.classList.add('active')
            activeTab.classList.remove('active')
        }
-        // On ajoute la classe fade sur l'élément actif
-        // A la fin de l'animation 
-        //          on retire la class fade et active
-        //          on ajoute la classe active et fade à l'élément à afficher
-        //          on ajoute la classe in
+        
     }
     
 

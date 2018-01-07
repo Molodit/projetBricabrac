@@ -4,11 +4,10 @@ $verifMembre = $objetSession->get("membre");
 
 ?>
 
-<section>
-    <h3>SECTION ADMIN</h3>
-    <h4>BIENVENUE <?php echo $verifMembre ?></h4>
+<section class="admin">
+    <h2>Administration du site</h2>
+    <h3>Bienvenu-e <?php echo $verifMembre ?></h3>
 </section>
-
 
 <?php 
 

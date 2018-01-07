@@ -147,15 +147,6 @@ section {
   margin:0 auto;
 }
 
-
-    
-/* XXXXXXXXXXX SECTION LISTE ARTICLE READ XXXXXXXXXXXXXX */
-
-.article-list table img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-}
 /*XXXXXXXXXXX LOGIN XXXXXXXXXXXXX*/
 .connection{
   display: inline-flex;
