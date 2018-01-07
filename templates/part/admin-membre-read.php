@@ -5,12 +5,12 @@ if ($objetRequest->get("codebarre", "") == "deleteMembre")
 {
     $objetFormArticle = new App\Controller\FormArticle;
     
-    $objetFormArticle->supprimer($objetRequest, $objetConnection, $cheminSymfony, $objetSession);
+    $objetFormArticle->supprimer($objetRequest, $objetConnection, $cheminSymfony, $objetSession, 'membre', 'id_membre');
     
 }
 ?>
 
-<section class="membre-list tab-content" id="membres">
+<section class="admin membre tab-content" id="membres">
     <h3>Liste des membres</h3>
     
         <table id="tableListeMembres" class="display" width="80%">
@@ -19,7 +19,7 @@ if ($objetRequest->get("codebarre", "") == "deleteMembre")
                     <!--Création de l'entête et pied du tableau avec les balises TH-->
                     <?php
                     
-                    $tabMembreTH = ["N° membre", "Email", "Pseudo", "niveau", "date d'inscription", "Supprimer"];
+                    $tabMembreTH = ["N°", "Email", "Pseudo", "Niveau", "Date d'inscription", "Supprimer"];
                     
                     foreach ($tabMembreTH as $element) {
                         echo
@@ -46,14 +46,10 @@ CODEHTML;
                 <tbody>
         <?php
 
-        // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
-        // $objetRepository = $this->getDoctrine()->getRepository("App\Entity\Membre");
-        $objetRepository = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
-
         // PLUS PRATIQUE => findBy
         // http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityRepository.html
         // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
-        $tabResultat = $objetRepository->findBy([], [ "idMembre" => "DESC" ]);
+        $tabResultat = $objetRepositoryMembre->findBy([], [ "idMembre" => "DESC" ]);
 
         // ON A UN TABLEAU D'OBJETS DE CLASSE Membre
         foreach($tabResultat as $objetMembre)
@@ -81,7 +77,7 @@ CODEHTML;
                     <form method="POST" action="">
                         <input type="hidden" name="codebarre" value="deleteMembre">
                         <input type="hidden" name="idDelete" value="$idMembre">
-                        <button type="submit"><i class="far fa-trash-alt"></i></button>
+                        <button type="submit" onclick="return confirm('Êtes vous sûr(e) de vouloir supprimer cet élément ?');"><i class="far fa-trash-alt"></i></button>
                     </form>
                 </td>
             </tr>

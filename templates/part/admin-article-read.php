@@ -1,11 +1,11 @@
 <?php
 
 // FAIRE LE TRAITEMENT DU FORMULAIRE AVANT DE FAIRE LE READ
-if ($objetRequest->get("codebarre", "") == "delete")
+if ($objetRequest->get("codebarre", "") == "deleteArticle")
 {
     $objetFormArticle = new App\Controller\FormArticle;
     
-    $objetFormArticle->supprimer($objetRequest, $objetConnection, $cheminSymfony, $objetSession);
+    $objetFormArticle->supprimer($objetRequest, $objetConnection, $cheminSymfony, $objetSession, 'article', 'id_article');
     
 }
 ?>
@@ -15,7 +15,7 @@ if ($objetRequest->get("codebarre", "") == "delete")
                     <li><a href="#membres">Membres</a></li>
                 </ul>
     <div class="tabs-content">
-        <section class="article-list tab-content active" id="articles">
+        <section class="admin article tab-content active" id="articles">
             <h3>Liste des articles</h3>
             
                 <table id="tableListeArticles" class="display" width="80%">
@@ -24,9 +24,9 @@ if ($objetRequest->get("codebarre", "") == "delete")
                 <!--Création de l'entête et pied du tableau avec les balises TH-->
                         <?php
                         
-                        $tabMembreTH = ["N° article", "Auteur", "Titre", "Mot-clé", "Rubrique",
-                                        "Contenu", "Images", "date de publication", "date de modification",
-                                        "Modifier", "Supprimer"];
+                        $tabMembreTH = ["N°", "Auteur", "Titre", "Rubrique", "Mot-clé",
+                                        "Images", "Contenu", "Date de publication", 
+                                        "Date de modification", "Modifier", "Supprimer"];
                         
                         foreach ($tabMembreTH as $element) {
                             echo
@@ -53,9 +53,10 @@ CODEHTML;
             <tbody>
         <?php
 
-        // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
-        // $objetRepository = $this->getDoctrine()->getRepository("App\Entity\MonArticle");
+        // JE VAIS RECUPERER LES REPOSITORY POUR LES ENTITES Article & Membre
+
         $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
+        $objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
 
         // PLUS PRATIQUE => findBy
         // http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityRepository.html
@@ -75,6 +76,15 @@ CODEHTML;
             $cheminImage      = $objetArticle->getCheminImage();
             $datePublication  = $objetArticle->getDatePublication("d/m/Y H:i:s");
             $dateModification = $objetArticle->getDateModification("d/m/Y H:i:s");
+
+             // JE VAIS FAIRE UNE 2e REQUETE POUR ALLER CHERCHER LE Membre
+           
+            $objetMembre = $objetRepositoryMembre->find($idMembre);
+            $pseudo = "";
+            if ($objetMembre)
+            {
+                $pseudo = $objetMembre->getMembre();
+            }
             
             // On ne prend que les 100 premiers caractères du texte de $contenu
             $contenu = mb_strimwidth($contenu, 0, 100, '...');
@@ -111,7 +121,7 @@ CODEHTML;
 
             <tr>
                 <td>$idArticle</td>
-                <td>$idMembre</td>
+                <td>$pseudo</td>
                 <td><a href="$urlArticle">$titre</a></td>
                 <td>$rubrique</td>
                 <td>$contenu</td>
@@ -129,9 +139,9 @@ CODEHTML;
                 </td>
                 <td>
                     <form method="POST" action="">
-                        <input type="hidden" name="codebarre" value="delete">
+                        <input type="hidden" name="codebarre" value="deleteArticle">
                         <input type="hidden" name="idDelete" value="$idArticle">
-                        <button type="submit"><i class="far fa-trash-alt"></i></button>
+                        <button type="submit" onclick="return confirm('Êtes vous sûr(e) de vouloir supprimer cet élément ?');"><i class="far fa-trash-alt"></i></button>
                     </form>
                 </td>
             </tr>

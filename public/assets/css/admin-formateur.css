@@ -1,3 +1,5 @@
+/* CSS pour l'affichage par onglet */
+
 .tab-content {
     display:none;
 }
@@ -7,11 +9,12 @@
 }
 
 .tabs .active a {
-    background-color: #fff;
+    color:white;
+    background-color:#5e528a ;
 }
 
 .tabs li {
-    float:left;
+
     display: block;    
 }
 
@@ -23,17 +26,22 @@
 }
 
 ul.tabs, .tabs li {
-    margin: 0;
     padding: 0;
     list-style:none; 
 }
 
+ul.tabs {
+    justify-content: unset;
+    margin-left: 10%;
+}
+
 .tabs a {
     display: inline-block;
-    background-color: #EEE;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     padding: 10px 15px;
-    color:inherit;
+    background-color: #EEE;
+    color: #5e528a;
+    font-size: 20px;
 }
 
 .tabs-content {
@@ -42,6 +50,7 @@ ul.tabs, .tabs li {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
+
 .fade {
     opacity: 0;
     transition: opacity 0.3s;
@@ -49,4 +58,43 @@ ul.tabs, .tabs li {
 
 .fade.in {
     opacity:1;
+}
+
+.admin h2, .admin h3, .admin h4 {
+    text-align:left;
+}
+
+.admin h3 {
+    font-family: 'Roboto', sans-serif;
+    text-transform: none;
+}
+
+.admin {
+    margin-top:2%;
+
+}
+
+.dataTables_wrapper .dataTables_length {
+    width:20%;
+}
+
+.dataTables_filter {
+    padding-bottom: 4.75em;
+}
+
+.dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_paginate {
+    padding-top: 4.75em;
+}
+
+
+/* XXXXXXXXXXX SECTION LISTE ARTICLE READ XXXXXXXXXXXXXX */
+
+.admin table img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+
+.admin table button {
+    padding:10%;
 }

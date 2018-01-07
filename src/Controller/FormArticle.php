@@ -54,7 +54,7 @@ class FormArticle
         
     }
     
-        function supprimer ($objetRequest, $objetConnection, $cheminSymfony, $objetSession)
+        function supprimer ($objetRequest, $objetConnection, $cheminSymfony, $objetSession, $tableName, $colName)
     {
         $idDelete          = $objetRequest->get("idDelete", "");
         // CONVERTIR EN NOMBRE
@@ -67,11 +67,11 @@ class FormArticle
 
             
 
-            $objetConnection->delete("article", [ "id_article" => $idDelete ]);
+            $objetConnection->delete($tableName, [ $colName => $idDelete ]);
 
             
             // MESSAGE RETOUR POUR LE VISITEUR
-            echo "l'article a été supprimé";
+            echo "l'élément a été supprimé";
         }
         
     }
