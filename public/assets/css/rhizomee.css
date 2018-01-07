@@ -1,9 +1,12 @@
 .rhizome{
-background-color: #cedbeb;
+/*background-color: #cedbeb;
 background-image: url("https://www.transparenttextures.com/patterns/wet-snow.png");
+background-image: url("https://thumbs.dreamstime.com/t/abstract-gray-gradient-geometric-shapes-white-background-shadow-abstract-gray-gradient-geometric-shapes-white-103165250.jpg");*/
+background-image: url("../img/fantasy-background.jpg");
 font-family: 'Roboto', sans-serif;
 width: 100%;
 margin: -15vh auto 0;
+
 }
 
 .article-rhizome{
@@ -39,7 +42,7 @@ h3{
 /* Style lors du passage de la souris*/
 .article-rhizome:hover{  
     z-index:-2;
-    background-color: #cedbeb;
+    background-color: #4BEEFF;
     box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
     color: #5e528a;
     
