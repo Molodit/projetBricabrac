@@ -1,0 +1,49 @@
+body{
+background-color: #ebbce2;
+background-image: url("https://www.transparenttextures.com/patterns/tileable-wood.png");
+font-family: 'Roboto', sans-serif;
+}
+
+
+.article-rhizome{
+ padding: 3% 4%;
+ border: solid 1px #5e528a;
+ border-radius: 10px 10px;
+ width: 39%;
+ margin: 1%;
+ text-align: center;
+ display: inline-table;
+ transition-property:z-index, background, text-shadow;
+    /* La transition durera deux secondes. */
+ transition-duration: 2s;
+ transition-timing-function: ease-in;
+  }
+a, h4, div, p{
+  color: #5e528a;
+}
+
+.article-rhizome img{
+    width: 200px;
+  height: 150px;
+  -webkit-filter: grayscale(0) blur(0px);
+  filter: grayscale(0) blur(0px);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+/* Style lors du passage de la souris*/
+.article-rhizome:hover{  
+    z-index:-2;
+    background-color: #ebbce2;
+    box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
+    color: #5e528a;
+    
+}
+
+.article-rhizome:hover  img{
+    width: 150px; /* on affiche l'image au carré */
+  height: 150px;
+  border-radius: 50%;  /* on arrondit l'image */
+  -webkit-transform: rotate(360deg); /* rotation de l'image */
+  transform: rotate(360deg);
+}

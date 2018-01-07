@@ -25,7 +25,7 @@ $urlLogout            = $this->generateUrl("logout");
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/normalize.css">
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/style.css"/>
-    <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/rhizome.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/rhizomee.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/admin-formateur.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/style-formulaire.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/animBalles.css"/>

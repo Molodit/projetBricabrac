@@ -1,6 +1,6 @@
 
 
-<section>
+<section class="rhizome">
 
     <h3>LISTE DES ARTICLES DE RHIZOME</h3> 
 
@@ -38,14 +38,14 @@ foreach($tabResultat as $objetArticle)
         if ($extension == "pdf")
     {
         $htmlFile = 
-        <<<CODEHTML
+<<<CODEHTML
         <iframe src="$urlAccueil/$cheminImage"></iframe>
 CODEHTML;
     }
 
     else {
         $htmlFile = 
-        <<<CODEHTML
+<<<CODEHTML
     
         <img src="$urlAccueil/$cheminImage" title="$cheminImage">
 CODEHTML;
@@ -58,13 +58,13 @@ CODEHTML;
     echo
 <<<CODEHTML
 
-    <article>
-    <td>$idArticle</td>
+    <article class="article-rhizome">
+   
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
         <div>$rubrique</div>
-        <p>$contenu</p>
-        <div>$htmlFile</div>
-        <div>$datePublication</div>
+        <p>$contenu $datePublication</p>
+        <div >$htmlFile</div>
+      
     </article>
     
 CODEHTML;
