@@ -46,11 +46,7 @@ foreach($tabResultat as $objetArticle)
 CODEHTML;
 	
 	// CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
-	$urlArticle = $this->generateUrl("article", [ "id_article"=> $idArticle , "id_membre" => $idMembre]);
-
-foreach($tabResultat as );
-
-	$circle1 =
+	$urlArticle = $this->generateUrl("article", ["id_article"=> $idArticle]);
 
 	echo
 	<<<CODEHTML

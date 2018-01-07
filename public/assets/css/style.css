@@ -6,6 +6,9 @@ figure img {
   width:100px;
   height: 100px;
 }
+i{
+  font-size:1em;
+}
 header{
   width: 100%;
 }
@@ -24,6 +27,7 @@ a {
 }
 
 header nav {
+  width:100%;
   text-align:center;
   background-color: #D3D3D3;
   color:#5e528a;
@@ -32,14 +36,14 @@ header nav {
 }
 header nav li {
   font-family: 'Philosopher', sans-serif;
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: normal;
   
 }
 
-header nav a, #ecrire a {
+header nav a{
+justify-content: flex-end;
  vertical-align: middle;
- margin: 10px 20px;
  background-color:#5e528a;
  color:white;
  padding: 3% 4%;
@@ -49,7 +53,6 @@ header nav a, #ecrire a {
 
 #menuLogin{
  text-align:right;
- margin: 10px 20px;
  background-color:#5e528a;
  color:white;
  padding: 3% 4%;
@@ -215,7 +218,7 @@ footer{
   font-family: 'Philosopher', sans-serif;
   background-color:#D3D3D3;
   color:#5e528a;
-  font-size:1.2em;
+  font-size:1em;
   padding-bottom:1.5%;
 }
 ul {
@@ -225,13 +228,14 @@ ul {
   justify-content: center;
 }
 #menufooter li{
-  margin-right: 10px;
+  margin-right: 20px;
   margin-top: 30px;
 }
 #menufooter a{
   margin-top:5%;
   vertical-align: middle;
-  margin: 10px 20px;
+
+  /*margin: 10px 20px;*/
   background-color:#5e528a;
   color:white;
   padding: 3% 4%;

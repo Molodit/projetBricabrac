@@ -34,7 +34,6 @@ header nav {
 }
 header nav li {
   font-family: 'Philosopher', sans-serif;
-  font-size: 25px;
   font-weight: normal;
   
 }
@@ -50,12 +49,14 @@ header nav a, #ecrire a {
 h1 {
   font-family: 'Philosopher', sans-serif;;
   font-size: 2em;
+
 }
 h1, h2, h3 {
   color: #5e528a;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom:1.5%;
+  margin-bottom:2%;
+  padding-bottom:1%;
 }
 
 h2, h3 {
@@ -120,7 +121,7 @@ button {
   
  
 }
-    .circle1{
+    div.circle1 article{
     position: absolute; 
     width:10%;
     left: 37.5%;
