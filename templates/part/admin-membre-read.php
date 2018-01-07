@@ -11,9 +11,9 @@ if ($objetRequest->get("codebarre", "") == "deleteMembre")
 ?>
 
 <section class="admin membre tab-content" id="membres">
-    <h3>Liste des membres</h3>
+    <h4>Liste des membres</h4>
     
-        <table id="tableListeMembres" class="display" width="80%">
+        <table id="tableListeMembres" class="display" width="100%">
             <thead>
                 <tr>
                     <!--Création de l'entête et pied du tableau avec les balises TH-->

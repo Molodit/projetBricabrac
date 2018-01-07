@@ -23,6 +23,26 @@ class MonArticleRepository extends ServiceEntityRepository
     LEFT JOIN membre
     ON article.id_membre = membre.id_membre
     ORDER BY date_modification DESC
+
+CODESQL;
+            // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#list-of-parameters-conversion
+            $objetStatement = $objetConnection->prepare($requeteSQL);
+            $objetStatement->execute();
+            
+            return $objetStatement;
+        }
+
+        public function trouverArticleUserLimit ($objetConnection)
+        {
+            $requeteSQL =
+    <<<CODESQL
+    
+    SELECT *, article.id_article as idArticle FROM article
+    LEFT JOIN membre
+    ON article.id_membre = membre.id_membre
+    ORDER BY date_modification DESC
+    LIMIT 3
+
 CODESQL;
             // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#list-of-parameters-conversion
             $objetStatement = $objetConnection->prepare($requeteSQL);

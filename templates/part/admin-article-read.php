@@ -16,16 +16,16 @@ if ($objetRequest->get("codebarre", "") == "deleteArticle")
                 </ul>
     <div class="tabs-content">
         <section class="admin article tab-content active" id="articles">
-            <h3>Liste des articles</h3>
+            <h4>Liste des articles</h4>
             
-                <table id="tableListeArticles" class="display" width="80%">
+                <table id="tableListeArticles" class="display" width="100%">
                 <thead>
                     <tr>
                 <!--Création de l'entête et pied du tableau avec les balises TH-->
                         <?php
                         
-                        $tabMembreTH = ["N°", "Auteur", "Titre", "Rubrique", "Mot-clé",
-                                        "Images", "Contenu", "Date de publication", 
+                        $tabMembreTH = ["N°", "Auteur", "Titre", "Rubrique", "Contenu",
+                                        "Images", "Mot-clé", "Date de publication", 
                                         "Date de modification", "Modifier", "Supprimer"];
                         
                         foreach ($tabMembreTH as $element) {

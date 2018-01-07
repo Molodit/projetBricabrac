@@ -17,8 +17,14 @@
       padding:1%;
       border-radius: 50%;
       overflow: hidden;
-      text-align: center;
-      vertical-align: middle;
+      color:black;
+      /* text-align: center;
+      vertical-align: middle; */
+  }
+
+  .circle-content article a {
+      color:black;
+      background: white;
   }
  
    .circle6 article{
@@ -46,8 +52,8 @@
       position: absolute;  
       left: 23%;
       top: 12%;
-      padding: 4% 0%;
-      background: rgba(188,207,0,0.6);
+      padding: 5%;
+      /* background: rgba(188,207,0,0.6); */
       }
       .circle2 article{
       position: absolute; 
@@ -112,13 +118,12 @@
     transition-timing-function: ease-in;
 } 
 
-.circle1 article .noDisplay
+/* .circle1 article .noDisplay
 {
     transition-property: max-width, max-height;
-    /* La transition durera deux secondes. */
     transition-duration: 2s;
     transition-timing-function: ease-in;
-}
+} */
 
 /* Style lors du passage de la souris*/
 .circle1 article:hover
@@ -149,4 +154,13 @@
      50%  {top: 55%;}
      to   {top: 60%;}
 }
+
+.balle {
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+
 
