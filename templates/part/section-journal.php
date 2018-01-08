@@ -1,8 +1,8 @@
 
-
 <section class="journal">
 
-    <h3>LISTE DES ARTICLES DE JOURNAL LA TANIERE</h3> 
+        <h3>LISTE DES ARTICLES DE JOURNAL LA TANIERE</h3> 
+
 
 <?php
 // ALLER CHERCHER LA LISTE DES ARTICLES DANS LA CATEGORIE $createxte
@@ -10,10 +10,58 @@
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
 $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
 
+?>
 
-// ATTENTION: ON UTILISE LE NOM DES PROPRIETES
+        <ul class="tabs">
+                    
+<?php
+
 $tabResultat = $objetRepository->findBy([ "rubrique" => "Journal" ], [ "datePublication" => "DESC" ]);
 
+foreach($tabResultat as $objetMenu)
+{
+    // METHODES "GETTER" A RAJOUTER DANS LA CLASSE MonArticle
+    $idArticle       = $objetMenu->getIdArticle();
+    $titre           = $objetMenu->getTitre();
+
+
+$mykey = current($tabResultat);
+    echo $mykey;
+ if($mykey == 0){
+   
+echo
+<<<CODEHTML
+        <li class="active"><a href="#art$idArticle">$titre</a></li>
+CODEHTML;
+
+ } 
+ else
+ {
+ 
+    
+    echo
+<<<CODEHTML
+        <li><a href="#art$idArticle">$titre</a></li>
+CODEHTML;
+
+}
+
+
+}
+?>
+
+<pre>
+ <?php
+ print_r($tabResultat);
+ ?>
+ </pre>
+
+        </ul>
+
+<div class="tabs-content">
+
+<?php
+$tabResultat = $objetRepository->findBy([ "rubrique" => "Journal" ], [ "datePublication" => "DESC" ]);
 // ON A UN TABLEAU D'OBJETS DE CLASSE Article
 foreach($tabResultat as $objetArticle)
 {
@@ -58,7 +106,7 @@ CODEHTML;
     echo
 <<<CODEHTML
 
-    <article class="article-journal">
+    <article class="article-journal tab-content" id="art$idArticle">
     
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
         <div>$rubrique</div>
@@ -72,5 +120,5 @@ CODEHTML;
 
 ?>
 
-
+</div>
 </section>

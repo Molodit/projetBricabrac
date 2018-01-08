@@ -50,7 +50,7 @@ h4, div, p{
 .article-journal:hover  iframe{
     max-width: 400px;
     max-height: 400px;
-    margin-left: 700px;
+    margin-left: 40%;
     transform: scale(1);
     align: middle ;
 }
