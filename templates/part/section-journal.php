@@ -11,23 +11,21 @@
 $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
 
 ?>
-
+    <div>
         <ul class="tabs">
                     
 <?php
 
 $tabResultat = $objetRepository->findBy([ "rubrique" => "Journal" ], [ "datePublication" => "DESC" ]);
 
-foreach($tabResultat as $objetMenu)
+foreach($tabResultat as $index =>$objetMenu)
 {
     // METHODES "GETTER" A RAJOUTER DANS LA CLASSE MonArticle
     $idArticle       = $objetMenu->getIdArticle();
     $titre           = $objetMenu->getTitre();
 
 
-$mykey = current($tabResultat);
-    echo $mykey;
- if($mykey == [0]){
+ if($index == 0){
    
 echo
 <<<CODEHTML
@@ -50,12 +48,6 @@ CODEHTML;
 }
 ?>
 
-<pre>
- <?php
- print_r($tabResultat);
- ?>
- </pre>
-
         </ul>
 
 <div class="tabs-content">
@@ -63,7 +55,7 @@ CODEHTML;
 <?php
 $tabResultat = $objetRepository->findBy([ "rubrique" => "Journal" ], [ "datePublication" => "DESC" ]);
 // ON A UN TABLEAU D'OBJETS DE CLASSE Article
-foreach($tabResultat as $objetArticle)
+foreach($tabResultat as $index => $objetArticle)
 {
     // METHODES "GETTER" A RAJOUTER DANS LA CLASSE MonArticle
     $idArticle       = $objetArticle->getIdArticle();
@@ -74,7 +66,16 @@ foreach($tabResultat as $objetArticle)
     $cheminImage     = $objetArticle->getCheminImage();
     $datePublication = $objetArticle->getDatePublication("d/m/Y H:i:s");
     
-    
+    $classActive = "";
+    if ($index == 0) {
+        $classActive = 'class="article-journal tab-content active"';
+    }
+
+    else {
+        $classActive = 'class="article-journal tab-content"';
+    }
+
+
     $htmlFile = "";
     // S'il y a un fichier (image ou pdf)
     if ($cheminImage)
@@ -106,7 +107,7 @@ CODEHTML;
     echo
 <<<CODEHTML
 
-    <article class="article-journal tab-content" id="art$idArticle">
+    <article $classActive id="art$idArticle">
     
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
         <div>$rubrique</div>
@@ -121,6 +122,7 @@ CODEHTML;
 ?>
 
 
+</div>
 </div>
 </section>
 
