@@ -51,9 +51,8 @@ CODEHTML;
 	echo
 	<<<CODEHTML
 	<tr>
-		
-		<td><a href="$$urlArticle" target="_blank"><h2>$titre</h2></a></td>
-		<td><img src="$cheminImage"/></td>
+		<td><h2>$titre</h2></td>
+		<td><a href="$$urlArticle" target="_blank"><img src="$cheminImage"/></a></td>
 		<td>$datePublication</td>
 		
 	</tr>

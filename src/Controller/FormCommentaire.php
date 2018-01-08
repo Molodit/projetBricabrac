@@ -1,12 +1,13 @@
 <?php
-
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\DBAL\Driver\Connection;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
+use ORM\EntityManager;
 
 namespace App\Controller;
 // DANS LA MECANIQUE DE SYMFONY
@@ -49,7 +50,7 @@ class FormCommentaire
                                         ]);
             
             // MESSAGE RETOUR POUR LE VISITEUR
-            echo "Votre commentaire vien d'être publié, merci.";
+            echo "Votre commentaire vient d'être publié, merci.";
             }
 
             else {
