@@ -50,16 +50,13 @@ CODEHTML;
 
 	echo
 	<<<CODEHTML
-	<div class="circle-link circle1">
-		<div class="circle-content">
-         	<div class="article">
-				<article>
-					<a href="$$urlArticle" target="_blank"><h2>$titre</h2></a>
-		            <img src="$htmlImage" title="$htmlImage"/>         
-		        </article>
-	       </div>
-		</div>
-	</div>
+	<tr>
+		
+		<td><a href="$$urlArticle" target="_blank"><h2>$titre</h2></a></td>
+		<td><img src="$cheminImage"/></td>
+		<td>$datePublication</td>
+		
+	</tr>
 CODEHTML;
 	}
 }

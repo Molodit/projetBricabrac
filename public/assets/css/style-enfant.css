@@ -3,9 +3,6 @@ body, html {
   font-family: 'Roboto', sans-serif;
   margin: 0 auto;
 }
-/*header{
-  width:100%;
-}*/
 figure img {
   width:100px;
   height: 100px;
@@ -57,12 +54,10 @@ h1, h2, h3 {
   text-transform: uppercase;
   margin-bottom:2%;
   padding-bottom:1%;
-}
-
-h2, h3 {
   font-family: 'Philosopher', sans-serif;
   letter-spacing: 5px;
 }
+
 form{
   margin: 3% auto;
   width:58%;
@@ -85,21 +80,12 @@ button {
   border-radius:3px;
   text-transform: uppercase;
 }
-.bgimg-1{
-  position: relative;
-  background-attachment: fixed;
-  background-position:center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity:0.9;
-
-}
-.caption {
-  position: absolute;
-  left: 0;
-  width: 80%;
-}
 /*XXXXXXXXXXX ADMIN ENFANT ET READ ADMIN ENFANT XXXXXXXXXXXXX*/
+
+img{
+  width:20%;
+  margin: 0 auto;
+}
 
 .circle-content h2 {
   background: white;
@@ -149,8 +135,8 @@ button {
 /************ DIV REPONSE ***************/
 .response{
   font-family: 'Philosopher', sans-serif;
-  margin-top:2%;
-  font-size:1.4em;
+  margin-top:4%;
+  font-size:1.6em;
   color:#32a1f7;
 }
 

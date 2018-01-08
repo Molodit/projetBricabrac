@@ -56,7 +56,6 @@ CODEHTML;
     <h3>Laisser un Commentaire : </h3>
     
     <form method="POST">
-        <input type="text" name="titre" required placeholder="Votre Titre"/>
             <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30"></textarea>
             <button type="submit"> <i class="far fa-hand-point-right"></i> Ajouter votre commentaire  </button>
         <input type="hidden" name="codebarre" value="commentaire">
