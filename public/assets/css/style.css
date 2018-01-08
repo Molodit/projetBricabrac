@@ -9,10 +9,10 @@ ul, li {
   background-color:#D3D3D3;
 }
 ul {
-  /*display:flex;
+  display:flex;
   flex-direction:row;
   flex-wrap: wrap;
-  justify-content: left;*/
+  justify-content: left;
 }
 a {
   text-decoration: none;
@@ -32,9 +32,9 @@ a {
   background-color:#5e528a;
   color:white;
   border-radius: 10px 10px;
-  padding: 1% 4%;
+  padding: 3% 3%;
   margin-top:5%;
-  /*vertical-align: middle;*/
+  vertical-align: middle;
   margin: 10px 20px;
 }
 .menuLogin  {
@@ -44,17 +44,15 @@ a {
   background-color:#5e528a;
   color:white;
   border-radius: 10px 10px;
-  padding: 1% 4%;
+  padding: 3% 3%;
   margin-top:5%;
-  /*vertical-align: middle;*/
+  vertical-align: middle;
   margin: 10px 20px;
   }
 
 h1 {
   font-family: 'Philosopher', sans-serif;
   font-size: 40px;
-  margin-top:5%;
-  margin-bottom:10%;
 }
 h1, h2, h3 {
   color: #5e528a;
@@ -66,7 +64,28 @@ h2, h3 {
   font-family: 'Philosopher', sans-serif;
   letter-spacing: 5px;
 }
+form{
+  margin: 3% auto;
+  width:50%;
+  } 
+input, select {
+  outline: none;
+  padding: 1% 1% 1% 0.3%;
+  border-radius:2px;
+  width:50%;
+  background: transparent;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  box-sizing: border-box;
+  outline: none; 
+}
 
+button {
+  background-color:#4e4c56;
+  color:white;
+  padding: 1% 2%;
+  border-radius:3px;
+  text-transform: uppercase;
+}
 .bgimg-1{
   position: relative;
   background-attachment: fixed;
@@ -81,6 +100,27 @@ h2, h3 {
   min-height: 100vh;
   margin-right: 0;
 }
+.caption {
+  position: absolute;
+  left: 0;
+  width: 80%;
+}
+section {
+  width: 80%;
+  margin: 5% auto;
+}
+
+#recherche .search {
+  width:30%;
+  display:inline-block;
+}
+
+#recherche .cloud {
+  width: 45%;
+  display: inline-block;
+}
+
+
 /*XXXXXXXXXXX ARTICLES  XXXXXXXXXXXXX*/
 #accueil-articles {
   width:90%;
@@ -110,6 +150,7 @@ ul {
   justify-content: center;
 }
 #footer li{
+  margin-right: 20px;
   margin-top: 30px;
 }
 .menufooter{
@@ -118,7 +159,7 @@ ul {
   margin: 10px 20px;
   background-color:#5e528a;
   color:white;
-  padding: 1% 4%;
+  padding: 2% 3%;
   border: solid 1px #5e528a;
   border-radius: 10px 10px;
 }

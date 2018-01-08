@@ -40,35 +40,6 @@ class Comments
      */
     private $datePublication;
 
-
-    function getIdComment ()
-    {
-        return $this->idComment;
-    }
-    function getIdArticle ()
-    {
-        return $this->idArticle;
-    }
-
-    function getIdMembre ()
-    {
-        return $this->idMembre;
-    }
-
-    function getTitre ()
-    {
-        return $this->titre;
-    }
-
-    function getContenu ()
-    {
-        return $this->contenu;
-    }
-
-    function getDatePublication ($format)
-    {
-        return $this->datePublication->format($format);
-    }
     
     
 }

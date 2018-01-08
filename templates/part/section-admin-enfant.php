@@ -1,4 +1,6 @@
-<section id="admin-enfant">
+
+
+<section id="adminEnfant">
     <h3>Ecrire un nouvel article</h3>
     <!-- NE PAS OUBLIER: POUR UPLOADER UN FICHIER -->
     <!-- method="POST" enctype="multipart/form-data" -->
