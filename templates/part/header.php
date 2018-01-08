@@ -35,15 +35,15 @@ $urlLogout            = $this->generateUrl("logout");
   </head>
   <body>
     <header>
-      <nav>
+      <nav class="header">
         <ul>
-          <li><a href="<?php echo $urlAccueil ?>">Accueil</a></li>
-          <li><a href="<?php echo $urlRhizome ?>">Rizhome</a></li>
-          <li><a href="<?php echo $urlCreaTexte ?>">CréaTexte</a></li>
-          <li><a href="<?php echo $urlJournal ?>">Journal <em>La Tanière</em></a></li> 
-          <li><a href="<?php echo $urlLogin ?>"> S'inscrire / Se Connecter </a></li>
-          <li class="menuLogin"><a href="<?php echo $urlAdmin ?>">Admin</a></li>
-          <li class="menuLogin"><a href="<?php echo $urlLogout ?>">Logout</a></li>      
+          <li><a href="<?php echo $urlAccueil ?>"class="menu">Accueil</a></li>
+          <li><a href="<?php echo $urlRhizome ?>"class="menu">Rizhome</a></li>
+          <li><a href="<?php echo $urlCreaTexte ?>"class="menu">CréaTexte</a></li>
+          <li><a href="<?php echo $urlJournal ?>"class="menu">Journal <em>La Tanière</em></a></li> 
+          <li><a href="<?php echo $urlLogin ?>"class="menuLogin"> S'inscrire / Se Connecter </a></li>
+          <li ><a href="<?php echo $urlAdmin ?>"class="menuLogin">Admin</a></li>
+          <li ><a href="<?php echo $urlLogout ?>"class="menuLogin">Logout</a></li>      
         </ul>
       </nav>
        <h1>La tanière bricabracs 
