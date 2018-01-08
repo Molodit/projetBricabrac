@@ -100,21 +100,34 @@ button {
   width: 80%;
 }
 /*XXXXXXXXXXX ADMIN ENFANT ET READ ADMIN ENFANT XXXXXXXXXXXXX*/
+#admin-enfant{
+  background-color: white;
+  margin: 0 auto;
+}
+img{
+  width: 20%;
+}
 
 .circle-content h2 {
   background: white;
   padding:1% 0;
   margin: 2.5% 0;
   position: relative;
+             
+}
+article{
+  display:inline-block;
+  float: left;
 }
 .circle-content article {
-    padding:1%;
-    border-radius: 50%;
-    display:table;
-    overflow: hidden;
-    text-align: center;
-    vertical-align: middle;
+  padding:1%;
+  border-radius: 50%;
+  display:table;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
 }
+
 .circle-content article img {
   background-position: center center;
   width: 40%;

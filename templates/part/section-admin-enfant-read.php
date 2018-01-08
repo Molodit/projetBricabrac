@@ -6,6 +6,7 @@ $verifMembre = $objetSession->get("membre");
  <h2>BIENVENUE <?php echo $verifMembre ?></h2>
 
 	<h3> Mes Articles :</h3>
+	
 <section>
 
 <?php
@@ -13,11 +14,11 @@ $verifMembre = $objetSession->get("membre");
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
 $objetRepository = $this->getDoctrine()->getManager()->getRepository(App\Entity\MonArticle::class);
 
-$tabResultat = $objetRepository->trouverArticleUser($objetConnection); 
+$tabResultat = $objetRepository->trouverArticleUserLimit($objetConnection); 
 // PLUS PRATIQUE => findBy
 // http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityRepository.html
 // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
-$tabResultat = $objetRepository->findBy([],["idArticle" => "DESC"]);
+$tabResultat = $objetRepository->findBy([],["idMembre" => "DESC"]);
 
 // ON A UN TABLEAU D'OBJETS DE CLASSE Article
 foreach($tabResultat as $objetArticle)
@@ -25,7 +26,8 @@ foreach($tabResultat as $objetArticle)
 
 	$idArticle        = $objetArticle->getIdArticle();
     $idMembre         = $objetArticle->getIdMembre();
-    $titre            = $objetArticle->getTitre();
+	$titre            = $objetArticle->getTitre();
+	$rubrique         = $objetArticle->getRubrique();
     $contenu          = $objetArticle->getContenu();
     $cheminImage      = $objetArticle->getCheminImage();
     $datePublication  = $objetArticle->getDatePublication("d/m/Y H:i:s");
@@ -50,17 +52,16 @@ CODEHTML;
 
 	echo
 	<<<CODEHTML
-	<div class="circle-link circle1">
-		<div class="circle-content">
-         	<div class="article">
-				<article>
-					<a href="$$urlArticle" target="_blank"><h2>$titre</h2></a>
-		            <img src="$htmlImage" title="$htmlImage"/>         
-		        </article>
-	        </div>
+    <section id="admin-enfant">
+    <div class="circle-content">
+        <div class="circle1">
+            <article>
+            <a href="$urlArticle"><h3>$titre</h3></a>
+            <img src="$cheminImage"/>
+            </article>
         </div>
 	</div>
-	</div>
+	</section>
 CODEHTML;
 	}
 }

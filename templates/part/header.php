@@ -42,8 +42,15 @@ $urlLogout            = $this->generateUrl("logout");
           <li><a href="<?php echo $urlCreaTexte ?>"class="menu">CréaTexte</a></li>
           <li><a href="<?php echo $urlJournal ?>"class="menu">Journal <em>La Tanière</em></a></li> 
           <li><a href="<?php echo $urlLogin ?>"class="menuLogin"> S'inscrire / Se Connecter </a></li>
-          <li ><a href="<?php echo $urlAdmin ?>"class="menuLogin">Admin</a></li>
-          <li ><a href="<?php echo $urlLogout ?>"class="menuLogin">Logout</a></li>      
+<?php
+if(isset($_SESSION['login'] )){
+{echo htmlentities(trim($_SESSION['login']));}
+?>        
+        <li ><a href="<?php echo $urlAdmin ?>"class="menuLogin">Admin</a></li>
+        <li ><a href="<?php echo $urlLogout ?>"class="menuLogin">Logout</a></li>
+<?php
+}
+?>      
         </ul>
       </nav>
        <h1>La tanière bricabracs 
