@@ -90,9 +90,9 @@ CODEHTML;
 }
 
 ?>
-                </tbody>
+            </tbody>
                 
-            </table>
+        </table>
 
 
-        </section>
+</section>
