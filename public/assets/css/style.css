@@ -9,10 +9,10 @@ ul, li {
   background-color:#D3D3D3;
 }
 ul {
-  display:flex;
+  /*display:flex;
   flex-direction:row;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: left;*/
 }
 a {
   text-decoration: none;
@@ -32,9 +32,9 @@ a {
   background-color:#5e528a;
   color:white;
   border-radius: 10px 10px;
-  padding: 3% 3%;
+  padding: 1% 4%;
   margin-top:5%;
-  vertical-align: middle;
+  /*vertical-align: middle;*/
   margin: 10px 20px;
 }
 .menuLogin  {
@@ -44,9 +44,9 @@ a {
   background-color:#5e528a;
   color:white;
   border-radius: 10px 10px;
-  padding: 3% 3%;
+  padding: 1% 4%;
   margin-top:5%;
-  vertical-align: middle;
+  /*vertical-align: middle;*/
   margin: 10px 20px;
   }
 
@@ -150,7 +150,6 @@ ul {
   justify-content: center;
 }
 #footer li{
-  margin-right: 20px;
   margin-top: 30px;
 }
 .menufooter{
@@ -159,7 +158,7 @@ ul {
   margin: 10px 20px;
   background-color:#5e528a;
   color:white;
-  padding: 2% 3%;
+  padding: 1% 4%;
   border: solid 1px #5e528a;
   border-radius: 10px 10px;
 }

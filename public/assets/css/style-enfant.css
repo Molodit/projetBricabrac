@@ -100,12 +100,21 @@ button {
   width: 80%;
 }
 /*XXXXXXXXXXX ADMIN ENFANT ET READ ADMIN ENFANT XXXXXXXXXXXXX*/
+#admin-enfant{
+  background-color: white;
+  display: block;
+  margin: 0 auto;
+}
+img{
+  width: 20%;
+}
 
 .circle-content h2 {
   background: white;
   padding:1% 0;
   margin: 2.5% 0;
   position: relative;
+  
 }
 .circle-content article {
     padding:1%;

@@ -25,7 +25,8 @@ foreach($tabResultat as $objetArticle)
 
 	$idArticle        = $objetArticle->getIdArticle();
     $idMembre         = $objetArticle->getIdMembre();
-    $titre            = $objetArticle->getTitre();
+	$titre            = $objetArticle->getTitre();
+	$rubrique         = $objetArticle->getRubrique();
     $contenu          = $objetArticle->getContenu();
     $cheminImage      = $objetArticle->getCheminImage();
     $datePublication  = $objetArticle->getDatePublication("d/m/Y H:i:s");
@@ -50,17 +51,18 @@ CODEHTML;
 
 	echo
 	<<<CODEHTML
-	<div class="circle-link circle1">
-		<div class="circle-content">
-         	<div class="article">
-				<article>
-					<a href="$$urlArticle" target="_blank"><h2>$titre</h2></a>
-		            <img src="$htmlImage" title="$htmlImage"/>         
-		        </article>
-	        </div>
-        </div>
-	</div>
-	</div>
+	<section id="admin-enfant">
+	<tr>
+        <td>$idArticle</td>
+        <td>$idMembre</td>
+        <td><a href="$urlArticle">$titre</a></td>
+        <td><a href="$rubrique">$rubrique</a></td>
+        <td>$contenu</td>
+        <td>$htmlImage</td>
+        <td>$datePublication</td>
+		<td>
+	</tr>
+	</section>
 CODEHTML;
 	}
 }
