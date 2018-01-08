@@ -1,6 +1,6 @@
 
 
-<section>
+<section class=createxte>
 
     <h3>LISTE DES ARTICLES DE CREATEXTE</h3> 
 
@@ -58,13 +58,12 @@ CODEHTML;
     echo
 <<<CODEHTML
 
-    <article>
-    <td>$idArticle</td>
+     <article class="article-createxte">
+    
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
         <div>$rubrique</div>
-        <p>$contenu</p>
-        <div>$htmlFile</div>
-        <div>$datePublication</div>
+        <p>$contenu $datePublication</p>
+        <div >$htmlFile</div>
     </article>
     
 CODEHTML;
