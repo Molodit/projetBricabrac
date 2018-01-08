@@ -57,9 +57,8 @@ CODEHTML;
 					<a href="$$urlArticle" target="_blank"><h2>$titre</h2></a>
 		            <img src="$htmlImage" title="$htmlImage"/>         
 		        </article>
-	        </div>
-        </div>
-	</div>
+	       </div>
+		</div>
 	</div>
 CODEHTML;
 	}

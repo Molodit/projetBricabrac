@@ -24,12 +24,6 @@ class Comments
      */
     private $idMembre;
 
-    // add your own fields
-    /**
-     * @ORM\Column(name ="titre", type="string", length=200)
-     */
-    private $titre;
-
     /**
      * @ORM\Column(name ="contenu", type="text")
      */

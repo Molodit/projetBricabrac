@@ -54,11 +54,10 @@ CODEHTML;
 
 <section id="commentaire">
     <h3>Laisser un Commentaire : </h3>
-    <div id="messages">
-    </div>
-    <form method="POST" action ="ajax.php?action=write" id="post-messages">
-        <input type="text" name="titre" id="titre" required placeholder="Votre Titre"/>
-            <textarea id="editor1" type="text" name="contenu" id="contenu" required placeholder="contenu" rows="30"></textarea>
+    
+    <form method="POST">
+        <input type="text" name="titre" required placeholder="Votre Titre"/>
+            <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30"></textarea>
             <button type="submit"> <i class="far fa-hand-point-right"></i> Ajouter votre commentaire  </button>
         <input type="hidden" name="codebarre" value="commentaire">
         <div class="response">
@@ -75,6 +74,7 @@ if ($objetRequest->get("codebarre", "") == "commentaire")
 ?>
         </div>
     </form>
-
+    
+    
 </section>
 
