@@ -102,7 +102,6 @@ button {
 /*XXXXXXXXXXX ADMIN ENFANT ET READ ADMIN ENFANT XXXXXXXXXXXXX*/
 #admin-enfant{
   background-color: white;
-  display: inline;
   margin: 0 auto;
 }
 img{
@@ -116,14 +115,19 @@ img{
   position: relative;
              
 }
-.circle-content article {
-    padding:1%;
-    border-radius: 50%;
-    display:table;
-    overflow: hidden;
-    text-align: center;
-    vertical-align: middle;
+article{
+  display:inline-block;
+  float: left;
 }
+.circle-content article {
+  padding:1%;
+  border-radius: 50%;
+  display:table;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+}
+
 .circle-content article img {
   background-position: center center;
   width: 40%;
