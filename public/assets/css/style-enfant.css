@@ -102,7 +102,7 @@ button {
 /*XXXXXXXXXXX ADMIN ENFANT ET READ ADMIN ENFANT XXXXXXXXXXXXX*/
 #admin-enfant{
   background-color: white;
-  display: block;
+  display: inline;
   margin: 0 auto;
 }
 img{
