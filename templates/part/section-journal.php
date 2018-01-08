@@ -1,5 +1,3 @@
-
-
 <section class="journal">
 
     <h3>LISTE DES ARTICLES DE JOURNAL LA TANIERE</h3> 
@@ -71,6 +69,5 @@ CODEHTML;
 }
 
 ?>
-
 
 </section>

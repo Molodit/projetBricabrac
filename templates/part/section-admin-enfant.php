@@ -1,5 +1,3 @@
-
-
 <section id="admin-enfant">
     <h3>Ecrire un nouvel article</h3>
     <!-- NE PAS OUBLIER: POUR UPLOADER UN FICHIER -->

@@ -6,6 +6,7 @@ $verifMembre = $objetSession->get("membre");
  <h2>BIENVENUE <?php echo $verifMembre ?></h2>
 
 	<h3> Mes Articles :</h3>
+	
 <section>
 
 <?php
