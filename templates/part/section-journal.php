@@ -27,7 +27,7 @@ foreach($tabResultat as $objetMenu)
 
 $mykey = current($tabResultat);
     echo $mykey;
- if($mykey == 0){
+ if($mykey == [0]){
    
 echo
 <<<CODEHTML

@@ -1,4 +1,5 @@
-<section>
+<section class="article-commentaire">
+<section class="article-select">
     <h3>ARTICLE</h3>
 
 <?php
@@ -77,3 +78,4 @@ if ($objetRequest->get("codebarre", "") == "commentaire")
     
 </section>
 
+</section>
