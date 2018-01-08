@@ -9,7 +9,7 @@ if ($objetRequest->get("codebarre", "") == "deleteArticle")
     
 }
 ?>
-<div>
+
     <ul class="tabs">
                     <li class="active"><a href="#articles">Articles</a></li>
                     <li><a href="#membres">Membres</a></li>

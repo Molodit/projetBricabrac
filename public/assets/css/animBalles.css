@@ -3,54 +3,60 @@
 /* Balles css Marina Molodit */
 
 /* Balles Animation Lydie Danjean */
-.noDisplay {
+/* .noDisplay {
     max-width:0;
     max-height:0;
-}
-.circle-content h2 {
-    background: white;
-    padding:2% 0;
-    margin: 5% 0;
-    position: relative;
-  }
+} */
   .circle-content article {
       padding:1%;
       border-radius: 50%;
       overflow: hidden;
-      color:black;
+     
       /* text-align: center;
       vertical-align: middle; */
   }
 
   .circle-content article a {
-      color:black;
-      background: white;
+    color: white;
+    margin:0;
+    position: relative;
+    font-family: Roboto;
+    max-width:50%;
+    display: block;
+    text-align:center;
+    font-size:25px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.9);
+  }
+
+  .circle-content article p {
+      color:white;
+      text-shadow: 2px 2px rgba(0, 0, 0, 0.7);
   }
  
    .circle6 article{
       position: absolute;  
       top: 56%;
       left: 0%;
-      padding: 7%;
+      padding: 4%;
       background: rgba(235,44,59,0.7);
       }
       .circle5 article{
       position: absolute;  
-      top: 71%;
-      left: 36%;
+      top: 65%;
+      left: 40%;
       padding: 7%;
       background: rgba(240,148,176,0.6);
       }
       .circle4 article{
       position: absolute;  
-      top: 0%;
+      top: 5%;
       left: 77%;
       padding: 8%;
       background: rgba(237,17,100,0.6);
       }
       .circle1 article{
       position: absolute;  
-      left: 23%;
+      left: 15%;
       top: 12%;
       padding: 5%;
       /* background: rgba(188,207,0,0.6); */
@@ -59,62 +65,57 @@
       position: absolute; 
       left: 20%;
       top: 46%;
-      padding: 7%;;
+      padding: 5%;;
       background: rgba(0,169,163,0.8);
       }
       .circle3 article{
        position: absolute;
-      left: 43%;
-      top: -8%;
-      padding: 6%;
+      padding: 5%;
+      top: 45%;
+      left: 73%;
       background: rgba(96,45,145,0.7);
       }
       .circle7 article{
       position: absolute; 
-      left: 40%;
+      left: 50%;
       top: 40%;
-      padding: 7%;
+      padding: 5%;
       background: rgba(244,120,59,0.7);
       }
       .circle8 article{
       position: absolute;
-      top: 55%;
-      left: 73%;
-      padding: 8%;
+      left: 43%;
+      top: -3%;
+      padding: 3%;
       background: rgba(0,166,81,0.7);
       }
       .circle9 article{
       position: absolute;
       top: 20%;
       left: 58%;
-      padding: 6%;
+      padding: 7%;
       background-color: rgba(46,49,146,0.6);
       }
       .circle10 article{
       position: absolute;
       top: 0%;
       left: 0%;
-      padding: 7%;
+      padding: 4%;
       background-color: rgba(255, 140, 153,0.6)
       }
-    
-      
       .circle11 article{
       position: absolute;
       top: 0%;
-      left: 90%;
-      
-      }
-      .circle11 article img{
-        border-radius:50%;
-        width: 50%;
+      left: 80%;
+      padding: 4%;
+      background: rgba(188,207,0,0.6);
       }
 
-.circle1 article
+.circle1 article, .circle2 article, .circle3 article
 {
-    transition-property:z-index, background, text-shadow;
+    transition-property:z-index, box-shadow, padding;
     /* La transition durera deux secondes. */
-    transition-duration: 2s;
+    transition-duration: 1s;
     transition-timing-function: ease-in;
 } 
 
@@ -126,18 +127,19 @@
 } */
 
 /* Style lors du passage de la souris*/
-.circle1 article:hover
+.circle1 article:hover, .circle2 article:hover, .circle3 article:hover
 {  
     z-index:999;
     background:#c1dc87;
     box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
+    padding:8%;
 }
 
-.circle1 article:hover .noDisplay {
+/* .circle1 article:hover .noDisplay {
     max-width: 25%;
     max-height:25%;
     object-fit: cover;
-}
+} */
 
 .circle8 article {
     transition: box-shadow 0.7s ease infinite;
@@ -150,17 +152,17 @@
 
 /* Style lors du passage de la souris*/
 @keyframes bounce{
-     from {top: 60%;}
-     50%  {top: 55%;}
-     to   {top: 60%;}
+     from {top: -8%;}
+     50%  {top: -3%;}
+     to   {top: -8%;}
 }
 
-.balle {
+/* .balle {
     width:200px;
     height:200px;
     border-radius:50%;
     object-fit:cover;
-}
+} */
 
 
 

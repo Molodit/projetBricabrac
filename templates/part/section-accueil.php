@@ -7,10 +7,6 @@
 // $objetRepository = $this->getDoctrine()->getRepository("App\Entity\MonArticle");
 $objetRepository     = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
 
-// PLUS PRATIQUE => findBy
-// http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityRepository.html
-// ATTENTION: ON UTILISE LE NOM DES PROPRIETES
-//$tabResultat = $objetRepository->findBy([], [ "datePublication" => "DESC" ]);
 
 $tabResultat = $objetRepository->trouverArticleUserLimit($objetConnection);
 $compteur = 0;
@@ -19,7 +15,6 @@ foreach($tabResultat as $tabLigne)
 {
     $compteur++;
     extract($tabLigne);
-    $contenu = mb_strimwidth($contenu, 0, 10, '...');
 
     $htmlFile = "";
     if ($chemin_image)
@@ -41,15 +36,38 @@ CODEHTML;
 
                   <div class="circle-link circle$compteur" >
                   <div class="circle-content" >
-    <article style="background-image:url('$chemin_image');background-position:center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity:0.9;">
-        <h3><a href="$urlArticle">$titre</a></h3>
-        <span>par $membre</span>
-        <p>$contenu</p>
-       
-        <span>$date_publication</span>
+    <article style="background-image:url('$chemin_image');
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size: cover;">
+       <a href="$urlArticle">$titre</a>
+        <p>de $membre</p>
+    </article>
+    </div>
+</div>
+    
+CODEHTML;
+    }
+    
+}
+
+$tabResultatMotCle = $objetRepository->trouverMotClePlus($objetConnection);
+$compteurMotCle = 3;
+// ON A UN TABLEAU D'OBJETS DE CLASSE Article
+foreach($tabResultatMotCle as $tabLigneMotCle)
+{
+    $compteurMotCle++;
+    extract($tabLigneMotCle);
+
+    if ($compteurMotCle > 3 && $compteurMotCle < 12) {
+    echo
+<<<CODEHTML
+<div class="circles-container container">
+
+                  <div class="circle-link circle$compteurMotCle" >
+                  <div class="circle-content" >
+    <article>
+        <a href="#">$mot_cle</a>
     </article>
     </div>
 </div>
@@ -60,171 +78,6 @@ CODEHTML;
 }
 
 ?>
-
-
-            
-        
-       
-        
-            
-                  
- 
-                  <!--<div class="circle-link circle2 col-sm-3">
-                  <div class="circle-content">
-            <a href="#" target="_blank">
-        <div>
-        <article>
-          <h3></h3>
-          <p></p>
-        </article>
-        </div>
-            </a>
-                  </div>
-                  </div>
-    
-  
-                  <div class="circle-link circle3 col-sm-2">
-                  <div class="circle-content" >
-            <a href="#" target="_blank">
-        <div>
-        <article>
-          <h3></h3>
-          <img src="#" alt="photo article 1"/>
-         <p></p>
-        </article>
-        </div>
-            </a>
-                  </div>
-                  </div>-->
- 
-                   <div class="circle-link circle4 col-sm-4">
-                  <div class="circle-content" >
-            <a href="#" target="_blank">
-        <div>
-        <article>
-          <h3></h3>
-          <img src="#" alt="photo article 1"/>
-          <p></p>
-        </article>
-        </div>
-            </a>
-                  </div>
-                  </div>
- 
-                  <div class="circle-link circle5 col-sm-3">
-                  <div class="circle-content" >
-           <a href="#" target="_blank">
-        <div>
-        <article>
-          <h3></h3>
-          <img src="#" alt="photo article 1"/>
-          <p></p>
-        </article>
-        </div>
-            </a>
-                  </div>
-                  </div>
-
-                  
-                  <div class="circle-link circle6 col-sm-3">
-                  <div class="circle-content" >
-           <a href="#" target="_blank">
-        <div>
-        <article>
-          <h3></h3>
-          <img src="#" alt="photo article 1"/>
-          <p></p>
-        </article>
-        </div>
-            </a>
-                  </div>
-                  </div>
-
-                  <div class="circle-link circle7 col-sm-3">
-                  <div class="circle-content">
-            <a href="#" target="_blank">
-        <div>
-        <article>
-          <h3></h3>
-          <img src="#" alt="photo article 1"/>
-          <p></p>
-        </article>
-        </div>
-            </a>
-                  </div>
-                  </div>
-
-                  <div class="circle-link circle8 col-sm-3">
-                  <div class="circle-content" >
-            <a href="#" target="_blank">
-        <div>
-        <article>
-          <h3></h3>
-          <img src="#" alt="photo article 1"/>
-         <p></p>
-        </article>
-        </div>
-            </a>
-                  </div>
-                  </div>
-
-                  <div class="circle-link circle9 col-sm-5">
-                  <div class="circle-content" >
-            <a href="#" target="_blank">
-        <div>
-        <article>
-          <h3></h3>
-          <img src="#" alt="photo article 1"/>
-         <p></p>
-        </article>
-        </div>
-            </a>
-                  </div>
-                  </div>
-
-                  <div class="circle-link circle10 col-sm-5">
-                  <div class="circle-content" >
-            <a href="#" target="_blank">
-        <div>
-        <article>
-          <h3></h3>
-          <img src="#" alt="photo article 1"/>
-         <p></p>
-        </article>
-        </div>
-            </a>
-                  </div>
-                  </div>
-                  
-                  <div class="circle-link circle11 col-sm-5">
-                  <div class="circle-content" >
-            <a href="#" target="_blank">
-        <div>
-        <article>
-         
-          <img src="assets/img/siteon0-38e4a.jpg" alt="logo"/>
-         
-        </article>
-        </div>
-            </a>
-                  </div>
-                  </div>
-
-    </div>
-
-
 </section>
-        
-  
-<form action="" method="POST" id="recherche">
-    <input type="text" name="recherche" placeholder="Recherche"/>
-    <button type="submit">Envoyer</button>
-</form>
-  
-
-<!-- <div class="bgimg-2">
-
-</div> -->
-
 
 

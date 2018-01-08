@@ -14,6 +14,7 @@ class MonArticleRepository extends ServiceEntityRepository
     }
 
         // AJOUTER MES METHODES QUI ONT BESOIN DE JOINTURES
+        // table membre jointe à l'article pour trouver l'auteur de l'article
         public function trouverArticleUser ($objetConnection)
         {
             $requeteSQL =
@@ -25,12 +26,14 @@ class MonArticleRepository extends ServiceEntityRepository
     ORDER BY date_modification DESC
 
 CODESQL;
-            // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#list-of-parameters-conversion
+        // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#list-of-parameters-conversion
             $objetStatement = $objetConnection->prepare($requeteSQL);
             $objetStatement->execute();
             
             return $objetStatement;
         }
+
+         // table membre jointe à l'article pour trouver l'auteur de l'article, limitée à 3 articles
 
         public function trouverArticleUserLimit ($objetConnection)
         {
@@ -44,10 +47,24 @@ CODESQL;
     LIMIT 3
 
 CODESQL;
-            // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#list-of-parameters-conversion
+            
             $objetStatement = $objetConnection->prepare($requeteSQL);
             $objetStatement->execute();
             
+            return $objetStatement;
+        }
+
+        //sélectionner les mots-clés les plus utilisées
+
+        public function trouverMotClePlus ($objetConnection) {
+            $requeteSQL = 
+            <<<CODESQL
+            SELECT DISTINCT mot_cle FROM article
+CODESQL;
+
+            $objetStatement = $objetConnection->prepare($requeteSQL);
+            $objetStatement->execute();
+
             return $objetStatement;
         }
     /*
