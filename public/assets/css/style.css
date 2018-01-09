@@ -10,7 +10,7 @@ ul, li {
   background-color:#D3D3D3;
 }
 li{
-  display: inline-block;
+  display: inline;
 }
 a {
   text-decoration: none;
@@ -18,7 +18,7 @@ a {
 .header{
   padding:1%;
 }
-.header .menu{
+nav.header .menu{
   font-family: 'Philosopher', sans-serif;
   font-size: 1.2em;
   font-weight: normal;
@@ -28,6 +28,7 @@ a {
   padding: 3% 3%;
   margin-top:5%;
   margin: 10px 20px;
+  overflow: hidden;
 }
 .menugauche{
   float:left;

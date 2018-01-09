@@ -9,11 +9,13 @@ if ($objetRequest->get("codebarre", "") == "deleteArticle")
     
 }
 ?>
+    <div>
+        <ul class="tabs">
+            <li class="active"><a href="#articles">Articles</a></li>
+            <li><a href="#membres">Membres</a></li>
+            <li><a href="#commentaires">Commentaires</a></li>
 
-    <ul class="tabs">
-                    <li class="active"><a href="#articles">Articles</a></li>
-                    <li><a href="#membres">Membres</a></li>
-                </ul>
+        </ul>
     <div class="tabs-content">
         <section class="admin article tab-content active" id="articles">
             <h4>Liste des articles</h4>
@@ -57,7 +59,7 @@ CODEHTML;
 
         $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
         $objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
-
+        $objetRepositoryComment = $this->getDoctrine()->getRepository(App\Entity\Comments::class);
         // PLUS PRATIQUE => findBy
         // http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityRepository.html
         // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
@@ -114,6 +116,7 @@ CODEHTML;
                 }
             }
             
+            // Génération de l'url de l'article
             $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
             
             echo

@@ -83,7 +83,9 @@ CODEHTML;
       }
 ?>
       </nav>
-       <h1>La tanière bricabracs 
+      <br><br><br> 
+      
+      <h1>La tanière bricabracs 
          <!--<figure><img src="<//?php echo $urlAccueil ?>assets/img/oiseau.gif" alt="oiseau anime"/> 
           </figure>-->
         </h1>
