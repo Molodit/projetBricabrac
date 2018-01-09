@@ -60,6 +60,9 @@ foreach($tabResultatMotCle as $tabLigneMotCle)
     extract($tabLigneMotCle);
 
     if ($compteurMotCle > 3 && $compteurMotCle < 12) {
+
+$urlMotCle            = $this->generateUrl("motCle", [ "mot_cle" => $mot_cle ]);
+
     echo
 <<<CODEHTML
 <div class="circles-container container">
@@ -67,7 +70,7 @@ foreach($tabResultatMotCle as $tabLigneMotCle)
                   <div class="circle-link circle$compteurMotCle" >
                   <div class="circle-content" >
     <article>
-        <a href="#">$mot_cle</a>
+        <a href="$urlMotCle">$mot_cle</a>
     </article>
     </div>
 </div>
