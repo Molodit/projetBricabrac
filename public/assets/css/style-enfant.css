@@ -150,15 +150,16 @@ button {
 }
 
 /*XXXXXXXXXXX FOOTER  XXXXXXXXXXXXX*/
-/*footer{
+footer{
   width: 100%;
   font-family: 'Philosopher', sans-serif;
-  background-color:#D3D3D3;
+  background-color:white;
   color:#5e528a;
   font-size:1em;
   padding:2%;
   margin-top:10%;
 }
+/*
 #footer li{
   margin-right: 20px;
   margin-top: 30px;

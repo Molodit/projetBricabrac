@@ -29,6 +29,7 @@ $urlLogout            = $this->generateUrl("logout");
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/createxte.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/journal.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/admin-formateur.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/style-enfant.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/style-formulaire.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/animBalles.css"/>
   </head>
@@ -40,6 +41,8 @@ $urlLogout            = $this->generateUrl("logout");
           <li><a href="<?php echo $urlRhizome?>" class="menu">Rizhome</a></li>
           <li><a href="<?php echo $urlCreaTexte ?>" class="menu">CréaTexte</a></li>
           <li><a href="<?php echo $urlJournal?>" class="menu">Journal <em>La Tanière</em></a></li>
+        </ul>
+        <ul class="menudroite">
 <?php
     $verifNiveau = $objetSession->get("niveau");
     
@@ -55,9 +58,9 @@ CODEHTML;
     //Sinon on affiche le logout:
       else
       {
+        echo
         <<<CODEHTML
-        <li ><a href="$urlLogout"class="menuLogin">Se Deconnecter</a></li>
-                
+        <li ><a href="$urlLogout"class="menuLogin">Se Deconnecter</a></li>                
 CODEHTML;
         // si niveau 7 on affiche les 2 liens suivant :
         if($verifNiveau == 7)
@@ -65,8 +68,7 @@ CODEHTML;
         
           echo
 <<<CODEHTML
-        <li ><a href="$urlAdminEnfant">Mon tableau de bord :</a></li>
-        <li ><a href="$urlLogout"class="menuLogin">Se Deconnecter</a></li>         
+        <li ><a href="$urlAdminEnfant">Mon tableau de bord :</a></li>                
 CODEHTML;
         }
         //si niveau 9, on affiche les 2 liens suivant
@@ -75,20 +77,11 @@ CODEHTML;
           echo
 <<<CODEHTML
           <li ><a href="$urlAdmin"class="menuLogin">Admin</a></li>
-          <li ><a href="$urlLogout"class="menuLogin">Se Deconnecter</a></li>
 CODEHTML;
         }
 
       }
 ?>
-     
-
-        <!--</ul>
-        <ul class="menudroite">
-          <li><a href="<//?php echo $urlLogin ?>"class="menuLogin"> S'inscrire / Se Connecter </a></li>
-          <li ><a href="<//?php echo $urlAdmin ?>"class="menuLogin">Admin</a></li>
-          <li ><a href="<//?php echo $urlLogout ?>"class="menuLogin">Logout</a></li>-->    
-        </ul>
       </nav>
        <h1>La tanière bricabracs 
          <!--<figure><img src="<//?php echo $urlAccueil ?>assets/img/oiseau.gif" alt="oiseau anime"/> 
