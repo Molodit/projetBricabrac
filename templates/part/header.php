@@ -64,7 +64,7 @@ CODEHTML;
         
           echo
 <<<CODEHTML
-        <li ><a href="$urlAdminEnfant">Accueil</a></li>
+        <li ><a href="$urlAdminEnfant">Mon tableau de bord :</a></li>
         <li ><a href="$urlLogout"class="menuLogin">Se Deconnecter</a></li>         
 CODEHTML;
         }
