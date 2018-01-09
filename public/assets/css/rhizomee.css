@@ -2,7 +2,9 @@
 /*background-color: #cedbeb;
 background-image: url("https://www.transparenttextures.com/patterns/wet-snow.png");
 background-image: url("https://thumbs.dreamstime.com/t/abstract-gray-gradient-geometric-shapes-white-background-shadow-abstract-gray-gradient-geometric-shapes-white-103165250.jpg");*/
-background-image: url("../img/fantasy-background.jpg");
+background-image: url("../img/rhizome.png");
+background-repeat: no-repeat;
+background-size: cover;
 font-family: 'Roboto', sans-serif;
 width: 100%;
 margin: -10vh auto 0;

@@ -62,7 +62,8 @@ CODEHTML;
    
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
         <div>$rubrique</div>
-        <p>$contenu $datePublication</p>
+        <p>$contenu</p>
+        <p> $datePublication</p>
         <div >$htmlFile</div>
       
     </article>
