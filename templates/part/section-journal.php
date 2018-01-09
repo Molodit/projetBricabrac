@@ -53,7 +53,7 @@ CODEHTML;
 <div class="tabs-content">
 
 <?php
-$tabResultat = $objetRepository->findBy([ "rubrique" => "Journal" ], [ "datePublication" => "DESC" ]);
+
 // ON A UN TABLEAU D'OBJETS DE CLASSE Article
 foreach($tabResultat as $index => $objetArticle)
 {
