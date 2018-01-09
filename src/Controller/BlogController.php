@@ -17,7 +17,7 @@ class BlogController
   /**
       * @Route("/", name="accueil")
       */   
-   public function accueil (Request $objetRequest, Connection $objetConnection)
+   public function accueil (Request $objetRequest, Connection $objetConnection,SessionInterface $objetSession)
    {
         
         ob_start();
@@ -59,7 +59,7 @@ class BlogController
    /**
       * @Route("rubrique/{rub}", name="rubrique")
       */   
-    public function rubrique ($rub, Request $objetRequest, Connection $objetConnection)
+    public function rubrique ($rub, Request $objetRequest, Connection $objetConnection,SessionInterface $objetSession)
     {
         
         ob_start();
@@ -80,7 +80,7 @@ class BlogController
  /**
       * @Route("contact", name="contact")
       */   
-   public function contact (Request $objetRequest, Connection $objectConnection)
+   public function contact (Request $objetRequest, Connection $objectConnection,SessionInterface $objetSession)
    {
         
         ob_start();

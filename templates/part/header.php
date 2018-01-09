@@ -1,5 +1,6 @@
 <?php
 
+$verifNiveau = $objetSession->get("niveau");
 
 // JE RECUPERE LES URLS DES PAGES GRACE AU NOM DE LEUR ROUTE
 $urlAccueil           = $this->generateUrl("accueil");
