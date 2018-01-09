@@ -187,6 +187,43 @@ class FormArticle
         return $cheminImage;
     }
 
-    
+  function creerDesImages ($objetRequest, $objetConnection, $cheminSymfony, $objetSession)
+    {
+        // RECUPERER LES INFOS DU FORMULAIRE
+        // ->get("email", "")
+        // VA CHERCHER L'INFO DANS LE FORMULAIRE HTML name="email"
+        // ET SI L'INFO N'EST PAS PRESENTE 
+        //  ALORS ON RETOURNE LA VALEUR PAR DEFAUT ""
+        $titre          = $objetRequest->get("titre", "");       
+        $categorie      = $objetRequest->get("categorie", "");       
+        $contenu        = $objetRequest->get("contenu", "");   
+        $cheminImage    = $objetRequest->get("cheminImage", "");
+       
+        
+        // SECURITE TRES BASIQUE
+        if (($titre != "") && ($categorie != "") && ($contenu != ""))
+        {
+            // COMPLETER LES INFOS MANQUANTES
+            $datePublication = date("Y-m-d H:i:s");
+             $dateModification = date("Y-m-d H:i:s");
+            $idUser           = $objetSession->get("id");
+            
+            // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
+            // ON VA UTILISER $objetConnection FOURNI PAR SYMFONY
+            // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#insert
+            $objetConnection->insert("article", 
+                                    [   "titre"             => $titre, 
+                                        "id_user"           => $idUser,
+                                        "categorie"         => $categorie,
+                                        "contenu"           => $contenu,
+                                        "date_publication"  => $datePublication,
+                                        "chemin_image"      => $cheminImage,
+                                        ]);
+            
+            // MESSAGE RETOUR POUR LE VISITEUR
+            echo "ARTICLE PUBLIE";
+        }
+        
+    }   
     
 }

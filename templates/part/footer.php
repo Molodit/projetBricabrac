@@ -4,10 +4,10 @@
             <nav id="footer">
                 <ul>
                   <li><a href="<?php echo $urlAccueil ?>" class="menufooter"><i class="fas fa-home"></i>  Accueil </a></li>
-                  <li><a href="<?php echo $urlRhizome ?>"class="menufooter"><i class="far fa-newspaper"></i>  Rhizome </a></li>
-                  <li><a href="<?php echo $urlCreaTexte ?>"class="menufooter"><i class="fas fa-book"></i> CréaTexte</a></li>
-                  <li><a href="<?php echo $urlJournal ?>"class="menufooter"><i class="far fa-edit"></i> Journal <em>La Tanière</em></a></li>
-                  <li><a href="<?php echo $urlContact ?>"class="menufooter"><i class="fas fa-comment-alt"></i>  Contact </a></li>
+                  <li><a href="<?php echo $urlRhizome ?>" class="menufooter"><i class="far fa-newspaper"></i>  Rhizome </a></li>
+                  <li><a href="<?php echo $urlCreaTexte ?>" class="menufooter"><i class="fas fa-book"></i> CréaTexte</a></li>
+                  <li><a href="<?php echo $urlJournal ?>" class="menufooter"><i class="far fa-edit"></i> Journal <em>La Tanière</em></a></li>
+                  <li><a href="<?php echo $urlContact ?>" class="menufooter"><i class="fas fa-comment-alt"></i>  Contact </a></li>
                 </ul>
               </nav>
     </footer>
