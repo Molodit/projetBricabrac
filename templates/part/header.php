@@ -43,7 +43,7 @@ $urlLogout            = $this->generateUrl("logout");
 <?php
     $verifNiveau = $objetSession->get("niveau");
     
-    
+    //Si le niveau est inférieur a 1, le visiteur aura accés a ces liens :
     if($verifNiveau < 1){
     
       echo 
@@ -51,14 +51,15 @@ $urlLogout            = $this->generateUrl("logout");
 <li><a href=" $urlLogin"class="menuLogin"> S'inscrire / Se Connecter </a></li> 
       
 CODEHTML;
-    }
+    } 
+    //Sinon on affiche le logout:
       else
       {
         <<<CODEHTML
         <li ><a href="$urlLogout"class="menuLogin">Se Deconnecter</a></li>
                 
 CODEHTML;
-
+        // si niveau 7 on affiche les 2 liens suivant :
         if($verifNiveau == 7)
         {
         
@@ -68,6 +69,7 @@ CODEHTML;
         <li ><a href="$urlLogout"class="menuLogin">Se Deconnecter</a></li>         
 CODEHTML;
         }
+        //si niveau 9, on affiche les 2 liens suivant
         elseif($verifNiveau == 9)
         {
           echo
