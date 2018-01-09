@@ -119,20 +119,21 @@
     transition-timing-function: ease-in;
 } 
 
-/* .circle1 article .noDisplay
+ .circle1 article .noDisplay
 {
     transition-property: max-width, max-height;
     transition-duration: 2s;
     transition-timing-function: ease-in;
-} */
+} 
 
 /* Style lors du passage de la souris*/
 .circle1 article:hover, .circle2 article:hover, .circle3 article:hover
 {  
-    z-index:999;
-    background:#c1dc87;
+    /*z-index:999;*/
+    /*background:#c1dc87;*/
     box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
-    padding:8%;
+    cursor: pointer;
+    padding:6%;
 }
 
 /* .circle1 article:hover .noDisplay {

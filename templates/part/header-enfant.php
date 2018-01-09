@@ -1,8 +1,13 @@
 <?php
 
-$urlAdminEnfant  = $this->generateUrl("admin-enfant");
+$urlAccueil           = $this->generateUrl("accueil");
+$urlAdminEnfant       = $this->generateUrl("admin-enfant");
+$urlCreaTexte         = $this->generateUrl("rubrique", [ "rub" => "CreaTexte" ]);
+$urlRhizome           = $this->generateUrl("rubrique", [ "rub" => "Rhizome"]);
+$urlJournal           = $this->generateUrl("rubrique", [ "rub" => "Journal" ]);
+$urlContact           = $this->generateUrl("contact");;
 $urlLogout       = $this->generateUrl("logout");
-$urlAccueil      = $this->generateUrl("accueil");
+
 ?>
 
 <!DOCTYPE html>
