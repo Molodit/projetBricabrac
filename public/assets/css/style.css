@@ -1,6 +1,7 @@
 body, html {
   color: #777;
   font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
 }
 ul, li {
   list-style: none;
@@ -8,22 +9,14 @@ ul, li {
 .header{
   background-color:#D3D3D3;
 }
-ul {
-  display:flex;
-  flex-direction:row;
-  flex-wrap: wrap;
-  justify-content: left;
+li{
+  display: inline-block;
 }
 a {
   text-decoration: none;
 }
 .header{
-  width:100%;
   padding:1%;
-}
-.header .menu {
-  text-align:center;
-  color:#5e528a; 
 }
 .header .menu{
   font-family: 'Philosopher', sans-serif;
@@ -34,8 +27,15 @@ a {
   border-radius: 10px 10px;
   padding: 3% 3%;
   margin-top:5%;
-  vertical-align: middle;
   margin: 10px 20px;
+}
+.menugauche{
+  float:left;
+  width: 45%;
+}
+.menudroite{
+  float: right;
+  width: 45%;
 }
 .menuLogin  {
   font-family: 'Philosopher', sans-serif;
@@ -46,7 +46,6 @@ a {
   border-radius: 10px 10px;
   padding: 3% 3%;
   margin-top:5%;
-  vertical-align: middle;
   margin: 10px 20px;
   }
 
@@ -142,12 +141,6 @@ footer{
   color:#5e528a;
   font-size:1em;
   padding-bottom:1.5%;
-}
-ul {
-  display:flex;
-  flex-direction:row;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 #footer li{
   margin-right: 20px;

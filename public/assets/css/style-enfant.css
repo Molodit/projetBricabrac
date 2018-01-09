@@ -52,7 +52,7 @@ h1, h2, h3 {
   color: #5e528a;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom:2%;
+  margin-bottom:1%;
   padding-bottom:1%;
   font-family: 'Philosopher', sans-serif;
   letter-spacing: 5px;
@@ -81,57 +81,66 @@ button {
   text-transform: uppercase;
 }
 /*XXXXXXXXXXX ADMIN ENFANT ET READ ADMIN ENFANT XXXXXXXXXXXXX*/
-
-img{
-  width:20%;
-  margin: 0 auto;
-}
-
-.circle-content h2 {
-  background: white;
-  padding:1% 0;
-  margin: 2.5% 0;
+.read{
+  margin-bottom: 30%;
+ }
+.cercle-content  h3{
+  color:white;
   position: relative;
+  font-size: 20px;
 }
-.circle-content article {
-    padding:1%;
-    border-radius: 50%;
-    display:table;
-    overflow: hidden;
-    text-align: center;
-    vertical-align: middle;
+.cercle-content article {
+  margin-left:2%;
+  color:white;
+  padding:1% 0;
+  border-radius:50%;
+  display:table;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
 }
-.circle-content article img {
+.cercle-content .articleBalle img {
   background-position: center center;
-  width: 40%;
+  width: 80%;
+  margin: 0 auto;
+  margin-top:8%;
+  margin-bottom:8%;
+  border-radius:50%;
   
  
 }
-    div.circle1 article{
+    div.cercle1 .articleBalle{
     position: absolute; 
-    width:10%;
-    left: 37.5%;
-    top: 135%;
+    width:12%;
+    left: 38%;
+    top: 150%;
     padding: 6%;
     background:  rgba(240,148,176,0.6);
     }
-    .circle2{
+    div.cercle2 .articleBalle{
     position: absolute;
-    width:10%;
-    left:2.5%;
-    top: 115%;
+    width:12%;
+    left:6%;
+    top: 140%;
     padding: 6%;;
     background: rgba(0,169,163,0.8);
     }
-    .circle3{
+    div.cercle3 .articleBalle{
     position: absolute;
-    width:15%;
+    width:12%;
     left: 70%;
-    top: 115%;
+    top: 140%;
     padding: 6%;
     background: rgba(96,45,145,0.7);
     }
-
+    .cercle1 .articleBalle:hover, .cercle2 .articleBalle:hover, .cercle3 .articleBalle:hover
+    {  
+        /*z-index:999;*/
+        /*background:#c1dc87;*/
+        box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
+        cursor: pointer;
+        padding:6%;
+    }
 /************ DIV REPONSE ***************/
 .response{
   font-family: 'Philosopher', sans-serif;
@@ -141,9 +150,26 @@ img{
 }
 
 /*XXXXXXXXXXX FOOTER  XXXXXXXXXXXXX*/
-footer{
+/*footer{
+  width: 100%;
   font-family: 'Philosopher', sans-serif;
   background-color:#D3D3D3;
   color:#5e528a;
-  font-size:1.2em;
+  font-size:1em;
+  padding:2%;
+  margin-top:10%;
 }
+#footer li{
+  margin-right: 20px;
+  margin-top: 30px;
+}
+.menufooter{
+  margin-top:5%;
+  vertical-align: middle;
+  margin: 10px 20px;
+  background-color:#5e528a;
+  color:white;
+  padding: 2% 3%;
+  border: solid 1px #5e528a;
+  border-radius: 10px 10px;
+}*/

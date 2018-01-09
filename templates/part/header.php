@@ -1,5 +1,6 @@
 <?php
 
+$verifNiveau = $objetSession->get("niveau");
 
 // JE RECUPERE LES URLS DES PAGES GRACE AU NOM DE LEUR ROUTE
 $urlAccueil           = $this->generateUrl("accueil");
@@ -36,11 +37,13 @@ $urlLogout            = $this->generateUrl("logout");
   <body>
     <header>
       <nav class="header">
-        <ul>
+        <ul class="menugauche">
           <li><a href="<?php echo $urlAccueil ?>"class="menu">Accueil</a></li>
           <li><a href="<?php echo $urlRhizome ?>"class="menu">Rizhome</a></li>
           <li><a href="<?php echo $urlCreaTexte ?>"class="menu">CréaTexte</a></li>
           <li><a href="<?php echo $urlJournal ?>"class="menu">Journal <em>La Tanière</em></a></li> 
+        </ul>
+        <ul class="menudroite">
           <li><a href="<?php echo $urlLogin ?>"class="menuLogin"> S'inscrire / Se Connecter </a></li>
           <li ><a href="<?php echo $urlAdmin ?>"class="menuLogin">Admin</a></li>
           <li ><a href="<?php echo $urlLogout ?>"class="menuLogin">Logout</a></li>      
