@@ -43,7 +43,7 @@ CODESQL;
     SELECT *, article.id_article as idArticle FROM article
     LEFT JOIN membre
     ON article.id_membre = membre.id_membre
-    ORDER BY date_modification DESC
+    ORDER BY date_publication DESC
     LIMIT 3
 
 CODESQL;
