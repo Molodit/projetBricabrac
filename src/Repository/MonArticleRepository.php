@@ -23,7 +23,7 @@ class MonArticleRepository extends ServiceEntityRepository
     SELECT *, article.id_article as idArticle FROM article
     LEFT JOIN membre
     ON article.id_membre = membre.id_membre
-    ORDER BY date_modification DESC
+    ORDER BY date_publication DESC
 
 CODESQL;
         // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#list-of-parameters-conversion
@@ -43,7 +43,7 @@ CODESQL;
     SELECT *, article.id_article as idArticle FROM article
     LEFT JOIN membre
     ON article.id_membre = membre.id_membre
-    ORDER BY date_modification DESC
+    ORDER BY date_publication DESC
     LIMIT 3
 
 CODESQL;
