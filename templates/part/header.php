@@ -1,7 +1,5 @@
 <?php
 
-$verifNiveau = $objetSession->get("niveau");
-
 // JE RECUPERE LES URLS DES PAGES GRACE AU NOM DE LEUR ROUTE
 $urlAccueil           = $this->generateUrl("accueil");
 $urlAdminEnfant       = $this->generateUrl("admin-enfant");
@@ -36,21 +34,62 @@ $urlLogout            = $this->generateUrl("logout");
   </head>
   <body>
     <header>
-      <nav class="header">
+    <nav class="header">
         <ul class="menugauche">
-          <li><a href="<?php echo $urlAccueil ?>"class="menu">Accueil</a></li>
-          <li><a href="<?php echo $urlRhizome ?>"class="menu">Rizhome</a></li>
-          <li><a href="<?php echo $urlCreaTexte ?>"class="menu">CréaTexte</a></li>
-          <li><a href="<?php echo $urlJournal ?>"class="menu">Journal <em>La Tanière</em></a></li> 
-        </ul>
+        <li><a href="<?php echo $urlAccueil ?>" class="menu">Accueil</a></li>
+          <li><a href="<?php echo $urlRhizome?>" class="menu">Rizhome</a></li>
+          <li><a href="<?php echo $urlCreaTexte ?>" class="menu">CréaTexte</a></li>
+          <li><a href="<?php echo $urlJournal?>" class="menu">Journal <em>La Tanière</em></a></li>
+<?php
+    $verifNiveau = $objetSession->get("niveau");
+    
+    
+    if($verifNiveau < 1){
+    
+      echo 
+<<<CODEHTML
+<li><a href=" $urlLogin"class="menuLogin"> S'inscrire / Se Connecter </a></li> 
+      
+CODEHTML;
+    }
+      else
+      {
+        <<<CODEHTML
+        <li ><a href="$urlLogout"class="menuLogin">Se Deconnecter</a></li>
+                
+CODEHTML;
+
+        if($verifNiveau == 7)
+        {
+        
+          echo
+<<<CODEHTML
+        <li ><a href="$urlAdminEnfant">Accueil</a></li>
+        <li ><a href="$urlLogout"class="menuLogin">Se Deconnecter</a></li>         
+CODEHTML;
+        }
+        elseif($verifNiveau == 9)
+        {
+          echo
+<<<CODEHTML
+          <li ><a href="$urlAdmin"class="menuLogin">Admin</a></li>
+          <li ><a href="$urlLogout"class="menuLogin">Se Deconnecter</a></li>
+CODEHTML;
+        }
+
+      }
+?>
+     
+
+        <!--</ul>
         <ul class="menudroite">
-          <li><a href="<?php echo $urlLogin ?>"class="menuLogin"> S'inscrire / Se Connecter </a></li>
-          <li ><a href="<?php echo $urlAdmin ?>"class="menuLogin">Admin</a></li>
-          <li ><a href="<?php echo $urlLogout ?>"class="menuLogin">Logout</a></li>      
+          <li><a href="<//?php echo $urlLogin ?>"class="menuLogin"> S'inscrire / Se Connecter </a></li>
+          <li ><a href="<//?php echo $urlAdmin ?>"class="menuLogin">Admin</a></li>
+          <li ><a href="<//?php echo $urlLogout ?>"class="menuLogin">Logout</a></li>-->    
         </ul>
       </nav>
        <h1>La tanière bricabracs 
-         <!--<figure><img src="<?php echo $urlAccueil ?>assets/img/oiseau.gif" alt="oiseau anime"/> 
+         <!--<figure><img src="<//?php echo $urlAccueil ?>assets/img/oiseau.gif" alt="oiseau anime"/> 
           </figure>-->
         </h1>
        
