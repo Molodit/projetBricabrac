@@ -38,7 +38,7 @@ class FormCommentaire
             $idMembre         = $objetSession->get("id_membre");
 
             
-            // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
+            // AJOUTER LES COMMENTAIRES DANS LA BASE DE DONNEES
             if ($contenu != "")
             { 
             $objetConnection->insert("comments", 

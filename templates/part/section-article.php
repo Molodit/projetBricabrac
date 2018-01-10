@@ -53,25 +53,64 @@ CODEHTML;
 ?>
 </section>
 
-<section id="commentaire">
-    <h3>Laisser un Commentaire : </h3>
-    
-    <form method="POST">
-            <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30"></textarea>
-            <button type="submit"> <i class="far fa-hand-point-right"></i> Ajouter votre commentaire  </button>
-        <input type="hidden" name="codebarre" value="commentaire">
-        <div class="response">
 <?php
-// TRAITER LE FORMULAIRE
-if ($objetRequest->get("codebarre", "") == "commentaire")
-{
-    $objetFormCommentaire = new App\Controller\FormCommentaire;
-    
-    $objetFormCommentaire->creerCommentaire($objetRequest, $objetConnection, $cheminSymfony, $objetSession);
 
+require_once("$cheminPart/section-comment-read.php")
 
-}
 ?>
+
+
+<section id="commentaire">
+        
+
+        
+<?php
+// VARIABLE GLOBALE POUR VERIFIER LES NIVEAU DE SESSION
+$verifNiveau = $objetSession->get("niveau");
+//SI LE NIVEAU EST INFERIEUR A 1
+if($verifNiveau < 1)
+{
+    echo
+<<<CODEHTML
+<form class="commentaires" style="display:none">
+    <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30"></textarea>
+    <button type="submit"> <i class="far fa-hand-point-right"></i> Ajouter votre commentaire  </button>
+    <input type="hidden" name="codebarre" value="commentaire">
+CODEHTML;
+}
+    // SI LES NIVEAU SONT SUPERIEUR A 1 ON AFFICHE LE FORMULAIRE POUR AJOUTER LES COMMENTAIRES
+    elseif($verifNiveau >= 1)
+    {
+        echo
+<<<CODEHTML
+<h3>Laisser un Commentaire :</h3>
+<form class="commentaires">
+    <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30"></textarea>
+    <button type="submit"> <i class="far fa-hand-point-right"></i> Ajouter votre commentaire  </button>
+    <input type="hidden" name="codebarre" value="commentaire">
+    
+CODEHTML;
+    
+        // TRAITEMENT DU FORMULAIRE POUR L'INSERTION DES COMMENTAIRES
+        if($objetRequest->get("codebarre", "") == "commentaire")
+        {
+        
+        $objetFormCommentaire = new App\Controller\FormCommentaire;
+            
+        $objetFormCommentaire->creerCommentaire($objetRequest, $objetConnection, $cheminSymfony, $objetSession);
+        }
+        else
+        {
+    <<<CODEHTML
+        <div class="response">
+CODEHTML;
+        }
+
+    }
+
+    
+?>
+        
         </div>
     </form>
     

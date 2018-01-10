@@ -23,7 +23,7 @@ class BlogController
         ob_start();
     
        // METHODE DE SYMFONY POUR OBTENIR LE CHEMIN DU DOSSIER symfony1        
-        $cheminSymfony   = $this->getParameter('kernel.project_dir');
+       $cheminSymfony   = $this->getParameter('kernel.project_dir');
        $cheminTemplates = "$cheminSymfony/templates"; 
        $cheminPart      = "$cheminTemplates/part"; 
        require_once("$cheminTemplates/template-accueil.php");
