@@ -52,6 +52,51 @@ CODEHTML;
         }
     
   }
+?>
+<?php
+
+
+$nbLigne = compterLigne("article");
+echo "IL Y A $nbLigne article";
+
+$numeroPage     = 1;
+// ON RECUPERE LE NUMERO DE PAGE DU PARAMETRE GET DANS L'URL
+if (isset($_REQUEST["numeroPage"]))
+{
+    $numeroPage = intval($_REQUEST["numeroPage"]);
+}
+
+// JE VEUX AFFICHER 10 articles PAR PAGE
+$nbLigneParPage = 10;
+// ON RECUPERE LE NUMERO DE PAGE DU PARAMETRE GET DANS L'URL
+if (isset($_REQUEST["nbLigneParPage"]))
+{
+    $nbLigneParPage = intval($_REQUEST["nbLigneParPage"]);
+}
+
+$nbPage         = ceil($nbLigne / $nbLigneParPage);
+$indiceDepart   = ($numeroPage -1) * $nbLigneParPage;
+
+?>
+
+    <nav>
+        <ul>
+<?php        
+
+for($p=1; $p <= $nbPage; $p++)
+{
+    echo
+<<<CODEHTML
+        <li><a href="?numeroPage=$p&nbLigneParPage=$nbLigneParPage">PAGE $p</a></li>
+        
+CODEHTML;
+
+}
+?>
+        </ul>
+    </nav>
+
+<?php
     // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
     $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
     
@@ -73,6 +118,5 @@ CODEHTML;
 }
 
 ?>
-
 
 </section>
