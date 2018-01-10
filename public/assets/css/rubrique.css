@@ -8,7 +8,7 @@
 }
 
 
-.rhizome, .article-commentaire{
+.rhizome, .article-commentaire, .createxte{
 background-image: url("../img/rhizome.png");
 background-repeat: no-repeat;
 background-size: cover;
@@ -17,6 +17,7 @@ width: 100%;
 margin: -10vh auto 0;
 color: rgb(16, 78, 139);
 }
+
  #commentaire form{
   padding-bottom: 2vh;
 }
@@ -29,9 +30,8 @@ padding: 3% 4%;
  margin-left: 20%;
 }
 
-.article-rhizome{
+.article-rhizome, .article-createxte{
  padding: 3% 4%;
- border: solid 1px rgb(16, 78, 139);
  border-radius: 10px 10px;
  width: 30%;
  margin: 1%;
@@ -42,29 +42,50 @@ padding: 3% 4%;
     /* La transition durera deux secondes. */
  transition-duration: 2s;
  transition-timing-function: ease-in;
-
+}
+.article-rhizome{
 background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+border: solid 1px rgb(16, 78, 139);  
   }
+
 .rhizome a, .rhizome h4, .rhizome h3, .rhizome div, .rhizome p{
   color: rgb(16, 78, 139);
 }
-.rhizome h3{
+.rhizome h3, .createxte{
   padding-top: 110px;
   font-family: "LondonBetween";
   text-transform: uppercase;
   font-size: 1.7em;
 }
-.rhizome h4{
+.rhizome h4, .createxte h4{
   text-transform: uppercase;
 }
 
 .article-rhizome img{
-    width: 200px;
+  width: 200px;
   height: 150px;
   -webkit-filter: grayscale(0) blur(0px);
   filter: grayscale(0) blur(0px);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+.article-createxte iframe{
+    transition-property: max-width, max-height;
+    /* La transition durera deux secondes. */
+    transition-duration: 2s;
+    transition-timing-function: ease-in;
+    max-width:0;
+    max-height:0;
+    /*display: table-cell;*/
+}
+.article-createxte img{
+    transition-property: max-width, max-height;
+    /* La transition durera deux secondes. */
+    transition-duration: 2s;
+    transition-timing-function: ease-in;
+    max-width:0;
+    max-height:0;
+    /*display: table-cell;*/
 }
 
 /* Style lors du passage de la souris*/
@@ -82,4 +103,23 @@ background-image: url("https://www.transparenttextures.com/patterns/brick-wall.p
   border-radius: 50%;  /* on arrondit l'image */
   -webkit-transform: rotate(360deg); /* rotation de l'image */
   transform: rotate(360deg);
+}
+/* Style lors du passage de la souris*/
+.article-createxte:hover{  
+    z-index:-2;
+    background:#F9C466;
+    box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
+    color: #5e528a;
+    
+}
+
+.article-createxte:hover  iframe{
+    max-width: 50%;
+    max-height: 50%;
+    
+}
+.article-createxte:hover  img{
+    max-width: 50%;
+    max-height: 50%;
+  
 }
