@@ -127,6 +127,46 @@ class FormArticle
         
     }
 
+    function updateMembre ($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession)
+    {
+        // RECUPERER LES INFOS DU FORMULAIRE
+        // ->get("email", "")
+        // VA CHERCHER L'INFO DANS LE FORMULAIRE HTML name="email"
+        // ET SI L'INFO N'EST PAS PRESENTE 
+        //  ALORS ON RETOURNE LA VALEUR PAR DEFAUT ""
+        $idUpdateMembre       = $objetRequest->get("idUpdateMembre", "");       
+        $email                = $objetRequest->get("email", "");       
+        $membre               = $objetRequest->get("membre", "");    
+        $niveau               = $objetRequest->get("niveau", "");          
+      
+        
+        // CONVERTIR $idUpdate EN NOMBRE
+        $idUpdateMembre = intval($idUpdateMembre);
+        
+        // SECURITE TRES BASIQUE
+
+       if (($idUpdateMembre > 0) && ($email != "") && ($membre != "") && ($niveau != ""))
+        {
+            
+            
+            // AJOUTER LE MEMBRE DANS LA BASE DE DONNEES
+            // ON VA UTILISER $objetConnection FOURNI PAR SYMFONY
+            
+            $tabLigneUpdate = [    
+                                        "email"             => $email,
+                                        "membre"            => $membre,
+                                        "niveau"            => $niveau,
+                                        
+                                    ];
+                                    
+                                    $objetConnection->update("membre", $tabLigneUpdate, [ "id_membre" => $idUpdateMembre ]);
+            
+            // MESSAGE RETOUR POUR LE VISITEUR
+            echo "Les infos du membre ont été modifiés";
+        }
+        
+    }
+
     
     function getUploadedFile ($nameInput, $objetRequest, $cheminSymfony)
     {

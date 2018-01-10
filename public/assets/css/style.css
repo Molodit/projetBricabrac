@@ -110,29 +110,21 @@ section {
   margin: 5% auto;
 }
 
-#recherche .search {
-  width:30%;
-  display:inline-block;
-}
-
-#recherche .cloud {
-  width: 45%;
-  display: inline-block;
-}
-
-
-/*XXXXXXXXXXX ARTICLES  XXXXXXXXXXXXX*/
-#accueil-articles {
+/*XXXXXXXXXXX BALLES  XXXXXXXXXXXXX*/
+#accueil-balles {
   width:90%;
   margin: 0 auto;
 }
 
-#accueil-articles h3 {
+#accueil-balles h3 {
   font-size: 12px;
   width:50%;
   text-align: center;
   margin:0 auto;
 }
+
+/* XXXXXXXXXXX ARTICLES XXXXXXXXXXXXXX */
+
 
 /*XXXXXXXXXXX FOOTER  XXXXXXXXXXXXX*/
 footer{
