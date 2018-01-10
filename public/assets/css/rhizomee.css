@@ -9,22 +9,20 @@
 
 
 .rhizome, .article-commentaire{
-/*background-color: #cedbeb;
-background-image: url("https://www.transparenttextures.com/patterns/wet-snow.png");
-background-image: url("https://thumbs.dreamstime.com/t/abstract-gray-gradient-geometric-shapes-white-background-shadow-abstract-gray-gradient-geometric-shapes-white-103165250.jpg");*/
 background-image: url("../img/rhizome.png");
 background-repeat: no-repeat;
 background-size: cover;
 font-family: "MyriadPro-Regular";
 width: 100%;
 margin: -10vh auto 0;
+color: rgb(16, 78, 139);
 }
  #commentaire form{
   padding-bottom: 2vh;
 }
 .article-select{
-  text-align: center;
-  padding: 3% 4%;
+text-align: center;
+padding: 3% 4%;
  border: solid 1px #5e528a;
  border-radius: 10px 10px;
  width: 50%;
@@ -33,7 +31,7 @@ margin: -10vh auto 0;
 
 .article-rhizome{
  padding: 3% 4%;
- border: solid 1px #5e528a;
+ border: solid 1px rgb(16, 78, 139);
  border-radius: 10px 10px;
  width: 30%;
  margin: 1%;
@@ -44,13 +42,20 @@ margin: -10vh auto 0;
     /* La transition durera deux secondes. */
  transition-duration: 2s;
  transition-timing-function: ease-in;
+
+background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
   }
-a, h4, div, p{
-  color: #5e528a;
+.rhizome a, .rhizome h4, .rhizome h3, .rhizome div, .rhizome p{
+  color: rgb(16, 78, 139);
 }
 .rhizome h3{
   padding-top: 110px;
   font-family: "LondonBetween";
+  text-transform: uppercase;
+  font-size: 1.7em;
+}
+.rhizome h4{
+  text-transform: uppercase;
 }
 
 .article-rhizome img{
@@ -65,14 +70,14 @@ a, h4, div, p{
 /* Style lors du passage de la souris*/
 .article-rhizome:hover{  
     z-index:-2;
-    background-color: #D3D3D3;
+    background-color: #EDEDED;
     box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
-    color: #5e528a;
+    color: rgb(72, 131, 176);
     
 }
 
 .article-rhizome:hover  img{
-    width: 150px; /* on affiche l'image au carré */
+  width: 150px; /* on affiche l'image au carré */
   height: 150px;
   border-radius: 50%;  /* on arrondit l'image */
   -webkit-transform: rotate(360deg); /* rotation de l'image */

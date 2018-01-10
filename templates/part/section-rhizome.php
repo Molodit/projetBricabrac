@@ -2,7 +2,7 @@
 
 <section class="rhizome">
 
-    <h3>LISTE DES ARTICLES DE RHIZOME</h3> 
+    <h3> RHIZOME</h3> 
 
     <?php
 
@@ -56,7 +56,7 @@ CODEHTML;
 
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
 $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
-
+$objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
 
 // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
 $tabResultat = $objetRepository->findBy([ "rubrique" => "Rhizome" ], [ "datePublication" => "DESC" ]);
@@ -66,12 +66,20 @@ foreach($tabResultat as $objetArticle)
 {
     // METHODES "GETTER" A RAJOUTER DANS LA CLASSE MonArticle
     $idArticle       = $objetArticle->getIdArticle();
+    $idMembre         = $objetArticle->getIdMembre();
     $titre           = $objetArticle->getTitre();
     $contenu         = $objetArticle->getContenu();
     $rubrique        = $objetArticle->getRubrique();
     $motCle          = $objetArticle->getMotCle();
     $cheminImage     = $objetArticle->getCheminImage();
     $datePublication = $objetArticle->getDatePublication("d/m/Y");
+
+     $objetMembre = $objetRepositoryMembre->find($idMembre);
+            $pseudo = "";
+            if ($objetMembre)
+            {
+                $pseudo = $objetMembre->getMembre();
+            }
     
     
     $contenu = mb_strimwidth($contenu, 0, 100, '...');
@@ -111,10 +119,12 @@ CODEHTML;
     <article class="article-rhizome">
    
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
+        
         <div>$rubrique</div>
         <p>$contenu</p>
         <p> $datePublication</p>
         <div >$htmlFile</div>
+        <td>$pseudo</td>
       
     </article>
     
