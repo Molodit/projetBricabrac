@@ -1,20 +1,49 @@
+@font-face {
+  font-family: "MyriadPro-Regular";
+  src: url("../css/fonts/MyriadPro-Regular.otf");
+}
+@font-face {
+  font-family: "LondonBetween";
+  src: url("../css/fonts/LondonBetween.ttf");
+}
+
 body, html {
   color: #777;
-  font-family: 'Roboto', sans-serif;
-  margin: 0 auto;
+  font-family: "MyriadPro-Regular";
+}
+/*XXXXXXXXXXXXXX HEADER ET NAV XXXXXXXXXXXXX*/
+/* lien du css https://codepen.io/collection/AxKbKw/2/ */
+header{
+  background:#f9f4f4;
+  padding-bottom:0.2%;
+  border-bottom: 1px solid #313233;
+}
+.ulNav{
+  margin-left:40%;
+}
+ul{
+  margin-top:3%;
+  margin-left:0.5%;
 }
 ul, li {
   list-style: none;
+  display: inline-block;
 }
-.header{
-  background-color:#D3D3D3;
-}
-li{
-  display: inline;
-}
-a {
+.menu a {
+  background: #1E90FF;
+  font-size:1.2em;
+  margin-right:10px;
+  box-shadow: 0 0 0 #000 inset;
+  border-radius: 4px;
+  border: 1px solid #313233; 
+  transition: .3s;
+  padding: 10px;
+  color: white;
   text-decoration: none;
 }
+
+.menu a:hover {
+  box-shadow: 0 -3em 0 #697275 inset;}
 .header{
   padding:1%;
 }
@@ -52,17 +81,16 @@ nav.header .menu{
   }
 
 h1 {
+  color:#DE6918;
   font-family: 'Philosopher', sans-serif;
   font-size: 40px;
-}
-h1, h2, h3 {
-  color: #5e528a;
+  margin-top:3%;
   text-align: center;
   text-transform: uppercase;
 }
 
+/*XXXXXXXXXXXXXXXXX SECTION XXXXXXXXXXXXXXXXXXX*/
 h2, h3 {
-  font-family: 'Philosopher', sans-serif;
   letter-spacing: 5px;
 }
 form{
@@ -109,8 +137,6 @@ section {
   margin: 5% auto;
 }
 
-/*XXXXXXXXXXX BALLES  XXXXXXXXXXXXX*/
-
 
 /* XXXXXXXXXXX ARTICLES XXXXXXXXXXXXXX */
 #accueil-articles img {
@@ -133,7 +159,7 @@ section {
   width:20%;
   vertical-align: top;
   padding: 5% 3% 3% 4%;
-  height:25vh;
+  height:25vh !important;
   border-radius: 5%;
   background: #4883b0;
   margin-left:4%;
@@ -161,23 +187,30 @@ box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
 
 /*XXXXXXXXXXX FOOTER  XXXXXXXXXXXXX*/
 footer{
-  width: 100%;
-  font-family: 'Philosopher', sans-serif;
-  background-color:#D3D3D3;
-  color:#5e528a;
-  font-size:1em;
-  padding-bottom:1.5%;
+  background:#f9f4f4;
+  padding-top:0.2%;
+  border-top: 1px solid #313233;
 }
-#footer li{
-  margin-right: 20px;
-  margin-top: 30px;
+.menuFooter{
+  margin-bottom:3%;
+  margin-left:35%;
 }
-.menufooter{
-  margin:5% 5% 0 0 !important;
-  vertical-align: middle;
-  background-color:#5e528a;
-  color:white;
-  padding: 2% 3%;
-  border: solid 1px #5e528a;
-  border-radius: 10px 10px;
+.footer ul, li {
+  display: inline-block;
 }
+.footer a {
+  background: #1E90FF;
+  font-size:1.2em;
+  margin-right:10px;
+  box-shadow: 0 0 0 #000 inset;
+  border: 1px solid #313233;
+  border-radius: 3px;
+  transition: .3s;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+.footer a:hover {
+  box-shadow: 0 -3em 0 #697275 inset;
+}
+

@@ -1,6 +1,6 @@
 
         </main>
-        <footer>
+        <footer class="footerEnfant">
     </footer>
         <!-- https://sdk.ckeditor.com/samples/autogrow.html# -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
