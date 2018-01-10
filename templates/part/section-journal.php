@@ -64,7 +64,7 @@ foreach($tabResultat as $index => $objetArticle)
     $rubrique        = $objetArticle->getRubrique();
     $motCle          = $objetArticle->getMotCle();
     $cheminImage     = $objetArticle->getCheminImage();
-    $datePublication = $objetArticle->getDatePublication("d/m/Y H:i:s");
+    $datePublication = $objetArticle->getDatePublication("d/m/Y");
     
     $classActive = "";
     if ($index == 0) {

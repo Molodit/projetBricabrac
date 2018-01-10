@@ -23,7 +23,7 @@ foreach($tabResultat as $objetArticle)
     $rubrique        = $objetArticle->getRubrique();
     $motCle          = $objetArticle->getMotCle();
     $cheminImage     = $objetArticle->getCheminImage();
-    $datePublication = $objetArticle->getDatePublication("d/m/Y H:i:s");
+    $datePublication = $objetArticle->getDatePublication("d/m/Y");
     
     
     $htmlFile = "";
