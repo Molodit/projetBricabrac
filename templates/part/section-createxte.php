@@ -2,14 +2,14 @@
 
 <section class=createxte>
 
-    <h3>LISTE DES ARTICLES DE CREATEXTE</h3> 
+    <h3>CREATEXTE</h3> 
 
 <?php
 // ALLER CHERCHER LA LISTE DES ARTICLES DANS LA CATEGORIE $createxte
 
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
 $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
-
+$objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
 
 // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
 $tabResultat = $objetRepository->findBy([ "rubrique" => "CreaTexte" ], [ "datePublication" => "DESC" ]);
@@ -19,12 +19,21 @@ foreach($tabResultat as $objetArticle)
 {
     // METHODES "GETTER" A RAJOUTER DANS LA CLASSE MonArticle
     $idArticle       = $objetArticle->getIdArticle();
+    $idMembre         = $objetArticle->getIdMembre();
     $titre           = $objetArticle->getTitre();
     $contenu         = $objetArticle->getContenu();
     $rubrique        = $objetArticle->getRubrique();
     $motCle          = $objetArticle->getMotCle();
     $cheminImage     = $objetArticle->getCheminImage();
     $datePublication = $objetArticle->getDatePublication("d/m/Y");
+    
+    
+     $objetMembre = $objetRepositoryMembre->find($idMembre);
+            $pseudo = "";
+            if ($objetMembre)
+            {
+                $pseudo = $objetMembre->getMembre();
+            }
     
     
     $htmlFile = "";
@@ -59,11 +68,14 @@ CODEHTML;
 <<<CODEHTML
 
      <article class="article-createxte">
-    
-        <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
+    <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
+        
         <div>$rubrique</div>
-        <p>$contenu $datePublication</p>
+        <p>$contenu</p>
+        <p> $datePublication</p>
         <div >$htmlFile</div>
+        <td>$pseudo</td>
+      
     </article>
     
 CODEHTML;

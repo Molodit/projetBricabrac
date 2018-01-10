@@ -8,7 +8,7 @@
 }
 
 
-.rhizome, .article-commentaire, .createxte{
+.rhizome, .article-commentaire, .createxte, .journal{
 background-image: url("../img/rhizome.png");
 background-repeat: no-repeat;
 background-size: cover;
@@ -30,7 +30,7 @@ padding: 3% 4%;
  margin-left: 20%;
 }
 
-.article-rhizome, .article-createxte{
+.article-rhizome, .article-createxte, .article-journal{
  padding: 3% 4%;
  border-radius: 10px 10px;
  width: 30%;
@@ -43,7 +43,7 @@ padding: 3% 4%;
  transition-duration: 2s;
  transition-timing-function: ease-in;
 }
-.article-rhizome{
+.article-rhizome, .article-createxte, .article-journal{
 background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
 border: solid 1px rgb(16, 78, 139);  
   }
@@ -51,13 +51,19 @@ border: solid 1px rgb(16, 78, 139);
 .rhizome a, .rhizome h4, .rhizome h3, .rhizome div, .rhizome p{
   color: rgb(16, 78, 139);
 }
-.rhizome h3, .createxte{
+.createxte a, .createxte h4, .createxte h3, .createxte div, .createxte p{
+  color: rgb(16, 78, 139);
+}
+.journal a, .journal h4, .journal h3, .journal div, .journal p{
+  color: rgb(16, 78, 139);
+}
+.rhizome h3, .createxte h3, .journal h3{
   padding-top: 110px;
   font-family: "LondonBetween";
   text-transform: uppercase;
   font-size: 1.7em;
 }
-.rhizome h4, .createxte h4{
+.rhizome h4, .createxte h4, .journal h4{
   text-transform: uppercase;
 }
 
@@ -69,7 +75,7 @@ border: solid 1px rgb(16, 78, 139);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-.article-createxte iframe{
+.article-createxte iframe, .article-journal iframe{
     transition-property: max-width, max-height;
     /* La transition durera deux secondes. */
     transition-duration: 2s;
@@ -78,7 +84,7 @@ border: solid 1px rgb(16, 78, 139);
     max-height:0;
     /*display: table-cell;*/
 }
-.article-createxte img{
+.article-createxte img, .article-journal img{
     transition-property: max-width, max-height;
     /* La transition durera deux secondes. */
     transition-duration: 2s;
@@ -89,7 +95,7 @@ border: solid 1px rgb(16, 78, 139);
 }
 
 /* Style lors du passage de la souris*/
-.article-rhizome:hover{  
+.article-rhizome:hover, .article-createxte:hover{  
     z-index:-2;
     background-color: #EDEDED;
     box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
@@ -104,22 +110,21 @@ border: solid 1px rgb(16, 78, 139);
   -webkit-transform: rotate(360deg); /* rotation de l'image */
   transform: rotate(360deg);
 }
-/* Style lors du passage de la souris*/
-.article-createxte:hover{  
-    z-index:-2;
-    background:#F9C466;
-    box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
-    color: #5e528a;
-    
-}
 
-.article-createxte:hover  iframe{
+
+.article-createxte:hover  iframe, .article-journal:hover  iframe{
     max-width: 50%;
     max-height: 50%;
     
 }
-.article-createxte:hover  img{
+.article-createxte:hover  img, .article-journal:hover  img{
     max-width: 50%;
     max-height: 50%;
   
+}
+.journal .tabs .active a{
+  color:white;
+  background-color: rgb(72, 131, 176);
+
+
 }
