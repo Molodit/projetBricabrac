@@ -33,14 +33,12 @@ $urlLogout            = $this->generateUrl("logout");
   </head>
   <body>
     <header>
-    <nav class="header">
-        <ul class="menugauche">
+    <nav class="menu" role="navigation">
+        <ul>
         <li><a href="<?php echo $urlAccueil ?>" class="menu">Accueil</a></li>
           <li><a href="<?php echo $urlRhizome?>" class="menu">Rizhome</a></li>
           <li><a href="<?php echo $urlCreaTexte ?>" class="menu">CréaTexte</a></li>
           <li><a href="<?php echo $urlJournal?>" class="menu">Journal <em>La Tanière</em></a></li>
-        </ul>
-        <ul class="menudroite">
 <?php
     $verifNiveau = $objetSession->get("niveau");
     
@@ -49,44 +47,49 @@ $urlLogout            = $this->generateUrl("logout");
     
       echo 
 <<<CODEHTML
-<li><a href=" $urlLogin"class="menuLogin"> S'inscrire / Se Connecter </a></li> 
+<li><a href=" $urlLogin"> S'inscrire / Se Connecter </a></li> 
       
 CODEHTML;
-    } 
-    //Sinon on affiche le logout:
-      else
-      {
-        echo
-        <<<CODEHTML
-        <li ><a href="$urlLogout"class="menuLogin">Se Deconnecter</a></li>                
-CODEHTML;
-        // si niveau 7 on affiche les 2 liens suivant :
+    }
+
+         // si niveau 7 on affiche le lien suivant :
         if($verifNiveau == 7)
         {
         
           echo
 <<<CODEHTML
-        <li ><a href="$urlAdminEnfant">Mon tableau de bord :</a></li>                
+        <li ><a href="$urlAdminEnfant" class="menuConnecter">Mon tableau de bord  <i class="fas fa-smile"></i> </a></li>                
 CODEHTML;
         }
-        //si niveau 9, on affiche les 2 liens suivant
+        //si niveau 9, on affiche le 2 lien suivant
         elseif($verifNiveau == 9)
         {
           echo
 <<<CODEHTML
-          <li ><a href="$urlAdmin"class="menuLogin">Admin</a></li>
+          <li ><a href="$urlAdmin" class="menuConnecter">Admin</a></li>
 CODEHTML;
         }
+?>
+
+        </ul>
+        <ul class="ulNav">
+
+
+<?php
+        //Sinon on affiche le logout:
+      if($verifNiveau >= 1)
+      {
+        echo
+        <<<CODEHTML
+        <li ><a href="$urlLogout">Se Deconnecter</a></li>                
+CODEHTML;
 
       }
 ?>
       </nav>
       <br><br><br> 
       
-      <h1>La tanière bricabracs 
-         <!--<figure><img src="<//?php echo $urlAccueil ?>assets/img/oiseau.gif" alt="oiseau anime"/> 
-          </figure>-->
-        </h1>
+      <h1>La tanière bricabracs</h1>
        
     </header>
 <main>
