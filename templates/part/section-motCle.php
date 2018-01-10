@@ -10,7 +10,7 @@ $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::cl
 
 
 // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
-$tabResultat = $objetRepository->findBy([ "mot_cle" => $mot_cle ], [ "datePublication" => "DESC" ]);
+$tabResultat = $objetRepository->findBy([ "motCle" => $mot_cle ], [ "datePublication" => "DESC" ]);
 
 
 // ON A UN TABLEAU D'OBJETS DE CLASSE Article
@@ -60,7 +60,7 @@ CODEHTML;
     <article class="article-motCle">
    
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
-        <div>$motCle</div>
+        <div>$mot_cle</div>
         <p>$contenu</p>
         <p> $datePublication</p>
         <div >$htmlFile</div>
