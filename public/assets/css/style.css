@@ -18,6 +18,7 @@ body, html {
 header{
   background:#A0D8F6;
   padding-bottom:0.2%;
+  border-bottom: 1px solid #313233;
 }
 .ulNav{
   margin-left:40%;
@@ -143,6 +144,7 @@ border-radius:50%;
 footer{
   background:#A0D8F6;
   padding-top:0.2%;
+  border-top: 1px solid #313233;
 }
 .menuFooter{
   margin-bottom:3%;
