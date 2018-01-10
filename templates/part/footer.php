@@ -1,8 +1,8 @@
 
         </main>
         <footer>
-            <nav id="footer">
-                <ul>
+            <nav class="footer">
+                <ul class="menuFooter">
                   <li><a href="<?php echo $urlAccueil ?>" class="menufooter"><i class="fas fa-home"></i>  Accueil </a></li>
                   <li><a href="<?php echo $urlRhizome ?>" class="menufooter"><i class="far fa-newspaper"></i>  Rhizome </a></li>
                   <li><a href="<?php echo $urlCreaTexte ?>" class="menufooter"><i class="fas fa-book"></i> CréaTexte</a></li>

@@ -1,6 +1,17 @@
+@font-face {
+  font-family: "MyriadPro-Regular";
+  src: url("../css/fonts/MyriadPro-Regular.otf");
+}
+@font-face {
+  font-family: "LondonBetween";
+  src: url("../css/fonts/LondonBetween.ttf");
+}
+
+
+
 body, html {
   color: #777;
-  font-family: 'Roboto', sans-serif;
+  font-family: "MyriadPro-Regular";
 }
 /*XXXXXXXXXXXXXX HEADER ET NAV XXXXXXXXXXXXX*/
 /* lien du css https://codepen.io/collection/AxKbKw/2/ */
@@ -13,7 +24,7 @@ header{
 }
 ul{
   margin-top:3%;
-  margin-left:2%;
+  margin-left:0.5%;
 }
 ul, li {
   list-style: none;
@@ -21,10 +32,9 @@ ul, li {
 }
 .menu a {
   background: #1E90FF;
-  display: inline-block;
+  font-size:1.2em;
   margin-right:10px;
   box-shadow: 0 0 0 #000 inset;
-  font-size:1.4em;
   border-radius: 4px;
   border: 1px solid #313233; 
   transition: .3s;
@@ -41,13 +51,13 @@ h1 {
   color:#DE6918;
   font-family: 'Philosopher', sans-serif;
   font-size: 40px;
+  margin-top:3%;
   text-align: center;
   text-transform: uppercase;
 }
 
 /*XXXXXXXXXXXXXXXXX SECTION XXXXXXXXXXXXXXXXXXX*/
 h2, h3 {
-  font-family: 'Philosopher', sans-serif;
   letter-spacing: 5px;
 }
 form{
@@ -130,3 +140,31 @@ border-radius:50%;
 
 
 /*XXXXXXXXXXX FOOTER  XXXXXXXXXXXXX*/
+footer{
+  background:#A0D8F6;
+  padding-top:0.2%;
+}
+.menuFooter{
+  margin-bottom:3%;
+  margin-left:35%;
+}
+.footer ul, li {
+  display: inline-block;
+}
+.footer a {
+  background: #1E90FF;
+  font-size:1.2em;
+  margin-right:10px;
+  box-shadow: 0 0 0 #000 inset;
+  border: 1px solid #313233;
+  border-radius: 3px;
+  transition: .3s;
+  padding: 10px;
+  color: #313233;
+  text-decoration: none;
+}
+.footer a:hover {
+  box-shadow: 0 -3em 0 #697275 inset;
+  color:white;
+}
+

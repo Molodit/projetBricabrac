@@ -39,10 +39,14 @@ $urlLogout            = $this->generateUrl("logout");
           <li><a href="<?php echo $urlRhizome?>" class="menu">Rizhome</a></li>
           <li><a href="<?php echo $urlCreaTexte ?>" class="menu">CréaTexte</a></li>
           <li><a href="<?php echo $urlJournal?>" class="menu">Journal <em>La Tanière</em></a></li>
+
 <?php
+
+// ON VA GERER L'AFFICHAGE DE LA NAVIGATION CELON LE NIVEAU DE SESSION
+
     $verifNiveau = $objetSession->get("niveau");
     
-    //Si le niveau est inférieur a 1, le visiteur aura accés a ces liens :
+    //Si le niveau est inférieur a 1, le visiteur aura accés a :
     if($verifNiveau < 1){
     
       echo 
@@ -51,8 +55,7 @@ $urlLogout            = $this->generateUrl("logout");
       
 CODEHTML;
     }
-
-         // si niveau 7 on affiche le lien suivant :
+         // si niveau 7 on affiche le lien suivant en plus:
         if($verifNiveau == 7)
         {
         
@@ -61,7 +64,7 @@ CODEHTML;
         <li ><a href="$urlAdminEnfant" class="menuConnecter">Mon tableau de bord  <i class="fas fa-smile"></i> </a></li>                
 CODEHTML;
         }
-        //si niveau 9, on affiche le 2 lien suivant
+        //si c'est le niveau 9, on affichera :
         elseif($verifNiveau == 9)
         {
           echo
@@ -74,21 +77,20 @@ CODEHTML;
         </ul>
         <ul class="ulNav">
 
-
 <?php
-        //Sinon on affiche le logout:
-      if($verifNiveau >= 1)
-      {
-        echo
-        <<<CODEHTML
-        <li ><a href="$urlLogout">Se Deconnecter</a></li>                
+
+// on affiche le logout dès qu'on a le niveau 1 et pour les niveaux supérieur :
+if($verifNiveau >= 1)
+{
+  echo
+  <<<CODEHTML
+  <li ><a href="$urlLogout">Se Deconnecter</a></li>                
 CODEHTML;
 
-      }
+}
 ?>
       </nav>
-      <br><br><br> 
-      
+
       <h1>La tanière bricabracs</h1>
        
     </header>

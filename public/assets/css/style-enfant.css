@@ -119,28 +119,3 @@ button {
   color:#32a1f7;
 }
 
-/*XXXXXXXXXXX FOOTER  XXXXXXXXXXXXX*/
-footer{
-  width: 100%;
-  font-family: "LondonBetween";
-  background-color:white;
-  color:#5e528a;
-  font-size:1em;
-  padding:2%;
-  margin-top:10%;
-}
-/*
-#footer li{
-  margin-right: 20px;
-  margin-top: 30px;
-}
-.menufooter{
-  margin-top:5%;
-  vertical-align: middle;
-  margin: 10px 20px;
-  background-color:#5e528a;
-  color:white;
-  padding: 2% 3%;
-  border: solid 1px #5e528a;
-  border-radius: 10px 10px;
-}*/
