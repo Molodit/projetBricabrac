@@ -3,10 +3,6 @@
 /* Balles css Marina Molodit */
 
 /* Balles Animation Lydie Danjean */
-/* .noDisplay {
-    max-width:0;
-    max-height:0;
-} */
 
 @font-face {
   font-family: "MyriadPro-Regular";
@@ -21,9 +17,6 @@
       padding:1%;
       border-radius: 50%;
       overflow: hidden;
-     
-      /* text-align: center;
-      vertical-align: middle; */
   }
 
   .circle-content article a {
@@ -45,10 +38,11 @@
  
    .circle6 article{
       position: absolute;  
-      top: 56%;
-      left: 0%;
+      top: 30%;
+      left: 35%;
       padding: 4%;
       background: rgba(235,44,59,0.7);
+      transition:all 0.3s ease;
       }
       .circle5 article{
       position: absolute;  
@@ -56,6 +50,7 @@
       left: 40%;
       padding: 7%;
       background: rgba(240,148,176,0.6);
+      transition:all 0.3s ease;
       }
       .circle4 article{
       position: absolute;  
@@ -63,13 +58,14 @@
       left: 77%;
       padding: 8%;
       background: rgba(237,17,100,0.6);
+      transition:all 0.3s ease;
       }
       .circle1 article{
       position: absolute;  
       left: 15%;
       top: 12%;
       padding: 5%;
-      /* background: rgba(188,207,0,0.6); */
+      background: rgba(188,207,0,0.6);
       }
       .circle2 article{
       position: absolute; 
@@ -91,13 +87,15 @@
       top: 40%;
       padding: 5%;
       background: rgba(244,120,59,0.7);
+      transition: all 0.7s ease;
       }
       .circle8 article{
       position: absolute;
       left: 43%;
-      top: -3%;
+      top: 4%;
       padding: 3%;
       background: rgba(0,166,81,0.7);
+      transition: box-shadow 0.7s ease infinite;
       }
       .circle9 article{
       position: absolute;
@@ -105,75 +103,80 @@
       left: 58%;
       padding: 7%;
       background-color: rgba(46,49,146,0.6);
+       transition: all 0.7s ease;
       }
       .circle10 article{
       position: absolute;
-      top: 0%;
-      left: 0%;
+      top: 80%;
+      left: 10%;
       padding: 4%;
-      background-color: rgba(255, 140, 153,0.6)
+      background-color: rgba(255, 140, 153,0.6);
+      transition:all 0.3s ease;
       }
       .circle11 article{
       position: absolute;
-      top: 0%;
-      left: 80%;
+      top: 60%;
+      left: 60%;
       padding: 4%;
       background: rgba(188,207,0,0.6);
+      transition:all 0.3s ease;
       }
 
 .circle1 article, .circle2 article, .circle3 article
 {
     transition-property:z-index, box-shadow, padding;
     /* La transition durera deux secondes. */
-    transition-duration: 1s;
-    transition-timing-function: ease-in;
-} 
-
- .circle1 article .noDisplay
-{
-    transition-property: max-width, max-height;
-    transition-duration: 2s;
+    transition-duration: 0.7s;
     transition-timing-function: ease-in;
 } 
 
 /* Style lors du passage de la souris*/
 .circle1 article:hover, .circle2 article:hover, .circle3 article:hover
 {  
-    /*z-index:999;*/
-    /*background:#c1dc87;*/
     box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
     cursor: pointer;
     padding:6%;
 }
 
-/* .circle1 article:hover .noDisplay {
-    max-width: 25%;
-    max-height:25%;
-    object-fit: cover;
-} */
-
-.circle8 article {
-    transition: box-shadow 0.7s ease infinite;
+.circle6 article:hover, .circle11 article:hover {
+    -webkit-transform: rotateZ(30deg);
+    -ms-transform: rotateZ(30deg);
+    transform: rotateZ(30deg);
 }
+
+.circle5 article:hover, .circle10 article:hover {
+    -webkit-transform: rotateZ(-30deg);
+    -ms-transform: rotateZ(-30deg);
+    transform: rotateZ(-30deg);
+}
+
 .circle8 article:hover
 {
      animation: bounce 0.7s ease infinite;
      box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
     }
 
-/* Style lors du passage de la souris*/
-@keyframes bounce{
-     from {top: -8%;}
-     50%  {top: -3%;}
-     to   {top: -8%;}
+.circle9 article:hover {
+    padding:5%;
 }
 
-/* .balle {
-    width:200px;
-    height:200px;
-    border-radius:50%;
-    object-fit:cover;
-} */
+.circle7 article:hover {
+    padding:3%;
+}
+
+.circle4 article:hover {
+    -webkit-transform: rotateZ(-90deg);
+    -ms-transform: rotateZ(-90deg);
+    transform: rotateZ(-90deg);
+}
+
+/* Style lors du passage de la souris*/
+@keyframes bounce{
+     from {top: 0%;}
+     50%  {top: 4%;}
+     to   {top: 0%;}
+}
+
 
 
 

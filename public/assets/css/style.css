@@ -18,17 +18,20 @@ a {
 .header{
   padding:1%;
 }
+
+.header li{
+  padding: 3% 5%;
+  border-radius: 10px;
+}
 nav.header .menu{
   font-family: 'Philosopher', sans-serif;
   font-size: 1.2em;
   font-weight: normal;
   background-color:#5e528a;
   color:white;
-  border-radius: 10px 10px;
-  padding: 3% 3%;
-  margin-top:5%;
-  margin: 10px 20px;
-  overflow: hidden;
+ 
+ 
+
 }
 .menugauche{
   float:left;
@@ -46,8 +49,6 @@ nav.header .menu{
   color:white;
   border-radius: 10px 10px;
   padding: 3% 3%;
-  margin-top:5%;
-  margin: 10px 20px;
   }
 
 h1 {
@@ -123,21 +124,33 @@ section {
   max-height:50%;
 }
 
+#accueil-articles h2 {
+  font-size:30px;
+}
+
 #accueil-articles article {
   display:inline-block;
-  width:23%;
+  width:20%;
   vertical-align: top;
-  /* border: 10px solid #4883b0; */
-  padding: 3%;
+  padding: 5% 3% 3% 4%;
   height:25vh;
   border-radius: 5%;
-  background: rgba(214,128,75,.1);
-  margin-left:2%;
+  background: #4883b0;
+  margin-left:4%;
+  color: white;
   transition:all 0.3s ease;
+  font-size:20px;
+}
+
+#accueil-articles article a, #accueil-articles article p {
+  color:white;
+  background: #4883b0;
+  padding:1%;
 }
 
 #accueil-articles article:hover {
 border-radius:50%;
+box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
 }
 
 #accueil-articles article div {
@@ -160,9 +173,8 @@ footer{
   margin-top: 30px;
 }
 .menufooter{
-  margin-top:5%;
+  margin:5% 5% 0 0 !important;
   vertical-align: middle;
-  margin: 10px 20px;
   background-color:#5e528a;
   color:white;
   padding: 2% 3%;
