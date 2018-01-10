@@ -1,6 +1,16 @@
+@font-face {
+  font-family: "MyriadPro-Regular";
+  src: url("../css/fonts/MyriadPro-Regular.otf");
+}
+@font-face {
+  font-family: "LondonBetween";
+  src: url("../css/fonts/LondonBetween.ttf");
+}
+
+
 body, html {
   color: #777;
-  font-family: 'Roboto', sans-serif;
+  font-family: "MyriadPro-Regular";
   margin: 0 auto;
 }
 figure img {
@@ -30,7 +40,7 @@ header nav {
   padding:1%;
 }
 header nav li {
-  font-family: 'Philosopher', sans-serif;
+  font-family: "LondonBetween";
   font-weight: normal;
   
 }
@@ -44,7 +54,7 @@ header nav a, #ecrire a {
  border-radius: 10px 10px;
 }
 h1 {
-  font-family: 'Philosopher', sans-serif;;
+  font-family: "LondonBetween";
   font-size: 2em;
 
 }
@@ -54,7 +64,7 @@ h1, h2, h3 {
   text-transform: uppercase;
   margin-bottom:1%;
   padding-bottom:1%;
-  font-family: 'Philosopher', sans-serif;
+  font-family: "LondonBetween";
   letter-spacing: 5px;
 }
 
@@ -143,7 +153,7 @@ button {
     }
 /************ DIV REPONSE ***************/
 .response{
-  font-family: 'Philosopher', sans-serif;
+  font-family: "LondonBetween";
   margin-top:4%;
   font-size:1.6em;
   color:#32a1f7;
@@ -152,7 +162,7 @@ button {
 /*XXXXXXXXXXX FOOTER  XXXXXXXXXXXXX*/
 footer{
   width: 100%;
-  font-family: 'Philosopher', sans-serif;
+  font-family: "LondonBetween";
   background-color:white;
   color:#5e528a;
   font-size:1em;

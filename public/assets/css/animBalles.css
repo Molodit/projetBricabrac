@@ -7,6 +7,16 @@
     max-width:0;
     max-height:0;
 } */
+
+@font-face {
+  font-family: "MyriadPro-Regular";
+  src: url("../css/fonts/MyriadPro-Regular.otf");
+}
+@font-face {
+  font-family: "LondonBetween";
+  src: url("../css/fonts/LondonBetween.ttf");
+}
+
   .circle-content article {
       padding:1%;
       border-radius: 50%;
@@ -20,7 +30,7 @@
     color: white;
     margin:0;
     position: relative;
-    font-family: Roboto;
+    font-family: "MyriadPro-Regular";
     max-width:50%;
     display: block;
     text-align:center;

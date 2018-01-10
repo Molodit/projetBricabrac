@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "MyriadPro-Regular";
+  src: url("../css/fonts/MyriadPro-Regular.otf");
+}
+@font-face {
+  font-family: "LondonBetween";
+  src: url("../css/fonts/LondonBetween.ttf");
+}
+
+
 .journal{
  font-family: 'Roboto', sans-serif;
 /*background-color: #ebbce2;

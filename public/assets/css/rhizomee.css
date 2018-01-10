@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "MyriadPro-Regular";
+  src: url("../css/fonts/MyriadPro-Regular.otf");
+}
+@font-face {
+  font-family: "LondonBetween";
+  src: url("../css/fonts/LondonBetween.ttf");
+}
+
+
 .rhizome, .article-commentaire{
 /*background-color: #cedbeb;
 background-image: url("https://www.transparenttextures.com/patterns/wet-snow.png");
@@ -5,7 +15,7 @@ background-image: url("https://thumbs.dreamstime.com/t/abstract-gray-gradient-ge
 background-image: url("../img/rhizome.png");
 background-repeat: no-repeat;
 background-size: cover;
-font-family: 'Roboto', sans-serif;
+font-family: "MyriadPro-Regular";
 width: 100%;
 margin: -10vh auto 0;
 }
@@ -40,6 +50,7 @@ a, h4, div, p{
 }
 .rhizome h3{
   padding-top: 110px;
+  font-family: "LondonBetween";
 }
 
 .article-rhizome img{

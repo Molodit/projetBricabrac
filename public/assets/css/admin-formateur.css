@@ -1,4 +1,13 @@
 /* CSS pour l'affichage par onglet */
+@font-face {
+  font-family: "MyriadPro-Regular";
+  src: url("../css/fonts/MyriadPro-Regular.otf");
+}
+@font-face {
+  font-family: "LondonBetween";
+  src: url("../css/fonts/LondonBetween.ttf");
+}
+
 
 .tab-content {
     display:none;
@@ -65,7 +74,7 @@ ul.tabs {
 }
 
 .admin h3 {
-    font-family: 'Roboto', sans-serif;
+    font-family: "MyriadPro-Regular";
     text-transform: none;
 }
 

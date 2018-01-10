@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "MyriadPro-Regular";
+  src: url("../css/fonts/MyriadPro-Regular.otf");
+}
+@font-face {
+  font-family: "LondonBetween";
+  src: url("../css/fonts/LondonBetween.ttf");
+}
+
+
 .createxte{
 font-family: 'Roboto', sans-serif;
 background-image: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX2589419.jpg");
