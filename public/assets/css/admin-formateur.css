@@ -1,12 +1,12 @@
 /* CSS pour l'affichage par onglet */
 
-.tab-content {
+/* .tab-content {
     display:none;
 }
 
 .tab-content.active {
     display: block;
-}
+} */
 
 .tabs .active a {
     color:white;

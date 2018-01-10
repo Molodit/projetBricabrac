@@ -15,6 +15,11 @@ if ($objetRequest->get("afficher", "") == "update")
 {
     require_once("$cheminPart/admin-article-update.php");
 }
+
+elseif ($objetRequest->get("afficher", "") == "updateMembre")
+{
+    require_once("$cheminPart/admin-membre-update.php");
+}
 else
 {
     require_once("$cheminPart/admin-article-create.php");

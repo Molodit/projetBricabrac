@@ -1,6 +1,6 @@
 <?php
 
-// FAIRE LE TRAITEMENT DU FORMULAIRE AVANT DE FAIRE LE READ
+// FAIRE LE TRAITEMENT DU FORMULAIRE DELETE AVANT DE FAIRE LE READ, AJOUT DES PARAMETRES DE LA TABLE ET DE L'ID DE CHAQUE TABLE
 if ($objetRequest->get("codebarre", "") == "deleteArticle")
 {
     $objetFormArticle = new App\Controller\FormArticle;
@@ -9,13 +9,15 @@ if ($objetRequest->get("codebarre", "") == "deleteArticle")
     
 }
 ?>
+
+ <!--MENU QUI AFFICHE UNE SEULE TABLE A LA FOIS  -->
     <div>
-        <ul class="tabs">
+        <!-- <ul class="tabs">
             <li class="active"><a href="#articles">Articles</a></li>
             <li><a href="#membres">Membres</a></li>
             <li><a href="#commentaires">Commentaires</a></li>
 
-        </ul>
+        </ul> -->
     <div class="tabs-content">
         <section class="admin article tab-content active" id="articles">
             <h4>Liste des articles</h4>
@@ -55,7 +57,7 @@ CODEHTML;
             <tbody>
         <?php
 
-        // JE VAIS RECUPERER LES REPOSITORY POUR LES ENTITES Article & Membre
+        // JE VAIS RECUPERER LES REPOSITORY POUR LES ENTITES Article & Membre & Comments
 
         $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
         $objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::class);

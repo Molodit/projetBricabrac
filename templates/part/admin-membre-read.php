@@ -19,7 +19,7 @@ if ($objetRequest->get("codebarre", "") == "deleteMembre")
                     <!--Création de l'entête et pied du tableau avec les balises TH-->
                     <?php
                     
-                    $tabMembreTH = ["N°", "Email", "Pseudo", "Niveau", "Date d'inscription", "Supprimer"];
+                    $tabMembreTH = ["N°", "Email", "Pseudo", "Niveau", "Date d'inscription", "Modifier", "Supprimer"];
                     
                     foreach ($tabMembreTH as $element) {
                         echo
@@ -72,7 +72,13 @@ CODEHTML;
                 <td>$membre</td>
                 <td>$niveau</td>
                 <td>$dateInscription</td>
-                
+                <td>
+                    <form method="GET" action="">
+                        <input type="hidden" name="afficher" value="updateMembre">
+                        <input type="hidden" name="idUpdate" value="$idMembre">
+                        <button type="submit"><i class="far fa-edit"></i></button>
+                    </form>
+                </td>
                 <td>
                     <form method="POST" action="">
                         <input type="hidden" name="codebarre" value="deleteMembre">
@@ -80,6 +86,7 @@ CODEHTML;
                         <button type="submit" onclick="return confirm('Êtes vous sûr(e) de vouloir supprimer cet élément ?');"><i class="far fa-trash-alt"></i></button>
                     </form>
                 </td>
+                
             </tr>
 CODEHTML;
             

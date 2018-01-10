@@ -58,11 +58,20 @@ CODEHTML;
             $contenu           = $objetComment->getContenu();
             $datePublicationComment   = $objetComment->getDatePublication("d/m/Y H:i:s");
             $idMembre = $objetComment->getIdMembre();
+            $idArticle = $objetComment->getIdArticle();
             $objetMembre = $objetRepositoryMembre->find($idMembre);
+            $objetArticle = $objetRepository->find($idArticle);
+           
             $pseudo = "";
             if ($objetMembre)
             {
                 $pseudo = $objetMembre->getMembre();
+            }
+          
+            $titreArt ="";
+            if ($objetArticle)
+            {
+                $titreArt = $objetArticle->getTitre();
             }
         
             echo
@@ -70,7 +79,7 @@ CODEHTML;
 
             <tr>
                 <td>$idComment</td>
-                <td><a href="$urlArticle">$titre</a></td>
+                <td><a href="$urlArticle">$titreArt</a></td>
                 <td>$pseudo</td>
                 <td>$contenu</td>
                 <td>$datePublicationComment</td>
