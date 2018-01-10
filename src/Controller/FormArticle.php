@@ -224,6 +224,8 @@ class FormArticle
             echo "ARTICLE PUBLIE";
         }
         
-    }   
+    }  
+
+
     
 }

@@ -55,9 +55,12 @@ CODEHTML;
 ?>
 <?php
 
+$objetRepository     = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
 
-$nbLigne = compterLigne("article");
-echo "IL Y A $nbLigne article";
+$nbLigne =  $objetRepository->compterLigneArticle($objetConnection);
+
+//$nbArticle = compterArticle("article");
+echo "IL Y A $nbLigne ARTICLES";
 
 $numeroPage     = 1;
 // ON RECUPERE LE NUMERO DE PAGE DU PARAMETRE GET DANS L'URL
@@ -67,15 +70,15 @@ if (isset($_REQUEST["numeroPage"]))
 }
 
 // JE VEUX AFFICHER 10 articles PAR PAGE
-$nbLigneParPage = 10;
+$nbArticleParPage = 10;
 // ON RECUPERE LE NUMERO DE PAGE DU PARAMETRE GET DANS L'URL
-if (isset($_REQUEST["nbLigneParPage"]))
+if (isset($_REQUEST["nbArticleParPage"]))
 {
-    $nbLigneParPage = intval($_REQUEST["nbLigneParPage"]);
+    $nbArticleParPage = intval($_REQUEST["nbArticleParPage"]);
 }
 
-$nbPage         = ceil($nbLigne / $nbLigneParPage);
-$indiceDepart   = ($numeroPage -1) * $nbLigneParPage;
+$nbPage         = ceil($nbLigne / $nbArticleParPage);
+$indiceDepart   = ($numeroPage -1) * $nbArticleParPage;
 
 ?>
 
@@ -87,7 +90,7 @@ for($p=1; $p <= $nbPage; $p++)
 {
     echo
 <<<CODEHTML
-        <li><a href="?numeroPage=$p&nbLigneParPage=$nbLigneParPage">PAGE $p</a></li>
+        <li><a href="?numeroPage=$p&nbArticleParPage=$nbArticleParPage">PAGE $p</a></li>
         
 CODEHTML;
 
