@@ -19,15 +19,17 @@ $urlMotCle = $this->generateUrl("motCle", [ "mot_cle" => $mot_cle ]);
 
     echo
 <<<CODEHTML
-<div class="circles-container container">
+<a href="$urlMotCle">
+    <div class="circles-container container">
 
-                  <div class="circle-link circle$compteur" >
-                  <div class="circle-content" >
-    <article>
-        <a href="$urlMotCle">$mot_cle</a>
-    </article>
+                    <div class="circle-link circle$compteur" >
+                    <div class="circle-content" >
+        <article>
+            <span>$mot_cle</span>
+        </article>
+        </div>
     </div>
-</div>
+</a>
     
 CODEHTML;
     }
@@ -55,15 +57,17 @@ foreach($tabResultat as $tabLigne)
     {
        echo
         <<<CODEHTML
+        <a href="$urlArticle">
             <article style="background-image:url('$chemin_image');
                 background-repeat:no-repeat;
                 background-position:center;
                 background-size: cover;">
                     <div class="images">
-                        <a href="$urlArticle">$titre</a>
+                        <p>$titre</p>
                         <p>écrit par $membre</p>
                     </div>
             </article>
+        </a>
 CODEHTML;
     
 
@@ -72,12 +76,14 @@ CODEHTML;
     else {
         echo
         <<<CODEHTML
+        <a href="$urlArticle">
         <article>
             <div>
-                <a href="$urlArticle">$titre</a>
+                <p>$titre</p>
                 <p>écrit par $membre</p>
             </div>
         </article>
+    </a>
 CODEHTML;
     }
     

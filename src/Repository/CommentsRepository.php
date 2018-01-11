@@ -13,6 +13,24 @@ class CommentsRepository extends ServiceEntityRepository
         parent::__construct($registry, Comments::class);
     }
 
+    public function trouverCommentUser ($objetConnection)
+    {
+        $requeteSQL =
+    <<<CODESQL
+
+SELECT *, comments.id_comment as idComment FROM comments
+LEFT JOIN membre
+ON comments.id_membre = membre.id_membre
+ORDER BY date_publication DESC
+
+CODESQL;
+    // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#list-of-parameters-conversion
+        $objetStatement = $objetConnection->prepare($requeteSQL);
+        $objetStatement->execute();
+        
+        return $objetStatement;
+    }
+
     /*
     public function findBySomething($value)
     {

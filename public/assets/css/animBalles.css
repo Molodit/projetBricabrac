@@ -19,7 +19,7 @@
       overflow: hidden;
   }
 
-  .circle-content article a {
+  .circle-content article span {
     color: white;
     margin:0;
     position: relative;
