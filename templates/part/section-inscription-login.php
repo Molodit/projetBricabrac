@@ -1,5 +1,9 @@
 <section class="Login">
   <h2> S'inscrire </h2>
+
+  <p>Si vous n'êtes pas déjà inscrit , veuillez remplir le formulaire ci-dessous.</p>
+  <p> Vous pourrez ainsi donner votre avis sur les articles de l'école.</p>
+  <p>En vous souhaitant une bonne navigation !!</p>
         <form method="POST" class="formLogin">
             <input type="email" name="email" required placeholder="Votre email">
             <input type="text" name="membre" required placeholder="Votre identifiant">
@@ -23,6 +27,8 @@
 <hr>
 
   <h2> Connectez-vous </h2>
+
+  <p> Déjà inscrit ? veuillez renseigner votre adresse email et votre mot de passe pour accéder à votre espace personnel.</p>
     <form  method="POST" class="formLogin">
           <input type="email" name="email" required placeholder="Votre adresse email">
           <input type="password" name="password" required placeholder="Votre mot de passe">

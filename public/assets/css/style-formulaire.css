@@ -18,24 +18,23 @@ hr{
 }
 
 section.Login h2{
-  margin: 5% 0 5% 0;  
-}
+  margin: 5% 0 5% 0;
+  width:30%;
+ }
 
 /*XXXXXXXXXXXXXXXXXXX CSS DES FORMULAIRE D'INSCRIPTION ET CONNEXION XXXXXXXXXXXXXXXX*/
 /*https://www.sanwebe.com/2014/08/css-html-forms-designs*/
 section.Login{
     width: 80%;
-	display: inline-block;
-	vertical-align: top;
     padding: 2.5%;
-	margin: 50px 2% 0 0;
+	margin: 0 auto;
 
 }
-.formLogin{
-    max-width: 300px;
+.formLogin {
+    max-width: 500px;
     padding: 10px 20px;
+    margin:25px auto;
     background: #f4f7f8;
-    margin: 10px auto;
     padding: 20px;
     background: #f4f7f8;
     border: 1px solid #313233 ;
@@ -95,5 +94,7 @@ section.Login{
 .formLogin button:hover
 {
     background: #A9D4ED;
+    color:black;
     cursor:pointer;
 }
+/*XXXXXXXXXXXXXXXXXXXX FORMULAIRE ADMIN ENFANT XXXXXXXXXXXXXXXXXXXXX*/

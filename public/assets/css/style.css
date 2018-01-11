@@ -40,8 +40,8 @@ nav.menu a:hover {
   box-shadow: 0 -3em 0 #b1b2b2 inset;
   color:#313233;
 }
-i{
-  display:inline-flex;
+.i{
+  display:inline
 }
 
 /*XXXXXXXXXXXXXXXX TITRE PRINCIPAL  XXXXXXXXXXXXXXX*/
