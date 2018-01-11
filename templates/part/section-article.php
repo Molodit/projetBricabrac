@@ -79,9 +79,7 @@ CODEHTML;
 
 
 <section id="commentaire">
-        
-
-        
+               
 <?php
 // VARIABLE GLOBALE POUR VERIFIER LES NIVEAU DE SESSION
 $verifNiveau = $objetSession->get("niveau");
@@ -111,7 +109,7 @@ CODEHTML;
     
     }
 
-    
+
 ?>
         
         </div>

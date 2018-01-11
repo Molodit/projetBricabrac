@@ -21,16 +21,5 @@ foreach($tabResultat as $objetComment)
 // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
 $urlArticle = $this->generateUrl("article",["id_article" => "$idArticle"]);
 
-    echo
-    <<<CODEHTML
-<section>
-    <p dataContenu="commentaire">$idMembre</p>
-    <p dataContenu="commentaire">$contenu</p>
-</section>
-
-CODEHTML;
-
-}
-
 ?>
 </section>
