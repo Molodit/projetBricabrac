@@ -76,7 +76,7 @@ CODEHTML;
 ?>
 
         </ul>
-        <ul class="ulNav">
+        <ul>
 
 <?php
 

@@ -15,11 +15,8 @@ body, html {
 header{
   background:#a9d4ed;
   padding-bottom:0.2%;
-  border-bottom: 1px solid #313233;
-}
-.ulNav{
-  margin-left:50%;
-}
+ }
+
 nav.menu ul{
   margin-top:3%;
   margin-left:0.5%;
@@ -31,7 +28,6 @@ nav.menu ul, nav.menu li {
 nav.menu a {
   background: #4883B0;
   font-size:1.2em;
-  margin-right:10px;
   box-shadow: 0 0 0 #000 inset;
   border-radius: 4px;
   transition: .3s;
@@ -43,6 +39,9 @@ nav.menu a {
 nav.menu a:hover {
   box-shadow: 0 -3em 0 #b1b2b2 inset;
   color:#313233;
+}
+i{
+  display:inline-flex;
 }
 
 /*XXXXXXXXXXXXXXXX TITRE PRINCIPAL  XXXXXXXXXXXXXXX*/
@@ -126,7 +125,6 @@ box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
 /*XXXXXXXXXXX FOOTER  XXXXXXXXXXXXX*/
 footer{
   background:#a9d4ed;
-  border-top: 1px solid #313233;
 }
 .menuFooter{
   margin-bottom:3%;
