@@ -77,8 +77,11 @@ CODEHTML;
         echo
         <<<CODEHTML
         <a href="$urlArticle">
-        <article>
-            <div>
+        <article style="background-image:url('$urlAccueil/assets/img/logo.png');
+        background-repeat:no-repeat;
+        background-position:center;
+        background-size:cover;">
+            <div class="images">
                 <p>$titre</p>
                 <p>écrit par $membre</p>
             </div>
