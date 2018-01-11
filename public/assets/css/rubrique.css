@@ -8,7 +8,7 @@
 }
 
 
-.rhizome, .article-commentaire, .createxte, .journal{
+.rhizome, .article-commentaire, .createxte{
 background-image: url("../img/rhizome.png");
 background-repeat: no-repeat;
 background-size: cover;
@@ -16,6 +16,14 @@ font-family: "MyriadPro-Regular";
 width: 100%;
 margin: -3vh auto 0;
 color: rgb(16, 78, 139);
+}
+
+.journal{
+font-family: "MyriadPro-Regular";
+width: 100%;
+margin: -3vh auto 0;
+color: rgb(16, 78, 139);
+background-color: rgb(222, 228, 156);
 }
  #commentaire form{
   padding-bottom: 2vh;
@@ -43,11 +51,16 @@ padding: 3% 4%;
  transition-timing-function: ease-in;
 }
  
-.article-rhizome, .article-createxte, .article-journal{
+.article-rhizome, .article-createxte{
 background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
 border: solid 1px rgb(16, 78, 139);
 /*background-color: #EDEDED; */ 
 background-color: white;
+  }
+.article-journal{
+background-color: rgb(222, 228, 156);
+background: #EEEFF1;
+border: solid 1px rgb(16, 78, 139);
   }
 
 .rhizome a, .rhizome h4, .rhizome h3, .rhizome div, .rhizome p{
@@ -62,6 +75,7 @@ background-color: white;
 .journal div{
   display: flex;
   padding-bottom: 5%; 
+
 }
 .rhizome h3, .createxte h3, .journal h3{
   padding-top: 110px;
@@ -104,13 +118,11 @@ background-color: white;
 /* Style lors du passage de la souris*/
 .article-rhizome:hover, .article-createxte:hover, .article-journal:hover{  
     z-index:-2;
-    background-color: white;
-    
+    background: #eeeff1;
     box-shadow:5px 5px 5px rgba(0, 0, 0, 0.7);
     color: rgb(72, 131, 176);
     
 }
-
 .article-rhizome:hover  img{
   width: 150px; /* on affiche l'image au carré */
   height: 150px;
@@ -132,7 +144,7 @@ background-color: white;
 }
 .journal .tabs .active a{
   color:white;
-  background-color: rgb(72, 131, 176);
+  background-color: rgb(191, 205, 71);
 
 }
 .journal .tabs{
@@ -148,8 +160,10 @@ background-color: white;
 .journal .tabs-content{
   margin-left: 10%;
   width: 50%;
+  background-color: rgb(191, 205, 71);
 }
 .journal .tabs-content .active{
-  margin-top: 5%;
+  margin-top: 10%;
   width: 65%;
+  margin-left: 14%;
 }

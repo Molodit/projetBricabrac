@@ -113,8 +113,8 @@ CODEHTML;
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
         <div>$rubrique</div>
         <p>$contenu $datePublication</p>
-        <div ><a href="$htmlFile" target="_blank"></a></div>
-        
+        <div><a href="$cheminImage" target="_blank">$htmlFile</a></div>
+
     </article>
     
 CODEHTML;
