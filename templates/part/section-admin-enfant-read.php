@@ -1,12 +1,5 @@
-<?php
-$verifMembre = $objetSession->get("membre");
-
-
-?>
- <h2>BIENVENUE <?php echo $verifMembre ?></h2>
-
-	<h3> Les derniers articles :</h3>
-<section class="read">
+	<h3> Tes articles en attentes de publications :</h3>
+<section class="enfantRead">
 
 <?php
 
@@ -37,18 +30,12 @@ $urlArticle = $this->generateUrl("article",["id_article" => "$idArticle"]);
 if ($compteur < 4){	
 echo
 <<<CODEHTML
-
-<div class="cercle-container container">
-
-	<div class="cercle-link cercle$compteur">
-		<div class="cercle-content" >
-			<article class="articleBalle">
-				<a href="$urlArticle"><h3>$titre</h3></a>
-				<img src="$chemin_image"/>
-				<p>écrit par $membre</p>
-			</article>
-		</div>
-	</div>
+<div class="articleEnfant">
+	<article class="$compteur">
+		<a href="$urlArticle"><h3>$titre</h3></a>
+		<img src="$chemin_image"/>
+		<p>écrit par $membre</p>
+	</article>
 </div>
 CODEHTML;
 	}

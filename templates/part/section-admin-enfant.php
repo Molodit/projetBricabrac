@@ -1,7 +1,12 @@
+<?php
+$verifMembre = $objetSession->get("membre");
 
+?>
+ <h2>BIENVENUE <?php echo $verifMembre ?></h2>
 
-<section id="adminEnfant">
+<section id="formulaireEnfant">
     <h3>Ecrire un nouvel article</h3>
+    <hr>
     <!-- NE PAS OUBLIER: POUR UPLOADER UN FICHIER -->
     <!-- method="POST" enctype="multipart/form-data" -->
     <form method="POST" enctype="multipart/form-data">
@@ -34,7 +39,7 @@ if ($objetRequest->get("codebarre", "") == "article")
     
     
 </section>
-
+<hr>
 <?php
 
 //J'appelle la section read

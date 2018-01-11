@@ -1,27 +1,5 @@
 <section id="section-membre-update">
-<?php
 
-// ON TRAITE LE FORMULAIRE UPDATE AVANT DE FAIRE LA REQUETE
-// POUR RECUPERER LES INFOS QUI VONT REMPLIR LE FORMULAIRE
-// => CELA PERMET D'AVOIR UN AFFICHAGE QUI EST A JOUR...
-// POUR AFFICHER LE MESSAGE SOUS LE FORMULAIRE
-// ON STOCKE LE MESSAGE DANS UNE VARIABLE
-// ET ON L'AFFICHE ENSUITE
-
-ob_start();
-
-// TRAITER LE FORMULAIRE
-if ($objetRequest->get("afficher", "") == "updateMembre")
-{
-    $objetFormArticle = new App\Controller\FormArticle;
-    
-    $objetEntityManager = $this->getDoctrine()->getManager();
-    $objetFormArticle->updateMembre($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession);
-}
-
-$messageUpdate = ob_get_clean();
-
-?>
 <?php
 
 // RECUPERER L'ID DE LA LIGNE A MODIFIER
@@ -44,7 +22,7 @@ $dateInscription = $objetMembreUpdate->getDateInscription("d/m/Y H:i:s");
     <H3>Modifier les informations d'un membre</H3>
     <table>
     <tr>
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data" action="<?php echo $urlAdmin ?>">
         <td>
             <?php echo $idMembre ?>  
         </td>
@@ -62,7 +40,7 @@ $dateInscription = $objetMembreUpdate->getDateInscription("d/m/Y H:i:s");
         </td>
         <td>
             <button type="submit">MODIFIER</button>
-            <input type="hidden" name="afficher" value="updateMembre">
+            <input type="hidden" name="afficher" value="">
             <input type="hidden" name="idUpdateMembre" value="<?php echo $idUpdate ?>">
             <input type="hidden" name="codebarre" value="update">
             
