@@ -15,9 +15,23 @@ class AjaxController
     /**
       * @Route("/ajax", name="ajax")
       */   
-   public function ajaxAction (Request $objetRequest)
+   public function ajax(Request $objetRequest,Connection $objetConnection, SessionInterface $objetSession)
    {
        
+    ob_start();
+        
+    // METHODE DE SYMFONY POUR OBTENIR LE CHEMIN DU DOSSIER symfony1        
+    $cheminSymfony   = $this->getParameter('kernel.project_dir');
+    $cheminTemplates = "$cheminSymfony/templates"; 
+    $cheminPart      = "$cheminTemplates/part"; 
+    require_once("$cheminPart/ajax.php");
+    
+    
+    $contenuCache = ob_get_clean();
+    
+    
+    return new Response($contenuCache);
+
    }
 
 

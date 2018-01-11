@@ -1,8 +1,11 @@
-	<h3> Tes articles en attentes de publications :</h3>
+<h3> Tes articles en attentes de publications :</h3>
+
 <section class="enfantRead">
 
-<?php
 
+	<div>
+<?php
+	
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
 $objetRepository = $this->getDoctrine()->getManager()->getRepository(App\Entity\MonArticle::class);
 
@@ -30,16 +33,15 @@ $urlArticle = $this->generateUrl("article",["id_article" => "$idArticle"]);
 if ($compteur < 4){	
 echo
 <<<CODEHTML
-<div class="articleEnfant">
-	<article class="$compteur">
-		<a href="$urlArticle"><h3>$titre</h3></a>
+<a href="$urlArticle"><article id="articleEnfant" class="$compteur">
+		<h3>$titre</h3>
+		<hr>
 		<img src="$chemin_image"/>
 		<p>écrit par $membre</p>
-	</article>
-</div>
+	</article></a>
 CODEHTML;
 	}
 }
 ?>
-
+	</div>
 </section>

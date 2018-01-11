@@ -17,16 +17,22 @@ a{
 }
 
 /*XXXXXXXXXXX ADMIN ENFANT ET READ ADMIN ENFANT XXXXXXXXXXXXX*/
-.enfantRead{
-  margin-bottom: 30%;
+section.enfantRead{
+  margin-bottom:5%;
+  padding:5%;
+  padding-bottom:10%;
+  width:70%;
+  overflow:hidden;
+  background-image:url("../img/sectionEnfant.jpg");
+  background-size: cover;
  }
 h2, h3{
-  margin-top:1.5%;
-   color:#D5804B;
-   font-family:"MyriadPro-Regular";
-   text-align:center;
-   font-size: 1.4em;
- }
+  margin-top:2%;
+  color:#D5804B;
+  font-family:"LondonBetween";
+  text-align:center;
+  font-size: 1.4em;
+}
 hr{
   width: 80%;
   margin-top: 3vh;
@@ -34,19 +40,46 @@ hr{
   border: 0;
   border-bottom: 1px solid #E6E9EC;
 }
- .articleEnfant {
-  float: left;
-  border-radius:10px;
-  margin: 10px;
-  padding: 5px;
-  width: 300px;
-  height: 300px;
-  border: 1px dashed #313233;
+.enfantRead div{
+  margin:0 auto;
+  width: 80%;
+  opacity: 0.8;
 }
-.articleEnfant img{
+.enfantRead div h3{
+  color:#D5804B;
+}
+#articleEnfant{
+  float: left;
+  font-size:1.4em;
+  background-color:white;
+  color:#313233;
+  border-radius:10px;
+  border: 1px dashed #313233;
+  margin-bottom:5%;
+  margin: 20px;
+  padding: 5px;
+  padding-bottom:5%;
+  width: 300px;
+  height: 280px;
+  transition:all 0.3s ease;
+}
+#articleEnfant img{
     border-radius:30%;
     width:40%;
     margin-left:30%;
+}
+#articleEnfant p{
+  text-align:right;
+  margin-top:8%;
+  margin-right:5%;
+}
+#articleEnfant:hover{
+-webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1);
+}
+#articleEnfant img:hover{
+  cursor:pointer;
 }
 /************ DIV REPONSE ***************/
 .response{
