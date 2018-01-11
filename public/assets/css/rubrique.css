@@ -10,28 +10,19 @@
 
 .rhizome, .createxte, .journal{
 background-image: url("../img/bubbles.png");
-/*background: rgba(72, 131, 176,0.3);*/
 background-repeat: no-repeat;
 background-size: contain;
 font-family: "MyriadPro-Regular";
 width: 100%;
 min-height: 70vh;
-margin: -3vh auto 0;
+margin: -3vh auto 3vh;
 color: rgb(16, 78, 139);
 }
-
-/*.journal{
-font-family: "MyriadPro-Regular";
-width: 100%;
-margin: -3vh auto 0;
-color: rgb(16, 78, 139);
-background-color: rgb(222, 228, 156);
-}*/
-
 
 .article-rhizome, .article-createxte, .article-journal{
  padding: 3% 4%;
  border-radius: 10px 10px;
+ border: solid 1px rgb(16, 78, 139);
  width: 30%;
  margin: 1%;
  margin-left: 7%;
@@ -45,20 +36,11 @@ background-color: rgb(222, 228, 156);
  
 .article-rhizome {
 background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
-border: solid 1px rgb(16, 78, 139);
 background-color: white;
   }
 .article-createxte{
-  border: solid 1px rgb(16, 78, 139);
-  /*background-color: rgba(169, 212, 237, 0.7);*/
   background-color: rgba(222, 228, 156, 0.5);
 }
-.article-journal{
-/*background-color: rgb(222, 228, 156);*/
-/*background-color: #EEEFF1;*/
-border: solid 1px rgb(16, 78, 139);
-  }
-
 .rhizome a, .rhizome h4, .rhizome h3, .rhizome div, .rhizome p{
   color: rgb(16, 78, 139);
 }
@@ -92,23 +74,9 @@ border: solid 1px rgb(16, 78, 139);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-.article-createxte iframe, .article-journal iframe{
-    transition-property: max-width, max-height;
-    /* La transition durera deux secondes. */
-    transition-duration: 2s;
-    transition-timing-function: ease-in;
-    max-width:0;
-    max-height:0;
-    /*display: table-cell;*/
-}
-.article-createxte img, .article-journal img{
-    transition-property: max-width, max-height;
-    /* La transition durera deux secondes. */
-    transition-duration: 2s;
-    transition-timing-function: ease-in;
-    max-width:0;
-    max-height:0;
-    /*display: table-cell;*/
+.article-createxte iframe, .article-journal iframe, .article-createxte img, .article-journal img{
+    height: 28vh;
+    width: 100%;
 }
 
 /* Style lors du passage de la souris*/
@@ -127,28 +95,14 @@ border: solid 1px rgb(16, 78, 139);
   transform: rotate(360deg);
 }
 
-
-.article-createxte:hover  iframe, .article-journal:hover  iframe{
-    max-width: 50%;
-    max-height: 50%;
-    
-}
-.article-createxte:hover  img, .article-journal:hover  img{
-    max-width: 50%;
-    max-height: 50%;
-  
-}
 .journal .tabs .active a{
   color:white;
   background-color: rgb(191, 205, 71);
 
 }
 .journal .tabs{
-  width: 14%;
+  width: 10%;
   margin-left: 10%;
-  overflow: scroll;
-  height: 50vh;
-
 }
 .journal ul{
   margin-top: 0;
@@ -165,4 +119,8 @@ border: solid 1px rgb(16, 78, 139);
   width: 65%;
   margin-left: 14%;
   background-color: rgba(191, 205, 71, 0.5);
+}
+.journal .tabs a{
+  font-size: 15px;
+  color: rgb(16, 78, 139);
 }
