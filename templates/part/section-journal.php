@@ -9,6 +9,7 @@
 
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
 $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
+$objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
 
 ?>
     <div>
@@ -60,12 +61,21 @@ foreach($tabResultat as $index => $objetArticle)
 {
     // METHODES "GETTER" A RAJOUTER DANS LA CLASSE MonArticle
     $idArticle       = $objetArticle->getIdArticle();
+    $idMembre         = $objetArticle->getIdMembre();
     $titre           = $objetArticle->getTitre();
     $contenu         = $objetArticle->getContenu();
     $rubrique        = $objetArticle->getRubrique();
     $motCle          = $objetArticle->getMotCle();
     $cheminImage     = $objetArticle->getCheminImage();
     $datePublication = $objetArticle->getDatePublication("d/m/Y");
+
+     $objetMembre = $objetRepositoryMembre->find($idMembre);
+            $pseudo = "";
+            if ($objetMembre)
+            {
+                $pseudo = $objetMembre->getMembre();
+            }
+    
     
     $classActive = "";
     if ($index == 0) {
@@ -113,7 +123,9 @@ CODEHTML;
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
         <div>$rubrique</div>
         <p>$contenu $datePublication</p>
-        <div><a href="$cheminImage" target="_blank">$htmlFile</a></div>
+        <h4 title=$htmlFile <a href="$urlAccueil/$cheminImage" target="_blank"> PDF</a></h4>
+        <div>$htmlFile</div>
+        <td>$pseudo</td>
 
     </article>
     

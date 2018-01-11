@@ -68,14 +68,14 @@ CODEHTML;
 <<<CODEHTML
 
      <article class="article-createxte">
-    <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
-        
+        <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
         <div>$rubrique</div>
-        <p>$contenu</p>
-        <p> $datePublication</p>
-        <div >$htmlFile</div>
+        <p>$contenu $datePublication</p>
+        <h4 title=$htmlFile <a href="$urlAccueil/$cheminImage" target="_blank"> PDF</a></h4>
+        <div>$htmlFile</div>
         <td>$pseudo</td>
       
+
     </article>
     
 CODEHTML;

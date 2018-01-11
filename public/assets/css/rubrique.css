@@ -8,12 +8,13 @@
 }
 
 
-.rhizome, .article-commentaire, .createxte{
+.rhizome, .createxte{
 background-image: url("../img/rhizome.png");
 background-repeat: no-repeat;
 background-size: cover;
 font-family: "MyriadPro-Regular";
 width: 100%;
+min-height: 70vh;
 margin: -3vh auto 0;
 color: rgb(16, 78, 139);
 }
@@ -25,17 +26,7 @@ margin: -3vh auto 0;
 color: rgb(16, 78, 139);
 background-color: rgb(222, 228, 156);
 }
- #commentaire form{
-  padding-bottom: 2vh;
-}
-.article-select{
-text-align: center;
-padding: 3% 4%;
- border: solid 1px #5e528a;
- border-radius: 10px 10px;
- width: 50%;
- margin-left: 20%;
-}
+
 
 .article-rhizome, .article-createxte, .article-journal{
  padding: 3% 4%;
@@ -51,15 +42,20 @@ padding: 3% 4%;
  transition-timing-function: ease-in;
 }
  
-.article-rhizome, .article-createxte{
+.article-rhizome {
 background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
-border: solid 1px rgb(16, 78, 139);
+border: solid 3px rgb(16, 78, 139);
 /*background-color: #EDEDED; */ 
 background-color: white;
   }
+.article-createxte{
+  border: solid 1px rgb(16, 78, 139);
+  /*background-color: rgba(169, 212, 237, 0.7);*/
+  background-color: rgba(222, 228, 156, 0.5);
+}
 .article-journal{
 background-color: rgb(222, 228, 156);
-background: #EEEFF1;
+/*background-color: #EEEFF1;*/
 border: solid 1px rgb(16, 78, 139);
   }
 
@@ -116,7 +112,7 @@ border: solid 1px rgb(16, 78, 139);
 }
 
 /* Style lors du passage de la souris*/
-.article-rhizome:hover, .article-createxte:hover, .article-journal:hover{  
+.article-rhizome:hover{  
     z-index:-2;
     background: #eeeff1;
     box-shadow:5px 5px 5px rgba(0, 0, 0, 0.7);
@@ -160,6 +156,8 @@ border: solid 1px rgb(16, 78, 139);
 .journal .tabs-content{
   margin-left: 10%;
   width: 50%;
+  border: 4px solid white;
+  border-radius: 10px;
   background-color: rgb(191, 205, 71);
 }
 .journal .tabs-content .active{
