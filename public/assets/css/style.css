@@ -160,6 +160,7 @@ footer{
 .menuFooter{
   margin-bottom:3%;
   margin-left:32%;
+  margin-top:3%;
 }
 .footer ul, li {
   display: inline-block;
