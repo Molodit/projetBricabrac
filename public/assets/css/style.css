@@ -8,7 +8,6 @@
 }
 
 body, html {
-  color: #777;
   font-family: "MyriadPro-Regular";
 }
 /*XXXXXXXXXXXXXX HEADER ET NAV XXXXXXXXXXXXX*/
@@ -21,15 +20,15 @@ header{
 .ulNav{
   margin-left:42%;
 }
-ul{
+nav.menu ul{
   margin-top:3%;
   margin-left:0.5%;
 }
-ul, li {
+nav.menu ul, nav.menu li {
   list-style: none;
   display: inline-block;
 }
-.menu a {
+nav.menu a {
   background: #4883B0;
   font-size:1.2em;
   margin-right:10px;
@@ -42,7 +41,7 @@ ul, li {
   text-decoration: none;
 }
 
-.menu a:hover {
+nav.menu a:hover {
   box-shadow: 0 -3em 0 #b1b2b2 inset;
   color:#313233;
 }
@@ -63,7 +62,7 @@ h1 {
 h2, h3 {
   letter-spacing: 5px;
 }
-form{
+/* form{
   margin: 3% auto;
   width:50%;
   } 
@@ -84,7 +83,7 @@ button {
   padding: 1% 2%;
   border-radius:3px;
   text-transform: uppercase;
-}
+} */
 .bgimg-1{
   position: relative;
   background-attachment: fixed;
@@ -97,11 +96,11 @@ button {
 
 }
 
-.caption {
+/* .caption {
   position: absolute;
   left: 0;
   width: 80%;
-}
+} */
 section {
   width: 80%;
   margin: 5% auto;
