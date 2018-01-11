@@ -1,4 +1,4 @@
-<section class="article-commentaire">
+<section id="article-commentaire">
 
 
 <?php
@@ -27,29 +27,30 @@ foreach($tabResultat as $objetArticle)
             {
                 $pseudo = $objetMembre->getMembre();
             }
-    $htmlImage = "";
-    if ($cheminImage)
-    {
-        $objetExtension = new SplFileInfo($cheminImage);
-        $extension = $objetExtension->getExtension();
+            $htmlFile = "";
+            // S'il y a un fichier (image ou pdf)
+            if ($cheminImage)
+            {
+                $objetExtension = new SplFileInfo($cheminImage);
+                $extension = $objetExtension->getExtension();
 
-        // Si le fichier est un pdf
-        if ($extension == "pdf")
-    {
-        $htmlFile = 
-        <<<CODEHTML
-        <iframe src="$cheminImage"></iframe>
+                // Si le fichier est un pdf
+                if ($extension == "pdf")
+            {
+                $htmlFile = 
+                <<<CODEHTML
+                <iframe src="$urlAccueil$cheminImage"></iframe>
 CODEHTML;
-    }
+            }
 
-    else {
-        $htmlFile = 
-        <<<CODEHTML
-    
-        <img src="$cheminImage" title="$cheminImage">
+            else {
+                $htmlFile = 
+                <<<CODEHTML
+            
+                <img src="$urlAccueil$cheminImage">
 CODEHTML;
-        }
-    }
+                }
+            }
 
    // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
     $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
@@ -60,10 +61,9 @@ CODEHTML;
 
     <article>
         <h3 title="$idArticle"><a href="$urlArticle">$titre</a></h3>
-        
         <span>de $pseudo</span>
         <p>$contenu</p>
-        <div>$htmlImage</div>
+        $htmlFile
         <div><a href="">$motCle</a></div>
         <div>$datePublication</div>
     </article>
@@ -110,10 +110,12 @@ CODEHTML;
 CODEHTML;
     
     }
-
+?>
+</section>
+<?php
 
 require_once("$cheminPart/section-comment-read.php")
 
 ?>
 
-</section>
+

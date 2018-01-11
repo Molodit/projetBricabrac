@@ -13,10 +13,8 @@ if($objetRequest->get("codebarre", "") == "commentaire")
     // ON VA L'AFFICHER
     echo
 <<<CODEHTML
-<section>
     <p>$idMembre</p>
     <p>$contenu</p>
-</section>
 
 CODEHTML;
 }
