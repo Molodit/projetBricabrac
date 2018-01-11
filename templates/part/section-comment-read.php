@@ -24,8 +24,8 @@ $urlArticle = $this->generateUrl("article",["id_article" => "$idArticle"]);
     echo
     <<<CODEHTML
 <section>
-    <p>$idMembre</p>
-    <p>$contenu</p>
+    <p dataContenu="commentaire">$idMembre</p>
+    <p dataContenu="commentaire">$contenu</p>
 </section>
 
 CODEHTML;
@@ -33,5 +33,4 @@ CODEHTML;
 }
 
 ?>
-
 </section>

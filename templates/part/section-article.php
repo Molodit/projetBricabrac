@@ -75,11 +75,7 @@ CODEHTML;
 ?>
 </section>
 
-<?php
 
-require_once("$cheminPart/section-comment-read.php")
-
-?>
 
 
 <section id="commentaire">
@@ -113,21 +109,6 @@ CODEHTML;
     
 CODEHTML;
     
-        // TRAITEMENT DU FORMULAIRE POUR L'INSERTION DES COMMENTAIRES
-        if($objetRequest->get("codebarre", "") == "commentaire")
-        {
-        
-        $objetFormCommentaire = new App\Controller\FormCommentaire;
-            
-        $objetFormCommentaire->creerCommentaire($objetRequest, $objetConnection, $cheminSymfony, $objetSession);
-        }
-        else
-        {
-    <<<CODEHTML
-        <div class="response">
-CODEHTML;
-        }
-
     }
 
     
@@ -139,4 +120,8 @@ CODEHTML;
     
 </section>
 
-</section>
+<?php
+
+require_once("$cheminPart/section-comment-read.php")
+
+?>

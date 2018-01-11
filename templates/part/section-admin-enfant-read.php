@@ -33,12 +33,12 @@ $urlArticle = $this->generateUrl("article",["id_article" => "$idArticle"]);
 if ($compteur < 4){	
 echo
 <<<CODEHTML
-	<article id="articleEnfant" class="$compteur">
-		<a href="$urlArticle"><h3>$titre</h3></a>
+<a href="$urlArticle"><article id="articleEnfant" class="$compteur">
+		<h3>$titre</h3>
 		<hr>
 		<img src="$chemin_image"/>
 		<p>écrit par $membre</p>
-	</article>
+	</article></a>
 CODEHTML;
 	}
 }
