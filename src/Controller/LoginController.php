@@ -29,7 +29,7 @@ class LoginController
         $cheminSymfony   = $this->getParameter('kernel.project_dir');
         $cheminTemplates = "$cheminSymfony/templates"; 
         $cheminPart      = "$cheminTemplates/part"; 
-        require_once("$cheminTemplates/template-login.php");
+        require_once("$cheminTemplates/template-inscription-login.php");
         
         
         $contenuCache = ob_get_clean();
@@ -51,7 +51,7 @@ class LoginController
         $cheminSymfony   = $this->getParameter('kernel.project_dir');
         $cheminTemplates = "$cheminSymfony/templates"; 
         $cheminPart      = "$cheminTemplates/part"; 
-        require_once("$cheminTemplates/template-login.php");
+        require_once("$cheminTemplates/template-inscription-login.php");
         
         
         $contenuCache = ob_get_clean();
