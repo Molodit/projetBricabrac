@@ -1,7 +1,7 @@
 <section class="Login">
-  <h3> Connectez-vous </h3>
+  <h2> Connectez-vous </h2>
     <form  method="POST" class="formLogin">
-          <input type="email" name="email" required placeholder="Votre identifiant">
+          <input type="email" name="email" required placeholder="Votre adresse email">
           <input type="password" name="password" required placeholder="Votre mot de passe">
           <button type="submit"> Se connecter <i class="fas fa-check-circle"></i> </button>
   

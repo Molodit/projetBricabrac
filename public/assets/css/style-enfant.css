@@ -24,6 +24,7 @@ section.enfantRead{
   width:70%;
   overflow:hidden;
   background-image:url("../img/sectionEnfant.jpg");
+  border-radius:5px;
   background-size: cover;
  }
 h2, h3{
