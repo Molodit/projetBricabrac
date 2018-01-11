@@ -20,6 +20,7 @@ foreach($tabResultat as $objetComment)
 // http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityRepository.html
 // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
 $urlArticle = $this->generateUrl("article",["id_article" => "$idArticle"]);
+}
 
 ?>
 </section>

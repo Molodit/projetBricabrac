@@ -1,5 +1,5 @@
 <section class="article-commentaire">
-<section class="article-select">
+
 
 <?php
 
@@ -92,6 +92,7 @@ if($verifNiveau < 1)
     <textarea type="text" name="contenu" required placeholder="contenu" rows="30"></textarea>
     <button type="submit"> <i class="far fa-hand-point-right"></i> Ajouter votre commentaire  </button>
     <input type="hidden" name="codebarre" value="commentaire">
+    </form>
 CODEHTML;
 }
     // SI LES NIVEAUX SONT SUPERIEURS A 1 ON AFFICHE LE FORMULAIRE POUR AJOUTER LES COMMENTAIRES
@@ -104,22 +105,15 @@ CODEHTML;
     <textarea type="text" name="contenu" required placeholder="contenu" rows="30"></textarea>
     <button type="submit"> <i class="far fa-hand-point-right"></i> Ajouter votre commentaire  </button>
     <input type="hidden" name="codebarre" value="commentaire">
+    </form>
     
 CODEHTML;
     
     }
 
 
-?>
-        
-        </div>
-    </form>
-    
-    
-</section>
-
-<?php
-
 require_once("$cheminPart/section-comment-read.php")
 
 ?>
+
+</section>
