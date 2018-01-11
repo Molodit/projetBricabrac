@@ -49,7 +49,7 @@
       top: 65%;
       left: 40%;
       padding: 7%;
-      background: rgba(0,169,163,0.8);
+      background: rgba(72, 131, 176,0.7);
       transition:all 0.3s ease;
       }
       .circle4 article{
@@ -72,7 +72,7 @@
       left: 20%;
       top: 46%;
       padding: 5%;;
-      background: rgba(0,169,163,0.8);
+      background: rgba(72, 131, 176,0.7);
       }
       .circle3 article{
        position: absolute;
@@ -110,7 +110,7 @@
       top: 80%;
       left: 10%;
       padding: 4%;
-      background-color: rgba(0,169,163,0.8);
+      background-color: rgba(72, 131, 176,0.7);
       transition:all 0.3s ease;
       }
       .circle11 article{
