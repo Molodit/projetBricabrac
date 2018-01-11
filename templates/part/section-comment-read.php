@@ -23,8 +23,10 @@ $urlArticle = $this->generateUrl("article",["id_article" => "$idArticle"]);
 
 echo
 <<<CODEHTML
-    <p>$idMembre</p>
-    <p>$contenu</p>
+    <article>
+        <h4>$idMembre</h4>
+        <p>$contenu</p>
+    <article>
 
 CODEHTML;
 
