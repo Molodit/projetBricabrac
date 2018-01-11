@@ -17,16 +17,21 @@ a{
 }
 
 /*XXXXXXXXXXX ADMIN ENFANT ET READ ADMIN ENFANT XXXXXXXXXXXXX*/
-.enfantRead{
-  margin-bottom: 30%;
+section.enfantRead{
+  margin-bottom:20%;
+  padding:5%;
+  width:70%;
+  overflow:hidden;
+  background-image:url("../img/sectionEnfant.jpg");
+  background-size: cover;
  }
 h2, h3{
-  margin-top:1.5%;
-   color:#D5804B;
-   font-family:"MyriadPro-Regular";
-   text-align:center;
-   font-size: 1.4em;
- }
+  margin-top:2%;
+  color:#D5804B;
+  font-family:"LondonBetween";
+  text-align:center;
+  font-size: 1.4em;
+}
 hr{
   width: 80%;
   margin-top: 3vh;
@@ -34,19 +39,35 @@ hr{
   border: 0;
   border-bottom: 1px solid #E6E9EC;
 }
- .articleEnfant {
+.enfantRead div{
+  margin:0 auto;
+  width: 80%;
+}
+.enfantRead div h3{
+  color:white;
+}
+#articleEnfant{
   float: left;
+  margin-bottom:5%;
   border-radius:10px;
   margin: 10px;
   padding: 5px;
   width: 300px;
-  height: 300px;
-  border: 1px dashed #313233;
+  height: 280px;
+  border: 1px dashed white;
 }
-.articleEnfant img{
+#articleEnfant img{
     border-radius:30%;
     width:40%;
     margin-left:30%;
+}
+#articleEnfant p{
+  text-align:right;
+  margin-top:8%;
+  margin-right:5%;
+}
+#articleEnfant img:hover{
+  cursor:pointer;
 }
 /************ DIV REPONSE ***************/
 .response{
