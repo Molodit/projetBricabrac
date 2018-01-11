@@ -1,4 +1,15 @@
-.article-select img{
-    width:30vw;
+/* CSS pour l'affichage par onglet */
+@font-face {
+    font-family: "MyriadPro-Regular";
+    src: url("../css/fonts/MyriadPro-Regular.otf");
+  }
+  @font-face {
+    font-family: "LondonBetween";
+    src: url("../css/fonts/LondonBetween.ttf");
+  }
+
+.read{
+    border: 2px solid #4883B0;
+    border-radius: 10px;
 
 }
