@@ -17,7 +17,6 @@ width: 100%;
 margin: -3vh auto 0;
 color: rgb(16, 78, 139);
 }
-
  #commentaire form{
   padding-bottom: 2vh;
 }
@@ -43,6 +42,7 @@ padding: 3% 4%;
  transition-duration: 2s;
  transition-timing-function: ease-in;
 }
+ 
 .article-rhizome, .article-createxte, .article-journal{
 background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
 border: solid 1px rgb(16, 78, 139);
@@ -58,6 +58,10 @@ background-color: white;
 }
 .journal a, .journal h4, .journal h3, .journal div, .journal p{
   color: rgb(16, 78, 139);
+}
+.journal div{
+  display: flex;
+  padding-bottom: 5%; 
 }
 .rhizome h3, .createxte h3, .journal h3{
   padding-top: 110px;
@@ -135,7 +139,17 @@ background-color: white;
   width: 14%;
   margin-left: 10%;
   overflow: scroll;
+  height: 50vh;
+
 }
-.journal .tab-content.active{
-  display: inline-block;
+.journal ul{
+  margin-top: 0;
+}
+.journal .tabs-content{
+  margin-left: 10%;
+  width: 50%;
+}
+.journal .tabs-content .active{
+  margin-top: 5%;
+  width: 65%;
 }

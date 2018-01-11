@@ -12,7 +12,7 @@ $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::cl
 
 ?>
     <div>
-        <ul class="tabs">
+        <ul class="tabs" >
                     
 <?php
 
@@ -49,6 +49,7 @@ CODEHTML;
 ?>
 
         </ul>
+    
 
 <div class="tabs-content">
 
@@ -112,7 +113,8 @@ CODEHTML;
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
         <div>$rubrique</div>
         <p>$contenu $datePublication</p>
-        <div >$htmlFile</div>
+        <div ><a href="$htmlFile" target="_blank"></a></div>
+        
     </article>
     
 CODEHTML;
@@ -123,6 +125,6 @@ CODEHTML;
 
 
 </div>
-</div>
+
 </section>
 

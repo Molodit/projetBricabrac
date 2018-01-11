@@ -8,10 +8,10 @@
 
 $objetRepository     = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
 
-$nbLigne =  $objetRepository->compterLigneArticle($objetConnection);
+$nbLigne =  $objetRepository->compterLigneArticle($objetConnection, "Rhizome" );
 
 //$nbArticle = compterArticle("article");
-echo "IL Y A $nbLigne ARTICLES";
+//echo "IL Y A $nbLigne ARTICLES";
 
 $numeroPage     = 1;
 // ON RECUPERE LE NUMERO DE PAGE DU PARAMETRE GET DANS L'URL
@@ -20,8 +20,8 @@ if (isset($_REQUEST["numeroPage"]))
     $numeroPage = intval($_REQUEST["numeroPage"]);
 }
 
-// JE VEUX AFFICHER 10 articles PAR PAGE
-$nbArticleParPage = 10;
+// JE VEUX AFFICHER 6 articles PAR PAGE
+$nbArticleParPage = 6;
 // ON RECUPERE LE NUMERO DE PAGE DU PARAMETRE GET DANS L'URL
 if (isset($_REQUEST["nbArticleParPage"]))
 {
@@ -59,7 +59,11 @@ $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::cl
 $objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
 
 // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
-$tabResultat = $objetRepository->findBy([ "rubrique" => "Rhizome" ], [ "datePublication" => "DESC" ]);
+$tabResultat = $objetRepository->findBy(
+    [ "rubrique" => "Rhizome" ], 
+    [ "datePublication" => "DESC" ],
+    $nbArticleParPage,
+    $indiceDepart);
 
 // ON A UN TABLEAU D'OBJETS DE CLASSE Article
 foreach($tabResultat as $objetArticle)
