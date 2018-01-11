@@ -68,20 +68,25 @@ CODESQL;
             return $objetStatement;
         }
 
-       public function compterLigneArticle ($objetConnection) {
+       public function compterLigneArticle ($objetConnection, $rub) {
             $requeteSQL = 
 <<<CODESQL
 
 SELECT COUNT(*) AS nbLigne FROM article
-
+WHERE rubrique = :rubrique
 CODESQL;
 
+            
             $tabResultat = $objetConnection->prepare($requeteSQL);
+            $tabResultat->execute(["rubrique" => $rub]);
+
             $nbLigne = 0;
+            //dump($tabResultat);
              foreach($tabResultat as $tabArticle)
             {
         // VA ME FOURNIR LA VALEUR DANS LA VARIABLE $nbLigne
         // extract($tabArticle);
+                
                 $nbLigne = $tabArticle["nbLigne"];
             }
     

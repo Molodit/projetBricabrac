@@ -49,43 +49,23 @@ foreach($tabResultat as $tabLigne)
     extract($tabLigne);
      // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
     $urlArticle     = $this->generateUrl("article", [ "id_article" => $idArticle ]);
-  
-    if ($chemin_image)
-    {
-        $objetExtension = new SplFileInfo($chemin_image);
-        $extension = $objetExtension->getExtension();
-
-        // Si le fichier est un pdf
-        if ($extension == "pdf")
+    $objetExtension = new SplFileInfo($chemin_image);
+    $extension = $objetExtension->getExtension();
+    if ($chemin_image && $extension != "pdf")
     {
        echo
-        <<<CODEHTML
-        <article>
-            <div>
-                <a href="$urlArticle">$titre</a>
-                <iframe src="$chemin_image" width="100%"></iframe>
-                
-                <p>écrit par $membre</p>
-            </div>
-        </article>
-CODEHTML;
-    }
-
-    else {
-       
-        echo
         <<<CODEHTML
             <article style="background-image:url('$chemin_image');
                 background-repeat:no-repeat;
                 background-position:center;
                 background-size: cover;">
-                    <div>
+                    <div class="images">
                         <a href="$urlArticle">$titre</a>
                         <p>écrit par $membre</p>
                     </div>
             </article>
 CODEHTML;
-        }
+    
 
     }
 
