@@ -35,10 +35,10 @@ $urlLogout            = $this->generateUrl("logout");
     <header>
     <nav class="menu" role="navigation">
         <ul>
-        <li><a href="<?php echo $urlAccueil ?>" class="menu">Accueil</a></li>
-          <li><a href="<?php echo $urlRhizome?>" class="menu">Rizhome</a></li>
-          <li><a href="<?php echo $urlCreaTexte ?>" class="menu">CréaTexte</a></li>
-          <li><a href="<?php echo $urlJournal?>" class="menu">Journal <em>La Tanière</em></a></li>
+        <li><a href="<?php echo $urlAccueil ?>"> <i class="fas fa-home"></i> Accueil </a></li>
+          <li><a href="<?php echo $urlRhizome?>"> <i class="far fa-newspaper"></i> Rizhome </a></li>
+          <li><a href="<?php echo $urlCreaTexte ?>"> <i class="fas fa-book"></i>  CréaTexte </a></li>
+          <li><a href="<?php echo $urlJournal?>"> <i class="fas fa-pencil-alt"></i> Journal <em>La Tanière</em></a></li>
 
 <?php
 
@@ -79,7 +79,7 @@ CODEHTML;
 
 <?php
 
-// on affiche le logout dès qu'on a le niveau 1 et pour les niveaux supérieur :
+// on affiche le logout dès qu'on a le niveau 1 et pour les niveaux supérieurs :
 if($verifNiveau >= 1)
 {
   echo
