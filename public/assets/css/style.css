@@ -62,28 +62,6 @@ h1 {
 h2, h3 {
   letter-spacing: 5px;
 }
-/* form{
-  margin: 3% auto;
-  width:50%;
-  } 
-input, select {
-  outline: none;
-  padding: 1% 1% 1% 0.3%;
-  border-radius:2px;
-  width:50%;
-  background: transparent;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
-  box-sizing: border-box;
-  outline: none; 
-}
-
-button {
-  background-color:#4e4c56;
-  color:white;
-  padding: 1% 2%;
-  border-radius:3px;
-  text-transform: uppercase;
-} */
 .bgimg-1{
   position: relative;
   background-attachment: fixed;
@@ -103,11 +81,6 @@ section {
 
 
 /* XXXXXXXXXXX ARTICLES XXXXXXXXXXXXXX */
-/* #accueil-articles img {
-  width:100%;
-  height:30%;
-  object-fit: cover;
-} */
 
 #accueil-articles iframe {
   max-width:100%;

@@ -7,65 +7,61 @@
   src: url("../css/fonts/LondonBetween.ttf");
 }
 
+/*XXXXXXXXXXXXXXXXXXX CSS DES FORMULAIRE D'INSCRIPTION ET CONNEXION XXXXXXXXXXXXXXXX*/
+.formLogin{
+    max-width: 500px;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    margin: 10px auto;
+    padding: 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
 
-.connection{
-    display: inline-flex;
-  }
-   .inscription, .connecter{
-    font-family: "LondonBetween";
-    box-shadow:10px 2px 10px rgba(0, 0, 0, 0.6);
-    width:40%;
-    border-radius:10px;
-    padding-bottom: 25px;
-    margin-left:10%;
-  }
-  .ecrire{
-    font-family: "LondonBetween";
-    box-shadow:10px 2px 10px rgba(0, 0, 0, 0.6);
-    border-radius:10px;
-    padding-bottom: 25px;
-    
-  }
-  .ecrire #form input{
-    width:32%;
-  }
-  .inscription h3, .ecrire h3,  .connecter h3{
-      text-align:center;
-      font-weight: bold;
-      margin-left:5%;
-  }
-  .label-file {
-      cursor: pointer;
-      color: #5e528a;
-      font-weight: bold;
-      padding-bottom: 2%;
-  }
-  .label-file:hover {
-      color: #25a5c4;
-  }
-  .input-file {
-      display: none;
-  }
-  #form{
+.formLogin input[type="email"],
+.formLogin input[type="text"],
+.formLogin input[type="password"]{
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding: 7px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color:#8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+   
+}
+.formLogin input[type="email"]:focus,.formLogin input[type="text"]:focus,
+.formLogin input[type="password"]:focus{
+    background: #d2d9dd;
+}
+.formLogin input[type="submit"],.formLogin input[type="button"]{
+    position: relative;
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    margin: 0 auto;
+    background: #4883B0;
+    font-size: 18px;
     text-align: center;
-    /*display:flex;*/
-    flex-direction: column;
-    margin:0 auto;
-    width: 70%;
-  }
-  #form input{
-    text-align:center;
-    border-radius: 10px;
-    margin-bottom: 5%;
-    padding-top: 2.5%;
-    padding-bottom: 2.5%;
-  }
-  #form button{
-    background-color:#f1e4fa;
-    color:#5e528a;
-    border-radius: 10px;
-    margin-bottom: 5%;
-    padding-top: 2.5%;
-    padding-bottom: 2.5%;
-    cursor:pointer;
-  }
+    font-style: normal;
+    width: 100%;
+    border: 1px solid #4883B0;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+}
+.formLogin input[type="submit"]:hover,
+.formLogin input[type="button"]:hover
+{
+    background: #4883B0;
+}
