@@ -92,6 +92,31 @@ CODESQL;
     
              return $nbLigne;
 } 
+
+public function compterLigneMotCle ($objetConnection, $mot_cle) {
+            $requeteSQL = 
+<<<CODESQL
+
+SELECT COUNT(*) AS nbLigne FROM article
+WHERE motCle = :motCle
+CODESQL;
+
+            
+            $tabResultat = $objetConnection->prepare($requeteSQL);
+            $tabResultat->execute([ "motCle" => $mot_cle ]);
+
+            $nbLigne = 0;
+            //dump($tabResultat);
+             foreach($tabResultat as $tabArticle)
+            {
+        // VA ME FOURNIR LA VALEUR DANS LA VARIABLE $nbLigne
+        // extract($tabArticle);
+                
+                $nbLigne = $tabArticle["nbLigne"];
+            }
+    
+             return $nbLigne;
+} 
     /*
     public function findBySomething($value)
     {

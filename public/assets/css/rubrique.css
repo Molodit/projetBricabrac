@@ -15,7 +15,7 @@ background-size: contain;
 font-family: "MyriadPro-Regular";
 width: 100%;
 min-height: 70vh;
-margin: -3vh auto 3vh;
+margin: -3vh auto 7vh;
 color: rgb(16, 78, 139);
 }
 
@@ -65,7 +65,15 @@ background-color: white;
 .rhizome h4, .createxte h4, .journal h4{
   text-transform: uppercase;
 }
-
+.rhizome ul, .createxte ul{
+  float: right;
+  margin-right: 10%;
+}
+.rhizome li a, .createxte li a{
+  padding: 30%;
+  background-color: rgb(169, 212, 237);
+  border-radius: 10px;
+}
 .article-rhizome img{
   width: 200px;
   height: 150px;

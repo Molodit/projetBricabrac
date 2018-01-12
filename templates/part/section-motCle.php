@@ -1,12 +1,49 @@
 <section class="motCle">
 
-    <h3>DES ARTICLES DE <?php echo $mot_cle ?></h3> 
+    <h3>DES ARTICLES DE <?php echo $mot_cle ?></h3>
+
+    <?php
+
+$objetRepository     = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
+
+$nbLigne =  $objetRepository->compterLigneArticle($objetConnection, "MotCle" );
+
+//$nbArticle = compterArticle("article");
+//echo "IL Y A $nbLigne ARTICLES";
+
+$numeroPage     = 1;
+// ON RECUPERE LE NUMERO DE PAGE DU PARAMETRE GET DANS L'URL
+if (isset($_REQUEST["numeroPage"]))
+{
+    $numeroPage = intval($_REQUEST["numeroPage"]);
+}
+
+// JE VEUX AFFICHER 6 articles PAR PAGE
+$nbArticleParPage = 6;
+// ON RECUPERE LE NUMERO DE PAGE DU PARAMETRE GET DANS L'URL
+if (isset($_REQUEST["nbArticleParPage"]))
+{
+    $nbArticleParPage = intval($_REQUEST["nbArticleParPage"]);
+}
+
+$nbPage         = ceil($nbLigne / $nbArticleParPage);
+$indiceDepart   = ($numeroPage -1) * $nbArticleParPage;
+
+?> 
 
 <?php
 // ALLER CHERCHER LA LISTE DES ARTICLES DANS LES MOTS CLES $motCle
 
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
 $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
+$objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
+
+// ATTENTION: ON UTILISE LE NOM DES PROPRIETES
+$tabResultat = $objetRepository->findBy(
+    [ "rubrique" => "MotCle" ], 
+    [ "datePublication" => "DESC" ],
+    $nbArticleParPage,
+    $indiceDepart);
 
 
 // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
@@ -18,12 +55,20 @@ foreach($tabResultat as $objetArticle)
 {
     // METHODES "GETTER" A RAJOUTER DANS LA CLASSE MonArticle
     $idArticle       = $objetArticle->getIdArticle();
+    $idMembre         = $objetArticle->getIdMembre();
     $titre           = $objetArticle->getTitre();
     $contenu         = $objetArticle->getContenu();
     $rubrique        = $objetArticle->getRubrique();
     $motCle          = $objetArticle->getMotCle();
     $cheminImage     = $objetArticle->getCheminImage();
     $datePublication = $objetArticle->getDatePublication("d/m/Y");
+
+     $objetMembre = $objetRepositoryMembre->find($idMembre);
+            $pseudo = "";
+            if ($objetMembre)
+            {
+                $pseudo = $objetMembre->getMembre();
+            }
     
     
     $htmlFile = "";
@@ -64,6 +109,7 @@ CODEHTML;
         <div>$mot_cle</div>
         <p>$contenu</p>
         <p> $datePublication</p>
+        <td>$pseudo</td>
         </div>
       
     </article>
@@ -73,6 +119,23 @@ CODEHTML;
 }
 
 ?>
+<nav>
+        <ul>
+<?php        
+
+for($p=1; $p <= $nbPage; $p++)
+{
+    echo
+<<<CODEHTML
+        
+        <li><a href="?numeroPage=$p&nbArticleParPage=$nbArticleParPage"> $p</a></li>
+        
+CODEHTML;
+
+}
+?>
+        </ul>
+    </nav>
 
 
 </section>

@@ -4,7 +4,7 @@
 
     <h3> RHIZOME</h3> 
 
-    <?php
+  <?php
 
 $objetRepository     = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
 
@@ -33,22 +33,7 @@ $indiceDepart   = ($numeroPage -1) * $nbArticleParPage;
 
 ?>
 
-    <nav>
-        <ul>
-<?php        
-
-for($p=1; $p <= $nbPage; $p++)
-{
-    echo
-<<<CODEHTML
-        <li><a href="?numeroPage=$p&nbArticleParPage=$nbArticleParPage">PAGE $p</a></li>
-        
-CODEHTML;
-
-}
-?>
-        </ul>
-    </nav>
+   
 
 
 <?php
@@ -137,5 +122,23 @@ CODEHTML;
 }
 
 ?>
+ <nav>
+        <ul>
+<?php        
+
+for($p=1; $p <= $nbPage; $p++)
+{
+    echo
+<<<CODEHTML
+        
+        <li><a href="?numeroPage=$p&nbArticleParPage=$nbArticleParPage"> $p</a></li>
+        
+CODEHTML;
+
+}
+?>
+        </ul>
+    </nav>
+  
 
 </section>
