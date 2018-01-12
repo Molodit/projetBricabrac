@@ -59,6 +59,14 @@ h1 {
 /*XXXXXXXXXXXXXXXXX SECTION XXXXXXXXXXXXXXXXXXX*/
 h2, h3 {
   letter-spacing: 5px;
+  margin: 5% 0;
+  color:#D5804B;
+}
+
+#presentation h2, #accueil-articles h2 {
+  /* margin-bottom: 5%; */
+  font-size:30px;
+  text-transform:uppercase;
 }
 .bgimg-1{
   position: relative;
@@ -66,7 +74,7 @@ h2, h3 {
   background-position:center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity:0.9;
+  opacity:0.95;
   background-image: url("../img/arbre-vert.png");
   min-height: 100vh;
 
@@ -80,14 +88,6 @@ section {
 
 /* XXXXXXXXXXX ARTICLES XXXXXXXXXXXXXX */
 
-#accueil-articles iframe {
-  max-width:100%;
-  max-height:50%;
-}
-
-#accueil-articles h2 {
-  font-size:30px;
-}
 
 #accueil-articles article {
   display:inline-block;
@@ -121,7 +121,22 @@ box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
   flex-direction: column;
 }
 
+/* XXXXXXXXXX PRESENTATION ACCUEIL */
 
+#presentation article {
+color: #313233;
+padding:0 10%;
+font-family:'Philosopher'
+}
+
+#presentation li {
+  display: block;
+}
+
+#presentation p, #presentation li {
+  font-size: 1.2em;
+  line-height: 1.2;
+}
 /*XXXXXXXXXXX FOOTER  XXXXXXXXXXXXX*/
 footer{
   background:#a9d4ed;

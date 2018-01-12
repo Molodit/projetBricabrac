@@ -1,8 +1,9 @@
-<section>
+<section class="formulaireAdmin">
     <h3>Ecrire un nouvel article</h3>
+    <hr>
     <!-- NE PAS OUBLIER: POUR UPLOADER UN FICHIER -->
     <!-- method="POST" enctype="multipart/form-data" -->
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data" class="formAdmin">
         <input type="text" name="titre" required placeholder="titre">
         <input type="text" name="mot_cle" required placeholder="mot-clé">
         <select name="rubrique" required>
