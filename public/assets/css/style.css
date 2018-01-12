@@ -63,10 +63,17 @@ h2, h3 {
   color:#D5804B;
 }
 
-#presentation h2, #accueil-articles h2 {
-  /* margin-bottom: 5%; */
+#presentation h2, #accueil-articles h2, #accueil-balles h2 {
   font-size:30px;
   text-transform:uppercase;
+  text-align:center;
+}
+
+#accueil-balles h4 {
+  font-size:1.2em;
+  position:absolute;
+  top:100%;
+  left:45%;
 }
 .bgimg-1{
   position: relative;
@@ -124,9 +131,12 @@ box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
 /* XXXXXXXXXX PRESENTATION ACCUEIL */
 
 #presentation article {
-color: #313233;
-padding:0 10%;
-font-family:'Philosopher'
+color: #565759;
+padding:2% 7%;
+font-family:'Philosopher';
+background:url(../img/back-pattern.png)repeat;
+margin: 0 10%;
+border-radius:10px;
 }
 
 #presentation li {

@@ -8,36 +8,50 @@
     src: url("../css/fonts/LondonBetween.ttf");
   }
 
+.illustration {
+  background-image:url(../img/ballon.png);
+  background-repeat:no-repeat;
+  background-position:60vw;
+}
 .read{
     border: 2px solid #4883B0;
     border-radius: 10px;
 }
 
 .article-commentaire {
-  overflow:hidden;
   display:flex;
-  flex-direction:row;
+  flex-direction: column;
+  background:url(../img/back-pattern.png)repeat;
+  border-radius:10px;
 }
 
 .article-commentaire img, .article-commentaire iframe  {
-  max-width: 40vw;
-  max-height: 80vh;
+  height: 80vh;
   object-fit: cover;
-  border-radius:10px;
-  float:left;
+}
+
+.article-commentaire img {
+  width: 50vw;
   padding-right:5%;
+  vertical-align: top;
+  object-fit: contain;
 }
 
-.article-commentaire .articleSeul {
-    width:60%;
-    float: left;
+.article-commentaire .articleSeul, #commentaire {
+  color: #565759;
+  padding:2% 0 0 2%;
+  width: 50vw;
+ 
 }
 
-.article-commentaire h2,  h2.readh2 {
+
+
+.article-commentaire h2 {
   text-transform: uppercase;
   font-size:30px;
   color:#4883B0;
-  width:100%!important;
+  margin-top:1%;
+  font-family:'Philosopher'
 
 }
 
@@ -45,15 +59,16 @@
   font-size: 18px;
 }
 
-.article-commentaire .container {
-  display:flex;
-  flex-direction:column;
+
+#commentaire h3{
+  margin-top: 1%;
 }
 
 .container .infos {
   color: #bfbdbd;
   font-size: 15px;
 }
+
 
 /*XXXXXXXXXXXXX MOT-CLE XXXXXXXXXXX*/
 .article-motCle{

@@ -38,7 +38,9 @@ CODEHTML;
 }
 
 ?>
+<h4>Les mots de Bricabracs</h4>
 </section>
+
 <hr>
 <section id="presentation">
     <h2>Les espaces éducatifs "école" Bricabracs</h2>
@@ -53,13 +55,13 @@ CODEHTML;
         de capital social ou économique. 
         Un espace éducatif qui va au-delà du cadre habituel des écoles et des
         accueils de loisirs en s'ouvrant et en accueillant les personnes agissant à proximité de son milieu de vie.</p>
-        <p>Ce site a plusieurs fonction :
+        <!-- <p>Ce site a plusieurs fonction :
             <ul>
                 <li>Un outil au service des enfants, nourrissant l'esprit des minots dans un va et vient entre l'intérieur et l'extérieur de notre vie quotidienne.</li>
                 <li>L'exposé d'un aperçu de la vie de La Tanière, notre milieu, que l'on donne à voir.</li>
                 <li>Une communication vers un rhizome d'incertitude susceptible de créer d'autres lignes d'erre.</li>
             </ul>
-        </p>
+        </p> -->
     </article>
 </section>
 <hr>
@@ -101,7 +103,7 @@ CODEHTML;
         echo
         <<<CODEHTML
         <a href="$urlArticle">
-        <article style="background-image:url('$urlAccueil/assets/img/logo.png');
+        <article style="background-image:url('$urlAccueil/assets/img/logo.jpg');
         background-repeat:no-repeat;
         background-position:center;
         background-size:cover;">
