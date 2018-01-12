@@ -4,7 +4,7 @@
 
     <h3> RHIZOME</h3> 
 
-  <?php
+<?php
 
 $objetRepository     = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
 
@@ -69,10 +69,9 @@ foreach($tabResultat as $objetArticle)
             {
                 $pseudo = $objetMembre->getMembre();
             }
-    
-    
+    // On ne prend que les 100 premiers caractères du texte de $contenu
     $contenu = mb_strimwidth($contenu, 0, 100, '...');
-
+    
     $htmlFile = "";
     // S'il y a un fichier (image ou pdf)
     if ($cheminImage)
@@ -98,11 +97,18 @@ CODEHTML;
         }
     
   }
+  if ($cheminImage == false) {
+        $htmlFile = 
+<<<CODEHTML
+    
+        <img src="$urlAccueil/assets/img/logo.jpg" title="$cheminImage">
+CODEHTML;
+        }
 
     // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
     $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
     
-    echo
+       echo
 <<<CODEHTML
 
     <article class="article-rhizome">

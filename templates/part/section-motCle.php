@@ -6,7 +6,7 @@
 
 $objetRepository     = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
 
-$nbLigne =  $objetRepository->compterLigneMotCle($objetConnection, "motCle" );
+$nbLigne =  $objetRepository->compterLigneMotCle($objetConnection, $mot_cle );
 
 //$nbArticle = compterArticle("article");
 //echo "IL Y A $nbLigne ARTICLES";
