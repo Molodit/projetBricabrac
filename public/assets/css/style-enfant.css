@@ -55,6 +55,8 @@ hr{
 }
 .enfantRead div h3{
   color:#D5804B;
+  font-size:1.2em;
+  text-align:center;
 }
 #articleEnfant{
   float: left;

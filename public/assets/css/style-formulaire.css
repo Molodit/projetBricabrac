@@ -18,7 +18,8 @@ hr{
 }
 
 section.Login h2{
-    margin: 1.5% auto;
+    margin: 0 auto;
+    text-align:center;
     font-size:1.8em;
     font-family:"MyriadPro-Regular";
  }

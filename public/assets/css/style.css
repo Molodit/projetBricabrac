@@ -61,6 +61,7 @@ h2, h3 {
   letter-spacing: 5px;
   margin: 5% 0;
   color:#D5804B;
+  text-align:center;
 }
 
 #presentation h2, #accueil-articles h2, #accueil-balles h2 {
