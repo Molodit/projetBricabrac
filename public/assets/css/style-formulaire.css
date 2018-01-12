@@ -18,7 +18,8 @@ hr{
 }
 
 section.Login h2{
-    margin: 1.5% auto;
+    margin: 0 auto;
+    text-align:center;
     font-size:1.8em;
     font-family:"MyriadPro-Regular";
  }
@@ -187,6 +188,84 @@ section.Login{
     margin-bottom: 10px;
 }
 .formEnfant button:hover{
+    background: #A9D4ED;
+    color:#313233;
+    cursor:pointer;
+}
+/*XXXXXXXXXXXXXXXXXX FORMULAIRE ADMIN XXXXXXXXXXXXXXXXXXXXX*/
+.formulaireAdmin{
+    width:80%;
+    margin:0 auto;
+}
+
+.formAdmin{
+    max-width: 60%;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    border: 1px solid #313233 ;
+    margin: 10px auto;
+    padding: 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.formAdmin input[type="text"],
+.formAdmin input[type="text"],
+.formAdmin input[type="file"],
+.formAdmin textarea,
+.formAdmin select {
+    font-family: "LondonBetween";
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2em;
+    margin: 0;
+    outline: 0;
+    padding: 7px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color:#313233;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+   
+}
+.formAdmin input[type="text"]:focus,
+.formAdmin input[type="text"]:focus,
+.formAdmin input[type="file"]:focus,
+.formAdmin textarea:focus,
+.formAdmin select:focus{
+    background: #d2d9dd;
+}
+.formAdmin select{
+    -webkit-appearance: menulist-button;
+    height:35px;
+    font-family: "LondonBetween";
+}
+
+/*XXXXXXXXXXXXXX BOUTON ADMIN XXXXXXXXXXXXXXX*/
+
+.formAdmin button{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 18px 35px 18px 35px;
+    color: #FFF;
+    margin: 0 auto;
+    background: #4883B0;
+    font-size: 1.2em;
+    text-align: center;
+    font-style: normal;
+    border: 1px solid #4883B0;
+    border-radius: 10px;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+}
+.formAdmin button:hover{
     background: #A9D4ED;
     color:#313233;
     cursor:pointer;

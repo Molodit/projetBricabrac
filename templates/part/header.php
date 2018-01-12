@@ -35,10 +35,13 @@ $urlLogout            = $this->generateUrl("logout");
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/template-article.css"/>
   </head>
   <body>
-    <header>
+    <div id="header">
+    <header id="site-header">
+    <h1>La tanière bricabracs</h1>
     <nav class="menu" role="navigation">
+      <div class="menu-container">
         <ul>
-        <li><a href="<?php echo $urlAccueil ?>"> <i class="fas fa-home"></i> Accueil </a></li>
+          <li><a href="<?php echo $urlAccueil ?>"> <i class="fas fa-home"></i> Accueil </a></li>
           <li><a href="<?php echo $urlRhizome?>"> <i class="far fa-newspaper"></i> Rhizome </a></li>
           <li><a href="<?php echo $urlCreaTexte ?>"> <i class="fas fa-book"></i>  CréaTexte </a></li>
           <li><a href="<?php echo $urlJournal?>"> <i class="fas fa-pencil-alt"></i> Journal <em>La Tanière</em></a></li>
@@ -77,9 +80,6 @@ CODEHTML;
         }
 ?>
 
-        </ul>
-        <ul>
-
 <?php
 
 // on affiche le logout dès qu'on a le niveau 1 et pour les niveaux supérieurs :
@@ -92,9 +92,10 @@ CODEHTML;
 
 }
 ?>
+        </ul>
+      </div>
       </nav>
 
-      <h1>La tanière bricabracs</h1>
-       
     </header>
+  </div>
 <main>

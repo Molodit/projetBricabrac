@@ -2,8 +2,6 @@
 
 <section class="enfantRead">
 
-
-
 	<div>
 <?php
 	
