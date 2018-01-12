@@ -39,7 +39,7 @@ $urlLogout            = $this->generateUrl("logout");
     <nav class="menu" role="navigation">
         <ul>
         <li><a href="<?php echo $urlAccueil ?>"> <i class="fas fa-home"></i> Accueil </a></li>
-          <li><a href="<?php echo $urlRhizome?>"> <i class="far fa-newspaper"></i> Rizhome </a></li>
+          <li><a href="<?php echo $urlRhizome?>"> <i class="far fa-newspaper"></i> Rhizome </a></li>
           <li><a href="<?php echo $urlCreaTexte ?>"> <i class="fas fa-book"></i>  CréaTexte </a></li>
           <li><a href="<?php echo $urlJournal?>"> <i class="fas fa-pencil-alt"></i> Journal <em>La Tanière</em></a></li>
 
@@ -87,7 +87,7 @@ if($verifNiveau >= 1)
 {
   echo
   <<<CODEHTML
-  <li ><a href="$urlLogout">Se Deconnecter</a></li>                
+  <li ><a href="$urlLogout">Se Déconnecter</a></li>                
 CODEHTML;
 
 }
