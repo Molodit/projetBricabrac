@@ -1,6 +1,6 @@
 <section class="motCle">
 
-    <h3>LISTE DES ARTICLES PAR MOT CLE</h3> 
+    <h3>DES ARTICLES DE <?php echo $mot_cle ?></h3> 
 
 <?php
 // ALLER CHERCHER LA LISTE DES ARTICLES DANS LES MOTS CLES $motCle
@@ -58,12 +58,13 @@ CODEHTML;
 <<<CODEHTML
 
     <article class="article-motCle">
-   
+        <div >$htmlFile</div>
+        <div class="article-mot">
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
         <div>$mot_cle</div>
         <p>$contenu</p>
         <p> $datePublication</p>
-        <div >$htmlFile</div>
+        </div>
       
     </article>
     
