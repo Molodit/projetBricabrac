@@ -58,6 +58,7 @@ hr{
   font-size:1.2em;
   text-align:center;
 }
+
 #articleEnfant{
   float: left;
   font-size:1.4em;
@@ -95,6 +96,6 @@ hr{
 .response{
   font-family: "LondonBetween";
   margin-top:4%;
-  font-size:1.6em;
+  font-size:1.4em;
   color:#4883B0;
 }
