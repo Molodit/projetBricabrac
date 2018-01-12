@@ -18,20 +18,36 @@ hr{
 }
 
 section.Login h2{
-  margin: 5% 0 5% 0;
-  width:30%;
+    margin: 1.5% auto;
+    font-size:1.8em;
+    font-family:"MyriadPro-Regular";
  }
 
 /*XXXXXXXXXXXXXXXXXXX CSS DES FORMULAIRE D'INSCRIPTION ET CONNEXION XXXXXXXXXXXXXXXX*/
 /*https://www.sanwebe.com/2014/08/css-html-forms-designs*/
 section.Login{
     width: 80%;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
     padding: 2.5%;
-	margin: 0 auto;
-
+    margin:0 auto;
+    margin-top:6%;
+    margin-bottom:6%;
+}
+.articleLogin{
+    width:60%;
+}
+.articleLogin p, .articleLogin.paraInscription{
+    text-align:center;
+    color:#313233;
+    font-family:'Philosopher', sans-serif;
+    width: 50%;
+    font-size:1.2em;
+    margin:2.5% auto;
 }
 .formLogin {
-    max-width: 500px;
+    max-width: 45%;
     padding: 10px 20px;
     margin:25px auto;
     background: #f4f7f8;
@@ -59,7 +75,7 @@ section.Login{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     background-color: #e8eeef;
-    color:black;
+    color:#313233;
     -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
     box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
     margin-bottom: 30px;
@@ -74,7 +90,7 @@ section.Login{
     background: #A9D4ED;
     cursor:pointer;
 }
-/*XXXXXXXXXXXXXXXXXXXX BOUTON XXXXXXXXXXXXXXXXXX*/
+/*XXXXXXXXXXXXXXXXXXXX BOUTON INSCRIPTON ET CONNEXION XXXXXXXXXXXXXXXXXX*/
 .formLogin button{
     position: relative;
     display: block;
@@ -94,7 +110,79 @@ section.Login{
 .formLogin button:hover
 {
     background: #A9D4ED;
-    color:black;
+    color:#313233;
     cursor:pointer;
 }
 /*XXXXXXXXXXXXXXXXXXXX FORMULAIRE ADMIN ENFANT XXXXXXXXXXXXXXXXXXXXX*/
+.formulaireEnfant{
+    width:80%;
+    margin:5% 0;
+}
+
+.formEnfant{
+    max-width: 60%;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    margin: 10px auto;
+    padding: 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.formEnfant input[type="text"],
+.formEnfant input[type="text"],
+.formEnfant input[type="file"],
+.formEnfant textarea,
+.formEnfant select {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0;
+    outline: 0;
+    padding: 7px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color:#8a97a0;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+   
+}
+.formEnfant input[type="text"]:focus,
+.formEnfant input[type="text"]:focus,
+.formEnfant input[type="file"]:focus,
+.formEnfant textarea:focus,
+.formEnfant select:focus{
+    background: #d2d9dd;
+}
+.formEnfant select{
+    -webkit-appearance: menulist-button;
+    height:35px;
+}
+
+/*XXXXXXXXXXXXXX BOUTON ADMIN XXXXXXXXXXXXXXX*/
+
+.formEnfant button{
+    position: relative;
+    display: block;
+    padding: 19px 39px 18px 39px;
+    color: #FFF;
+    margin: 0 auto;
+    background: #1abc9c;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    width: 100%;
+    border: 1px solid #16a085;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+}
+.formEnfant button{
+    background: #109177;
+}

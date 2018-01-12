@@ -26,7 +26,6 @@
   border-radius:10px;
   float:left;
   padding-right:5%;
-  
 }
 
 .article-commentaire .articleSeul {
@@ -54,4 +53,33 @@
 .container .infos {
   color: #bfbdbd;
   font-size: 15px;
+}
+
+/*XXXXXXXXXXXXX MOT-CLE XXXXXXXXXXX*/
+.article-motCle{
+  color: rgb(16, 78, 139);
+  font-size: 1em;
+  display: inline-flex;
+  border: 4px solid rgb(169, 212, 237);
+  padding: 2%;
+  width: 100%;
+  margin-bottom: 2%;
+}
+.article-mot a{
+  font-size: 1.2em;
+  text-transform: uppercase;
+  color: rgb(16, 78, 139);
+  }
+.article-mot{
+    padding-left: 5%;
+  }
+.motCle h3{
+  font-size: 1.6em;
+  text-transform: uppercase;
+  }
+.article-motCle div iframe {
+  width: 45vw;
+  height: 30vh;
+  object-fit: cover;
+  border-radius:10px;
 }

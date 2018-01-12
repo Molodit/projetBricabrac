@@ -27,8 +27,8 @@ section.enfantRead{
   border-radius:5px;
   background-size: cover;
  }
-h2, h3{
-  margin-top:2%;
+ #formulaireEnfant h2, #formulaireEnfant h3{
+  margin:2% 0;
   color:#D5804B;
   font-family:"LondonBetween";
   text-align:center;
@@ -45,6 +45,13 @@ hr{
   margin:0 auto;
   width: 80%;
   opacity: 0.8;
+}
+.enfantRead h3{
+  margin:2% 0;
+  color:#D5804B;
+  font-family:"LondonBetween";
+  text-align:center;
+  font-size: 1.8em;
 }
 .enfantRead div h3{
   color:#D5804B;

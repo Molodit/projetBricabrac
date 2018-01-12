@@ -75,3 +75,4 @@
     window.addEventListener('hashchange', hashChange)
     hashChange();
 })()
+// FONCTION POUR L'EDITEUR DES ADMIN
