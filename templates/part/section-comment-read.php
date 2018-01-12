@@ -1,30 +1,26 @@
-<h3> Commentaires</h3>
+<h2 class="readh2">Commentaires</h2>
 <section class="read">
+
 
 <?php
 
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Comments
 $objetRepository = $this->getDoctrine()->getManager()->getRepository(App\Entity\Comments::class);
 
-$tabResultat = $objetRepository->findBy([], [ "datePublication" => "DESC" ]);
+$tabResultat = $objetRepository->trouverCommentUser ($objetConnection);
 
 
-foreach($tabResultat as $objetComment)
+foreach($tabResultat as $tabLigne)
 {
 
-    $idComment       = $objetComment->getIdComment();
-    $idMembre         = $objetComment->getIdMembre();
-    $contenu            = $objetComment->getContenu();
+    $tabLigne = array_map("htmlentities", $tabLigne);
+    extract($tabLigne);
 
-// PLUS PRATIQUE => findBy
-// http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityRepository.html
-// ATTENTION: ON UTILISE LE NOM DES PROPRIETES
-$urlArticle = $this->generateUrl("article",["id_article" => "$idArticle"]);
 
 echo
 <<<CODEHTML
     <article>
-        <h4>$idMembre</h4>
+        <h4>$membre</h4>
         <p>$contenu</p>
     <article>
 

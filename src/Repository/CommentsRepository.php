@@ -13,6 +13,7 @@ class CommentsRepository extends ServiceEntityRepository
         parent::__construct($registry, Comments::class);
     }
 
+    //Jointure entre la table commentaire et la table membre pour trouver l'auteur d'un commentaire
     public function trouverCommentUser ($objetConnection)
     {
         $requeteSQL =
