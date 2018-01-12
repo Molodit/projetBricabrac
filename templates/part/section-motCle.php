@@ -6,7 +6,7 @@
 
 $objetRepository     = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
 
-$nbLigne =  $objetRepository->compterLigneArticle($objetConnection, "MotCle" );
+$nbLigne =  $objetRepository->compterLigneMotCle($objetConnection, "motCle" );
 
 //$nbArticle = compterArticle("article");
 //echo "IL Y A $nbLigne ARTICLES";
@@ -19,7 +19,7 @@ if (isset($_REQUEST["numeroPage"]))
 }
 
 // JE VEUX AFFICHER 6 articles PAR PAGE
-$nbArticleParPage = 6;
+$nbArticleParPage = 3;
 // ON RECUPERE LE NUMERO DE PAGE DU PARAMETRE GET DANS L'URL
 if (isset($_REQUEST["nbArticleParPage"]))
 {
@@ -40,14 +40,12 @@ $objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::
 
 // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
 $tabResultat = $objetRepository->findBy(
-    [ "rubrique" => "MotCle" ], 
+    [ "motCle" => $mot_cle ], 
     [ "datePublication" => "DESC" ],
     $nbArticleParPage,
     $indiceDepart);
 
 
-// ATTENTION: ON UTILISE LE NOM DES PROPRIETES
-$tabResultat = $objetRepository->findBy([ "motCle" => $mot_cle ], [ "datePublication" => "DESC" ]);
 
 
 // ON A UN TABLEAU D'OBJETS DE CLASSE Article
@@ -119,7 +117,7 @@ CODEHTML;
 }
 
 ?>
-<nav>
+ <nav>
         <ul>
 <?php        
 
@@ -136,8 +134,7 @@ CODEHTML;
 ?>
         </ul>
     </nav>
-
+  
 
 </section>
-
 

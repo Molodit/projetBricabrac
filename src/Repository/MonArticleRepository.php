@@ -98,7 +98,7 @@ public function compterLigneMotCle ($objetConnection, $mot_cle) {
 <<<CODESQL
 
 SELECT COUNT(*) AS nbLigne FROM article
-WHERE motCle = :motCle
+WHERE mot_cle = :motCle
 CODESQL;
 
             
