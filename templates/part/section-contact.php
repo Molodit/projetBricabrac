@@ -1,10 +1,10 @@
  <section class="contact container">
 	<div class="form">
 
-	<h2> Contactez nous</h2>
+	<h2> Contactez-nous</h2>
 	<p>68 chemin de Baumillon, </p>
 	<p>13015 Marseille</p>
-	<a href=""><p>lesbricabracs@bricabracs.org</p></a>
+	<a href="mailto:lesbricabracs@bricabracs.org"><p>Envoyez un mail</p></a>
 </div>
 
 	<aside class="aside">

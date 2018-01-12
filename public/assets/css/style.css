@@ -151,3 +151,19 @@ footer{
 
 }
 
+/*XXXXXXXXXXX CONTACT  XXXXXXXXXXXXX*/
+.contact{
+  width: 50%;
+  text-align: center;
+}
+.contact h2{
+  font-size: 2em;
+}
+.contact .form{
+  font-family: "LondonBetween";
+  color: rgb(16, 78, 139);
+  font-size: 1.2em;
+}
+.contact a{
+      color: #D5804B;
+}
