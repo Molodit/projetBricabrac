@@ -9,6 +9,7 @@ $verifMembre = $objetSession->get("membre");
 <section id="formulaireEnfant">
     <h3>Ecrire un nouvel article</h3>
     
+    
     <!-- NE PAS OUBLIER: POUR UPLOADER UN FICHIER -->
     <!-- method="POST" enctype="multipart/form-data" -->
     <form method="POST" enctype="multipart/form-data">
