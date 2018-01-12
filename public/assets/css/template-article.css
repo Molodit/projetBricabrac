@@ -20,7 +20,7 @@
 }
 
 .article-commentaire img, .article-commentaire iframe  {
-  max-width: 70vw;
+  max-width: 40vw;
   max-height: 80vh;
   object-fit: cover;
   border-radius:10px;
