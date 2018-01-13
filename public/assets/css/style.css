@@ -13,16 +13,28 @@ body, html {
 /*XXXXXXXXXXXXXX HEADER ET NAV XXXXXXXXXXXXX*/
 /* lien du css https://codepen.io/collection/AxKbKw/2/ */
 #header{
-
+   background-color: #a9d4ed;
+   width:100%;
+   top:0;
+   padding:0;
+   position: fixed;
+   opacity:1;
 }
 #header h1{
-
+  left:0;
+  width:35%;
 }
 .menu-container ul{
-
+  display:block;
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
 }
 .menu-container li{
- 
+  float:left;
 }
 
 /*header{
