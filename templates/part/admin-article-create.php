@@ -14,8 +14,7 @@
      </select>
         <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30"></textarea>
         <input type="file" name="cheminImage" placeholder="insérer une image">
-        <button type="submit" name="statut" value="publie">Publier l'article</button>
-        <button type="submit" name="statut" value="brouillon">Enregistrer l'article</button>
+        <button type="submit">Publier l'article</button>
         <input type="hidden" name="codebarre" value="article">
         <div class="response">
 <?php

@@ -1,6 +1,6 @@
 
 
-<section class="createxte">
+<section class=createxte>
 
     <h3>CREATEXTE</h3> 
 <?php
@@ -41,7 +41,7 @@ $objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::
 
 // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
 $tabResultat = $objetRepository->findBy(
-    [ "rubrique" => "CreaTexte", "statut" => "publie" ], 
+    [ "rubrique" => "CreaTexte" ], 
     [ "datePublication" => "DESC" ],
     $nbArticleParPage,
     $indiceDepart);

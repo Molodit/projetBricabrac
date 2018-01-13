@@ -30,7 +30,7 @@ if ($objetRequest->get("codebarre", "") == "deleteArticle")
                         
                         $tabMembreTH = ["N°", "Auteur", "Titre", "Rubrique", "Contenu",
                                         "Images", "Mot-clé", "Date de publication", 
-                                        "Date de modification", "Statut", "Modifier", "Supprimer"];
+                                        "Date de modification", "Modifier", "Supprimer"];
                         
                         foreach ($tabMembreTH as $element) {
                             echo
@@ -78,9 +78,8 @@ CODEHTML;
             $rubrique         = $objetArticle->getRubrique();
             $contenu          = $objetArticle->getContenu();
             $cheminImage      = $objetArticle->getCheminImage();
-            $statut           = $objetArticle->getStatut();
-            $datePublication  = $objetArticle->getDatePublication("d/m/Y");
-            $dateModification = $objetArticle->getDateModification("d/m/Y");
+            $datePublication  = $objetArticle->getDatePublication("d/m/Y H:i:s");
+            $dateModification = $objetArticle->getDateModification("d/m/Y H:i:s");
 
              // JE VAIS FAIRE UNE 2e REQUETE POUR ALLER CHERCHER LE Membre
            
@@ -135,7 +134,6 @@ CODEHTML;
                 <td>$motCle</td>
                 <td>$datePublication</td>
                 <td>$dateModification</td>
-                <td>$statut</td>
                 
                 <td>
                     <form method="GET" action="">

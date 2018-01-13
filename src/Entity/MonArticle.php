@@ -46,11 +46,6 @@ class MonArticle
     private $motCle;
 
     /**
-     * @ORM\Column(name ="statut", type="string", length=100)
-     */
-    private $statut;
-
-    /**
      * @ORM\Column(name ="date_publication", type="datetime")
      */
     private $datePublication;
@@ -94,11 +89,6 @@ class MonArticle
     public function setCheminImage ($cheminImage)
     {
         $this->chemin_image = $cheminImage;
-    }
-
-    public function setStatut ($statut)
-    {
-        $this->statut = $statut;
     }
 
     public function setDatePublication ($datePublication)
@@ -147,10 +137,6 @@ class MonArticle
         return $this->contenu;
     }
 
-    public function getStatut () {
-        
-        return $this->statut;
-    }
     public function getCheminImage ()
     {
         return $this->cheminImage;
