@@ -14,8 +14,24 @@
   background-position:60vw;
 }
 .read{
-    border: 2px solid #4883B0;
+    border: 1px solid #ddd;
     border-radius: 10px;
+    padding:3%;
+    width: 50vw;
+    margin-left:10%;
+}
+
+.read h3 {
+ text-align:left;
+ margin-top:1%;
+}
+
+.read p {
+  margin-top: -2%;
+}
+
+.read hr {
+  margin-left:0;
 }
 
 .article-commentaire {
@@ -23,6 +39,7 @@
   flex-direction: column;
   background:url(../img/back-pattern.png)repeat;
   border-radius:10px;
+  border: 1px solid #ddd;
 }
 
 .article-commentaire img, .article-commentaire iframe  {
@@ -39,9 +56,16 @@
 
 .article-commentaire .articleSeul, #commentaire {
   color: #565759;
-  padding:2% 0 0 2%;
+  padding:2% 0 5% 4%;
   width: 50vw;
- 
+}
+
+.article-commentaire a {
+  color:#D5804B
+}
+
+.article-commentaire a:hover {
+  text-decoration: underline;
 }
 
 
@@ -62,11 +86,16 @@
 
 #commentaire h3{
   margin-top: 1%;
+  text-align: left;
 }
 
-.container .infos {
-  color: #bfbdbd;
-  font-size: 15px;
+.infos {
+  color: #a09f9f;
+  font-size: 15px !important;
+}
+
+.pdf {
+  padding: 1% 0 0 4%;
 }
 
 

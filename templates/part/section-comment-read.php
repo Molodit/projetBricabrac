@@ -1,6 +1,6 @@
-<h2 class="readh2">Commentaires</h2>
-<section class="read">
 
+<section class="read">
+<h3 class="readh2">Commentaires</h3>
 
 <?php
 
@@ -22,7 +22,9 @@ echo
     <article>
         <h4>$membre</h4>
         <p>$contenu</p>
+        <hr>
     <article>
+    
 
 CODEHTML;
 

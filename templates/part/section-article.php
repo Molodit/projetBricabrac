@@ -41,6 +41,7 @@
                         $htmlFile = 
                         <<<CODEHTML
                         <iframe src="$urlAccueil$cheminImage" width="67%"></iframe>
+                        <a href="$urlAccueil/$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
 CODEHTML;
                     }
 
