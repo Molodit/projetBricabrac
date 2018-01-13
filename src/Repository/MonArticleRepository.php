@@ -14,7 +14,7 @@ class MonArticleRepository extends ServiceEntityRepository
     }
 
         // AJOUTER MES METHODES QUI ONT BESOIN DE JOINTURES
-        // table membre jointe à l'article pour trouver l'auteur de l'article
+        // table membre jointe à l'article pour trouver l'auteur des articles qui ont le statut publié
         public function trouverArticleUser ($objetConnection)
         {
             $requeteSQL =
@@ -23,12 +23,13 @@ class MonArticleRepository extends ServiceEntityRepository
     SELECT *, article.id_article as idArticle FROM article
     LEFT JOIN membre
     ON article.id_membre = membre.id_membre
+    WHERE statut = :statut
     ORDER BY date_publication DESC
 
 CODESQL;
         // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#list-of-parameters-conversion
             $objetStatement = $objetConnection->prepare($requeteSQL);
-            $objetStatement->execute();
+            $objetStatement->execute([":statut" => 'publie']);
             
             return $objetStatement;
         }
@@ -43,13 +44,14 @@ CODESQL;
     SELECT *, article.id_article as idArticle FROM article
     LEFT JOIN membre
     ON article.id_membre = membre.id_membre
+    WHERE statut = :statut
     ORDER BY date_publication DESC
     LIMIT 3
 
 CODESQL;
             
             $objetStatement = $objetConnection->prepare($requeteSQL);
-            $objetStatement->execute();
+            $objetStatement->execute([":statut" => 'publie']);
             
             return $objetStatement;
         }
@@ -60,10 +62,12 @@ CODESQL;
             $requeteSQL = 
             <<<CODESQL
             SELECT DISTINCT mot_cle FROM article
+            WHERE statut = :statut
+
 CODESQL;
 
             $objetStatement = $objetConnection->prepare($requeteSQL);
-            $objetStatement->execute();
+            $objetStatement->execute([":statut" => 'publie']);
 
             return $objetStatement;
         }
@@ -73,12 +77,12 @@ CODESQL;
 <<<CODESQL
 
 SELECT COUNT(*) AS nbLigne FROM article
-WHERE rubrique = :rubrique
+WHERE rubrique = :rubrique AND statut = :statut
 CODESQL;
 
             
             $tabResultat = $objetConnection->prepare($requeteSQL);
-            $tabResultat->execute(["rubrique" => $rub]);
+            $tabResultat->execute(["rubrique" => $rub, "statut" => "publie"]);
 
             $nbLigne = 0;
             //dump($tabResultat);
@@ -98,12 +102,12 @@ public function compterLigneMotCle ($objetConnection, $mot_cle) {
 <<<CODESQL
 
 SELECT COUNT(*) AS nbLigne FROM article
-WHERE mot_cle = :motCle
+WHERE mot_cle = :motCle AND statut = :statut
 CODESQL;
 
             
             $tabResultat = $objetConnection->prepare($requeteSQL);
-            $tabResultat->execute([ "motCle" => $mot_cle ]);
+            $tabResultat->execute([ "motCle" => $mot_cle, "statut" => "publie" ]);
 
             $nbLigne = 0;
             //dump($tabResultat);

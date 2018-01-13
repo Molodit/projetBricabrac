@@ -20,7 +20,8 @@ class FormArticle
         $titre          = $objetRequest->get("titre", "");       
         $rubrique       = $objetRequest->get("rubrique", "");   
         $motCle         = $objetRequest->get("mot_cle", "");    
-        $contenu        = $objetRequest->get("contenu", "");       
+        $contenu        = $objetRequest->get("contenu", "");
+        $statut         = $objetRequest->get("statut", "");     
         $cheminImage    = $this->getUploadedFile("cheminImage", $objetRequest, $cheminSymfony);
         
         // SECURITE TRES BASIQUE
@@ -40,11 +41,20 @@ class FormArticle
                                         "contenu"           => $contenu,
                                         "date_publication"  => $datePublication,
                                         "chemin_image"      => $cheminImage,
-                                        "mot_cle"           => $motCle
+                                        "mot_cle"           => $motCle,
+                                        "statut"            => $statut
                                         ]);
             
             // MESSAGE RETOUR POUR LE VISITEUR
-            echo "L'article $titre a été publié";
+
+                if ($statut == "brouillon")
+                {
+                    echo "L'article $titre a bien été enregistré";
+                }
+                else {
+                    echo "L'article $titre a été publié";
+                }
+           
             }
 
             else {
@@ -87,7 +97,8 @@ class FormArticle
         $titre          = $objetRequest->get("titre", "");       
         $rubrique       = $objetRequest->get("rubrique", "");    
         $motCle         = $objetRequest->get("mot_cle", "");    
-        $contenu        = $objetRequest->get("contenu", "");       
+        $contenu        = $objetRequest->get("contenu", "");
+        $statut         = $objetRequest->get("statut", ""); 
         $cheminImage    = $this->getUploadedFile("chemin_image", $objetRequest, $cheminSymfony);
         
         // CONVERTIR $idUpdate EN NOMBRE
@@ -109,6 +120,7 @@ class FormArticle
                                         "rubrique"          => $rubrique,
                                         "mot_cle"           => $motCle,
                                         "contenu"           => $contenu,
+                                        "statut"            => $statut,
                                         "date_modification" => $dateModification,
                                         
                                     ];
@@ -122,7 +134,14 @@ class FormArticle
                                     $objetConnection->update("article", $tabLigneUpdate, [ "id_article" => $idUpdate ]);
             
             // MESSAGE RETOUR POUR LE VISITEUR
-            echo "ARTICLE MODIFIE";
+
+            if ($statut == "publie") {
+            echo "L'article est modifié et publié";
+            }
+
+            else {
+                echo "L'article est modifié et enregistré en tant que brouillon";
+            }
         }
         
     }

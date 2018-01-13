@@ -2,7 +2,7 @@
 
 <section class="rhizome">
 
-    <h3> RHIZOME</h3> 
+    <h3>RHIZOME</h3> 
 
 <?php
 
@@ -45,7 +45,7 @@ $objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::
 
 // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
 $tabResultat = $objetRepository->findBy(
-    [ "rubrique" => "Rhizome" ], 
+    [ "rubrique" => "Rhizome", "statut" => "publie" ], 
     [ "datePublication" => "DESC" ],
     $nbArticleParPage,
     $indiceDepart);

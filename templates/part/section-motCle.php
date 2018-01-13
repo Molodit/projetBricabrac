@@ -40,7 +40,7 @@ $objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::
 
 // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
 $tabResultat = $objetRepository->findBy(
-    [ "motCle" => $mot_cle ], 
+    [ "motCle" => $mot_cle, "statut" => "publie" ], 
     [ "datePublication" => "DESC" ],
     $nbArticleParPage,
     $indiceDepart);

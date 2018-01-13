@@ -17,7 +17,7 @@ $objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::
                     
 <?php
 
-$tabResultat = $objetRepository->findBy([ "rubrique" => "Journal" ], [ "datePublication" => "DESC" ]);
+$tabResultat = $objetRepository->findBy([ "rubrique" => "Journal", "statut" => "publie"], [ "datePublication" => "DESC" ]);
 
 foreach($tabResultat as $index =>$objetMenu)
 {
