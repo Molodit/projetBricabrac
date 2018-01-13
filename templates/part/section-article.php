@@ -7,7 +7,7 @@
         $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
         $objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
 
-        $tabResultat = $objetRepository->findBy([ "idArticle" => $id_article ], [ "datePublication" => "DESC" ]);
+        $tabResultat = $objetRepository->findBy([ "idArticle" => $id_article, "statut" => "publie" ], [ "datePublication" => "DESC" ]);
 
         // ON A UN TABLEAU D'OBJETS DE CLASSE Article
         foreach($tabResultat as $objetArticle)

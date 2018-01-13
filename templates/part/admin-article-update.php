@@ -52,7 +52,8 @@ $rubrique   = $objetArticleUpdate->getRubrique();
      </select>
         <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30"><?php echo $contenu ?></textarea>
         <input type="file" name="chemin_image">
-        <button type="submit">MODIFIER ARTICLE</button>
+        <button type="submit" name="statut" value="brouillon">MODIFIER ET ENREGISTRER L'ARTICLE</button>
+        <button type="submit" name="statut" value="publie">MODIFIER ET PUBLIER L'ARTICLE</button>
         <input type="hidden" name="afficher" value="update">
         <input type="hidden" name="idUpdate" value="<?php echo $idUpdate ?>">
         <input type="hidden" name="codebarre" value="update">
