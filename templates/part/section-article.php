@@ -6,6 +6,7 @@
 
         $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
         $objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
+        
 
         $tabResultat = $objetRepository->findBy([ "idArticle" => $id_article, "statut" => "publie" ], [ "datePublication" => "DESC" ]);
 
@@ -40,7 +41,7 @@
                     {
                         $htmlFile = 
                         <<<CODEHTML
-                        <iframe src="$urlAccueil$cheminImage" width="67%"></iframe>
+                        <iframe src="$urlAccueil$cheminImage"></iframe>
                         <a href="$urlAccueil/$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
 CODEHTML;
                     }

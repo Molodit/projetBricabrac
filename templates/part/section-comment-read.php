@@ -1,34 +1,46 @@
 
 <section class="read">
-<h3 class="readh2">Commentaires</h3>
+<h2 class="readh2">Commentaires</h2>
 
 <?php
 
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Comments
 $objetRepository = $this->getDoctrine()->getManager()->getRepository(App\Entity\Comments::class);
 
-$tabResultat = $objetRepository->trouverCommentUser ($objetConnection);
+
+$tabResultat = $objetRepository->findBy([], [ "datePublication" => "DESC" ]);
 
 
-foreach($tabResultat as $tabLigne)
+foreach($tabResultat as $objetComment)
 {
 
-    $tabLigne = array_map("htmlentities", $tabLigne);
-    extract($tabLigne);
+    $idComment       = $objetComment->getIdComment();
+    $idMembre        = $objetComment->getIdMembre();
+    $contenu         = $objetComment->getContenu();
+    $objetMembre = $objetRepositoryMembre->find($idMembre);
+    $pseudo = "";
+    if ($objetMembre)
+    {
+        $pseudo = $objetMembre->getMembre();
+    }
 
+// PLUS PRATIQUE => findBy
+// http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityRepository.html
+// ATTENTION: ON UTILISE LE NOM DES PROPRIETES
+$urlArticle = $this->generateUrl("article",["id_article" => "$idArticle"]);
 
-echo
-<<<CODEHTML
-    <article>
-        <h4>$membre</h4>
-        <p>$contenu</p>
-        <hr>
-    <article>
-    
+    echo
+    <<<CODEHTML
+<article>
+    <h3>$pseudo</h3>
+    <hr>
+    <p>$contenu</p>
+</article>
 
 CODEHTML;
 
 }
 
 ?>
+
 </section>

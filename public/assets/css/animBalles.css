@@ -124,18 +124,16 @@
 
 .circle1 article, .circle2 article, .circle3 article
 {
-    transition-property:z-index, box-shadow, padding;
+    transition-property: padding;
     /* La transition durera deux secondes. */
-    transition-duration: 0.7s;
-    transition-timing-function: ease-in;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
 } 
 
 /* Style lors du passage de la souris*/
 .circle1 article:hover, .circle2 article:hover, .circle3 article:hover
 {  
-    box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
-    cursor: pointer;
-    padding:6%;
+    padding:7%;
 }
 
 .circle6 article:hover, .circle11 article:hover {
@@ -176,6 +174,65 @@
      50%  {top: 4%;}
      to   {top: 0%;}
 }
+
+/* XXXXXXXXXXX ARTICLES XXXXXXXXXXXXXX */
+
+
+#accueil-articles article {
+    display:inline-block;
+    width:20%;
+    vertical-align: top;
+    padding: 5% 3% 3% 4%;
+    height:25vh !important;
+    border-radius: 5%;
+    margin-left:4%;
+    color: white;
+    transition:all 0.3s ease;
+    font-size:20px;
+  }
+  
+  #accueil-articles article a, #accueil-articles article p {
+    color:white;
+    /* padding:1%; */
+    
+  }
+  
+  #accueil-articles p.images {
+    text-shadow:2px 2px rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.7);
+    border-radius:10px;
+    padding:1%;
+  }
+  
+  #accueil-articles article:hover {
+  border-radius:50%;
+  box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
+  }
+  
+  #accueil-articles article div {
+    display:flex;
+    flex-direction: column;
+  }
+  
+  /* XXXXXXXXXX PRESENTATION ACCUEIL */
+  
+  #presentation article {
+  color: #565759;
+  padding:2% 7%;
+  font-family:'Philosopher';
+  background:url(../img/back-pattern.png)repeat;
+  margin: 0 10%;
+  border-radius:10px;
+  }
+  
+  #presentation li {
+    display: block;
+  }
+  
+  #presentation p, #presentation li {
+    font-size: 1.2em;
+    line-height: 1.2;
+  }
 
 
 

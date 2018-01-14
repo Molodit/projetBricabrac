@@ -21,17 +21,21 @@
     margin-left:10%;
 }
 
-.read h3 {
+.read h2, .read h3 {
  text-align:left;
- margin-top:1%;
+ margin:2.5% 0 0.5% 0;
 }
 
-.read p {
-  margin-top: -2%;
+.read article {
+  margin-left: 5%;
 }
 
 .read hr {
-  margin-left:0;
+  margin:0;
+}
+
+.read p {
+  color: #565759;
 }
 
 .article-commentaire {
@@ -42,16 +46,19 @@
   border: 1px solid #ddd;
 }
 
-.article-commentaire img, .article-commentaire iframe  {
-  height: 80vh;
-  object-fit: cover;
-}
 
 .article-commentaire img {
+  max-height: 80vh;
   width: 50vw;
   padding-right:5%;
   vertical-align: top;
   object-fit: contain;
+}
+
+.article-commentaire iframe {
+  width:50vw;
+  height:80vh;
+
 }
 
 .article-commentaire .articleSeul, #commentaire {

@@ -32,6 +32,7 @@ $rubrique   = $objetArticleUpdate->getRubrique();
         <input type="file" name="chemin_image">
         <button type="submit" name="statut" value="brouillon">Modifier et enregistrer comme brouillon</button>
         <button type="submit" name="statut" value="publie">Modifier et publier l'article</button>
+        <button type="reset" name="annuler" value="Annuler">Annuler</button>
         <input type="hidden" name="afficher" value="">
         <input type="hidden" name="idUpdate" value="<?php echo $idUpdate ?>">
         <input type="hidden" name="codebarre" value="updateArticle">

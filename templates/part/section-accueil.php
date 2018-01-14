@@ -88,10 +88,10 @@ foreach($tabResultat as $tabLigne)
                 background-repeat:no-repeat;
                 background-position:center;
                 background-size: cover;">
-                    <div class="images">
-                        <p>$titre</p>
-                        <p>écrit par $membre</p>
-                    </div>
+                    
+                <p class="images">$titre écrit par $membre</p>
+                       
+                    
             </article>
         </a>
 CODEHTML;
@@ -106,10 +106,9 @@ CODEHTML;
         <article style="background-image:url('$urlAccueil/assets/img/logo.jpg');
         background-repeat:no-repeat;
         background-position:center;
-        background-size:cover;">
-            <div class="images">
-                <p>$titre</p>
-                <p>écrit par $membre</p>
+        background-size:contain;">
+        <p class="images">
+             $titre écrit par $membre
             </div>
         </article>
     </a>
