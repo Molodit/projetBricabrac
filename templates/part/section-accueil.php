@@ -43,13 +43,15 @@ CODEHTML;
 
 <hr>
 <section id="presentation">
+
     <h2>Les espaces éducatifs "école" Bricabracs</h2>
+
     <article>
         <p>C'est un collectif de 20 enfants, de 4 à 10 ans, 2 enseignants-éducateurs,
         une ouverture continue de 8h à 17h sans séparation des temps éducatifs dits scolaires et périscolaires.
         Des pédagogies actives pour placer l’enfant au cœur du projet (Freinet,
-        Collot, Korczak, Montessori, pédagogie sociale, ...).</p>
-        <p>Des principes de laïcité, d’entraide, de coopération, d’ouverture aux autres,
+        Collot, Korczak, Montessori, pédagogie sociale...)</p>
+        <p>Des principes de laïcité, d’entraide, de coopération, d’ouverture aux autres
         dans une dynamique de solidarité. 
         Une hétérogénéité et une mixité du public, en termes d’âge, de culture,
         de capital social ou économique. 
@@ -67,6 +69,7 @@ CODEHTML;
 <hr>
 <section id="accueil-articles">
     <h2>Les derniers articles</h2>
+  
 <?php
 
 $tabResultat = $objetRepository->trouverArticleUserLimit($objetConnection);
@@ -89,7 +92,9 @@ foreach($tabResultat as $tabLigne)
                 background-position:center;
                 background-size: cover;">
                     
-                <p class="images">$titre écrit par $membre</p>
+                <p class="images">$titre
+                <p class="date">$date_modification</p>
+                </p>
                        
                     
             </article>
@@ -103,13 +108,14 @@ CODEHTML;
         echo
         <<<CODEHTML
         <a href="$urlArticle">
-        <article style="background-image:url('$urlAccueil/assets/img/logo.jpg');
+        <article style="background-image:url('$urlAccueil/assets/img/IMG_2810.jpg');
         background-repeat:no-repeat;
-        background-position:center;
-        background-size:contain;">
+        background-size:cover;">
         <p class="images">
-             $titre écrit par $membre
-            </div>
+             $titre 
+             <p class="date">$date_modification</p>
+             </p>
+            
         </article>
     </a>
 CODEHTML;
@@ -117,6 +123,7 @@ CODEHTML;
     
 }
 ?>
+
 </section>
 
 

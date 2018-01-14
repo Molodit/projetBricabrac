@@ -29,6 +29,8 @@ class FormArticle
             // COMPLETER LES INFOS MANQUANTES
             $datePublication = date("Y-m-d H:i:s");
             $idMembre         = $objetSession->get("id_membre");
+            //Les mots clés sont convertis en minuscules avec la première lettre en majuscule
+            $motCle = ucfirst(strtolower($motCle));
 
             
             // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
