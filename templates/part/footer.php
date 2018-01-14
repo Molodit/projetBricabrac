@@ -1,5 +1,6 @@
 
 </main>
+</div>
 <footer>
     <nav class="footer">
         <ul class="menuFooter">

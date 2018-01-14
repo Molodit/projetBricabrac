@@ -8,6 +8,8 @@
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
 $objetRepository = $this->getDoctrine()->getManager()->getRepository(App\Entity\MonArticle::class);
 
+
+
 $tabResultat = $objetRepository->trouverArticleUser($objetConnection);
 $compteur = 0;
 
@@ -28,7 +30,7 @@ CODEHTML;
 // PLUS PRATIQUE => findBy
 // http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityRepository.html
 // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
-$urlArticle = $this->generateUrl("article",["id_article" => "$idArticle"]);
+$urlArticle = $this->generateUrl("article",["brouillon" => "$statut"]);
 if ($compteur < 4){	
 echo
 <<<CODEHTML
@@ -37,6 +39,7 @@ echo
 		<hr>
 		<img src="$chemin_image"/>
 		<p>écrit par $membre</p>
+		<p>$statut</p>
 	</article></a>
 CODEHTML;
 	}

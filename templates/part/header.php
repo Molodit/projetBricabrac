@@ -34,17 +34,16 @@ $urlLogout            = $this->generateUrl("logout");
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/animBalles.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/template-article.css"/>
   </head>
-  <body>
- 
-              <h1> La tanière bricabracs </h1>>
-      
+  <body>   
      <header>
-      <nav>             
+     <div class="container">
+     <h1 class="logo"> La tanière bricabracs </h1>
+      <nav  class="nav-collapse">             
         <ul>
-          <li><a href="<?php echo $urlAccueil ?>">  Accueil </a></li>
-          <li><a href="<?php echo $urlRhizome?>">  Rhizome </a></li>
-          <li><a href="<?php echo $urlCreaTexte ?>"> CréaTexte </a></li>
-          <li><a href="<?php echo $urlJournal?>"> Journal <em>La Tanière</em></a></li>
+          <li class="menu-item active"><a href="<?php echo $urlAccueil ?>">  Accueil </a></li>
+          <li class="menu-item"><a href="<?php echo $urlRhizome?>">  Rhizome </a></li>
+          <li class="menu-item"><a href="<?php echo $urlCreaTexte ?>"> CréaTexte </a></li>
+          <li class="menu-item"><a href="<?php echo $urlJournal?>"> Journal <em>La Tanière</em></a></li>
 
 <?php
 
@@ -93,8 +92,8 @@ CODEHTML;
 }
 ?>
         </ul>     
-        </div>
-      </div>
-      </nav>
+       </nav>
+       </div>
     </header>
+    <div class="container container-bottom">
     <main>

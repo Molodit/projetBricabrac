@@ -28,10 +28,9 @@ $verifMembre = $objetSession->get("membre");
         <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30">    
         </textarea>
         <input type="file" name="cheminImage" placeholder="insérer une image">
-        <button type="submit">Publier l'article</button>
-        <button type="submit">Enregistrer en brouillon</button>
-        <input type="hidden" name="statut" value="brouillon">
-        <input type="hidden" name="statut" value="article">
+        <button type="submit" name="statut" value="publie">Publier l'article</button>
+        <button type="submit" name="statut" value="brouillon">Enregistrer en brouillon</button>
+        <input type="hidden" value="article">
         <div class="response">
 <?php
 // TRAITER LE FORMULAIRE
