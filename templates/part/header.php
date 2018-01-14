@@ -44,7 +44,7 @@ $urlLogout            = $this->generateUrl("logout");
           <li class="menu-item"><a href="<?php echo $urlRhizome?>">  Rhizome </a></li>
           <li class="menu-item"><a href="<?php echo $urlCreaTexte ?>"> CréaTexte </a></li>
           <li class="menu-item"><a href="<?php echo $urlJournal?>"> Journal <em>La Tanière</em></a></li>
-
+          <li><a href="<?php echo $urlContact ?>">  Contact </a></li>
 <?php
 
 // ON VA GERER L'AFFICHAGE DE LA NAVIGATION CELON LE NIVEAU DE SESSION
