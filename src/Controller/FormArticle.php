@@ -49,7 +49,7 @@ class FormArticle
 
                 if ($statut == "brouillon")
                 {
-                    echo "L'article $titre a bien été enregistré";
+                    echo "L'article $titre a été enregistré";
                 }
                 else {
                     echo "L'article $titre a été publié";
@@ -81,7 +81,10 @@ class FormArticle
 
             
             // MESSAGE RETOUR POUR LE VISITEUR
-            echo "l'élément a été supprimé";
+            echo 
+            <<<CODEHTML
+            <div class="response">l'élément a été supprimé"</div>
+CODEHTML;
         }
         
     }

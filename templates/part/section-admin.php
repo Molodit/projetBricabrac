@@ -28,6 +28,14 @@ if ($objetRequest->get("codebarre", "") == "update")
     $objetFormArticle->updateMembre($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession);
 }
 
+elseif ($objetRequest->get("codebarre", "") == "updateArticle")
+{
+    $objetFormArticle = new App\Controller\FormArticle;
+    
+    $objetEntityManager = $this->getDoctrine()->getManager();
+    $objetFormArticle->update($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession);
+}
+
 $messageUpdate = ob_get_clean();
 
 if ($objetRequest->get("afficher", "") == "update")

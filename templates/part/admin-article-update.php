@@ -1,27 +1,5 @@
 <section id="section-update">
-<?php
 
-// ON TRAITE LE FORMULAIRE UPDATE AVANT DE FAIRE LA REQUETE
-// POUR RECUPERER LES INFOS QUI VONT REMPLIR LE FORMULAIRE
-// => CELA PERMET D'AVOIR UN AFFICHAGE QUI EST A JOUR...
-// POUR AFFICHER LE MESSAGE SOUS LE FORMULAIRE
-// ON STOCKE LE MESSAGE DANS UNE VARIABLE
-// ET ON L'AFFICHE ENSUITE
-
-ob_start();
-
-// TRAITER LE FORMULAIRE
-if ($objetRequest->get("afficher", "") == "update")
-{
-    $objetFormArticle = new App\Controller\FormArticle;
-    
-    $objetEntityManager = $this->getDoctrine()->getManager();
-    $objetFormArticle->update($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession);
-}
-
-$messageUpdate = ob_get_clean();
-
-?>
 <?php
 
 // RECUPERER L'ID DE LA LIGNE A MODIFIER
@@ -40,8 +18,8 @@ $motCle     = $objetArticleUpdate->getMotCle();
 $rubrique   = $objetArticleUpdate->getRubrique();
 
 ?>
-    <H3>FORMULAIRE UPDATE article</H3>
-    <form method="POST" enctype="multipart/form-data">
+    <H3>Modifier un article</H3>
+    <form method="POST" enctype="multipart/form-data" class="formAdmin" action="<?php echo $urlAdmin ?>">
         <input type="text" name="titre" required placeholder="titre" value="<?php echo $titre ?>">
         <input type="text" name="mot_cle" required placeholder="Mots-clés" value="<?php echo $motCle ?>">
         <select name="rubrique" required>
@@ -52,11 +30,11 @@ $rubrique   = $objetArticleUpdate->getRubrique();
      </select>
         <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30"><?php echo $contenu ?></textarea>
         <input type="file" name="chemin_image">
-        <button type="submit" name="statut" value="brouillon">MODIFIER ET ENREGISTRER L'ARTICLE</button>
-        <button type="submit" name="statut" value="publie">MODIFIER ET PUBLIER L'ARTICLE</button>
-        <input type="hidden" name="afficher" value="update">
+        <button type="submit" name="statut" value="brouillon">Modifier et enregistrer comme brouillon</button>
+        <button type="submit" name="statut" value="publie">Modifier et publier l'article</button>
+        <input type="hidden" name="afficher" value="">
         <input type="hidden" name="idUpdate" value="<?php echo $idUpdate ?>">
-        <input type="hidden" name="codebarre" value="update">
+        <input type="hidden" name="codebarre" value="updateArticle">
         <div class="response">
 <?php echo $messageUpdate ?>
         </div>

@@ -68,19 +68,30 @@ ul.tabs {
     opacity:1;
 }
 
-.admin h2, .admin h3 {
+.admin h2 {
     text-align:left;
 }
 
-.admin h3 {
-    font-family: "MyriadPro-Regular";
-    text-transform: none;
+.formulaireAdmin h3, .admin h3 {
+    font-family: "LondonBetween";
+    text-transform: uppercase;
+  
 }
 
-.admin h4 {
+.formulaireAdmin h4, .admin h4 {
     text-transform: uppercase;
     font-size:20px;
     text-align: center;
+    color:#437ba6;
+    font-family: "LondonBetween";
+   
+}
+
+h3.admin {
+    text-transform: uppercase;
+    text-align:left;
+    margin:8% 0 0 15%;
+    font-family: "LondonBetween";
 }
 
 .admin {
@@ -109,4 +120,27 @@ ul.tabs {
     height: 100px;
     object-fit: cover;
   }
+
+.admin table th {
+    color:#437ba6;
+}
+
+.admin table td {
+    color:#565759;
+}
+
+.admin button {
+   
+    color: #437ba6;
+    padding: 10%;
+}
+
+.admin table a {
+    color:#D5804B;
+}
+
+.admin table a:hover {
+    text-decoration:underline;
+}
+
 

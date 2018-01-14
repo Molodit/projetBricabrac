@@ -16,36 +16,29 @@ $idMembre        = $objetMembreUpdate->getIdMembre();
 $email           = $objetMembreUpdate->getEmail();
 $membre          = $objetMembreUpdate->getMembre();
 $niveau          = $objetMembreUpdate->getNiveau();
-$dateInscription = $objetMembreUpdate->getDateInscription("d/m/Y H:i:s");
+
 
 ?>
-    <H3>Modifier les informations d'un membre</H3>
-    <table>
-    <tr>
-    <form method="POST" enctype="multipart/form-data" action="<?php echo $urlAdmin ?>">
-        <td>
-            <?php echo $idMembre ?>  
-        </td>
-        <td>
+    <h3>Modifier les informations d'un membre</h3>
+    
+    <form method="POST" enctype="multipart/form-data" class="formAdmin" action="<?php echo $urlAdmin ?>">
+            <label for="email">Email</label>
             <input type="text" name="email" required placeholder="Email" value="<?php echo $email ?>">
-        </td>
-        <td>
+            <label for="membre">Pseudo</label>
             <input type="text" name="membre" required placeholder="Pseudo" value="<?php echo $membre ?>">
-        </td>
-        <td>
-            <input type="text" name="niveau" required placeholder="Niveau" value="<?php echo $niveau ?>">
-        </td>
-        <td>
-            <?php echo $dateInscription ?>
-        </td>
-        <td>
-            <button type="submit">MODIFIER</button>
+            <label for="niveau">Niveau</label>
+            <select type="text" name="niveau" required placeholder="Niveau" value="Choisissez le niveau">
+                    <option value="9">Formateur</option>
+                    <option value="7">Enfant</option>
+                    <option value="1">Membre inscrit</option>
+                    <option value="0">Désinscrit la personne</option>
+            </select>
+            <button type="submit">Modifier</button>
             <input type="hidden" name="afficher" value="">
             <input type="hidden" name="idUpdateMembre" value="<?php echo $idUpdate ?>">
             <input type="hidden" name="codebarre" value="update">
             
-        </td>
-        <td>
+       
             <div class="response">
                 <?php echo $messageUpdate ?>
             </div>

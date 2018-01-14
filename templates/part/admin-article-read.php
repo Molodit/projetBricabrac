@@ -11,13 +11,19 @@ if ($objetRequest->get("codebarre", "") == "deleteArticle")
 ?>
 
  <!--MENU QUI AFFICHE UNE SEULE TABLE A LA FOIS  -->
-    <div>
-        <ul class="tabs">
-            <li class="active"><a href="#articles">Articles</a></li>
-            <li><a href="#membres">Membres</a></li>
-            <li><a href="#commentaires">Commentaires</a></li>
 
-        </ul>
+     
+   
+    <hr>
+        <div>
+        <h3 class="admin">Tableau de bord</h3>
+            <ul class="tabs">
+                <li class="active"><a href="#articles">Articles</a></li>
+                <li><a href="#membres">Membres</a></li>
+                <li><a href="#commentaires">Commentaires</a></li>
+
+            </ul>
+
     <div class="tabs-content">
         <section class="admin article tab-content active" id="articles">
             <h4>Liste des articles</h4>
