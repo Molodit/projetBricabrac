@@ -53,7 +53,7 @@ a:hover {
 }
 
 .nav-toggle {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: #4883B0(0,0,0,0);
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -85,9 +85,10 @@ header {
   width: 100%;
   left: 0;
   top: 0;
+  height: 9%;
 }
 
-.logo {
+h1.logo {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   text-decoration: none;
   font-weight: bold;
@@ -96,7 +97,7 @@ header {
   color:#D5804B;
   font-family: 'Philosopher', sans-serif;
   font-size: 2.5em;
-  margin-top:3%;
+  margin-top:1%;
   text-align: center;
   text-transform: uppercase;
   float: left;
@@ -111,7 +112,7 @@ header {
   -webkit-transition: opacity 300ms;
   -moz-transition: opacity 300ms;
   transition: opacity 300ms;
-  background: rgba(0,0,0, .2);
+  background: #4883B0(0,0,0, .2);
   visibility: hidden;
   position: fixed;
   opacity: 0;
@@ -213,7 +214,7 @@ header {
 }
 
 .nav-collapse ul ul a {
-  background: #a9d4ed;
+  background: #4883B0;
   padding-left: 2em;
 }
 
