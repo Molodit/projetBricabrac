@@ -169,7 +169,7 @@ section.Login{
     font-family: "LondonBetween";
 }
 
-/*XXXXXXXXXXXXXX BOUTON ADMIN XXXXXXXXXXXXXXX*/
+/*XXXXXXXXXXXXXX BOUTON ADMIN FORMATEUR XXXXXXXXXXXXXXX*/
 
 .formEnfant button{
     position: relative;
@@ -199,6 +199,7 @@ section.Login{
 }
 
 .formAdmin{
+    cursor:pointer;
     max-width: 60%;
     padding: 10px 20px;
     background: #f4f7f8;

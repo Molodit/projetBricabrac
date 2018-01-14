@@ -35,16 +35,16 @@ $urlLogout            = $this->generateUrl("logout");
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/template-article.css"/>
   </head>
   <body>
-    <div id="header">
-    <header id="site-header">
-    <h1>La tanière bricabracs</h1>
-    <nav class="menu" role="navigation">
-      <div class="menu-container">
+ 
+              <h1> La tanière bricabracs </h1>>
+      
+     <header>
+      <nav>             
         <ul>
-          <li><a href="<?php echo $urlAccueil ?>"> <i class="fas fa-home"></i> Accueil </a></li>
-          <li><a href="<?php echo $urlRhizome?>"> <i class="far fa-newspaper"></i> Rhizome </a></li>
-          <li><a href="<?php echo $urlCreaTexte ?>"> <i class="fas fa-book"></i>  CréaTexte </a></li>
-          <li><a href="<?php echo $urlJournal?>"> <i class="fas fa-pencil-alt"></i> Journal <em>La Tanière</em></a></li>
+          <li><a href="<?php echo $urlAccueil ?>">  Accueil </a></li>
+          <li><a href="<?php echo $urlRhizome?>">  Rhizome </a></li>
+          <li><a href="<?php echo $urlCreaTexte ?>"> CréaTexte </a></li>
+          <li><a href="<?php echo $urlJournal?>"> Journal <em>La Tanière</em></a></li>
 
 <?php
 
@@ -67,7 +67,7 @@ CODEHTML;
         
           echo
 <<<CODEHTML
-        <li ><a href="$urlAdminEnfant" class="menuConnecter">Mon tableau de bord  <i class="fas fa-smile"></i> </a></li>                
+        <li><a href="$urlAdminEnfant" class="menuConnecter">Mon tableau de bord  <i class="fas fa-smile"></i> </a></li>                
 CODEHTML;
         }
         //si c'est le niveau 9, on affichera :
@@ -75,7 +75,7 @@ CODEHTML;
         {
           echo
 <<<CODEHTML
-          <li ><a href="$urlAdmin" class="menuConnecter">Admin</a></li>
+          <li><a href="$urlAdmin" class="menuConnecter">Admin</a></li>
 CODEHTML;
         }
 ?>
@@ -87,15 +87,14 @@ if($verifNiveau >= 1)
 {
   echo
   <<<CODEHTML
-  <li ><a href="$urlLogout">Se Déconnecter</a></li>                
+  <li class="pure-menu-item" ><a href="$urlLogout">Se Déconnecter</a></li>                
 CODEHTML;
 
 }
 ?>
-        </ul>
+        </ul>     
+        </div>
       </div>
       </nav>
-
     </header>
-  </div>
-<main>
+    <main>
