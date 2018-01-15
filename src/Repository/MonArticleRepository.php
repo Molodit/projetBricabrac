@@ -33,6 +33,25 @@ CODESQL;
             
             return $objetStatement;
         }
+        // RETROUVER LES BROUILLONS DANS L'ADMIN ENFANT
+        public function trouverBrouillon ($objetConnection)
+        {
+            $requeteSQL =
+    <<<CODESQL
+    
+    SELECT *, article.id_article as idArticle FROM article
+    LEFT JOIN membre
+    ON article.id_membre = membre.id_membre
+    WHERE statut = :statut
+    ORDER BY date_publication DESC
+
+CODESQL;
+        // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#list-of-parameters-conversion
+            $objetStatement = $objetConnection->prepare($requeteSQL);
+            $objetStatement->execute([":statut" => 'brouillon']);
+            
+            return $objetStatement;
+        }
 
          // table membre jointe à l'article pour trouver l'auteur de l'article, limitée à 3 articles
 
@@ -51,7 +70,7 @@ CODESQL;
 CODESQL;
             
             $objetStatement = $objetConnection->prepare($requeteSQL);
-            $objetStatement->execute([":statut" => 'publie']);
+            $objetStatement->execute([":statut" => 'brouillon']);
             
             return $objetStatement;
         }

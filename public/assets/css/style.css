@@ -81,7 +81,7 @@ a:hover {
 
 header {
   position: fixed;
-  z-index: 3;
+  z-index: 8;
   width: 100%;
   left: 0;
   top: 0;
@@ -115,7 +115,7 @@ h1.logo {
   background: #4883B0(0,0,0, .2);
   visibility: hidden;
   position: fixed;
-  opacity: 0;
+  opacity: 0.8;
   z-index: 2;
   bottom: 0;
   right: 0;
