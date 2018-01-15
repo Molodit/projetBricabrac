@@ -39,7 +39,6 @@ echo
 		<hr>
 		<img src="$chemin_image"/>
 		<p>écrit par $membre</p>
-		<p>$statut</p>
 	</article></a>
 CODEHTML;
 	}

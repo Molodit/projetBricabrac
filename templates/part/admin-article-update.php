@@ -20,8 +20,11 @@ $rubrique   = $objetArticleUpdate->getRubrique();
 ?>
     <H3>Modifier un article</H3>
     <form method="POST" enctype="multipart/form-data" class="formAdmin" action="<?php echo $urlAdmin ?>">
+        <label for="titre">Titre</label>
         <input type="text" name="titre" required placeholder="titre" value="<?php echo $titre ?>">
+        <label for="mot_clé">Mot-clé</label>
         <input type="text" name="mot_cle" required placeholder="Mots-clés" value="<?php echo $motCle ?>">
+        <label for="rubrique">Rubrique</label>
         <select name="rubrique" required>
           <option value="">-- Choisissez une rubrique --</option>
           <option value="Rhizome">Rhizome</option>
@@ -29,10 +32,10 @@ $rubrique   = $objetArticleUpdate->getRubrique();
           <option value="Journal">Journal La Tanière</option>
      </select>
         <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30"><?php echo $contenu ?></textarea>
-        <input type="file" name="chemin_image">
+        <label for="file">Choisir une image</label>
+        <input type="file" name="chemin_image" id="chemin_image">
         <button type="submit" name="statut" value="brouillon">Modifier et enregistrer comme brouillon</button>
         <button type="submit" name="statut" value="publie">Modifier et publier l'article</button>
-        <button type="reset" name="annuler" value="Annuler">Annuler</button>
         <input type="hidden" name="afficher" value="">
         <input type="hidden" name="idUpdate" value="<?php echo $idUpdate ?>">
         <input type="hidden" name="codebarre" value="updateArticle">

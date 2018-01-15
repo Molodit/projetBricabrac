@@ -203,20 +203,19 @@ section.Login{
     max-width: 60%;
     padding: 10px 20px;
     background: #f4f7f8;
-    border: 1px solid #313233 ;
     margin: 10px auto;
     padding: 20px;
     background: #f4f7f8;
     border-radius: 8px;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: "MyriadPro-Regular"
 }
 
 .formAdmin input[type="text"],
 .formAdmin input[type="text"],
-.formAdmin input[type="file"],
+
 .formAdmin textarea,
 .formAdmin select {
-    font-family: "LondonBetween";
+    font-family: "MyriadPro-Regular";
     background: rgba(255,255,255,.1);
     border: none;
     border-radius: 4px;
@@ -236,8 +235,7 @@ section.Login{
    
 }
 .formAdmin input[type="text"]:focus,
-.formAdmin input[type="text"]:focus,
-.formAdmin input[type="file"]:focus,
+.formAdmin input[type="text"]:focus
 .formAdmin textarea:focus,
 .formAdmin select:focus{
     background: #d2d9dd;
@@ -245,8 +243,20 @@ section.Login{
 .formAdmin select{
     -webkit-appearance: menulist-button;
     height:35px;
-    font-family: "LondonBetween";
+    font-family: "MyriadPro-Regular";
 }
+
+input[type="file"] {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+  }
+  
+  input[type="file"] + label {
+    border: 1px solid rgba(0,0,0,.2);
+    padding: 5px;
+    background: lavender;
+  }
 
 /*XXXXXXXXXXXXXX BOUTON ADMIN XXXXXXXXXXXXXXX*/
 
