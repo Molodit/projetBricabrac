@@ -30,7 +30,7 @@ CODEHTML;
 // PLUS PRATIQUE => findBy
 // http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityRepository.html
 // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
-$urlArticle = $this->generateUrl("article",["" => ""]);
+$urlArticle = $this->generateUrl("article",["id_article" => "$idArticle"]);
 if ($compteur < 4){	
 echo
 <<<CODEHTML
@@ -39,7 +39,6 @@ echo
 		<hr>
 		<img src="$chemin_image"/>
 		<p>écrit par $membre</p>
-		<p>$statut</p>
 	</article></a>
 CODEHTML;
 	}
