@@ -104,7 +104,7 @@ header {
   top: 0;
 }
 main{
-  margin-top:12%;
+  margin-top:10%;
 }
 /*XXXXXXXXXXXXXXXX TITRE PRINCIPAL  XXXXXXXXXXXXXXX*/
 a.logo {
@@ -115,7 +115,7 @@ a.logo {
   float: left;
   color:#D5804B;
   font-family: 'Philosopher', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.3em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -311,7 +311,7 @@ h2, h3 {
 
 section {
   width: 80%;
-  margin: 5% auto;
+  margin: 2% auto;
 }
 
 
