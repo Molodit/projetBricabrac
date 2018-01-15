@@ -1,7 +1,7 @@
 
 <section class="journal">
 
-        <h3>JOURNAL LA TANIERE</h3> 
+           <h3>JOURNAL LA TANIERE</h3>
 
 
 <?php
@@ -12,7 +12,9 @@ $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::cl
 $objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
 
 ?>
+
     <div>
+
         <ul class="tabs" >
                     
 <?php
@@ -50,8 +52,7 @@ CODEHTML;
 ?>
 
         </ul>
-   
-    
+      
 
 <div class="tabs-content">
 
@@ -120,6 +121,8 @@ CODEHTML;
 <<<CODEHTML
 
     <article $classActive id="art$idArticle">
+
+
     
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
         <div>$rubrique</div>
