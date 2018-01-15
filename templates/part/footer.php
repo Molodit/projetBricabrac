@@ -3,10 +3,9 @@
 
 
 <footer>
-   
-   <nav>
+   <nav class="nav-collapse">
        <ul>
-           <li>
+           <li class="menu-item">
                <a href="<?php echo $urlMentions?>">Mentions Légales</a>
            </li>
        </ul>
