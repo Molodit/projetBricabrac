@@ -10,7 +10,7 @@ $objetRepository = $this->getDoctrine()->getManager()->getRepository(App\Entity\
 
 
 
-$tabResultat = $objetRepository->trouverArticleUser($objetConnection);
+$tabResultat = $objetRepository->trouverBrouillon($objetConnection);
 $compteur = 0;
 
 foreach($tabResultat as $tabLigne)
@@ -30,7 +30,7 @@ CODEHTML;
 // PLUS PRATIQUE => findBy
 // http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityRepository.html
 // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
-$urlArticle = $this->generateUrl("article",["brouillon" => "$statut"]);
+$urlArticle = $this->generateUrl("article",["id_article" => "$idArticle"]);
 if ($compteur < 4){	
 echo
 <<<CODEHTML
