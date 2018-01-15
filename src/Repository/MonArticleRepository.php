@@ -72,7 +72,7 @@ CODESQL;
 CODESQL;
             
             $objetStatement = $objetConnection->prepare($requeteSQL);
-            $objetStatement->execute([":statut" => 'brouillon']);
+            $objetStatement->execute([":statut" => 'publie']);
             
             return $objetStatement;
         }
