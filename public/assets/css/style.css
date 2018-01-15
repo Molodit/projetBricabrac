@@ -338,8 +338,14 @@ footer{
 
 
 /*XXXXXXXXXXX CONTACT  XXXXXXXXXXXXX*/
+@media screen and (min-width: 320px) and (max-width: 600px) {
+  .contact iframe{
+    width: auto !important;
+    margin: 5% !important;
+  }
+}
 .contact{
-  width: 50%;
+  width: 50% !important;
   text-align: center;
 }
 .contact h2{
