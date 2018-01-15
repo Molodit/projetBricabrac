@@ -88,25 +88,26 @@ a:hover {
 header {
   background: #4883B0;
   position: fixed;
+  padding:0;
   opacity:0.9;
   z-index: 3;
   width: 100%;
   left: 0;
   top: 0;
 }
-
-h1.logo {
+main{
+  margin-top:20%;
+}
+/*XXXXXXXXXXXXXXXX TITRE PRINCIPAL  XXXXXXXXXXXXXXX*/
+a.logo {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-  text-decoration: none;
-  font-weight: bold;
   line-height: 55px;
   padding: 0 20px;
   color: #fff;
   float: left;
   color:#D5804B;
   font-family: 'Philosopher', sans-serif;
-  font-size: 2em;
-  margin-top:1%;
+  font-size: 1.5em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -264,19 +265,13 @@ h1.logo {
   content: "";
   box-shadow: (0 10px 0 1px white, 0 16px 0 1px white, 0 22px 0 1px white);
 }
-/*XXXXXXXXXXXXXXXX TITRE PRINCIPAL  XXXXXXXXXXXXXXX*/
 
-
-/*.logo {
-  color:#D5804B;
-  font-family: 'Philosopher', sans-serif;
-  font-size: 2em;
-  margin-top:1%;
-  text-align: center;
-  text-transform: uppercase;
-}*/
 
 /*XXXXXXXXXXXXXXXXX SECTION XXXXXXXXXXXXXXXXXXX*/
+section{
+  margin-top: 15%;
+}
+
 h2, h3 {
   letter-spacing: 5px;
   margin: 5% 0;
