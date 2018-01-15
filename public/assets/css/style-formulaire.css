@@ -212,9 +212,10 @@ section.Login{
 
 .formAdmin input[type="text"],
 .formAdmin input[type="text"],
-
+.formAdmin input[type="file"],
 .formAdmin textarea,
-.formAdmin select {
+.formAdmin select,
+.formAdmin label {
     font-family: "MyriadPro-Regular";
     background: rgba(255,255,255,.1);
     border: none;
@@ -235,7 +236,8 @@ section.Login{
    
 }
 .formAdmin input[type="text"]:focus,
-.formAdmin input[type="text"]:focus
+.formAdmin input[type="text"]:focus,
+.formAdmin input[type="file"]:focus,
 .formAdmin textarea:focus,
 .formAdmin select:focus{
     background: #d2d9dd;
@@ -246,23 +248,11 @@ section.Login{
     font-family: "MyriadPro-Regular";
 }
 
-input[type="file"] {
-    height: 0;
-    width: 0;
-    overflow: hidden;
-  }
-  
-  input[type="file"] + label {
-    border: 1px solid rgba(0,0,0,.2);
-    padding: 5px;
-    background: lavender;
-  }
-
 /*XXXXXXXXXXXXXX BOUTON ADMIN XXXXXXXXXXXXXXX*/
 
 .formAdmin button{
     position: relative;
-    display: block;
+    display: inline-block;
     width: 100%;
     padding: 18px 35px 18px 35px;
     color: #FFF;
@@ -273,11 +263,19 @@ input[type="file"] {
     font-style: normal;
     border: 1px solid #4883B0;
     border-radius: 10px;
-    border-width: 1px 1px 3px;
+    border-width: 1px 1px 2px;
     margin-bottom: 10px;
+    width:49%;
+   
 }
 .formAdmin button:hover{
     background: #A9D4ED;
     color:#313233;
     cursor:pointer;
+}
+
+.formAdmin button[value="brouillon"] {
+    background: #9e9c9c;
+    border: 1px solid #ddd;
+    text-align:left;
 }

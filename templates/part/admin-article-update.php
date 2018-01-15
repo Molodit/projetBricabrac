@@ -32,8 +32,8 @@ $rubrique   = $objetArticleUpdate->getRubrique();
           <option value="Journal">Journal La Tanière</option>
      </select>
         <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30"><?php echo $contenu ?></textarea>
-        <label for="file">Choisir une image</label>
-        <input type="file" name="chemin_image" id="chemin_image">
+        
+        <input type="file" name="chemin_image">
         <button type="submit" name="statut" value="brouillon">Modifier et enregistrer comme brouillon</button>
         <button type="submit" name="statut" value="publie">Modifier et publier l'article</button>
         <input type="hidden" name="afficher" value="">

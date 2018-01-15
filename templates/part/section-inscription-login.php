@@ -20,7 +20,8 @@
     if ($objetRequest->get("codebarre", "") == "inscription")
     {
         $objetTraitementForm = new App\Controller\TraitementForm;
-        $objetTraitementForm->traiterInscription($objetRequest, $objetConnection);
+        $objetRepository     = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
+        $objetTraitementForm->traiterInscription($objetRequest, $objetConnection, $objetRepository);
     }
     ?>
                 </div>

@@ -7,21 +7,25 @@ namespace App\Controller;
 
 
 class FormArticle
+    extends SecuController
+
 {
     // METHODES
+    protected $objetRequest;
 
     function creer ($objetRequest, $objetConnection, $cheminSymfony, $objetSession)
     {
+        $this->objetRequest = $objetRequest;
         // RECUPERER LES INFOS DU FORMULAIRE
         // ->get("email", "")
         // VA CHERCHER L'INFO DANS LE FORMULAIRE HTML name="email"
         // ET SI L'INFO N'EST PAS PRESENTE 
         //  ALORS ON RETOURNE LA VALEUR PAR DEFAUT ""
-        $titre          = $objetRequest->get("titre", "");       
-        $rubrique       = $objetRequest->get("rubrique", "");   
-        $motCle         = $objetRequest->get("mot_cle", "");    
-        $contenu        = $objetRequest->get("contenu", "");
-        $statut         = $objetRequest->get("statut", "");     
+        $titre          = $this->verifierInfo("titre", "");       
+        $rubrique       = $this->verifierInfo("rubrique", "");   
+        $motCle         = $this->verifierInfo("mot_cle", "");    
+        $contenu        = $this->verifierInfo("contenu", "");
+        $statut         = $this->verifierInfo("statut", "");     
         $cheminImage    = $this->getUploadedFile("cheminImage", $objetRequest, $cheminSymfony);
         
         // SECURITE TRES BASIQUE

@@ -17,7 +17,7 @@ class TraitementForm
     
    
     
-    function traiterInscription ($objetRequest, $objetConnection)
+    function traiterInscription ($objetRequest, $objetConnection, $objetRepository)
     {
         // RECUPERER LES INFOS DU FORMULAIRE
         // ->get("email", "")
@@ -31,7 +31,20 @@ class TraitementForm
         // UN PEU DE SECURITE (BASIQUE)
         if ( ($email != "") && ($membre != "") && ($password != ""))
         {
-            // COMPLETER LES INFOS MANQUANTES
+           
+            $objetMembre = $objetRepository->findBy(["email" => $email]);
+            $objetMembre2 = $objetRepository->findBy(["membre" => $membre]);
+
+            if ($objetMembre) {
+                echo "L'email existe déjà";
+            }
+
+            elseif ($objetMembre2) {
+                echo "Le pseudo est déjà pris";
+            }
+
+            else {
+                // COMPLETER LES INFOS MANQUANTES
             $dateInscription = date("Y-m-d H:i:s"); // DATE AU FORMAT SQL DATETIME
             $niveau          = 1;                   // DIRECTEMENT ACTIF
             
@@ -51,6 +64,9 @@ class TraitementForm
             
             // MESSAGE POUR LE VISITEUR
             echo "MERCI DE VOTRE INSCRIPTION $membre ($email)";
+            }
+
+            
         }
         
     }

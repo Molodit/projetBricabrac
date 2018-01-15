@@ -16,7 +16,7 @@
         <input type="file" name="cheminImage" placeholder="Insérer une image">
         <!-- Deux boutons pour donner la possibilité d'enregistrer en brouillon -->
         <button type="submit" name="statut" value="publie">Publier l'article</button>
-        <button type="submit" name="statut" value="brouillon">Enregistrer l'article</button>
+        <button type="submit" name="statut" value="brouillon">Enregistrer comme brouillon</button>
         <input type="hidden" name="codebarre" value="article">
         <div class="response">
 <?php
