@@ -81,10 +81,15 @@ display: inline-flex;
 background-color: rgba(214,214,214, .7);
 display: inline-table;
 }
-.journal div{
-  display: inline-flex;
-  padding-bottom: 2%;
-}
+
+/*--------- SECTIONS DETAILS ---------*/;
+ 
+ .article-createxte iframe, .article-createxte img{
+    height: 30vh;
+    width: 100%;
+    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgb(16, 78, 139);
+ }
 
 .rhizome h3, .createxte h3, .journal h3{
   font-family: "LondonBetween";
@@ -106,9 +111,8 @@ display: inline-table;
   margin-bottom: 2%;
 }
 .rhizome li a, .createxte li a, .motCle li a{
-  padding: 30%;
+  padding: 100%;
   background-color: rgb(169, 212, 237);
-  border-radius: 10px;
   text-decoration: none;
 }
 .article-rhizome div img{
@@ -121,13 +125,6 @@ display: inline-table;
   box-shadow:5px 5px 5px rgba(0, 0, 0, 0.7);
   border: 1px solid rgb(16, 78, 139);
 }
- 
- .article-createxte iframe, .article-createxte img{
-    height: 30vh;
-    width: 100%;
-    box-shadow:5px 5px 5px rgba(0, 0, 0, 0.7);
-    border: 1px solid rgb(16, 78, 139);
- }
 
 /* Style lors du passage de la souris*/
 .article-rhizome:hover{  
@@ -143,7 +140,11 @@ display: inline-table;
   -webkit-transform: rotate(360deg); /* rotation de l'image */
   transform: rotate(360deg);
 }
-
+/*----------Journal ------------*/
+.journal div{
+  display: flex;
+  padding-bottom: 2%;
+}
  .journal iframe{
     height: 70vh;
     width: 100%;
