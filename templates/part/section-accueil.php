@@ -82,6 +82,7 @@ foreach($tabResultat as $tabLigne)
     $urlArticle     = $this->generateUrl("article", [ "id_article" => $idArticle ]);
     $objetExtension = new SplFileInfo($chemin_image);
     $extension = $objetExtension->getExtension();
+    
     if ($chemin_image && $extension != "pdf")
     {
        echo

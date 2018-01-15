@@ -1,7 +1,5 @@
 <div class="illustration">
     <section class="article-commentaire">
-
-        
         <?php
 
         $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
@@ -95,7 +93,7 @@ CODEHTML;
         <<<CODEHTML
         <h3>Laisser un commentaire :</h3>
         <form class="commentaires">
-            <textarea type="text" name="contenu" required placeholder="contenu" rows="5" cols="60"></textarea>
+            <textarea type="text" name="contenu" required placeholder="Votre commentaire" rows="10" cols="60"></textarea>
             <br>
             <button type="submit"> <i class="far fa-hand-point-right"></i> Ajouter votre commentaire</button>
             <input type="hidden" name="codebarre" value="commentaire">

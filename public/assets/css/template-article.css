@@ -44,11 +44,11 @@
 /* XXXXXXX AFFICHAGE DE L'ARTICLE XXXXXXXXX */
 
 .article-commentaire {
-  display:flex;
-  flex-direction: column;
+ margin-top:12%;
   background:url(../img/back-pattern.png)repeat;
   border-radius:10px;
   border: 1px solid #ddd;
+  
 }
 
 
@@ -63,6 +63,7 @@
 .article-commentaire iframe {
   width:50vw;
   height:80vh;
+  margin-top:3%;
 
 }
 
