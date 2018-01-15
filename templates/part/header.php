@@ -8,7 +8,7 @@ $urlRhizome           = $this->generateUrl("rubrique", [ "rub" => "Rhizome"]);
 $urlJournal           = $this->generateUrl("rubrique", [ "rub" => "Journal" ]);
 $urlContact           = $this->generateUrl("contact");
 $urlLogin             = $this->generateUrl("login");
-$urlMentionsLegales   = $this->generateUrl("mentions-legales");
+$urlMentions          = $this->generateUrl("mentions");
 $urlAdmin             = $this->generateUrl("admin");
 $urlLogout            = $this->generateUrl("logout");
 

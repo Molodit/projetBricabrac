@@ -118,4 +118,27 @@ class BlogController
         return new Response($contenuCache);
    }
    
+   /**
+      * @Route("mentions", name="mentions")
+      */   
+      public function mentions (Request $objetRequest, Connection $objectConnection,SessionInterface $objetSession)
+      {
+           
+           ob_start();
+           
+           // METHODE DE SYMFONY POUR OBTENIR LE CHEMIN DU DOSSIER symfony1        
+           $cheminSymfony   = $this->getParameter('kernel.project_dir');
+           $cheminTemplates = "$cheminSymfony/templates"; 
+           $cheminPart      = "$cheminTemplates/part"; 
+           require_once("$cheminTemplates/template-mentions-legales.php");
+           
+         
+           $contenuCache = ob_get_clean();
+          
+           return new Response($contenuCache);
+      }
  }
+
+ 
+      
+    
