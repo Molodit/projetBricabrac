@@ -19,7 +19,10 @@
 
     if ($objetRequest->get("codebarre", "") == "inscription")
     {
+        
         $objetTraitementForm = new App\Controller\TraitementForm;
+
+        //On appelle les fichiers doctrine de l'entité Membre
         $objetRepository     = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
         $objetTraitementForm->traiterInscription($objetRequest, $objetConnection, $objetRepository);
     }

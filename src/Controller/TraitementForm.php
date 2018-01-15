@@ -32,6 +32,7 @@ class TraitementForm
         if ( ($email != "") && ($membre != "") && ($password != ""))
         {
            
+            // On vérifie que l'email et le membre ne sont déjà pas dans la base
             $objetMembre = $objetRepository->findBy(["email" => $email]);
             $objetMembre2 = $objetRepository->findBy(["membre" => $membre]);
 

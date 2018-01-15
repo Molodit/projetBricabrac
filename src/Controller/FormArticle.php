@@ -21,6 +21,8 @@ class FormArticle
         // VA CHERCHER L'INFO DANS LE FORMULAIRE HTML name="email"
         // ET SI L'INFO N'EST PAS PRESENTE 
         //  ALORS ON RETOURNE LA VALEUR PAR DEFAUT ""
+
+        //On appelle les méthodes vérifierInfo de Sécu Controller
         $titre          = $this->verifierInfo("titre", "");       
         $rubrique       = $this->verifierInfo("rubrique", "");   
         $motCle         = $this->verifierInfo("mot_cle", "");    

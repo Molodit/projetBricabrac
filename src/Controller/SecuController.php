@@ -1,9 +1,7 @@
 <?php
 namespace App\Controller;
-// LA CLASSE Controller
-// EST RESPONSABLE DE LA COMMUNICATION AVEC LE NAVIGATEUR
-// => LE TRAITEMENT DES INFOS DES FORMULAIRES DOIT PASSER PAR LA CLASSE Controller
 
+// Fichier pour sécuriser les formulaires
 class SecuController
 {
     // DEBUT DE LA CLASSE
@@ -65,7 +63,12 @@ class SecuController
         // $valueInput EST UNE VARIABLE LOCALE
         // QUI CONTIENT CE QUE LE VISITEUR A ENVOYE AVEC LE FORMULAIRE
         // SI LE FORMULAIRE CONTIENT BIEN L'INFO
+        //On passe par l'objet $objetRequest
+
         $valueInput = $this->objetRequest->get($nameInput, $valeurDefaut);
+        
+
+        // ANCIEN CODE
         
         // if (isset($_REQUEST[$nameInput]))
         // {

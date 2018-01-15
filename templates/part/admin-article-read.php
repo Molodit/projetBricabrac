@@ -144,7 +144,7 @@ CODEHTML;
                 <td>$statut</td>
                 
                 <td>
-                    <form method="GET" action="">
+                    <form method="POST" action="#section-update">
                         <input type="hidden" name="afficher" value="update">
                         <input type="hidden" name="idUpdate" value="$idArticle">
                         <button type="submit"><i class="far fa-edit"></i></button>
