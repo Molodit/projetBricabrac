@@ -29,7 +29,7 @@ $(function(){
             // QUAND LE NAVIGATEUR VA RECEVOIR LE REPONSE DU SERVEUR
             // JE VAIS AFFICHER response DANS LA BALISE .response
             console.log(response);
-            $(".read").prepend(response);
+           $(".read h2").after(response);
         });
 
     });

@@ -8,7 +8,7 @@
 $objetRepository = $this->getDoctrine()->getManager()->getRepository(App\Entity\Comments::class);
 
 
-$tabResultat = $objetRepository->findBy([], [ "datePublication" => "DESC" ]);
+$tabResultat = $objetRepository->findBy(["idArticle" => $idArticle], [ "datePublication" => "DESC" ]);
 
 
 foreach($tabResultat as $objetComment)
