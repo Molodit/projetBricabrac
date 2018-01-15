@@ -52,7 +52,7 @@ CODEHTML;
 ?>
 
         </ul>
-      
+
 
 <div class="tabs-content">
 
@@ -129,7 +129,7 @@ CODEHTML;
         <p>$contenu $datePublication</p>
         <h4 title=$htmlFile <a href="$urlAccueil/$cheminImage" target="_blank"> Voir le PDF</a></h4>
         <div>$htmlFile</div>
-        <td>$pseudo</td>
+        <p>$pseudo</p>
 
     </article>
     

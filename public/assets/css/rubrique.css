@@ -19,10 +19,9 @@
     height: 15vh;
   }
 }
-@media screen and (max-width: 1000px){
-  .article-rhizome div img{
-    width: 5vw;
-    height: 5vh;
+@media screen and (max-width: 1090px){
+  .article-rhizome {
+    flex-direction: column;
   }
 }
 /*--------SECTIONS -------*/
@@ -34,6 +33,7 @@ color: rgb(16, 78, 139);
 }
 .rhizome{
 background-image: url("../img/bubble.png");
+
 background-repeat: no-repeat;
 background-size: contain;
 }
@@ -43,11 +43,11 @@ background-size: contain;
 }
 .journal{
 background-image: url("../img/round.png");
-background-position: left;
+background-repeat: no-repeat;
 }
 
 /*--------ARTICLES -------*/
-.article-rhizome, .article-createxte, .article-journal{
+.article-rhizome, .article-createxte, .journal .tabs-content .active{
  padding: 2% 2%;
  border-radius: 10px 10px;
  border: solid 1px rgb(16, 78, 139);
@@ -73,7 +73,9 @@ display: inline-table;
 }
 .journal div{
   display: flex;
+  padding-bottom: 2%;
 }
+
 .rhizome h3, .createxte h3, .journal h3{
   font-family: "LondonBetween";
   text-transform: uppercase;
@@ -91,6 +93,7 @@ display: inline-table;
   float: left;
   margin-right: 2%;
   list-style: none;
+  margin-bottom: 2%;
 }
 .rhizome li a, .createxte li a, .motCle li a{
   padding: 30%;
@@ -156,7 +159,6 @@ display: inline-table;
   width: 50%;
   border: 4px solid #A9D4ED;
   border-radius: 10px;
-
   bottom: 2%;
 }
 .journal .tabs-content .active{
