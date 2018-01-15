@@ -8,6 +8,7 @@ $urlRhizome           = $this->generateUrl("rubrique", [ "rub" => "Rhizome"]);
 $urlJournal           = $this->generateUrl("rubrique", [ "rub" => "Journal" ]);
 $urlContact           = $this->generateUrl("contact");
 $urlLogin             = $this->generateUrl("login");
+$urlMentionsLegales   = $this->generateUrl("mentions-legales");
 $urlAdmin             = $this->generateUrl("admin");
 $urlLogout            = $this->generateUrl("logout");
 
@@ -34,17 +35,16 @@ $urlLogout            = $this->generateUrl("logout");
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/animBalles.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/template-article.css"/>
   </head>
-  <body>   
-     <header>
-     <div class="container">
-     <h1 class="logo"> La tanière bricabracs </h1>
-      <nav  class="nav-collapse">             
+  <body>
+    <header>
+    <a class="logo" href="<?php echo $urlAccueil ?>" data-scroll><h1> La tanière bricabracs </h1></a>
+      <nav class="nav-collapse">             
         <ul>
-          <li class="menu-item active"><a href="<?php echo $urlAccueil ?>">  Accueil </a></li>
-          <li class="menu-item"><a href="<?php echo $urlRhizome?>">  Rhizome </a></li>
-          <li class="menu-item"><a href="<?php echo $urlCreaTexte ?>"> CréaTexte </a></li>
-          <li class="menu-item"><a href="<?php echo $urlJournal?>"> Journal <em>La Tanière</em></a></li>
-          <li><a href="<?php echo $urlContact ?>">  Contact </a></li>
+          <li class="menu-item active"><a href="<?php echo $urlAccueil ?>" data-scroll>  Accueil </a></li>
+          <li class="menu-item"><a href="<?php echo $urlRhizome?>" data-scroll>  Rhizome </a></li>
+          <li class="menu-item"><a href="<?php echo $urlCreaTexte ?>"data-scroll> CréaTexte </a></li>
+          <li class="menu-item"><a href="<?php echo $urlJournal?>"data-scroll> Journal <em>La Tanière</em></a></li>
+          <li class="menu-item"><a href="<?php echo $urlContact ?>"data-scroll>  Contact </a></li>
 <?php
 
 // ON VA GERER L'AFFICHAGE DE LA NAVIGATION CELON LE NIVEAU DE SESSION
@@ -56,7 +56,7 @@ $urlLogout            = $this->generateUrl("logout");
     
       echo 
 <<<CODEHTML
-<li><a href=" $urlLogin"> S'inscrire / Se Connecter </a></li> 
+<li class="menu-item"><a href=" $urlLogin" data-scroll> S'inscrire / Se Connecter </a></li> 
       
 CODEHTML;
     }
@@ -66,7 +66,7 @@ CODEHTML;
         
           echo
 <<<CODEHTML
-        <li><a href="$urlAdminEnfant" class="menuConnecter">Mon tableau de bord  <i class="fas fa-smile"></i> </a></li>                
+        <li class="menu-item"><a href="$urlAdminEnfant" data-scroll>Mon tableau de bord  <i class="fas fa-smile"></i> </a></li>                
 CODEHTML;
         }
         //si c'est le niveau 9, on affichera :
@@ -74,7 +74,7 @@ CODEHTML;
         {
           echo
 <<<CODEHTML
-          <li><a href="$urlAdmin" class="menuConnecter">Admin</a></li>
+          <li class="menu-item"><a href="$urlAdmin" data-scroll>Admin</a></li>
 CODEHTML;
         }
 ?>
@@ -86,14 +86,12 @@ if($verifNiveau >= 1)
 {
   echo
   <<<CODEHTML
-  <li class="pure-menu-item" ><a href="$urlLogout">Se Déconnecter</a></li>                
+  <li class="menu-item"><a href="$urlLogout" data-scroll>Se Déconnecter</a></li>                
 CODEHTML;
 
 }
 ?>
-        </ul>     
-       </nav>
-       </div>
+          </ul> 
+        </nav>
     </header>
-    <div class="container container-bottom">
     <main>

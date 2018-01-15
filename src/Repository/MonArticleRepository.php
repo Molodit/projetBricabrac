@@ -36,6 +36,8 @@ CODESQL;
         // RETROUVER LES BROUILLONS DANS L'ADMIN ENFANT
         public function trouverBrouillon ($objetConnection)
         {
+        
+         
             $requeteSQL =
     <<<CODESQL
     
@@ -70,7 +72,7 @@ CODESQL;
 CODESQL;
             
             $objetStatement = $objetConnection->prepare($requeteSQL);
-            $objetStatement->execute([":statut" => 'publie']);
+            $objetStatement->execute([":statut" => 'brouillon']);
             
             return $objetStatement;
         }
