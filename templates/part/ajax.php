@@ -9,11 +9,13 @@ if($objetRequest->get("codebarre", "") == "commentaire")
 
     $contenu  = $objetRequest->get("contenu", "");
     $idMembre = $objetSession->get("id_membre");
+    $idArticle = $objetRequest->get("id_article");
     // UNE FOIS QUE LE COMMENTAIRE A ETE AJOUTE
     // ON VA L'AFFICHER
+
     echo
 <<<CODEHTML
-    <p>$idMembre</p>
+    
     <p>$contenu</p>
 
 CODEHTML;

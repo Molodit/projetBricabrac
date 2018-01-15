@@ -98,6 +98,7 @@ CODEHTML;
             <br>
             <button type="submit"> <i class="far fa-hand-point-right"></i> Ajouter votre commentaire</button>
             <input type="hidden" name="codebarre" value="commentaire">
+            <input type="hidden" name="id_article" value="$idArticle">
             </form>
                     
 CODEHTML;
