@@ -8,11 +8,14 @@
     src: url("../css/fonts/LondonBetween.ttf");
   }
 
+/* Classe pour l'affichage du dessin en background */
 .illustration {
   background-image:url(../img/ballon.png);
   background-repeat:no-repeat;
   background-position:60vw;
 }
+
+/* XXXXXXX AFFICHAGE DES COMMENTAIRES XXXXXXXXX */
 .read{
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -37,6 +40,8 @@
 .read p {
   color: #565759;
 }
+
+/* XXXXXXX AFFICHAGE DE L'ARTICLE XXXXXXXXX */
 
 .article-commentaire {
   display:flex;
@@ -92,7 +97,7 @@
 
 
 #commentaire h3{
-  margin-top: 1%;
+  margin: 2% 0;
   text-align: left;
 }
 
@@ -106,7 +111,7 @@
 }
 
 
-/*XXXXXXXXXXXXX MOT-CLE XXXXXXXXXXX*/
+/*XXXXXXXXXXXXX SECTION MOT-CLE XXXXXXXXXXX*/
 .article-motCle{
   color: rgb(16, 78, 139);
   font-size: 1em;
@@ -134,6 +139,8 @@
   object-fit: cover;
   border-radius:10px;
 }
+
+/* XXXXXXXXXXXXX SECTION CONTACT XXXXXXXXXXXXXXXXXX */
 
 address {
   font-style:normal;

@@ -265,13 +265,11 @@ section.Login{
 
 /*XXXXXXXXXXXXXX BOUTON ADMIN XXXXXXXXXXXXXXX*/
 
-.formAdmin button{
+.formAdmin button {
     position: relative;
     display: inline-block;
-    width: 100%;
     padding: 18px 35px 18px 35px;
     color: #FFF;
-    margin: 0 auto;
     background: #4883B0;
     font-size: 1.2em;
     text-align: center;
@@ -283,7 +281,25 @@ section.Login{
     width:49%;
    
 }
-.formAdmin button:hover{
+
+.commentaires button {
+    background: #4883B0;
+    font-size: 1.2em;
+    text-align: center;
+    font-style: normal;
+    border-radius: 10px;
+    margin-top: 0.7%;
+    padding: 1% 3%;
+    color: #FFF;
+}
+
+.commentaires textarea {
+    border: 1px solid #4883B0;
+    border-radius: 10px;
+    height:10vh;
+    padding: 2% 0 0 2%;
+}
+.formAdmin button:hover, .commentaires button:hover{
     background: #A9D4ED;
     color:#313233;
     cursor:pointer;

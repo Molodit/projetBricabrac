@@ -6,6 +6,7 @@
 
         $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
         $objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
+        $objetRepositoryComment = $this->getDoctrine()->getManager()->getRepository(App\Entity\Comments::class);
         
 
         $tabResultat = $objetRepository->findBy([ "idArticle" => $id_article, "statut" => "publie" ], [ "datePublication" => "DESC" ]);
@@ -114,8 +115,9 @@ CODEHTML;
 
 <?php
 
-require_once("$cheminPart/section-comment-read.php")
 
+    require_once("$cheminPart/section-comment-read.php");
+ 
 ?>
 
 
