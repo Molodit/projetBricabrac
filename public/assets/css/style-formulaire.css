@@ -114,6 +114,106 @@ section.Login{
     color:#313233;
     cursor:pointer;
 }
+
+}
+@media screen and (max-width:1754px){
+    main{
+        margin-top:2520%;
+    }
+}
+
+@media screen and (max-width:1600px){
+        main{
+            margin-top:12%;
+        }
+    section.Login {
+        margin:0 auto;
+       font-size:14px;
+       width:100%; 
+       }
+    .formLogin input{
+        width:100%;
+        font-size:14px;
+    }
+}
+
+@media screen and (max-width:1150px){
+    main{
+        margin-top:20%;
+    }
+     section.Login {
+         margin:0 auto;
+        font-size:12px;
+        width:100%; 
+        }
+     .formLogin input{
+         width:100%;
+         font-size:12px;
+     }
+     button{
+         width:80%;
+         padding:1.5% 0;
+     }
+}
+@media screen and (max-width:1050px){
+    main{
+        margin-top:25%;
+    }
+     section.Login {
+         margin:0 auto;
+        font-size:12px;
+        width:100%; 
+        }
+     .formLogin input{
+         width:100%;
+         font-size:12px;
+     }
+     button{
+         width:80%;
+         padding:1.5% 0;
+     }
+}
+
+@media screen and (max-width:850px){
+    main{
+        margin-top:40%;
+    }
+    section.Login {
+        margin:0 auto;
+       font-size:11px;
+       widows: 100%; 
+       }
+    .formLogin input{
+        width:100%;
+        font-size:11px;
+    }
+    button{
+        width:80%;
+        padding:1.5% 0;
+    }
+}
+
+
+@media screen and (max-width:800px){
+    main{
+        margin-top:40%;
+    }
+    section.Login {
+        margin-left:20%;
+        font-size:13px;
+        display:block !important;
+        width: 100%;
+    }
+    .formLogin input{
+        margin:0 auto;
+        width:100%;
+        font-size:13px;
+    }
+    button{
+        width:80%;
+        padding:1% 0;
+    }
+}
 /*XXXXXXXXXXXXXXXXXXXX FORMULAIRE ADMIN ENFANT XXXXXXXXXXXXXXXXXXXXX*/
 .formulaireEnfant{
     width:80%;
