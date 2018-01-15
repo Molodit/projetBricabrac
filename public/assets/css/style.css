@@ -47,7 +47,7 @@ a:hover {
   display: block;
 }
 .nav-collapse a:hover{
-  color:#313233;
+ border-bottom: 2px solid #A9D4ED;
 }
 .js .nav-collapse {
   clip: rect(0 0 0 0);
@@ -323,16 +323,19 @@ section {
 footer{
   display:flex;
   flex-direction: row;
-  width:100%;
-  margin:0;
+  background: #4883B0;
   padding:0;
+  opacity:0.9;
+  z-index: 3;
+  width: 100%;
+  left: 0;
+  top: 0;
 }
 .logoB{
-  width:15%;
+  width:10%;
+  border-radius:50%;
 }
-.mentions {
-  
-}
+
 
 /*XXXXXXXXXXX CONTACT  XXXXXXXXXXXXX*/
 .contact{
