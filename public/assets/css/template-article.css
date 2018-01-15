@@ -134,3 +134,20 @@
   object-fit: cover;
   border-radius:10px;
 }
+
+address {
+  font-style:normal;
+  font-family: "MyriadPro-Regular";
+}
+
+.contactInfos {
+  font-family: "MyriadPro-Regular";
+  color: #565759;
+  padding:2% 0 5% 4%;
+  text-align: left;
+}
+
+.contactInfos h3 {
+  text-align:left;
+  margin-bottom:1%;
+}

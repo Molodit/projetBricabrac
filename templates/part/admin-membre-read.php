@@ -73,7 +73,7 @@ CODEHTML;
                 <td>$niveau</td>
                 <td>$dateInscription</td>
                 <td>
-                    <form method="GET" action="">
+                    <form method="POST" action="#section-membre-update">
                         <input type="hidden" name="afficher" value="updateMembre">
                         <input type="hidden" name="idUpdate" value="$idMembre">
                         <button type="submit"><i class="far fa-edit"></i></button>

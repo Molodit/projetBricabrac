@@ -26,12 +26,12 @@ $niveau          = $objetMembreUpdate->getNiveau();
             <input type="text" name="email" required placeholder="Email" value="<?php echo $email ?>">
             <label for="membre">Pseudo</label>
             <input type="text" name="membre" required placeholder="Pseudo" value="<?php echo $membre ?>">
-            <label for="niveau">Niveau</label>
+            <label for="niveau">Donner accès au niveau :</label>
             <select type="text" name="niveau" required placeholder="Niveau" value="Choisissez le niveau">
-                    <option value="9">Formateur</option>
-                    <option value="7">Enfant</option>
-                    <option value="1">Membre inscrit</option>
-                    <option value="0">Désinscrit la personne</option>
+                    <option value="9">Formateur (publier, modifier et supprimer des articles, modifier et supprimer des membres)</option>
+                    <option value="7">Enfant (écrire et modifier des articles, les enregistrer en brouillon)</option>
+                    <option value="1">Simple membre inscrit (peut commenter les articles, pas d'accès à l'administration du site)</option>
+                    <option value="0">Désinscrire la personne du site (ne peut plus commenter les articles)</option>
             </select>
             <button type="submit">Modifier</button>
             <input type="hidden" name="afficher" value="">
