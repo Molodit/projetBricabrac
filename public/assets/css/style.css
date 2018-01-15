@@ -33,6 +33,7 @@ a:hover {
   margin-top:1.8%;
   font-size:1.2em;
 }
+
 .nav-collapse ul {
   margin: 0;
   padding: 0;
@@ -45,7 +46,9 @@ a:hover {
   width: 100%;
   display: block;
 }
-
+.nav-collapse a:hover{
+  color:#313233;
+}
 .js .nav-collapse {
   clip: rect(0 0 0 0);
   max-height: 0;
@@ -317,7 +320,19 @@ section {
 
 
 /*XXXXXXXXXXX FOOTER  XXXXXXXXXXXXX*/
-
+footer{
+  display:flex;
+  flex-direction: row;
+  width:100%;
+  margin:0;
+  padding:0;
+}
+.logoB{
+  width:15%;
+}
+.mentions {
+  
+}
 
 /*XXXXXXXXXXX CONTACT  XXXXXXXXXXXXX*/
 .contact{

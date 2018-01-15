@@ -3,11 +3,12 @@
 
 
 <footer>
-   
+    
+    <figure><img class="logoB" src="<?php echo $urlAccueil ?>assets/img/logo.jpg"></figure>
    <nav>
        <ul>
            <li>
-               <a href="<?php echo $urlMentions?>">Mentions Légales</a>
+               <a class="mentions" href="<?php echo $urlMentions?>">Mentions Légales</a>
            </li>
        </ul>
    </nav>
