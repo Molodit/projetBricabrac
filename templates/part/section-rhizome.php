@@ -112,15 +112,16 @@ CODEHTML;
 <<<CODEHTML
 
     <article class="article-rhizome">
+
+    <div>
    
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
-        
-        <div>$rubrique</div>
+        <p>$rubrique<p>
         <p>$contenu</p>
         <p> $datePublication</p>
-        <div >$htmlFile</div>
         <td>$pseudo</td>
-      
+    </div>
+     <div >$htmlFile</div> 
     </article>
     
 CODEHTML;

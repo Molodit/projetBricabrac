@@ -50,6 +50,7 @@ CODEHTML;
 ?>
 
         </ul>
+   
     
 
 <div class="tabs-content">
@@ -134,7 +135,7 @@ CODEHTML;
 }
 
 ?>
-
+ </div>
 
 </div>
 
