@@ -5,11 +5,12 @@
 <footer>
     
     <figure><img class="logoB" src="<?php echo $urlAccueil ?>assets/img/logo.jpg"></figure>
-   <nav class="nav-collapse">
-       <ul>
+   <nav id="menu">
+       <ul class="footer">
            <li>
-               <a class="menu-item" href="<?php echo $urlMentions?>">Mentions Légales</a>
-           </li>
+               <a href="<?php echo $urlMentions?>"data-scroll>Mentions Légales</a>
+             </li>
+             <li><a href="<?php echo $urlContact ?>"data-scroll>  Contact </a></li>
        </ul>
    </nav>
    </footer>

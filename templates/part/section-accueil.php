@@ -69,7 +69,7 @@ foreach($tabResultat as $tabLigne)
                 background-size: cover;">
                     
                 <p class="images">$titre
-                <p class="date">publé le $date</p>
+                <p class="date">publié le $date</p>
                 </p>
                        
                     
