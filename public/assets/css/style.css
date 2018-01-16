@@ -214,14 +214,14 @@ li {display:inline;}
 
 
 /*XXXXXXXXXXX CONTACT  XXXXXXXXXXXXX*/
-@media screen and (min-width: 320px) and (max-width: 600px) {
+@media screen and (min-width: 320px) and (max-width: 900px) {
   .contact iframe{
-    width: auto !important;
+    width: 100% !important;
     margin: 5% !important;
   }
 }
 .contact{
-  width: 50% !important;
+  width: 50% ;
   text-align: center;
 }
 .contact h2{
