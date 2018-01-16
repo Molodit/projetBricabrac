@@ -1,10 +1,10 @@
 <section class="Login">
     <article class="articleLogin"> 
-    <h2>Pour S'inscrire </h2>
+    <h2>Inscrivez-vous</h2>
     <hr>
 
     <p class="paraInscription">Pas encore inscrit ? Remplissez le formulaire ci-dessous.
-        Vous pourrez ainsi commenter les articles. Bonne navigation !!</p>
+        Vous pourrez ainsi commenter les articles. Bonne navigation !</p>
 
             <form method="POST" class="formLogin">
                 <input type="email" name="email" required placeholder="Votre email">
@@ -35,7 +35,7 @@
     <h2> Connectez-vous </h2>
 
     <hr>
-    <p class="paraLogin"> Déjà inscrit ? Veuillez renseigner votre adresse email et votre mot de passe pour accéder à votre espace personnel.</p>
+    <p class="paraLogin"> Déjà inscrit ? Veuillez renseigner votre adresse email et votre mot de passe.</p>
 
         <form  method="POST" class="formLogin">
             <input type="email" name="email" required placeholder="Votre adresse email">

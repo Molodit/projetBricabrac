@@ -201,19 +201,24 @@
     background: rgba(0, 0, 0, 0.7);
     border-radius:10px;
     padding:4% 2%;
-    margin: 25% auto;
+    margin: 25% auto 2% auto;
     display: block;
   }
   
   #accueil-articles article:hover {
   border-radius:50%;
   box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
+  
   }
   
   
   #accueil-articles p.date {
       color:#ddd;
       font-size: 13px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 4% 2%;
+      border-radius:10px;
+
   }
 
   @media screen and (max-width:1100px) {
@@ -236,7 +241,7 @@
   #presentation article {
   color: #ddd;
   padding:7% 7% 5%;
-  width:75%;
+  width:55%;
   
   }
   
@@ -258,13 +263,14 @@
       background:white;
       vertical-align: middle;
       margin:0;
-      
-  }
+   }
 
   #presentation {
       display:flex;
       flex-direction:row;
-      background: #5684A7
+      background: #5684A7;
+      width:100%;
+      margin-bottom:0;
  }
 
  @media screen and (max-width:1290px) {
@@ -313,6 +319,10 @@
         width:100%;
         padding:20% 0%;
         border-radius:0 0 50% 50%;
+    }
+
+    #presentation article {
+        margin:2% auto;
     }
 }
 
