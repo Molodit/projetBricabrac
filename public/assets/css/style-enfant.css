@@ -93,13 +93,13 @@ hr{
       -ms-transform: scale(1.1);
       transform: scale(1.1);
 }
-#articleEnfant img:hover{
+#articleEnfant button:hover{
   cursor:pointer;
 }
 /************ DIV REPONSE ***************/
 .response{
   font-family: "LondonBetween";
   margin-top:4%;
-  font-size:1.4em;
+  font-size:1.2em;
   color:#4883B0;
 }

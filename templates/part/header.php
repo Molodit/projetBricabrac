@@ -37,8 +37,17 @@ $urlLogout            = $this->generateUrl("logout");
   </head>
   <body>
     <header>
-    <a class="logo" href="<?php echo $urlAccueil ?>" data-scroll><h1> La tanière bricabracs </h1></a>
-      <nav class="nav-collapse">             
+   
+    <div class="mobile-nav">
+   
+     <div class="menu-btn" id="menu-btn">
+	<div></div>
+	<span></span>
+	<span></span>
+	<span></span>
+     </div>
+      <div class="nav-collapse responsive-menu">
+      <a class="logo" href="<?php echo $urlAccueil ?>" data-scroll><h1> La tanière bricabracs </h1></a>     
         <ul>
           <li class="menu-item active"><a href="<?php echo $urlAccueil ?>" data-scroll>  Accueil </a></li>
           <li class="menu-item"><a href="<?php echo $urlRhizome?>" data-scroll>  Rhizome </a></li>
@@ -92,6 +101,7 @@ CODEHTML;
 }
 ?>
           </ul> 
-        </nav>
+</div>
+</div>
     </header>
     <main>

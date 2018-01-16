@@ -8,8 +8,6 @@
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
 $objetRepository = $this->getDoctrine()->getManager()->getRepository(App\Entity\MonArticle::class);
 
-
-
 $tabResultat = $objetRepository->trouverBrouillon($objetConnection);
 $compteur = 0;
 
@@ -34,12 +32,21 @@ $urlArticle = $this->generateUrl("article",["id_article" => "$idArticle"]);
 if ($compteur < 4){	
 echo
 <<<CODEHTML
-<a href="$urlArticle"><article id="articleEnfant" class="$compteur">
+<article id="articleEnfant" class="$compteur">
 		<h3>$titre</h3>
 		<hr>
 		<img src="$chemin_image"/>
 		<p>écrit par $membre</p>
-	</article></a>
+		<td>
+            <!-- ETAPE 1: AFFICHER LE FORMULAIRE POUR UN UPDATE -->
+            <form method="GET" action="#section-update">
+                <input type="hidden" name="afficher" value="update">
+                <input type="hidden" name="idUpdate" value="">
+				<button class="updateEnfant" type="submit">modifier</button>
+				<input type="hidden" name="codebarre" value="update">
+            </form>
+        </td>
+	</article>
 CODEHTML;
 	}
 }
