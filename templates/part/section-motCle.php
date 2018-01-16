@@ -81,7 +81,7 @@ foreach($tabResultat as $objetArticle)
     {
         $htmlFile = 
 <<<CODEHTML
-        <iframe src="$urlAccueil/$cheminImage"></iframe>
+        <iframe src="{$urlAccueil}$cheminImage"></iframe>
 CODEHTML;
     }
 
@@ -89,7 +89,7 @@ CODEHTML;
         $htmlFile = 
 <<<CODEHTML
     
-        <img src="$urlAccueil/$cheminImage" title="$cheminImage">
+        <img src="{$urlAccueil}$cheminImage" title="$cheminImage">
 CODEHTML;
         }
     

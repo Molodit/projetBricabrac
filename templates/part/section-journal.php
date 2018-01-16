@@ -101,7 +101,7 @@ foreach($tabResultat as $index => $objetArticle)
     {
         $htmlFile = 
         <<<CODEHTML
-        <iframe src="$urlAccueil/$cheminImage"></iframe>
+        <iframe src="{$urlAccueil}$cheminImage"></iframe>
 CODEHTML;
     }
 
@@ -109,7 +109,7 @@ CODEHTML;
         $htmlFile = 
         <<<CODEHTML
     
-        <img src="$urlAccueil/$cheminImage" title="$cheminImage">
+        <img src="{$urlAccueil}$cheminImage" title="$cheminImage">
 CODEHTML;
         }
     
@@ -127,7 +127,7 @@ CODEHTML;
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
         <div>$rubrique</div>
         <p>$contenu $datePublication</p>
-        <h4 title=$htmlFile <a href="$urlAccueil/$cheminImage" target="_blank"> Voir le PDF</a></h4>
+        <h4 title=$htmlFile <a href="{$urlAccueil}$cheminImage" target="_blank"> Voir le PDF</a></h4>
         <div>$htmlFile</div>
         <p>$pseudo</p>
 
