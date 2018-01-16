@@ -50,6 +50,9 @@
 .journal iframe{
   display: none;
 }
+.journal .tabs a{
+  font-size: 5px;
+}
 }
 /*--------SECTIONS -------*/
 .rhizome, .createxte, .journal{
@@ -182,9 +185,7 @@ display: inline-table;
 .journal ul{
   margin-top: 0;
 }
-.journal .tabs li{
-  width: 22vh;
-}
+
 .journal .tabs-content{
   margin-left: 15%;
   width: 50%;
@@ -202,4 +203,5 @@ display: inline-table;
   font-size: 15px;
   color: rgb(16, 78, 139);
   background-color: rgba(214,214,214, .7);
+  width: 10vw;
 }
