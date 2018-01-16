@@ -3,13 +3,15 @@ function hamburger_click()
   var hamburgerElement = document.getElementById("hamburger");
   var menuElement = document.getElementById("menu");
  
-  if(menuElement.style.display == "block"){
+  if(menuElement.style.display == "block")
+    {
       console.log("ok");
-      hamburgerElement.display = "block"
+      hamburgerElement.display = "block";
       menuElement.style.display = "none";
-  }
-    else{
-        console.log("!!!!");
+    }
+    else
+    {
+        hamburgerElement.display = "block";
         menuElement.style.display = "block";
 
     }   
