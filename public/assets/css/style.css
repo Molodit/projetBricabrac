@@ -48,6 +48,7 @@ a:hover {
 }
 .nav-collapse a:hover{
  border-bottom: 2px solid #A9D4ED;
+ 
 }
 .js .nav-collapse {
   clip: rect(0 0 0 0);
