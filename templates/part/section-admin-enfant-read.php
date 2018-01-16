@@ -42,7 +42,7 @@ echo
             <form method="GET" action="#section-update">
                 <input type="hidden" name="afficher" value="update">
                 <input type="hidden" name="idUpdate" value="$idArticle">
-				<button class="updateEnfant" type="submit">modifier</button>
+				<button class="updateEnfant" type="submit">Modifier le brouillon</button>
 				<input type="hidden" name="codebarre" value="update">
             </form>
         </td>
