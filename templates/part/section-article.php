@@ -40,7 +40,7 @@
                     {
                         $htmlFile = 
                         <<<CODEHTML
-                        <iframe src="$urlAccueil$cheminImage"></iframe>
+                        <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
                         <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
 CODEHTML;
                     }
@@ -49,7 +49,7 @@ CODEHTML;
                         $htmlFile = 
                         <<<CODEHTML
                     
-                        <img src="$urlAccueil$cheminImage">
+                        <img src="$urlAccueil$cheminImage" alt="photo de l'article">
 CODEHTML;
                         }
                     }

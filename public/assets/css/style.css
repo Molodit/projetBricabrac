@@ -219,6 +219,7 @@ footer{
 .logoB{
   width:80px;
   object-fit: cover;
+  border-radius:50%;
 }
 
 footer nav {

@@ -26,6 +26,64 @@
   }
 }
 
+/* XXXXX MEDIA QUERIES POUR IFRAME */
+
+@media screen and (max-width: 1500px)
+{
+
+  .article-commentaire iframe {
+    width:54vw !important;
+  }
+}
+
+@media screen and (max-width: 1350px)
+{
+
+  .article-commentaire iframe {
+    width:61vw !important;
+  }
+}
+
+@media screen and (max-width: 1200px)
+{
+
+  .article-commentaire iframe {
+    width:69vw !important;
+  }
+}
+
+@media screen and (max-width: 1100px)
+{
+
+  .article-commentaire iframe {
+    width:75vw !important;
+  }
+}
+
+@media screen and (max-width: 1000px)
+{
+
+  .article-commentaire iframe {
+    width:82vw !important;
+  }
+}
+
+@media screen and (max-width: 850px)
+{
+
+  .article-commentaire iframe {
+    width:96vw !important;
+  }
+}
+
+@media screen and (max-width: 780px)
+{
+
+  .article-commentaire iframe {
+    width:100vw !important;
+  }
+}
+
 /* Classe pour l'affichage du dessin en background */
 .illustration {
   background-image:url(../img/ballon.png);
