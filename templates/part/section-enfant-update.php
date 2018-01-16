@@ -34,7 +34,7 @@ $rubrique   = $objetArticleUpdate->getRubrique();
         <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30"><?php echo $contenu ?></textarea>
         
         <input type="file" name="chemin_image">
-        <button type="submit" name="statut" value="brouillon">Modifier et enregistrer comme brouillon</button>
+        <button type="submit" name="statut" value="brouillon"> Enregistrer comme brouillon</button>
         <button type="submit" name="statut" value="publie">Modifier et publier l'article</button>
         <input type="hidden" name="afficher" value="update">
         <input type="hidden" name="idUpdate" value="<?php echo $idUpdate ?>">
