@@ -19,6 +19,12 @@
     flex-direction: column;
   }
 }
+@media all and (min-width: 320px) and (max-width: 500px)  {
+  .article-motCle div img{
+    margin-right: 5% !important;
+    width: 100% !important;
+  }
+}
 
 /* Classe pour l'affichage du dessin en background */
 .illustration {
