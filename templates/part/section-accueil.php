@@ -84,7 +84,7 @@ CODEHTML;
         echo
         <<<CODEHTML
         <a href="$urlArticle">
-        <article style="background-image:url('$urlAccueil/assets/img/IMG_2810.jpg');
+        <article style="background-image:url('{$urlAccueil}assets/img/IMG_2810.jpg');
         background-repeat:no-repeat;
         background-size:cover;">
         <p class="images">
