@@ -264,7 +264,7 @@
   #presentation {
       display:flex;
       flex-direction:row;
-      background: rgba(72, 131, 176, 0.7);
+      background: #5684A7
  }
 
  @media screen and (max-width:1290px) {
