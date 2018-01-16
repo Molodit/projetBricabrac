@@ -92,7 +92,7 @@ if($verifNiveau >= 1)
 {
   echo
   <<<CODEHTML
-  <li><a href="$urlLogout" data-scroll>Se Déconnecter</a></li>                
+  <li><a href="$urlLogout" data-scroll>Se déconnecter</a></li>                
 CODEHTML;
 
 }

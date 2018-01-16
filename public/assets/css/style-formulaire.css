@@ -452,6 +452,7 @@ section.Login{
     border-radius: 10px;
     height:10vh;
     padding: 2% 0 0 2%;
+    max-width:67vw;
 }
 .formAdmin button:hover, .commentaires button:hover{
     background: #A9D4ED;

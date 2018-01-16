@@ -76,6 +76,16 @@ body, html {
   }
 }
 
+@media screen and (max-width: 476px)
+{
+
+  main {
+    margin-top:350px !important;
+  }
+}
+
+
+
 @media screen and (max-width: 927px)
 {
   #menu {
@@ -84,6 +94,8 @@ body, html {
 
   }
 }
+
+
 
 @media screen and (max-width: 750px)
 {
@@ -96,6 +108,13 @@ body, html {
   #hamburger
   {
     display:block;
+  }
+
+  @media screen and (min-width: 750px) {
+    #menu
+    {
+      display:inline-block !important;
+    }
   }
  
 }
@@ -129,7 +148,7 @@ header {
   top: 0;
 }
 main{
-  margin-top:10%;
+  margin-top:200px;
 }
 
 .logo {
@@ -164,7 +183,7 @@ h2, h3 {
 #accueil-balles h4 {
   font-size:1.2em;
   position:absolute;
-  top:100%;
+  top:-50px;
   left:45%;
   color:#565759;
 }
@@ -195,11 +214,10 @@ footer{
   width: 100%;
   left: 0;
   top: 0;
-  margin-top:5%;
+  margin-top:150px;
 }
 .logoB{
-  width:100px;
-  border-radius:50%;
+  width:80px;
   object-fit: cover;
 }
 
@@ -208,9 +226,18 @@ width:100%;
 }
 
 ul.footer {
-  margin-left: 25% !important;
+  margin-left: 35% !important;
 }
 li {display:inline;}
+
+footer li a {
+  font-size:1.1em;
+  color:#A9D4ED;
+  font-family:'Philosopher', sans-serif;
+  cursor:pointer;
+  padding:5px 8px;
+  margin-right: 10px;
+}
 
 
 /*XXXXXXXXXXX CONTACT  XXXXXXXXXXXXX*/

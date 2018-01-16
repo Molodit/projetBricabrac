@@ -5,7 +5,7 @@
 <footer>
     
     <figure><img class="logoB" src="<?php echo $urlAccueil ?>assets/img/logo.jpg"></figure>
-   <nav id="menu">
+   <nav>
        <ul class="footer">
            <li>
                <a href="<?php echo $urlMentions?>"data-scroll>Mentions Légales</a>

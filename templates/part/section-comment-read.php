@@ -1,3 +1,13 @@
+<?php
+$objetRepository = $this->getDoctrine()->getManager()->getRepository(App\Entity\Comments::class);
+
+
+$tabResultat = $objetRepository->findBy(["idArticle" => $idArticle], [ "datePublication" => "DESC" ]);
+
+// $nbComment = count($tabResultat);
+
+// if ($nbComment > 0):
+?>
 
 <section class="read">
 <h2 class="readh2">Commentaires</h2>
@@ -5,10 +15,7 @@
 <?php
 
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Comments
-$objetRepository = $this->getDoctrine()->getManager()->getRepository(App\Entity\Comments::class);
 
-
-$tabResultat = $objetRepository->findBy(["idArticle" => $idArticle], [ "datePublication" => "DESC" ]);
 
 
     foreach($tabResultat as $objetComment)

@@ -38,7 +38,6 @@ CODEHTML;
 }
 
 ?>
-<h4>Les mots de Bricabracs</h4>
 </section>
 
 <hr>
@@ -57,6 +56,8 @@ foreach($tabResultat as $tabLigne)
     $urlArticle     = $this->generateUrl("article", [ "id_article" => $idArticle ]);
     $objetExtension = new SplFileInfo($chemin_image);
     $extension = $objetExtension->getExtension();
+    
+    // date au format jour / mois /année
     $date = date("d/m/Y",strtotime($date_modification));
     if ($chemin_image && $extension != "pdf")
     {
@@ -84,9 +85,10 @@ CODEHTML;
         echo
         <<<CODEHTML
         <a href="$urlArticle">
-        <article style="background-image:url('{$urlAccueil}assets/img/IMG_2810.jpg');
+        <article style="background-image:url('{$urlAccueil}assets/img/logo.jpg');
         background-repeat:no-repeat;
-        background-size:cover;">
+        background-size:cover;
+        border:1px solid #ddd">
         <p class="images">
              $titre 
              <p class="date">publié le $date</p>
