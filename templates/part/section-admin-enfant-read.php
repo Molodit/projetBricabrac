@@ -41,7 +41,7 @@ echo
             <!-- ETAPE 1: AFFICHER LE FORMULAIRE POUR UN UPDATE -->
             <form method="GET" action="#section-update">
                 <input type="hidden" name="afficher" value="update">
-                <input type="hidden" name="idUpdate" value="">
+                <input type="hidden" name="idUpdate" value="$idArticle">
 				<button class="updateEnfant" type="submit">modifier</button>
 				<input type="hidden" name="codebarre" value="update">
             </form>
