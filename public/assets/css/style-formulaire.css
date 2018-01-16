@@ -175,9 +175,9 @@ section.Login{
 }
 
 @media screen and (max-width:850px){
-    main{
+   /* main{
         margin-top:40%;
-    }
+    }*/
     section.Login {
         margin:0 auto;
        font-size:11px;
@@ -196,7 +196,7 @@ section.Login{
 
 @media screen and (max-width:800px){
     main{
-        margin-top:40%;
+        margin-top:30%;
     }
     section.Login {
         margin-left:6%;
@@ -304,6 +304,60 @@ section.Login{
     color: #313233;
     border: 1px solid #ddd;
 }
+.updateEnfant{
+    margin-left: 10%;
+    width:80%;
+    border-radius:20px;
+    color: #A9D4ED;
+    background: #4883B0;
+    font-size: 1em;
+    text-align: center;
+}
+
+/*XXXXXXXXXXXXXXXXXX  MEDIA SCREEN XXXXXXXXXXXXXXXXXXXXXXX*/
+/*
+@media screen and (max-width:1350px){
+    main{
+        margin-top:15%;
+        top:0;
+    }
+    header{
+        padding:0;
+    }
+}
+@media screen and (max-width:1290px){
+    header{
+        font-size:1em;
+        margin-top:0;
+    
+    }
+    .formEnfant{
+        width:100%;
+    }
+    .button{
+        width:40%;
+        font-size:1em;
+    }
+    .formulaireEnfant{
+        width:120%;
+    }
+}
+@media screen and (max-width:990px){
+    .formEnfant{
+        width:100%;
+    }
+    .button{
+        width:40%;
+        font-size:10px;
+        padding:0 !important;
+    }
+    .formulaireEnfant{
+        width:120%;
+    }
+
+}*/
+
+
 /*XXXXXXXXXXXXXXXXXX FORMULAIRE ADMIN XXXXXXXXXXXXXXXXXXXXX*/
 .formulaireAdmin{
     width:80%;
