@@ -8,6 +8,18 @@
     src: url("../css/fonts/LondonBetween.ttf");
   }
 
+
+@media all and (min-width: 320px) and (max-width: 800px)  {
+  .motCle{
+    width: auto !important;
+    margin: 1% !important;
+    margin-right:  6% !important;
+  }
+  .article-motCle{
+    flex-direction: column;
+  }
+}
+
 /* Classe pour l'affichage du dessin en background */
 .illustration {
   background-image:url(../img/ballon.png);
