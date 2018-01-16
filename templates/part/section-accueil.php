@@ -42,6 +42,66 @@ CODEHTML;
 </section>
 
 <hr>
+<section id="accueil-articles">
+    <h2>Les derniers articles</h2>
+  
+<?php
+
+$tabResultat = $objetRepository->trouverArticleUserLimit($objetConnection);
+
+// ON A UN TABLEAU D'OBJETS DE CLASSE Article
+foreach($tabResultat as $tabLigne)
+{
+    extract($tabLigne);
+     // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
+    $urlArticle     = $this->generateUrl("article", [ "id_article" => $idArticle ]);
+    $objetExtension = new SplFileInfo($chemin_image);
+    $extension = $objetExtension->getExtension();
+    $date = date("d/m/Y",strtotime($date_modification));
+    if ($chemin_image && $extension != "pdf")
+    {
+       echo
+        <<<CODEHTML
+        <a href="$urlArticle">
+            <article style="background-image:url('$chemin_image');
+                background-repeat:no-repeat;
+                background-position:center;
+                background-size: cover;">
+                    
+                <p class="images">$titre
+                <p class="date">publé le $date</p>
+                </p>
+                       
+                    
+            </article>
+        </a>
+CODEHTML;
+    
+
+    }
+
+    else {
+        echo
+        <<<CODEHTML
+        <a href="$urlArticle">
+        <article style="background-image:url('$urlAccueil/assets/img/IMG_2810.jpg');
+        background-repeat:no-repeat;
+        background-size:cover;">
+        <p class="images">
+             $titre 
+             <p class="date">publié le $date</p>
+             </p>
+            
+        </article>
+    </a>
+CODEHTML;
+    }
+    
+}
+?>
+
+</section>
+<hr>
 <section id="presentation">
 
     <h2>Les espaces éducatifs "école" Bricabracs</h2>
@@ -65,66 +125,6 @@ CODEHTML;
             </ul>
         </p> -->
     </article>
-</section>
-<hr>
-<section id="accueil-articles">
-    <h2>Les derniers articles</h2>
-  
-<?php
-
-$tabResultat = $objetRepository->trouverArticleUserLimit($objetConnection);
-
-// ON A UN TABLEAU D'OBJETS DE CLASSE Article
-foreach($tabResultat as $tabLigne)
-{
-    extract($tabLigne);
-     // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
-    $urlArticle     = $this->generateUrl("article", [ "id_article" => $idArticle ]);
-    $objetExtension = new SplFileInfo($chemin_image);
-    $extension = $objetExtension->getExtension();
-    
-    if ($chemin_image && $extension != "pdf")
-    {
-       echo
-        <<<CODEHTML
-        <a href="$urlArticle">
-            <article style="background-image:url('$chemin_image');
-                background-repeat:no-repeat;
-                background-position:center;
-                background-size: cover;">
-                    
-                <p class="images">$titre
-                <p class="date">$date_modification</p>
-                </p>
-                       
-                    
-            </article>
-        </a>
-CODEHTML;
-    
-
-    }
-
-    else {
-        echo
-        <<<CODEHTML
-        <a href="$urlArticle">
-        <article style="background-image:url('$urlAccueil/assets/img/IMG_2810.jpg');
-        background-repeat:no-repeat;
-        background-size:cover;">
-        <p class="images">
-             $titre 
-             <p class="date">$date_modification</p>
-             </p>
-            
-        </article>
-    </a>
-CODEHTML;
-    }
-    
-}
-?>
-
 </section>
 
 

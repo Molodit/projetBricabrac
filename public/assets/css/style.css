@@ -14,6 +14,54 @@ body, html {
 /* ------------------------------------------
   FIXED HEADER
 --------------------------------------------- */
+#menu
+{
+  font-size:18px;
+  font-weight:normal;
+  letter-spacing:6px;
+}
+ 
+#menu ul
+{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+ 
+#menu ul li
+{
+  cursor:pointer;
+  padding:5px 8px;
+}
+ 
+#menu ul li:hover
+{
+  background-color:#008ac5;
+  color:gold;
+}
+ 
+#hamburger
+{
+  display:none;
+  width:100%;
+  height:50px;
+  text-align:center;
+}
+ 
+@media screen and (max-width: 750px)
+{
+ 
+#menu
+{
+  display:none;
+}
+ 
+#hamburger
+{
+  display:block;
+}
+ 
+}
 
 /* 
 a:active,
@@ -97,7 +145,7 @@ a:hover {
   FIXED HEADER
 --------------------------------------------- */
 
-/* header {
+header {
   background: #4883B0;
   position: fixed;
   padding:0;
@@ -111,7 +159,7 @@ main{
   margin-top:10%;
 }
 
-a.logo {
+.logo {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   line-height: 55px;
   padding: 0 20px;
@@ -121,7 +169,7 @@ a.logo {
   font-size: 1.3em;
   text-align: center;
   text-transform: uppercase;
-} */
+}
 
 
 /* ------------------------------------------

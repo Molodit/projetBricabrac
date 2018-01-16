@@ -18,7 +18,7 @@ $motCle     = $objetArticleUpdate->getMotCle();
 $rubrique   = $objetArticleUpdate->getRubrique();
 
 ?>
-    <H3>Modifier un article</H3>
+    <h3>Modifier un article</h3>
     <form method="POST" enctype="multipart/form-data" class="formAdmin" action="<?php echo $urlAdmin ?>">
         <label for="titre">Titre</label>
         <input type="text" name="titre" required placeholder="titre" value="<?php echo $titre ?>">
@@ -40,7 +40,7 @@ $rubrique   = $objetArticleUpdate->getRubrique();
         <input type="hidden" name="idUpdate" value="<?php echo $idUpdate ?>">
         <input type="hidden" name="codebarre" value="updateArticle">
         <div class="response">
-<?php echo $messageUpdate ?>
+
         </div>
     </form>
 </section>
