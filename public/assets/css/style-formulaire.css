@@ -199,14 +199,14 @@ section.Login{
         margin-top:40%;
     }
     section.Login {
-        margin-left:20%;
+        margin-left:6%;
         font-size:13px;
         display:block !important;
-        width: 100%;
+        width: 140%;
     }
     .formLogin input{
         margin:0 auto;
-        width:100%;
+         width:110%;
         font-size:13px;
     }
     button{

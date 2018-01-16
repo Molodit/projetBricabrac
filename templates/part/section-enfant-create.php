@@ -3,9 +3,6 @@ $verifMembre = $objetSession->get("membre");
 
 ?>
  
-
- 
-
 <section id="formulaireEnfant">
 
 <h2>BIENVENUE <?php echo $verifMembre ?></h2>
