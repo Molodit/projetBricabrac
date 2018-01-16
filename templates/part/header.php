@@ -37,23 +37,20 @@ $urlLogout            = $this->generateUrl("logout");
   </head>
   <body>
     <header>
-   
-    <div class="mobile-nav">
-   
-     <div class="menu-btn" id="menu-btn">
-	<div></div>
-	<span></span>
-	<span></span>
-	<span></span>
-     </div>
-      <div class="nav-collapse responsive-menu">
-      <a class="logo" href="<?php echo $urlAccueil ?>" data-scroll><h1> La tanière bricabracs </h1></a>     
-        <ul>
-          <li class="menu-item active"><a href="<?php echo $urlAccueil ?>" data-scroll>  Accueil </a></li>
-          <li class="menu-item"><a href="<?php echo $urlRhizome?>" data-scroll>  Rhizome </a></li>
-          <li class="menu-item"><a href="<?php echo $urlCreaTexte ?>"data-scroll> CréaTexte </a></li>
-          <li class="menu-item"><a href="<?php echo $urlJournal?>"data-scroll> Journal <em>La Tanière</em></a></li>
-          <li class="menu-item"><a href="<?php echo $urlContact ?>"data-scroll>  Contact </a></li>
+      <div id="hamburger">
+      <a href="javascript:hamburger_click();">
+    <img id="hamburger-img" src="<?php echo $urlAccueil ?>assets/img/iconhamburger.png">
+    </a>
+    </div>
+    <a class="logo" href="<?php echo $urlAccueil ?>" data-scroll><h1> La tanière bricabracs </h1></a>
+    <div id="menu">  
+    <nav>        
+      <ul>
+          <li><a href="<?php echo $urlAccueil ?>" data-scroll>  Accueil </a></li>
+          <li><a href="<?php echo $urlRhizome?>" data-scroll>  Rhizome </a></li>
+          <li><a href="<?php echo $urlCreaTexte ?>"data-scroll> CréaTexte </a></li>
+          <li><a href="<?php echo $urlJournal?>"data-scroll> Journal <em>La Tanière</em></a></li>
+          <li><a href="<?php echo $urlContact ?>"data-scroll>  Contact </a></li>
 <?php
 
 // ON VA GERER L'AFFICHAGE DE LA NAVIGATION CELON LE NIVEAU DE SESSION
@@ -65,7 +62,7 @@ $urlLogout            = $this->generateUrl("logout");
     
       echo 
 <<<CODEHTML
-<li class="menu-item"><a href=" $urlLogin" data-scroll> S'inscrire / Se Connecter </a></li> 
+<li><a href=" $urlLogin" data-scroll> S'inscrire / Se Connecter </a></li> 
       
 CODEHTML;
     }
@@ -75,7 +72,7 @@ CODEHTML;
         
           echo
 <<<CODEHTML
-        <li class="menu-item"><a href="$urlAdminEnfant" data-scroll>Mon tableau de bord  <i class="fas fa-smile"></i> </a></li>                
+        <li><a href="$urlAdminEnfant" data-scroll>Mon tableau de bord  <i class="fas fa-smile"></i> </a></li>                
 CODEHTML;
         }
         //si c'est le niveau 9, on affichera :
@@ -83,7 +80,7 @@ CODEHTML;
         {
           echo
 <<<CODEHTML
-          <li class="menu-item"><a href="$urlAdmin" data-scroll>Admin</a></li>
+          <li><a href="$urlAdmin" data-scroll>Admin</a></li>
 CODEHTML;
         }
 ?>
@@ -95,13 +92,13 @@ if($verifNiveau >= 1)
 {
   echo
   <<<CODEHTML
-  <li class="menu-item"><a href="$urlLogout" data-scroll>Se Déconnecter</a></li>                
+  <li><a href="$urlLogout" data-scroll>Se Déconnecter</a></li>                
 CODEHTML;
 
 }
 ?>
-          </ul> 
-</div>
-</div>
+          </ul>
+      </nav>
+  </div>
     </header>
     <main>
