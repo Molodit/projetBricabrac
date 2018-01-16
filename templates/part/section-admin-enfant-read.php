@@ -1,4 +1,4 @@
-<h3> Tes articles en attentes de publications :</h3>
+<h3> Tes articles en attente de publications :</h3>
 
 <section class="enfantRead">
 

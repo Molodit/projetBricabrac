@@ -19,6 +19,7 @@ body, html {
   font-size:18px;
   font-weight:normal;
   letter-spacing:6px;
+  display:inline-block;
 }
  
 #menu ul
@@ -47,7 +48,15 @@ body, html {
   height:50px;
   text-align:center;
 }
+#menu ul li {
+  float:left;
  
+}
+#menu li a{
+  font-size:1em;
+  color:#A9D4ED;
+  font-family:'Philosopher', sans-serif;
+} 
 @media screen and (max-width: 750px)
 {
  
