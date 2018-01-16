@@ -154,7 +154,7 @@ display: inline-table;
     color: rgb(72, 131, 176); 
 }
 .article-rhizome:hover  img{
-  width: 20vw; /* on affiche l'image au carré */
+  width: 12vw; /* on affiche l'image au carré */
   height: 20vh;
   border-radius: 50%;  /* on arrondit l'image */
   -webkit-transform: rotate(360deg); /* rotation de l'image */
