@@ -38,7 +38,7 @@ $urlLogout            = $this->generateUrl("logout");
   <body>
     <header>
     <div id="hamburger">
-      <a href="javascript:hamburger_click();">
+      <a href="#">
       <img id="hamburger-img" src="<?php echo $urlAccueil ?>assets/img/hamburger.png">
       </a>
     </div>
