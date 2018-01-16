@@ -12,7 +12,7 @@ body, html {
 }
 
 /* ------------------------------------------
-  FIXED HEADER
+  FIXED HEADER 
 --------------------------------------------- */
 #menu
 {
@@ -20,9 +20,10 @@ body, html {
   margin-left:8%;
   font-size:1.2em;
   font-weight:normal;
-  letter-spacing:2px;
   display:inline-block;
 }
+
+/* http://www.web-design-codex.fr/bascule-de-menu-en-mode-hamburger/ */
  
 #menu ul
 {
@@ -59,18 +60,43 @@ body, html {
   color:#A9D4ED;
   font-family:'Philosopher', sans-serif;
 } 
+
+@media screen and (max-width: 1647px)
+{
+  #menu {
+    margin-top:0;
+  }
+  h1 {
+    width:100vw;
+    margin:0.67em auto;
+  }
+
+  main {
+    margin-top:250px !important;
+  }
+}
+
+@media screen and (max-width: 927px)
+{
+  #menu {
+    margin-top:0;
+    margin-left:2px;
+
+  }
+}
+
 @media screen and (max-width: 750px)
 {
  
-#menu
-{
-  display:none;
-}
- 
-#hamburger
-{
-  display:block;
-}
+  #menu
+  {
+    display:none;
+  }
+  
+  #hamburger
+  {
+    display:block;
+  }
  
 }
 .nav ul {
@@ -81,7 +107,6 @@ body, html {
   list-style: none;
 }
 
- 
 a:active,
 a:hover {
   outline: 0;
@@ -159,8 +184,6 @@ section {
   margin: 2% auto;
 }
 
-
-
 /*XXXXXXXXXXX FOOTER  XXXXXXXXXXXXX*/
 footer{
   display:flex;
@@ -211,4 +234,10 @@ li {display:inline;}
 }
 .contact a{
       color: #D5804B;
+}
+
+@media screen and (max-width:540px) {
+  main {
+   margin-top:5%;
+  }
 }

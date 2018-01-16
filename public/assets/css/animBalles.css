@@ -273,6 +273,8 @@
     
  }
 
+/* XXXXXXXXXXXX SECTION PRESENTATION RESPONSIVE XXXXXXXXXXXXXXXXXX */
+
  @media screen and (max-width:1290px) {
      #presentation h2 {
         border-radius: 0 55% 55% 0;
