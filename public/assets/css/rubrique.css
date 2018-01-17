@@ -138,6 +138,7 @@ display: inline-table;
   float: left;
   margin: 2%;
   padding: 1.5%;
+  border-radius: 5px;
   list-style: none;
   background-color: rgb(169, 212, 237);
   text-decoration: none;
