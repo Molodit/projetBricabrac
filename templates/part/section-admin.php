@@ -4,6 +4,7 @@ $verifMembre = $objetSession->get("membre");
 
 ?>
 
+<div class="illustrationAdmin">
 <section class="admin">
     
     <h2>Bienvenu-e <?php echo $verifMembre ?></h2>
@@ -54,3 +55,4 @@ else
 
     require_once("$cheminPart/admin-read.php");
 ?>
+</div>

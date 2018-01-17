@@ -15,7 +15,7 @@ if ($objetRequest->get("codebarre", "") == "deleteArticle")
      
    
     <hr>
-        <div>
+        <div class="menuTables">
         <h3 class="admin">Tableau de bord</h3>
             <ul class="tabs">
                 <li class="active"><a href="#articles">Articles</a></li>
