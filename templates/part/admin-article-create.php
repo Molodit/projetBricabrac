@@ -15,7 +15,7 @@
      </select>
         <textarea id="editor1" type="text" name="contenu" required placeholder="Votre texte" rows="30"></textarea>
 
-        <input type="hidden" name="cheminImage" placeholder="Insérer une image">
+        <input type="hidden" name="cheminImage">
         <!-- Deux boutons pour donner la possibilité d'enregistrer en brouillon -->
         <div id="filelist"></div>
                 <br />

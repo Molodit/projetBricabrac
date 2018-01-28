@@ -27,8 +27,9 @@ class FormArticle
         $rubrique       = $this->verifierInfo("rubrique", "");   
         $motCle         = $this->verifierInfo("mot_cle", "");    
         $contenu        = $this->verifierInfo("contenu", "");
-        $statut         = $this->verifierInfo("statut", "");     
-        $cheminImage    = $this->getUploadedFile("cheminImage", $objetRequest, $cheminSymfony);
+        $statut         = $this->verifierInfo("statut", "");
+        $cheminImage    = $objetRequest->get("cheminImage", "");     
+        //$cheminImage    = $this->getUploadedFile("cheminImage", $objetRequest, $cheminSymfony);
         
         // SECURITE TRES BASIQUE
         
@@ -257,7 +258,7 @@ CODEHTML;
         return $cheminImage;
     }
 
-  function creerDesImages ($objetRequest, $objetConnection, $cheminSymfony, $objetSession)
+  /*function creerDesImages ($objetRequest, $objetConnection, $cheminSymfony, $objetSession)
     {
         // RECUPERER LES INFOS DU FORMULAIRE
         // ->get("email", "")
@@ -294,7 +295,7 @@ CODEHTML;
             echo "ARTICLE PUBLIE";
         }
         
-    }  
+    } */ 
 
 
     

@@ -99,6 +99,7 @@ CODEHTML;
             
             // On ne prend que les 100 premiers caractères du texte de $contenu
             $contenu = mb_strimwidth($contenu, 0, 100, '...');
+
             
             $htmlFile = "";
             // S'il y a un fichier (image ou pdf)
@@ -121,9 +122,11 @@ CODEHTML;
                 <<<CODEHTML
             
                 <img src="$cheminImage" title="$cheminImage">
+                
 CODEHTML;
                 }
             }
+
             
             // Génération de l'url de l'article
             $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
