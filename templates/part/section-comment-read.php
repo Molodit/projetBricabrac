@@ -20,6 +20,7 @@ $tabResultat = $objetRepository->findBy(["idArticle" => $idArticle], [ "datePubl
 
     foreach($tabResultat as $objetComment)
     {
+        
 
         $idComment       = $objetComment->getIdComment();
         $idMembre        = $objetComment->getIdMembre();

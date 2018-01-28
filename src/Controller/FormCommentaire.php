@@ -16,11 +16,16 @@ namespace App\Controller;
 
 
 class FormCommentaire
+    extends SecuController
 {
+    
+    protected $objetRequest;
+
     // METHODES
 
     function creerCommentaire($objetRequest, $objetConnection, $cheminSymfony, $objetSession)
     {
+        $this->objetRequest = $objetRequest;
         // RECUPERER LES INFOS DU FORMULAIRE
         // ->get("email", "")
         // VA CHERCHER L'INFO DANS LE FORMULAIRE HTML name="email"
@@ -28,10 +33,10 @@ class FormCommentaire
         //  ALORS ON RETOURNE LA VALEUR PAR DEFAUT ""
         $idComment      = $objetRequest->get("id_comment", "");
         $idArticle      = $objetRequest->get("id_article", "");
-        $contenu        = $objetRequest->get("contenu", "");       
+        $contenu        = $this->verifierInfo("contenu", "");       
 
         
-        // SECURITE TRES BASIQUE
+
         
             // COMPLETER LES INFOS MANQUANTES
             $datePublication = date("Y-m-d H:i:s");

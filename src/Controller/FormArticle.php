@@ -10,8 +10,10 @@ class FormArticle
     extends SecuController
 
 {
-    // METHODES
+    
     protected $objetRequest;
+
+    // METHODES
 
     function creer ($objetRequest, $objetConnection, $cheminSymfony, $objetSession)
     {
@@ -30,7 +32,6 @@ class FormArticle
         $statut         = $this->verifierInfo("statut", "");     
         $cheminImage    = $this->getUploadedFile("cheminImage", $objetRequest, $cheminSymfony);
         
-        // SECURITE TRES BASIQUE
         
             // COMPLETER LES INFOS MANQUANTES
             $datePublication = date("Y-m-d H:i:s");

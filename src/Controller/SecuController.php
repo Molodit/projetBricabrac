@@ -88,6 +88,7 @@ class SecuController
         // ENLEVER LES BALISES HTML ET PHP
         // http://php.net/manual/fr/function.strip-tags.php
         $valueInput = strip_tags($valueInput);
+        
     
         // ENLEVER LES ESPACES AU DEBUT ET A LA FIN
         // http://php.net/manual/fr/function.trim.php
