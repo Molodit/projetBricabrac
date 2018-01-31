@@ -3,7 +3,7 @@
     <h2>Inscrivez-vous</h2>
     <hr>
 
-    <p class="paraInscription">Pas encore inscrit ? Remplissez le formulaire ci-dessous.
+    <p class="paraInscription">Pas encore inscrit(e) ? Remplissez le formulaire ci-dessous.
         Vous pourrez ainsi commenter les articles. Bonne navigation !</p>
 
             <form method="POST" class="formLogin">
@@ -35,7 +35,7 @@
     <h2> Connectez-vous </h2>
 
     <hr>
-    <p class="paraLogin"> Déjà inscrit ? Veuillez renseigner votre adresse email et votre mot de passe pour accéder aux commentaires.</p>
+    <p class="paraLogin"> Déjà inscrit(e) ? Veuillez renseigner votre adresse email et votre mot de passe pour accéder aux commentaires.</p>
 
         <form  method="POST" class="formLogin">
             <input type="email" name="email" required placeholder="Votre adresse email">
