@@ -11,6 +11,16 @@ $verifMembre = $objetSession->get("membre");
     
  <hr>    
 
+
+  <!-- BARRE DE RECHERCHE PAR MOT CLES -->
+    <form method="POST" class="recherche">
+    <input type="text" name="mot-cles" required placeholder="Recherche par mot clés"/>
+    <button> RECHERHCER </button>
+    <input type="hidden" name="codebarre" value="mot-cles">
+        <div class="response">
+        </div>
+    </form>
+
     <!--  NE PAS OUBLIER: POUR UPLOADER UN FICHIER -->
     <!-- method="POST" enctype="multipart/form-data" -->
     <form method="POST" enctype="multipart/form-data" class="formAdmin">

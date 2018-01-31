@@ -115,7 +115,6 @@ section.Login{
     cursor:pointer;
 }
 
-}
 @media screen and (max-width:1754px){
     main{
         margin-top:20%;
@@ -269,7 +268,7 @@ section.Login{
     font-family: "LondonBetween";
 }
 
-/*XXXXXXXXXXXXXX BOUTON ADMIN FORMATEUR XXXXXXXXXXXXXXX*/
+/*XXXXXXXXXXXXXX BOUTON ADMIN ENFANT XXXXXXXXXXXXXXX*/
 
 .formEnfant button{
     position: relative;
@@ -314,49 +313,68 @@ section.Login{
     text-align: center;
 }
 
-/*XXXXXXXXXXXXXXXXXX  MEDIA SCREEN XXXXXXXXXXXXXXXXXXXXXXX*/
-/*
-@media screen and (max-width:1350px){
-    main{
-        margin-top:15%;
-        top:0;
-    }
-    header{
-        padding:0;
-    }
-}
-@media screen and (max-width:1290px){
-    header{
-        font-size:1em;
-        margin-top:0;
-    
-    }
-    .formEnfant{
-        width:100%;
-    }
-    .button{
-        width:40%;
-        font-size:1em;
-    }
-    .formulaireEnfant{
-        width:120%;
-    }
-}
-@media screen and (max-width:990px){
-    .formEnfant{
-        width:100%;
-    }
-    .button{
-        width:40%;
-        font-size:10px;
-        padding:0 !important;
-    }
-    .formulaireEnfant{
-        width:120%;
-    }
+/*XXXXXXXXXXXXXXXXXXX FORMULAIRE RECHERHCE PAR MOT CLES XXXXXXXXXXXX*/
 
-}*/
+.recherche{
+    cursor:pointer;
+    max-width: 60%;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    margin: 10px auto;
+    padding: 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+    font-family: "MyriadPro-Regular"
+}
 
+.recherche input[type="text"],
+ {
+    font-family: "MyriadPro-Regular";
+    background: rgba(255,255,255,.1);
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    margin: 0;
+    outline: 0;
+    padding: 7px;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background-color: #e8eeef;
+    color:#313233;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+   
+}
+.recherche input[type="text"]:focus
+{
+    background: #d2d9dd;
+}
+/**XXXXXXXXXXXXXX BUTTON RECHERCHE XXXXXXXXXXXXXXXXXXXXXXXXX*/
+.recherche button{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 18px 35px 18px 35px;
+    color: #FFF;
+    margin: 0 auto;
+    background: #4883B0;
+    font-size: 1.2em;
+    text-align: center;
+    font-style: normal;
+    border: 1px solid #4883B0;
+    border-radius: 10px;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+    width:49%;
+}
+.recherche button:hover{
+    background: #A9D4ED;
+    color:#313233;
+    cursor:pointer;
+}
 
 /*XXXXXXXXXXXXXXXXXX FORMULAIRE ADMIN XXXXXXXXXXXXXXXXXXXXX*/
 .formulaireAdmin{
