@@ -13,7 +13,7 @@ $verifMembre = $objetSession->get("membre");
 
 
   <!-- BARRE DE RECHERCHE PAR MOT CLES -->
-    <form method="POST" class="recherche">
+    <form method="POST" id="recherche">
     <input type="text" name="mot-cles" required placeholder="Recherche par mot clés"/>
     <button type="submit"> RECHERHCER </button>
     <input type="hidden" name="codebarre" value="mot-cles">
