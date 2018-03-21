@@ -35,7 +35,7 @@ if ($objetRequest->get("codebarre", "") == "deleteArticle")
                         <?php
                         
                         $tabMembreTH = ["N°", "Auteur", "Titre", "Rubrique", "Contenu",
-                                        "Images", "Mot-clé", "Date de publication", 
+                                         "Mot-clé", "Date de publication", 
                                         "Date de modification", "Statut", "Modifier", "Supprimer"];
                         
                         foreach ($tabMembreTH as $element) {
@@ -83,7 +83,7 @@ CODEHTML;
             $motCle           = $objetArticle->getMotCle();
             $rubrique         = $objetArticle->getRubrique();
             $contenu          = $objetArticle->getContenu();
-            $cheminImage      = $objetArticle->getCheminImage();
+           // $cheminImage      = $objetArticle->getCheminImage();
             $statut           = $objetArticle->getStatut();
             $datePublication  = $objetArticle->getDatePublication("d/m/Y");
             $dateModification = $objetArticle->getDateModification("d/m/Y");
@@ -101,31 +101,31 @@ CODEHTML;
             $contenu = mb_strimwidth($contenu, 0, 100, '...');
 
             
-            $htmlFile = "";
-            // S'il y a un fichier (image ou pdf)
-            if ($cheminImage)
-            {
-                $objetExtension = new SplFileInfo($cheminImage);
-                $extension = $objetExtension->getExtension();
+//             $htmlFile = "";
+//             // S'il y a un fichier (image ou pdf)
+//             if ($cheminImage)
+//             {
+//                 $objetExtension = new SplFileInfo($cheminImage);
+//                 $extension = $objetExtension->getExtension();
 
-                // Si le fichier est un pdf
-                if ($extension == "pdf")
-            {
-                $htmlFile = 
-                <<<CODEHTML
-                <iframe src="$cheminImage"></iframe>
-CODEHTML;
-            }
+//                 // Si le fichier est un pdf
+//                 if ($extension == "pdf")
+//             {
+//                 $htmlFile = 
+//                 <<<CODEHTML
+//                 <iframe src="$cheminImage"></iframe>
+// CODEHTML;
+//             }
 
-            else {
-                $htmlFile = 
-                <<<CODEHTML
+//             else {
+//                 $htmlFile = 
+//                 <<<CODEHTML
             
-                <img src="$cheminImage" title="$cheminImage">
+//                 <img src="$cheminImage" title="$cheminImage">
                 
-CODEHTML;
-                }
-            }
+// CODEHTML;
+//                 }
+//             }
 
             
             // Génération de l'url de l'article
@@ -140,7 +140,7 @@ CODEHTML;
                 <td><a href="$urlArticle">$titre</a></td>
                 <td>$rubrique</td>
                 <td>$contenu</td>
-                <td>$htmlFile</td>
+               
                 <td>$motCle</td>
                 <td>$datePublication</td>
                 <td>$dateModification</td>

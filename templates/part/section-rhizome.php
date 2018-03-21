@@ -42,6 +42,7 @@ $indiceDepart   = ($numeroPage -1) * $nbArticleParPage;
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
 $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
 $objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
+$objetRepositoryImages = $this->getDoctrine()->getRepository(App\Entity\Images::class);
 
 // ATTENTION: ON UTILISE LE NOM DES PROPRIETES
 $tabResultat = $objetRepository->findBy(
@@ -60,7 +61,6 @@ foreach($tabResultat as $objetArticle)
     $contenu         = $objetArticle->getContenu();
     $rubrique        = $objetArticle->getRubrique();
     $motCle          = $objetArticle->getMotCle();
-    $cheminImage     = $objetArticle->getCheminImage();
     $datePublication = $objetArticle->getDatePublication("d/m/Y");
 
      $objetMembre = $objetRepositoryMembre->find($idMembre);
@@ -73,58 +73,74 @@ foreach($tabResultat as $objetArticle)
     $contenu = mb_strimwidth($contenu, 0, 100, '...');
     
     $htmlFile = "";
+
     // S'il y a un fichier (image ou pdf)
-    if ($cheminImage)
-    {
-        $objetExtension = new SplFileInfo($cheminImage);
-        $extension = $objetExtension->getExtension();
-
-        // Si le fichier est un pdf
-        if ($extension == "pdf")
-    {
-        $htmlFile = 
-<<<CODEHTML
-        <iframe src="{$urlAccueil}$cheminImage"></iframe>
-CODEHTML;
-    }
-
-    else {
-        $htmlFile = 
-<<<CODEHTML
-    
-        <img src="{$urlAccueil}$cheminImage" title="$cheminImage">
-CODEHTML;
-        }
-    
-  }
-  if ($cheminImage == false) {
-        $htmlFile = 
-<<<CODEHTML
-    
-        <img src="{$urlAccueil}assets/img/logo.jpg" title="$cheminImage">
-CODEHTML;
-        }
-
+    $objetImage     = $objetArticle->getImages();
     // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
     $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
     
        echo
-<<<CODEHTML
-
+    <<<CODEHTML
+    
     <article class="article-rhizome">
-
+    
     <div>
-   
+    
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
         <p>$rubrique<p>
         <p>$contenu</p>
         <p> $datePublication</p>
         <td>$pseudo</td>
     </div>
-     <div >$htmlFile</div> 
-    </article>
-    
 CODEHTML;
+
+                    if ($objetImage)
+                    {
+                       
+
+                        foreach ($objetImage as $image) {
+                            $idImage = $image->getIdImage();
+                            $cheminImage = $image->getCheminImage();
+                            $objetExtension = new SplFileInfo($cheminImage);
+                            $extension = $objetExtension->getExtension();
+                       //     Si le fichier est un pdf
+                            if ($extension == "pdf")
+                        {
+                            $htmlFile = 
+                            <<<CODEHTML
+                            <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
+                            <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
+                            
+
+CODEHTML;
+                           
+                        }
+    
+                        else {
+                            $htmlFile = 
+                            <<<CODEHTML
+                        
+                            <img src="$urlAccueil$cheminImage" alt="$cheminImage">
+CODEHTML;
+                            }
+
+                          
+                          echo "<div>$htmlFile</div>";  
+
+                        }
+
+                    }
+                else {
+                    echo 
+                <<<CODEHTML
+                
+                    <img src="{$urlAccueil}assets/img/logo.jpg" title="logo">
+CODEHTML;
+        }
+        
+        echo "</article>";
+    
+
     
 }
 

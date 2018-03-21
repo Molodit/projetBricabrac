@@ -10,7 +10,7 @@
            <li>
                <a href="<?php echo $urlMentions?>"data-scroll>Mentions Légales</a>
              </li>
-             <li><a href="<?php echo $urlContact ?>"data-scroll>  Contact </a></li>
+             <li><a href="<?php echo $urlContact ?>"data-scroll>Contact</a></li>
        </ul>
    </nav>
    </footer>

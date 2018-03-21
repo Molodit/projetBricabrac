@@ -5,6 +5,7 @@
         $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
         $objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
         $objetRepositoryComment = $this->getDoctrine()->getManager()->getRepository(App\Entity\Comments::class);
+        $objetRepositoryImages     = $this->getDoctrine()->getRepository(App\Entity\Images::class);
         
 
         $tabResultat = $objetRepository->findBy([ "idArticle" => $id_article, "statut" => "publie" ], [ "datePublication" => "DESC" ]);
@@ -18,40 +19,53 @@
             $titre           = $objetArticle->getTitre();
             $rubrique       = $objetArticle->getRubrique();
             $contenu         = $objetArticle->getContenu();
-            $cheminImage     = $objetArticle->getCheminImage();
             $motCle          = $objetArticle->getMotCle();
             $datePublication = $objetArticle->getDatePublication("d/m/Y");
             
             $objetMembre = $objetRepositoryMembre->find($idMembre);
-                    $pseudo = "";
-                    if ($objetMembre)
-                    {
-                        $pseudo = $objetMembre->getMembre();
-                    }
-                    $htmlFile = "";
-                    // S'il y a un fichier (image ou pdf)
-                    if ($cheminImage)
-                    {
-                        $objetExtension = new SplFileInfo($cheminImage);
-                        $extension = $objetExtension->getExtension();
+            $pseudo = "";
+            if ($objetMembre)
+            {
+                $pseudo = $objetMembre->getMembre();
+            }
 
-                        // Si le fichier est un pdf
-                        if ($extension == "pdf")
-                    {
-                        $htmlFile = 
-                        <<<CODEHTML
-                        <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
-                        <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
-CODEHTML;
-                    }
+            echo "<h2>$titre</h2>";
+            $htmlFile = "";
 
-                    else {
-                        $htmlFile = 
-                        <<<CODEHTML
-                    
-                        <img src="$urlAccueil$cheminImage" alt="photo de l'article">
+            // S'il y a un fichier (image ou pdf)
+            $objetImage     = $objetArticle->getImages();
+                    if ($objetImage)
+                    {
+                       
+
+                        foreach ($objetImage as $image) {
+                            $idImage = $image->getIdImage();
+                            $cheminImage = $image->getCheminImage();
+                            $objetExtension = new SplFileInfo($cheminImage);
+                            $extension = $objetExtension->getExtension();
+                       //     Si le fichier est un pdf
+                            if ($extension == "pdf")
+                        {
+                            $htmlFile = 
+                            <<<CODEHTML
+                            <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
+                            <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
 CODEHTML;
                         }
+    
+                        else {
+                            $htmlFile = 
+                            <<<CODEHTML
+                        
+                            <img src="$urlAccueil$cheminImage" alt="photo de l'article">
+CODEHTML;
+                            }
+
+                           echo $htmlFile;
+                            
+
+                        }
+
                     }
 
         // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
@@ -60,13 +74,8 @@ CODEHTML;
             
             echo
         <<<CODEHTML
-        <h2>$titre</h2>
-        
-           
-            
-            $htmlFile
-           
-            <article class="articleSeul">
+       
+        <article class="articleSeul">
             <span>écrit par $pseudo</span>
             <p>$contenu</p>
             <p class="infos">Cet article a été publié avec le mot-clé <a href="$urlMotCle">$motCle</a>

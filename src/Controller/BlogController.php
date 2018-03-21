@@ -17,7 +17,7 @@ class BlogController
   /**
       * @Route("/", name="accueil")
       */   
-   public function accueil (Request $objetRequest, Connection $objetConnection,SessionInterface $objetSession)
+   public function accueil (Request $objetRequest, Connection $objetConnection, SessionInterface $objetSession)
    {
         
         ob_start();

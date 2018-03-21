@@ -2,8 +2,9 @@
 
 <?php
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
-// $objetRepository = $this->getDoctrine()->getRepository("App\Entity\MonArticle");
-$objetRepository     = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
+
+$objetRepository            = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
+$objetRepositoryImages     = $this->getDoctrine()->getRepository(App\Entity\Images::class);
 
 $tabResultatMotCle = $objetRepository->trouverMotClePlus($objetConnection);
 $compteur = 0;
@@ -53,7 +54,7 @@ foreach($tabResultat as $tabLigne)
 {
     extract($tabLigne);
      // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
-    $urlArticle     = $this->generateUrl("article", [ "id_article" => $idArticle ]);
+    $urlArticle     = $this->generateUrl("article", [ "id_article" => $id_article ]);
     $objetExtension = new SplFileInfo($chemin_image);
     $extension = $objetExtension->getExtension();
     
@@ -91,14 +92,15 @@ CODEHTML;
         border:1px solid #ddd">
         <p class="images">
              $titre 
-             <p class="date">publié le $date</p>
+             <p class="date">publié le $date_publication</p>
              </p>
             
         </article>
     </a>
 CODEHTML;
-    }
     
+    
+}
 }
 ?>
 

@@ -62,10 +62,15 @@ CODESQL;
             $requeteSQL =
     <<<CODESQL
     
-    SELECT *, article.id_article as idArticle FROM article
-    LEFT JOIN membre
-    ON article.id_membre = membre.id_membre
+    
+    SELECT * FROM  article 
+    INNER JOIN articles_images
+    ON articles_images.id_article = article.id_article 
+    
+    INNER JOIN images ON images.id_image = articles_images.id_image
+    
     WHERE statut = :statut
+    GROUP BY articles_images.id_article
     ORDER BY date_publication DESC
     LIMIT 3
 
