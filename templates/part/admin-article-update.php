@@ -21,13 +21,13 @@ $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::cl
 // http://www.doctrine-project.org/api/orm/2.5/class-Doctrine.ORM.EntityRepository.html
 $objetArticleUpdate = $objetRepository->find($idUpdate);
 
-            if ($objetArticleUpdate) :
+            if ($objetArticleUpdate) {
 
 // OK ON A TROUVE UN ARTICLE POUR CET ID
 $titre      = $objetArticleUpdate->getTitre();
 $contenu    = $objetArticleUpdate->getContenu();
 $motCle     = $objetArticleUpdate->getMotCle();
-$rubrique   = $objetArticleUpdate->getRubrique();
+$rubrique   = $objetArticleUpdate->getRubrique();}
 
 ?>
 
@@ -70,6 +70,9 @@ $rubrique   = $objetArticleUpdate->getRubrique();
 <?php echo $messageUpdate ?>
         </div>
     </form>
+    </section>
+          
+
     <script type="text/javascript">
   
 // Initialize the widget when the DOM is ready
@@ -134,10 +137,5 @@ $(function() {
    
 });
 
-
-
-
 </script>
     
-</section>
-            <?php endif; ?>

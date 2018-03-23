@@ -89,42 +89,23 @@ class FormArticle
     }
 
     
-        function supprimer ($objetRequest, $objetConnection, $cheminSymfony, $objetSession)
+        function supprimer ($objetRequest, $objetConnection, $cheminSymfony, $objetSession, $tableName, $colName)
     {
-        $idDelete          = $objetRequest->get("idDelete", "");
+
+        $this->objetRequest = $objetRequest;
+        
+        $idDelete       = $objetRequest->get("idDelete", "");
+         
+        
         // CONVERTIR EN NOMBRE
         $idDelete = intval($idDelete);
         // SECURITE TRES BASIQUE
-        if ($idDelete > 0)
+        if ($idDelete >0)
+
         {
-
+            $objetConnection->delete($tableName, [ $idDelete => $colName ]);   
             
-            $objetArticle = new \App\Entity\MonArticle;
-
-
-            $objetConnection->delete("article", $tabLigneDelete = [ "id_article"    => $idDelete ]);
-            
-
-            if ($cheminImage != "") {
-                foreach ($cheminImage as $ligneImage)
-                    {
-                        $objetImage = new \App\Entity\Images;
-                        $objetImage->getCheminImage($ligneImage);
-                        $objetArticle->getImages()->delete($objetImage);
-                    }
-
-             if ($cheminArticleImage != "") {
-                foreach ($cheminArticleImage as $ligneArticleImage)
-                    {
-                        $objetArticleImage = new \App\Entity\ArticlesImages;
-                        $objetArticleImage->getCheminArticleImage($ligneArticleImage);
-                        $objetArticle->getArticlesImages()->delete($objetArticleImage);
-                    }
-            } 
-            
-
-            
-            // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#delete
+     //docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#delete
             
 
             
@@ -133,10 +114,11 @@ class FormArticle
             <<<CODEHTML
             <div class="response">l'élément a été supprimé"</div>
 CODEHTML;
-        }
+            }
         
-    }
-}
+     }   
+    
+
     
       function update ($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession)
     {
