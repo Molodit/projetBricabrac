@@ -17,6 +17,7 @@ class MonArticle
      * @ORM\JoinTable(name="articles_images",
      *      joinColumns={@ORM\JoinColumn(name="id_article", referencedColumnName="id_article")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="id_image", referencedColumnName="id_image")})
+     @ORM\Entity(repositoryClass="App\Repository\MonArticleImageRepository")
      */
     private $images;
 

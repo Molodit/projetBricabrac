@@ -37,7 +37,7 @@ $indiceDepart   = ($numeroPage -1) * $nbArticleParPage;
 
 
 <?php
-// ALLER CHERCHER LA LISTE DES ARTICLES DANS LA CATEGORIE $createxte
+// ALLER CHERCHER LA LISTE DES ARTICLES DANS LA CATEGORIE $rhizome
 
 // JE VAIS RECUPERER LE REPOSITORY POUR L'ENTITE Article
 $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
@@ -56,7 +56,7 @@ foreach($tabResultat as $objetArticle)
 {
     // METHODES "GETTER" A RAJOUTER DANS LA CLASSE MonArticle
     $idArticle       = $objetArticle->getIdArticle();
-    $idMembre         = $objetArticle->getIdMembre();
+    $idMembre        = $objetArticle->getIdMembre();
     $titre           = $objetArticle->getTitre();
     $contenu         = $objetArticle->getContenu();
     $rubrique        = $objetArticle->getRubrique();
@@ -120,7 +120,7 @@ CODEHTML;
                             $htmlFile = 
                             <<<CODEHTML
                         
-                            <img src="$urlAccueil$cheminImage" alt="$cheminImage">
+                            <img src={$urlAccueil}$cheminImage" alt="$cheminImage">
 CODEHTML;
                             }
 

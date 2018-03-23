@@ -37,6 +37,7 @@ class FormArticle
         
             // COMPLETER LES INFOS MANQUANTES
             $datePublication = date("Y-m-d H:i:s");
+            $dateModification= date("Y-m-d H:i:s");
             $idMembre         = $objetSession->get("id_membre");
             //Les mots clés sont convertis en minuscules avec la première lettre en majuscule
             $motCle = ucfirst(strtolower($motCle));
@@ -63,7 +64,7 @@ class FormArticle
                 $objetArticle->setMotCle($motCle);
                 $objetArticle->setStatut($statut);
                 $objetArticle->setDatePublication($datePublication);
-                $objetArticle->setDateModification($datePublication);
+                $objetArticle->setDateModification($dateModification);
                 $objetEntityManager->persist($objetArticle);
                 // ENVOIE L'OBJET DANS LA TABLE SQL (UN PEU COMME EXECUTE...)
                 $objetEntityManager->flush();
@@ -88,7 +89,7 @@ class FormArticle
     }
 
     
-        function supprimer ($objetRequest, $objetConnection, $cheminSymfony, $objetSession, $tableName, $colName)
+        function supprimer ($objetRequest, $objetConnection, $cheminSymfony, $objetSession)
     {
         $idDelete          = $objetRequest->get("idDelete", "");
         // CONVERTIR EN NOMBRE
@@ -96,12 +97,35 @@ class FormArticle
         // SECURITE TRES BASIQUE
         if ($idDelete > 0)
         {
+
+            
+            $objetArticle = new \App\Entity\MonArticle;
+
+
+            $objetConnection->delete("article", $tabLigneDelete = [ "id_article"    => $idDelete ]);
+            
+
+            if ($cheminImage != "") {
+                foreach ($cheminImage as $ligneImage)
+                    {
+                        $objetImage = new \App\Entity\Images;
+                        $objetImage->getCheminImage($ligneImage);
+                        $objetArticle->getImages()->delete($objetImage);
+                    }
+
+             if ($cheminArticleImage != "") {
+                foreach ($cheminArticleImage as $ligneArticleImage)
+                    {
+                        $objetArticleImage = new \App\Entity\ArticlesImages;
+                        $objetArticleImage->getCheminArticleImage($ligneArticleImage);
+                        $objetArticle->getArticlesImages()->delete($objetArticleImage);
+                    }
+            } 
+            
+
             
             // http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/data-retrieval-and-manipulation.html#delete
-
             
-
-            $objetConnection->delete($tableName, [ $colName => $idDelete ]);
 
             
             // MESSAGE RETOUR POUR LE VISITEUR
@@ -112,22 +136,30 @@ CODEHTML;
         }
         
     }
+}
     
       function update ($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession)
     {
+        $this->objetRequest = $objetRequest;
         // RECUPERER LES INFOS DU FORMULAIRE
         // ->get("email", "")
         // VA CHERCHER L'INFO DANS LE FORMULAIRE HTML name="email"
         // ET SI L'INFO N'EST PAS PRESENTE 
         //  ALORS ON RETOURNE LA VALEUR PAR DEFAUT ""
+
+
         $idUpdate       = $objetRequest->get("idUpdate", "");       
         $titre          = $objetRequest->get("titre", "");       
         $rubrique       = $objetRequest->get("rubrique", "");    
         $motCle         = $objetRequest->get("mot_cle", "");    
         $contenu        = $objetRequest->get("contenu", "");
         $statut         = $objetRequest->get("statut", ""); 
-        $cheminImage    = $this->getUploadedFile("chemin_image", $objetRequest, $cheminSymfony);
-        
+        $cheminImage    = $this->verifierInfo("cheminImage", "");
+        $cheminImage = rtrim($cheminImage, ',');
+        $cheminImage = explode(",", $cheminImage);
+        $cheminImage = array_map("trim", $cheminImage);
+        //$cheminImage    = $this->getUploadedFile("chemin_image", $objetRequest, $cheminSymfony);
+
         // CONVERTIR $idUpdate EN NOMBRE
         $idUpdate = intval($idUpdate);
         
@@ -136,29 +168,39 @@ CODEHTML;
         {
             // COMPLETER LES INFOS MANQUANTES
             $dateModification = date("Y-m-d H:i:s");
+            
             // ON MET AUSSI A JOUR L'AUTEUR DE L'ARTICLE
             $idMembre         = $objetSession->get("id_membre");
+            
             
             // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
             // ON VA UTILISER $objetConnection FOURNI PAR SYMFONY
             
-            $tabLigneUpdate = [   "titre"             => $titre, 
-                                        "id_membre"         => $idMembre,
-                                        "rubrique"          => $rubrique,
-                                        "mot_cle"           => $motCle,
-                                        "contenu"           => $contenu,
-                                        "statut"            => $statut,
-                                        "date_modification" => $dateModification,
+            $tabLigneUpdate = [     "titre"             => $titre, 
+                                    "id_membre"         => $idMembre,
+                                    "rubrique"          => $rubrique,
+                                    "mot_cle"           => $motCle,
+                                    "contenu"           => $contenu,
+                                    "statut"            => $statut,
+                                    "date_modification" => $dateModification,
                                         
                                     ];
-                                    if ($cheminImage != "")
-                                    {
-                                        // SI IL Y A UNE IMAGE UPLOADE
-                                        // ON MET A JOUR LA VALEUR DANS LA TABLE SQL
-                                        $tabLigneUpdate["chemin_image"] = $cheminImage;
-                                    }
-                                    
-                                    $objetConnection->update("article", $tabLigneUpdate, [ "id_article" => $idUpdate ]);
+                $objetConnection->update("article", $tabLigneUpdate, [ "id_article" => $idUpdate ]);
+
+                $objetArticle = new \App\Entity\MonArticle;
+                $tabLigneUpdate["chemin_image"] = $cheminImage;
+
+                if ($cheminImage != "") {
+                foreach ($cheminImage as $ligneImage)
+                    {
+                        $objetImage = new \App\Entity\Images;
+                        $objetImage->setCheminImage($ligneImage);
+                        $objetArticle->getImages()->add($objetImage);
+                    }
+                }
+
+                
+            
             
             // MESSAGE RETOUR POUR LE VISITEUR
 
@@ -170,8 +212,9 @@ CODEHTML;
                 echo "L'article est modifié et enregistré en tant que brouillon";
             }
         }
-        
     }
+        
+    
 
     function updateMembre ($objetRequest, $objetConnection, $objetEntityManager, $cheminSymfony, $objetSession)
     {
