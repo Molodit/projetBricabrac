@@ -165,4 +165,25 @@ h3.admin {
     text-decoration:underline;
 }
 
+/* STYLES DU WIDGET PLUPLOAD */
+
+#uploader .plupload_add, #uploader .plupload_start {
+    font-size: 13px;
+    padding: 15px 10px;
+    color:gray;
+}
+
+table.plupload_filelist {
+    vertical-align: bottom !important;
+}
+
+#uploader {
+    height:50vh;
+    scroll-behavior: unset;
+}
+
+#uploader .plupload_dropbox{
+    height:40vh;
+}
+
 
