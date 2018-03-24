@@ -71,7 +71,7 @@ if ($objetRequest->get("codebarre", "") == "article")
 $(function() {
     $("#uploader").plupload({
         // General settings
-        runtimes : 'html5,flash,silverlight,html4',
+        runtimes : 'html5,gears,flash,silverlight,browserplus,html4',
         url : "../assets/upload/upload.php",
        
  
@@ -120,9 +120,9 @@ $(function() {
       var inputName = $( "input[name*='_name']" );
   
       inputName.each(function(){
-         cheminImage += 'assets/upload/' + $(this).val() + ',';
+         cheminImage += 'assets/upload/' + $(this).val() + ','
         
-      })
+      });
      
     $("input[name=cheminImage]").val(cheminImage);
           });
