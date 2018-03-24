@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 	exit; // finish preflight CORS requests here
 }
 */
-// modif une ligne pour test
+
 // 5 minutes execution time
 @set_time_limit(5 * 60);
 
@@ -41,8 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 $targetDir = ini_get("upload_tmp_dir") . DIRECTORY_SEPARATOR . "plupload";
 //$targetDir = ini_get("upload_tmp_dir") . "plupload";
 
-//$targetDir = 'public' . DIRECTORY_SEPARATOR . 'upload';
-//$targetDir = __DIR__ ;
+
 $targetDir = "__DIR__/upload/";
 $cleanupTargetDir = true; // Remove old files
 $maxFileAge = 5 * 3600; // Temp file age in seconds
