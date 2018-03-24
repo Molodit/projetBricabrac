@@ -24,3 +24,4 @@ public/assets/upload/pexels-photo-725995.jpeg
 src/Migrations/Version20171222132840.php
 src/Migrations/Version20171229093523.php
 templates/part/admin-article-create.php
+public/assets/.DS_Store
