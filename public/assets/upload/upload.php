@@ -39,10 +39,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 
 // Settings
 $targetDir = ini_get("upload_tmp_dir") . DIRECTORY_SEPARATOR . "plupload";
-//$targetDir = ini_get("upload_tmp_dir") . "plupload";
 
+<<<<<<< HEAD
 
 $targetDir = "__DIR__/upload/";
+=======
+//$targetDir = __DIR__ ;
+$targetDir = "../upload/";
+>>>>>>> parent of 1b19214... Merge branch 'master' of https://github.com/Molodit/projetBricabrac
 $cleanupTargetDir = true; // Remove old files
 $maxFileAge = 5 * 3600; // Temp file age in seconds
 
