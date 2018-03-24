@@ -127,7 +127,7 @@ if ($objetRequest->get("codebarre", "") == "article")
       $("input[name=cheminImage]").val(cheminImage);
             });
 
-  
+  });
   
   
   
