@@ -67,7 +67,7 @@ if ($objetRequest->get("codebarre", "") == "article")
 
 <script type="text/javascript">
   
-<<<<<<< HEAD
+
   // Initialize the widget when the DOM is ready
   $(function() {
       $("#uploader").plupload({
@@ -105,14 +105,7 @@ if ($objetRequest->get("codebarre", "") == "article")
    
           // Flash settings
           flash_swf_url : '/plupload/js/Moxie.swf',
-=======
-// Initialize the widget when the DOM is ready
-$(function() {
-    $("#uploader").plupload({
-        // General settings
-        runtimes : 'html5,flash,silverlight,html4',
-        url : "../assets/upload/upload.php",
->>>>>>> parent of 1b19214... Merge branch 'master' of https://github.com/Molodit/projetBricabrac
+
        
           // Silverlight settings
           silverlight_xap_url : '/plupload/js/Moxie.xap'
@@ -137,29 +130,10 @@ $(function() {
             });
 
   });
-<<<<<<< HEAD
-  
-=======
->>>>>>> parent of f2dc3f6... Revert "test"
-  
-<<<<<<< HEAD
+
   
   </script>
-=======
-      inputName.each(function(){
-         cheminImage += 'assets/upload/' + $(this).val() + ',';
-        
-      })
-     
-    $("input[name=cheminImage]").val(cheminImage);
-          });
-   
-});
 
 
-
-
-</script>
->>>>>>> parent of 8336166... upload
     
 </section>
