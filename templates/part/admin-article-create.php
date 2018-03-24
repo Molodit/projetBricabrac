@@ -77,8 +77,6 @@ $(function() {
  
         // Maximum file size
         max_file_size : '2mb',
-
-        buttons: {browse: false, start: false, stop: false},
         
 
         // Specify what files to browse for
