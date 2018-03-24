@@ -139,7 +139,24 @@ $(function() {
   });
   
   
+<<<<<<< HEAD
   
   </script>
+=======
+      inputName.each(function(){
+         cheminImage += 'assets/upload/' + $(this).val() + ',';
+        
+      })
+     
+    $("input[name=cheminImage]").val(cheminImage);
+          });
+   
+});
+
+
+
+
+</script>
+>>>>>>> parent of 8336166... upload
     
 </section>
