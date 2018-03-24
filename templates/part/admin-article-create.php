@@ -115,21 +115,15 @@ $(function() {
     $('form.formAdmin').on('submit', function () {
   
       var cheminImage = $("input[name=cheminImage]").val();
-      var inputName = $( "input[name*='_name']" );
-  
-      inputName.each(function(){
-         cheminImage += 'assets/upload/' + $(this).val() + ',';
-        
+      var inputName = $("input[name*='_name']");
+         inputName.each(function(){
+         cheminImage+='assets/upload/'+$(this).val()+',';
       })
      
     $("input[name=cheminImage]").val(cheminImage);
           });
    
 });
-
-
-
-
 </script>
     
 </section>
