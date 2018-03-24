@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 	exit; // finish preflight CORS requests here
 }
 */
-
+// modif une ligne pour test
 // 5 minutes execution time
 @set_time_limit(5 * 60);
 
