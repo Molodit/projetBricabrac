@@ -137,7 +137,10 @@ $(function() {
             });
 
   });
+<<<<<<< HEAD
   
+=======
+>>>>>>> parent of f2dc3f6... Revert "test"
   
 <<<<<<< HEAD
   
