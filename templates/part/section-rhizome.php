@@ -89,7 +89,7 @@ foreach($tabResultat as $objetArticle)
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
         <p>$rubrique<p>
         <p>$contenu</p>
-        <p> $datePublication</p>
+        <p>$datePublication</p>
         <td>$pseudo</td>
     </div>
 CODEHTML;
@@ -108,7 +108,7 @@ CODEHTML;
                         {
                             $htmlFile = 
                             <<<CODEHTML
-                            <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
+                            <iframe src="{$urlAccueil}$cheminImage"></iframe><br><br>
                             <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
                             
 
@@ -120,7 +120,7 @@ CODEHTML;
                             $htmlFile = 
                             <<<CODEHTML
                         
-                            <img src={$urlAccueil}$cheminImage" alt="$cheminImage">
+                            <img src="{$urlAccueil}$cheminImage" alt="$cheminImage">
 CODEHTML;
                             }
 
