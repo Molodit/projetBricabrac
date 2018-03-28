@@ -32,7 +32,7 @@
             echo "<h2>$titre</h2>";
             $htmlFile = "";
 
-            // S'il y a un fichier (image ou pdf)
+            // S'il y a un ou plusieurs fichiers image ou pdf
             $objetImage     = $objetArticle->getImages();
                     if ($objetImage)
                     {

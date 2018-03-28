@@ -1,3 +1,5 @@
+<!-- Scripts JS et CSS pour initialiser Plupload WidgetUI avec jQuery et jQuery UI -->
+
 <link rel="stylesheet" type="text/css" href="assets/js/plupload/jquery.ui.plupload/css/jquery.ui.plupload.css"/>
          <script  src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="  crossorigin="anonymous"></script>
          <script
@@ -14,13 +16,13 @@
 
 
     <!-- BARRE DE RECHERCHE PAR MOT CLES -->
-    <form method="POST" id="recherche">
+    <!-- <form method="POST" id="recherche">
     <input type="text" name="mot-cles" required placeholder="Recherche par mot clés"/>
     <button>RECHERCHER</button>
     <input type="hidden" name="codebarre" value="mot-cles">
       <div class="response">
       </div>
-    </form>
+    </form> -->
 
         <!-- NE PAS OUBLIER: POUR UPLOADER UN FICHIER -->
         <!-- method="POST" enctype="multipart/form-data" -->
@@ -33,7 +35,7 @@
           <option value="CreaTexte">CréaTexte</option>
           <option value="Journal">Journal La Tanière</option>
      </select>
-        <textarea id="editor1" type="text" name="contenu" required placeholder="Votre texte" rows="30"></textarea>
+        <textarea type="text" name="contenu" required placeholder="Votre texte" rows="30"></textarea>
         <input type="hidden" name="cheminImage">
             <div id="filelist"></div>
               <br />
@@ -67,7 +69,7 @@ if ($objetRequest->get("codebarre", "") == "article")
 
 <script type="text/javascript">
   
-
+    //Plupload Widget UI
   // Initialize the widget when the DOM is ready
   $(function() {
       $("#uploader").plupload({
