@@ -24,29 +24,50 @@ $objetArticleUpdate = $objetRepository->find($idUpdate);
             if ($objetArticleUpdate) {
 
 // OK ON A TROUVE UN ARTICLE POUR CET ID
-$titre      = $objetArticleUpdate->getTitre();
-$contenu    = $objetArticleUpdate->getContenu();
-$motCle     = $objetArticleUpdate->getMotCle();
-$rubrique   = $objetArticleUpdate->getRubrique();}
+                $titre      = $objetArticleUpdate->getTitre();
+                $contenu    = $objetArticleUpdate->getContenu();
+                $motCle     = $objetArticleUpdate->getMotCle();
+                $rubrique   = $objetArticleUpdate->getRubrique();
+                $objetImage = $objetArticleUpdate->getImages();
+                $htmlFile = "";
 
-?>
-
-    <H3>Modifier un article</H3>
-    <hr>
-    <form method="POST" enctype="multipart/form-data" class="formAdmin" action="<?php echo $urlAdmin ?>">
-        <label for="titre">Titre</label>
-        <input type="text" name="titre" required placeholder="Titre" value="<?php echo $titre ?>">
-        <label for="mot_clé">Mot-clé</label>
-        <input type="text" name="mot_cle" required placeholder="Mots-clés" value="<?php echo $motCle ?>">
-        <label for="rubrique">Rubrique</label>
-        <select name="rubrique" required>
-          <option value="">-- Choisissez une rubrique --</option>
-          <option value="Rhizome">Rhizome</option>
-          <option value="CreaTexte">CréaTexte</option>
-          <option value="Journal">Journal La Tanière</option>
-     </select>
-        <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30"><?php echo $contenu ?></textarea>
-        <input type="hidden" name="cheminImage">
+                if ($objetImage) {
+                    foreach ($objetImage as $image) {
+                        $idImage = $image->getIdImage();
+                        $cheminImage = $image->getCheminImage();
+                        $htmlFile .= 
+                        <<<CODEHTML
+                        
+                        <input type="checkbox" name="chemin_image[]" value="$idImage" checked="checked">
+                        <img src="$urlAccueil$cheminImage" alt="photo de l'article">
+CODEHTML;
+                    }
+                }
+                
+            }
+            
+            ?>
+            
+            <H3>Modifier l'article <?php echo "'$titre'" ?></H3>
+            <hr>
+            <form method="POST" enctype="multipart/form-data" class="formAdmin" action="<?php echo $urlAdmin ?>">
+            <label for="titre">Titre</label>
+            <input type="text" name="titre" required placeholder="Titre" value="<?php echo $titre ?>">
+            <label for="mot_cle">Mot-clé</label>
+            <input type="text" name="mot_cle" required placeholder="Mots-clés" value="<?php echo $motCle ?>">
+            <label for="rubrique">Rubrique</label>
+            <select name="rubrique" required>
+            <option value="">-- Choisissez une rubrique --</option>
+            <option value="Rhizome">Rhizome</option>
+            <option value="CreaTexte">CréaTexte</option>
+            <option value="Journal">Journal La Tanière</option>
+            </select>
+            <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30"><?php echo $contenu ?></textarea>
+            <div>
+                <label for="chemin_image">Images de l'article. Décochez pour les supprimer de l'article</label>
+            </div>
+            <br>
+            <?php echo $htmlFile ?>
             <div id="filelist"></div>
               <br />
               
@@ -54,7 +75,7 @@ $rubrique   = $objetArticleUpdate->getRubrique();}
               <pre id="console"></pre>
 
               <div id="uploader">
-                  <p>Your browser doesn't have Flash, Silverlight or HTML5 support.</p>
+                  <p>Le navigateur ne supporte pas Flash, Silverlight ou HTML5.</p>
               </div>
 
         <!-- Deux boutons pour donner la possibilité d'enregistrer en brouillon -->
@@ -86,7 +107,7 @@ $(function() {
         // Maximum file size
         max_file_size : '2mb',
 
-        buttons: {browse: false, start: false, stop: false},
+        
         
 
         // Specify what files to browse for

@@ -44,7 +44,7 @@
               <pre id="console"></pre>
 
               <div id="uploader">
-                  <p>Your browser doesn't have Flash, Silverlight or HTML5 support.</p>
+                  <p>Le navigateur ne supporte pas Flash, Silverlight ou HTML5.</p>
               </div>
 
         <!-- Deux boutons pour donner la possibilité d'enregistrer en brouillon -->

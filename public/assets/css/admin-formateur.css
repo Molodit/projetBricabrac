@@ -137,11 +137,15 @@ h3.admin {
 
 /* XXXXXXXXXXX SECTION LISTE ARTICLE READ XXXXXXXXXXXXXX */
 
-.admin table img {
+.admin table img, .formAdmin img {
     width: 100px;
     height: 100px;
     object-fit: cover;
   }
+
+.formAdmin img {
+    margin-top: 25px;
+}
 
 .admin table th {
     color:#437ba6;

@@ -98,6 +98,36 @@ CODEHTML;
 
              // S'il y a un ou plusieurs fichiers image ou pdf
              $htmlFile = "";
+             $objetImage     = $objetArticle->getImages();
+             if ($objetImage)
+             {
+                
+
+                 foreach ($objetImage as $image) {
+                     $idImage = $image->getIdImage();
+                     $cheminImage = $image->getCheminImage();
+                     $objetExtension = new SplFileInfo($cheminImage);
+                     $extension = $objetExtension->getExtension();
+                //     Si le fichier est un pdf
+                     if ($extension == "pdf")
+                 {
+                     $htmlFile .= 
+                     <<<CODEHTML
+                     <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
+                     <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
+CODEHTML;
+                 }
+
+                 else {
+                     $htmlFile .= 
+                     <<<CODEHTML
+                 
+                     <img src="$urlAccueil$cheminImage" alt="photo de l'article">
+CODEHTML;
+                     }
+                   
+                  }
+             }
              // On ne prend que les 100 premiers caractères du texte de $contenu
              $contenu = mb_strimwidth($contenu, 0, 100, '...');
              
@@ -113,45 +143,7 @@ CODEHTML;
                  <td><a href="$urlArticle">$titre</a></td>
                  <td>$rubrique</td>
                  <td>$contenu</td>
-                 <td>
-CODEHTML;
-             $objetImage     = $objetArticle->getImages();
-             if ($objetImage)
-             {
-                
-
-                 foreach ($objetImage as $image) {
-                     $idImage = $image->getIdImage();
-                     $cheminImage = $image->getCheminImage();
-                     $objetExtension = new SplFileInfo($cheminImage);
-                     $extension = $objetExtension->getExtension();
-                //     Si le fichier est un pdf
-                     if ($extension == "pdf")
-                 {
-                     $htmlFile = 
-                     <<<CODEHTML
-                     <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
-                     <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
-CODEHTML;
-                 }
-
-                 else {
-                     $htmlFile = 
-                     <<<CODEHTML
-                 
-                     <img src="$urlAccueil$cheminImage" alt="photo de l'article">
-CODEHTML;
-                     }
-
-                     echo "$htmlFile";
-                   
-                  }
-             }
-            
-
-            echo
-            <<<CODEHTML
-                </td>
+                 <td>$htmlFile</td>
                 <td>$motCle</td>
                 <td>$datePublication</td>
                 <td>$dateModification</td>

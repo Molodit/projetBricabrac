@@ -5,7 +5,6 @@
         $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
         $objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
         $objetRepositoryComment = $this->getDoctrine()->getManager()->getRepository(App\Entity\Comments::class);
-        $objetRepositoryImages     = $this->getDoctrine()->getRepository(App\Entity\Images::class);
         
 
         $tabResultat = $objetRepository->findBy([ "idArticle" => $id_article, "statut" => "publie" ], [ "datePublication" => "DESC" ]);
@@ -29,52 +28,53 @@
                 $pseudo = $objetMembre->getMembre();
             }
 
-            echo "<h2>$titre</h2>";
             $htmlFile = "";
-
+            
             // S'il y a un ou plusieurs fichiers image ou pdf
             $objetImage     = $objetArticle->getImages();
-                    if ($objetImage)
+            if ($objetImage)
+            {
+                
+                
+                foreach ($objetImage as $image) {
+                    $idImage = $image->getIdImage();
+                    $cheminImage = $image->getCheminImage();
+                    $objetExtension = new SplFileInfo($cheminImage);
+                    $extension = $objetExtension->getExtension();
+                    //     Si le fichier est un pdf
+                    if ($extension == "pdf")
                     {
-                       
-
-                        foreach ($objetImage as $image) {
-                            $idImage = $image->getIdImage();
-                            $cheminImage = $image->getCheminImage();
-                            $objetExtension = new SplFileInfo($cheminImage);
-                            $extension = $objetExtension->getExtension();
-                       //     Si le fichier est un pdf
-                            if ($extension == "pdf")
-                        {
-                            $htmlFile = 
-                            <<<CODEHTML
-                            <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
-                            <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
+                        $htmlFile .= 
+                        <<<CODEHTML
+                        <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
+                        <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
 CODEHTML;
-                        }
-    
-                        else {
-                            $htmlFile = 
-                            <<<CODEHTML
-                        
-                            <img src="$urlAccueil$cheminImage" alt="photo de l'article">
-CODEHTML;
-                            }
-
-                           echo $htmlFile;
-                            
-
-                        }
-
                     }
-
-        // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
+                    
+                    else {
+                        $htmlFile .= 
+                        <<<CODEHTML
+                        
+                        <img src="$urlAccueil$cheminImage" alt="photo de l'article">
+CODEHTML;
+                    }
+                    
+                    
+                    
+                    
+                }
+                
+            }
+            
+            // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
             $urlMotCle = $this->generateUrl("motCle", [ "mot_cle" => $motCle ]);
             
             
             echo
-        <<<CODEHTML
-       
+            <<<CODEHTML
+            
+            <h2>$titre</h2>
+            $htmlFile
         <article class="articleSeul">
             <span>écrit par $pseudo</span>
             <p>$contenu</p>
