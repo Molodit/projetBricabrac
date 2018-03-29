@@ -13,7 +13,7 @@ class MonArticle
 {
     /**
     
-     * @ORM\ManyToMany(targetEntity="Images", cascade={"persist"}, inversedBy="articles")
+     * @ORM\ManyToMany(targetEntity="Images", cascade={"persist", "remove"}, inversedBy="articles")
      * @ORM\JoinTable(name="articles_images",
      *      joinColumns={@ORM\JoinColumn(name="id_article", referencedColumnName="id_article")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="id_image", referencedColumnName="id_image")})
@@ -178,8 +178,18 @@ class MonArticle
     }
     
     public function addImage(Images $image) {
-        $image->addArticle($this);
-        $this->images[] = $image;
+        if(!$this->images->contains($image)) {
+            $image->addArticle($this);
+            $this->images[] = $image;
+        }
+    }
+
+    public function removeImage(Images $image)
+    {
+    if ($this->images->contains($image)) {
+        
+        $this->images->removeElement($image);
+        }
     }
 
 }

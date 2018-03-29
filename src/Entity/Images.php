@@ -60,7 +60,15 @@ class Images
     }
     
     public function addArticle(MonArticle $article)
-    {
+    {    if (!$this->articles->contains($article)) {
         $this->articles[] = $article;
+        }
+    }
+
+    public function removeArticle (MonArticle $article)
+    {
+        if ($this->articles->contains($article)) {
+            $this->articles->removeElement($article);
+        }
     }
 }

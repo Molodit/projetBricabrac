@@ -4,8 +4,8 @@
 if ($objetRequest->get("codebarre", "") == "deleteArticle")
 {
     $objetFormArticle = new App\Controller\FormArticle;
-    
-    $objetFormArticle->supprimer($objetRequest, $objetConnection, $cheminSymfony, $objetSession, 'article', 'id_article');
+    $objetEntityManager = $this->getDoctrine()->getManager();
+    $objetFormArticle->supprimerArticle( $objetRequest, $objetEntityManager);
     
 }
 ?>

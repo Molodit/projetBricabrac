@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Controller;
+
 // DANS LA MECANIQUE DE SYMFONY
 // App              => src
 // App\Controller   => src/Controller
-
+use ORM\EntityManager;
+use App\Entity\MonArticle;
 
 class FormArticle
     extends SecuController
@@ -116,7 +118,23 @@ class FormArticle
 CODEHTML;
             }
         
-     }   
+     }
+
+     //Méthode pour supprimer l'article et les images jointes en relation many to many
+     function supprimerArticle ($objetRequest, $objetEntityManager)
+      {
+        $this->objetRequest = $objetRequest;
+        $idDelete       = $objetRequest->get("idDelete", "");
+        $idDelete = intval($idDelete);
+       
+        if ($idDelete >0)
+
+        {
+            $objetArticle = $objetEntityManager->getRepository(MonArticle::class)->find($idDelete);
+            $objetEntityManager->remove($objetArticle);
+            $objetEntityManager->flush();
+        }
+     }
     
 
     
