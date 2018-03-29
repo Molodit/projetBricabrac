@@ -125,14 +125,22 @@ CODEHTML;
       {
         $this->objetRequest = $objetRequest;
         $idDelete       = $objetRequest->get("idDelete", "");
+        $titre          = $objetRequest->get("titre", "");
         $idDelete = intval($idDelete);
        
         if ($idDelete >0)
 
         {
             $objetArticle = $objetEntityManager->getRepository(MonArticle::class)->find($idDelete);
+            // MESSAGE RETOUR POUR LE VISITEUR
             $objetEntityManager->remove($objetArticle);
+            
             $objetEntityManager->flush();
+            
+            echo 
+            <<<CODEHTML
+            <div class="response">L'article $titre a été supprimé"</div>
+CODEHTML;
         }
      }
     

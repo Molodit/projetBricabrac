@@ -73,6 +73,9 @@ CODEHTML;
             {
                 $titreArt = $objetArticle->getTitre();
             }
+
+             // Génération de l'url de l'article
+             $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
         
             echo
         <<<CODEHTML

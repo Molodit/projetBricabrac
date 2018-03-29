@@ -34,7 +34,7 @@ if ($objetRequest->get("codebarre", "") == "deleteArticle")
                 <!--Création de l'entête et pied du tableau avec les balises TH-->
                         <?php
                         
-                        $tabMembreTH = ["N°", "Auteur", "Titre", "Rubrique", "Contenu",
+                        $tabMembreTH = ["N°", "Auteur", "Titre", "Rubrique", "Contenu", "PDF/Images",
                                          "Mot-clé", "Date de publication", 
                                         "Date de modification", "Statut", "Modifier", "Supprimer"];
                         
@@ -83,7 +83,6 @@ CODEHTML;
             $motCle           = $objetArticle->getMotCle();
             $rubrique         = $objetArticle->getRubrique();
             $contenu          = $objetArticle->getContenu();
-           // $cheminImage      = $objetArticle->getCheminImage();
             $statut           = $objetArticle->getStatut();
             $datePublication  = $objetArticle->getDatePublication("d/m/Y");
             $dateModification = $objetArticle->getDateModification("d/m/Y");
@@ -96,51 +95,63 @@ CODEHTML;
             {
                 $pseudo = $objetMembre->getMembre();
             }
-            
-            // On ne prend que les 100 premiers caractères du texte de $contenu
-            $contenu = mb_strimwidth($contenu, 0, 100, '...');
 
-            
-//             $htmlFile = "";
-//             // S'il y a un fichier (image ou pdf)
-//             if ($cheminImage)
-//             {
-//                 $objetExtension = new SplFileInfo($cheminImage);
-//                 $extension = $objetExtension->getExtension();
-
-//                 // Si le fichier est un pdf
-//                 if ($extension == "pdf")
-//             {
-//                 $htmlFile = 
-//                 <<<CODEHTML
-//                 <iframe src="$cheminImage"></iframe>
-// CODEHTML;
-//             }
-
-//             else {
-//                 $htmlFile = 
-//                 <<<CODEHTML
-            
-//                 <img src="$cheminImage" title="$cheminImage">
+             // S'il y a un ou plusieurs fichiers image ou pdf
+             $htmlFile = "";
+             // On ne prend que les 100 premiers caractères du texte de $contenu
+             $contenu = mb_strimwidth($contenu, 0, 100, '...');
+             
+             
+             // Génération de l'url de l'article
+             $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
+             echo
+             <<<CODEHTML
+             
+             <tr>
+                 <td>$idArticle</td>
+                 <td>$pseudo</td>
+                 <td><a href="$urlArticle">$titre</a></td>
+                 <td>$rubrique</td>
+                 <td>$contenu</td>
+                 <td>
+CODEHTML;
+             $objetImage     = $objetArticle->getImages();
+             if ($objetImage)
+             {
                 
-// CODEHTML;
-//                 }
-//             }
 
+                 foreach ($objetImage as $image) {
+                     $idImage = $image->getIdImage();
+                     $cheminImage = $image->getCheminImage();
+                     $objetExtension = new SplFileInfo($cheminImage);
+                     $extension = $objetExtension->getExtension();
+                //     Si le fichier est un pdf
+                     if ($extension == "pdf")
+                 {
+                     $htmlFile = 
+                     <<<CODEHTML
+                     <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
+                     <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
+CODEHTML;
+                 }
+
+                 else {
+                     $htmlFile = 
+                     <<<CODEHTML
+                 
+                     <img src="$urlAccueil$cheminImage" alt="photo de l'article">
+CODEHTML;
+                     }
+
+                     echo "$htmlFile";
+                   
+                  }
+             }
             
-            // Génération de l'url de l'article
-            $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
-            
+
             echo
-        <<<CODEHTML
-
-            <tr>
-                <td>$idArticle</td>
-                <td>$pseudo</td>
-                <td><a href="$urlArticle">$titre</a></td>
-                <td>$rubrique</td>
-                <td>$contenu</td>
-               
+            <<<CODEHTML
+                </td>
                 <td>$motCle</td>
                 <td>$datePublication</td>
                 <td>$dateModification</td>
