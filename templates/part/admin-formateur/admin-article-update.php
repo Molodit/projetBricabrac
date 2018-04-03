@@ -105,7 +105,7 @@ $(function() {
        
  
         // Maximum file size
-        max_file_size : '2mb',
+        max_file_size : '15mb',
 
         
         
