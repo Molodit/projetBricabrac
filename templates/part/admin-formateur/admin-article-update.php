@@ -38,7 +38,7 @@ $objetArticleUpdate = $objetRepository->find($idUpdate);
                         $htmlFile .= 
                         <<<CODEHTML
                         
-                        <input type="checkbox" name="chemin_image[]" value="$idImage" checked="checked">
+                        <input type="checkbox" name="image[]" value="$idImage">
                         <img src="$urlAccueil$cheminImage" alt="photo de l'article">
 CODEHTML;
                     }
@@ -57,14 +57,15 @@ CODEHTML;
             <input type="text" name="mot_cle" required placeholder="Mots-clés" value="<?php echo $motCle ?>">
             <label for="rubrique">Rubrique</label>
             <select name="rubrique" required>
-            <option value="">-- Choisissez une rubrique --</option>
+            <option value="<?php echo $rubrique ?>"><?php echo $rubrique ?></option>
             <option value="Rhizome">Rhizome</option>
             <option value="CreaTexte">CréaTexte</option>
             <option value="Journal">Journal La Tanière</option>
             </select>
             <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30"><?php echo $contenu ?></textarea>
+            <input type="hidden" name="cheminImage">
             <div>
-                <label for="chemin_image">Images de l'article. Décochez pour les supprimer de l'article</label>
+                <label for="image">Images de l'article. Cochez pour les supprimer de l'article</label>
             </div>
             <br>
             <?php echo $htmlFile ?>

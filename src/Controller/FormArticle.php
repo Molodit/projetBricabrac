@@ -7,6 +7,7 @@ namespace App\Controller;
 // App\Controller   => src/Controller
 use ORM\EntityManager;
 use App\Entity\MonArticle;
+use App\Entity\Images;
 
 class FormArticle
     extends SecuController
@@ -156,13 +157,14 @@ CODEHTML;
         //  ALORS ON RETOURNE LA VALEUR PAR DEFAUT ""
 
 
-        $idUpdate       = $objetRequest->get("idUpdate", "");       
-        $titre          = $objetRequest->get("titre", "");       
-        $rubrique       = $objetRequest->get("rubrique", "");    
-        $motCle         = $objetRequest->get("mot_cle", "");    
-        $contenu        = $objetRequest->get("contenu", "");
-        $statut         = $objetRequest->get("statut", ""); 
+        $idUpdate       = $this->verifierInfo("idUpdate", "");       
+        $titre          = $this->verifierInfo("titre", "");       
+        $rubrique       = $this->verifierInfo("rubrique", "");    
+        $motCle         = $this->verifierInfo("mot_cle", "");    
+        $contenu        = $this->verifierInfo("contenu", "");
+        $statut         = $this->verifierInfo("statut", ""); 
         $cheminImage    = $this->verifierInfo("cheminImage", "");
+        $image          = $objetRequest->get("image", "");
         $cheminImage = rtrim($cheminImage, ',');
         $cheminImage = explode(",", $cheminImage);
         $cheminImage = array_map("trim", $cheminImage);
@@ -172,31 +174,19 @@ CODEHTML;
         $idUpdate = intval($idUpdate);
         
         // SECURITE TRES BASIQUE
+        // COMPLETER LES INFOS MANQUANTES
+        $dateModification = date("Y-m-d H:i:s");
+        
+        // ON MET AUSSI A JOUR L'AUTEUR DE L'ARTICLE
+        $idMembre         = $objetSession->get("id_membre");
+        $motCle           = ucfirst(strtolower($motCle));
+        
+        
         if (($idUpdate >0) && ($titre != "") && ($rubrique != "") && ($motCle != "") && ($contenu != ""))
         {
-            // COMPLETER LES INFOS MANQUANTES
-            $dateModification = date("Y-m-d H:i:s");
-            
-            // ON MET AUSSI A JOUR L'AUTEUR DE L'ARTICLE
-            $idMembre         = $objetSession->get("id_membre");
-            
-            
             // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
             // ON VA UTILISER $objetConnection FOURNI PAR SYMFONY
-            
-            $tabLigneUpdate = [     "titre"             => $titre, 
-                                    "id_membre"         => $idMembre,
-                                    "rubrique"          => $rubrique,
-                                    "mot_cle"           => $motCle,
-                                    "contenu"           => $contenu,
-                                    "statut"            => $statut,
-                                    "date_modification" => $dateModification,
-                                        
-                                    ];
-                $objetConnection->update("article", $tabLigneUpdate, [ "id_article" => $idUpdate ]);
-
-                $objetArticle = new \App\Entity\MonArticle;
-                $tabLigneUpdate["chemin_image"] = $cheminImage;
+            $objetArticle = $objetEntityManager->getRepository(MonArticle::class)->find($idUpdate);   
 
                 if ($cheminImage != "") {
                 foreach ($cheminImage as $ligneImage)
@@ -207,7 +197,27 @@ CODEHTML;
                     }
                 }
 
-                
+                if ($image) {
+                    foreach ($image as $imageDelete)
+                    {
+                        $objetImageDelete = $objetEntityManager->getRepository(Images::class)->find($imageDelete);
+                        $objetImageDelete->removeArticle($objetArticle);
+                        $objetArticle->removeImage($objetImageDelete);
+                       
+                        
+                    }
+                }
+
+                $objetArticle->setIdMembre($idMembre);
+                $objetArticle->setTitre($titre);
+                $objetArticle->setRubrique($rubrique);                
+                $objetArticle->setContenu($contenu);
+                $objetArticle->setMotCle($motCle);
+                $objetArticle->setStatut($statut);
+                $objetArticle->setDateModification($dateModification);
+                $objetEntityManager->merge($objetArticle);
+                // ENVOIE L'OBJET DANS LA TABLE SQL (UN PEU COMME EXECUTE...)
+                $objetEntityManager->flush();
             
             
             // MESSAGE RETOUR POUR LE VISITEUR
