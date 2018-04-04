@@ -23,7 +23,7 @@ if ($objetRequest->get("codebarre", "") == "deleteArticle")
                 <li><a href="#commentaires">Commentaires</a></li>
 
             </ul>
-        </div>
+        
     <div class="tabs-content">
         <section class="admin article tab-content active" id="articles">
             <h4>Liste des articles</h4>

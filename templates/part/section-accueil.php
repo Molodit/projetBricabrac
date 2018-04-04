@@ -13,7 +13,6 @@ foreach($tabResultatMotCle as $tabLigneMotCle)
 {
     $compteur++;
     extract($tabLigneMotCle);
-    $mot_cle = ucfirst(strtolower($mot_cle));
 
     if ($compteur < 12) {
 

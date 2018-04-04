@@ -35,7 +35,7 @@
           <option value="CreaTexte">CréaTexte</option>
           <option value="Journal">Journal La Tanière</option>
      </select>
-        <textarea type="text" name="contenu" required placeholder="Votre texte" rows="30"></textarea>
+        <textarea id="editor1" type="text" name="contenu" required placeholder="Votre texte" rows="30"></textarea>
         <input type="hidden" name="cheminImage">
             <div id="filelist"></div>
               <br />

@@ -166,12 +166,8 @@ CODEHTML;
         $cheminImage    = $this->verifierInfo("cheminImage", "");
         $image          = $objetRequest->get("image", "");
         
-        if ($cheminImage != "") {
-            $cheminImage = rtrim($cheminImage, ',');
-            $cheminImage = explode(",", $cheminImage);
-            $cheminImage = array_map("trim", $cheminImage);
-        }
-
+        
+        
         // CONVERTIR $idUpdate EN NOMBRE
         $idUpdate = intval($idUpdate);
         
@@ -181,16 +177,22 @@ CODEHTML;
         
         // ON MET AUSSI A JOUR L'AUTEUR DE L'ARTICLE
         $idMembre         = $objetSession->get("id_membre");
-        $motCle           = ucfirst(strtolower($motCle));
+        
         
         
         if (($idUpdate >0) && ($titre != "") && ($rubrique != "") && ($motCle != "") && ($contenu != ""))
         {
-            // AJOUTER L'ARTICLE DANS LA BASE DE DONNEES
-            // ON VA UTILISER $objetConnection FOURNI PAR SYMFONY
+            
             $objetArticle = $objetEntityManager->getRepository(MonArticle::class)->find($idUpdate);   
+            
+            // Les mots clés sont transformés en minuscule avec la première lettre en maj
+            $motCle           = ucfirst(strtolower($motCle));
+            // Si des images sont ajoutées avec plupload
+            if ($cheminImage != "") {
 
-                if ($cheminImage != "") {
+                $cheminImage = rtrim($cheminImage, ',');
+                $cheminImage = explode(",", $cheminImage);
+                $cheminImage = array_map("trim", $cheminImage);
                 foreach ($cheminImage as $ligneImage)
                     {
                         $objetImage = new \App\Entity\Images;

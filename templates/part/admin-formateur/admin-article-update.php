@@ -31,6 +31,7 @@ $objetArticleUpdate = $objetRepository->find($idUpdate);
                 $objetImage = $objetArticleUpdate->getImages();
                 $htmlFile = "";
 
+                //Si des images sont déjà présentes dans l'article, on les affiche
                 if ($objetImage) {
                     foreach ($objetImage as $image) {
                         $idImage = $image->getIdImage();
