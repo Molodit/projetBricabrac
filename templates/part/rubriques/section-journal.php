@@ -100,14 +100,12 @@ foreach($tabResultat as $index => $objetArticle)
     
     <article $classActive id="art$idArticle">
     
-    <div>
-    
+   <div>
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
-        <p>$rubrique<p>
-        <p>$contenu</p>
-        <p> $datePublication</p>
+        
+    </div>   
         <td>$pseudo</td>
-    </div>
+      
 CODEHTML;
 
                     if ($objetImage)
@@ -124,8 +122,10 @@ CODEHTML;
                         {
                             $htmlFile = 
                             <<<CODEHTML
-                            <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
-                            <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
+                            
+                            
+                            <iframe src="{$urlAccueil}$cheminImage"></iframe><br><br>
+                            <p><a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a></p>
                             
 
 CODEHTML;
@@ -136,12 +136,12 @@ CODEHTML;
                             $htmlFile = 
                             <<<CODEHTML
                         
-                            <img src="$urlAccueil$cheminImage" alt="$cheminImage">
+                            <img src="{$urlAccueil}$cheminImage" alt="$cheminImage">
 CODEHTML;
                             }
 
                           
-                          echo "<div>$htmlFile</div>";  
+                          echo "<p>$htmlFile</p>";  
 
                         }
 

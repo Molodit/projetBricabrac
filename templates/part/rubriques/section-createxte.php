@@ -88,7 +88,7 @@ foreach($tabResultat as $objetArticle)
         <td>$pseudo</td>
       </div>
 
-    </article>
+    
     
 CODEHTML;
 
@@ -118,7 +118,7 @@ CODEHTML;
                             $htmlFile = 
                             <<<CODEHTML
                         
-                            <img src="$urlAccueil$cheminImage" alt="$cheminImage">
+                            <img src="{$urlAccueil}$cheminImage" alt="$cheminImage">
 CODEHTML;
                             }
 

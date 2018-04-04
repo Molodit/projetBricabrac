@@ -144,8 +144,9 @@ display: inline-table;
   text-decoration: none;
 }
 .article-rhizome div img{
-  width: 29vh;
+  width: 28vh;
   height: 25vh;
+  margin: 1%;
   -webkit-filter: grayscale(0) blur(0px);
   filter: grayscale(0) blur(0px);
   -webkit-transition: all 0.5s ease;
@@ -173,11 +174,12 @@ display: inline;
 /*----------Journal ------------*/
 .journal div{
   display: flex;
-  padding-bottom: 2%;
+  padding-bottom: 4%;
+
 }
  .journal iframe{
     height: 70vh;
-    width: 100%;
+    min-width: 100%;
     box-shadow:5px 5px 5px rgba(0, 0, 0, 0.7);
     border: 1px solid rgb(16, 78, 139);
  } 
@@ -207,7 +209,9 @@ display: inline;
 }
 .journal .tabs-content .active{
   margin: 4%;
+  padding-bottom: 5%;
   width: 100%;
+  display: inline-table;
   background-color: rgba(214,214,214, .7);
 }
 .journal .tabs a{

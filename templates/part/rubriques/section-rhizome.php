@@ -125,7 +125,7 @@ CODEHTML;
                             }
 
                           
-                          echo "<div>$htmlFile</div>";  
+                          echo "<div class='img'>$htmlFile</div>";  
 
                         }
 
