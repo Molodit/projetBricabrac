@@ -13,7 +13,7 @@ class MonArticle
 {
     /**
     
-     * @ORM\ManyToMany(targetEntity="Images", cascade={"persist", "remove"}, inversedBy="articles")
+     * @ORM\ManyToMany(targetEntity="Images", cascade={"persist", "remove"}, orphanRemoval=true, inversedBy="articles")
      * @ORM\JoinTable(name="articles_images",
      *      joinColumns={@ORM\JoinColumn(name="id_article", referencedColumnName="id_article")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="id_image", referencedColumnName="id_image")})
