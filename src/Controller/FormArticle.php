@@ -165,10 +165,12 @@ CODEHTML;
         $statut         = $this->verifierInfo("statut", ""); 
         $cheminImage    = $this->verifierInfo("cheminImage", "");
         $image          = $objetRequest->get("image", "");
-        $cheminImage = rtrim($cheminImage, ',');
-        $cheminImage = explode(",", $cheminImage);
-        $cheminImage = array_map("trim", $cheminImage);
-        //$cheminImage    = $this->getUploadedFile("chemin_image", $objetRequest, $cheminSymfony);
+        
+        if ($cheminImage != "") {
+            $cheminImage = rtrim($cheminImage, ',');
+            $cheminImage = explode(",", $cheminImage);
+            $cheminImage = array_map("trim", $cheminImage);
+        }
 
         // CONVERTIR $idUpdate EN NOMBRE
         $idUpdate = intval($idUpdate);
@@ -200,8 +202,8 @@ CODEHTML;
                 if ($image) {
                     foreach ($image as $imageDelete)
                     {
+                       
                         $objetImageDelete = $objetEntityManager->getRepository(Images::class)->find($imageDelete);
-                        $objetImageDelete->removeArticle($objetArticle);
                         $objetArticle->removeImage($objetImageDelete);
                        
                         
@@ -215,7 +217,7 @@ CODEHTML;
                 $objetArticle->setMotCle($motCle);
                 $objetArticle->setStatut($statut);
                 $objetArticle->setDateModification($dateModification);
-                $objetEntityManager->merge($objetArticle);
+               
                 // ENVOIE L'OBJET DANS LA TABLE SQL (UN PEU COMME EXECUTE...)
                 $objetEntityManager->flush();
             
