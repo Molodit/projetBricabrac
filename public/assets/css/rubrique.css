@@ -157,19 +157,19 @@ display: inline-flex;
 margin: 1%;
 }
 
-.flexslider {
+.flexslider1 {
   margin: 0;
   padding: 0;
 }
-.flexslider .slides > li {
+.flexslider1 .slides1 > li {
   display: inline;
   width: 37vw;
 }
-.flexslider .slides img {
+.flexslider1 .slides1 img {
   height: 14vh;
 }
-.slides,
-.slides > li{
+.slides1,
+.slides1 > li{
    margin: 0;
   padding: 0;
   list-style: none;

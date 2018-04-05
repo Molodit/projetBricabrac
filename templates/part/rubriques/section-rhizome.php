@@ -90,8 +90,8 @@ foreach($tabResultat as $objetArticle)
         <p>$datePublication</p>
         <td>$pseudo</td>
     
-     <div class="flexslider">
-                            <ul class="slides">
+     <div class="flexslider1">
+                            <ul class="slides1">
                              <li>
 CODEHTML;
 
@@ -135,14 +135,10 @@ CODEHTML;
 
 
                     }
-                else {
-                    echo 
-                <<<CODEHTML
-                <a href="$urlArticle">
-                <article style="background-image:url('{$urlAccueil}assets/img/logo.jpg');
-                background-repeat:no-repeat;
-                background-size:cover;
-                border:1px solid #ddd"></a>
+               else {
+        echo
+        <<<CODEHTML
+        <img src="{$urlAccueil}/assets/img/logo.jpg" title="logo">
 
          </li>
                              </ul>
@@ -153,7 +149,7 @@ CODEHTML;
         
         echo "</article>";   
 }
-//<img src="{$urlAccueil}assets/img/logo.jpg" title="logo">
+
 ?>
 
 
