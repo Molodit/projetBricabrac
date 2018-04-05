@@ -137,15 +137,13 @@ display: inline-table;
 .rhizome ul li, .createxte ul li, .motCle ul li{
   float: left;
   margin: 2%;
-  padding: 1.5%;
+  /*padding: 1.5%;*/
   border-radius: 5px;
   list-style: none;
-  background-color: rgb(169, 212, 237);
+  /*background-color: rgb(169, 212, 237);*/
   text-decoration: none;
 }
 .article-rhizome div img{
-  width: 28vh;
-  height: 25vh;
   margin: 1%;
   -webkit-filter: grayscale(0) blur(0px);
   filter: grayscale(0) blur(0px);
@@ -155,7 +153,27 @@ display: inline-table;
   border: 1px solid rgb(16, 78, 139);
 }
 .article-rhizome  .img{
-display: inline;
+display: inline-flex;
+margin: 1%;
+}
+
+.flexslider {
+  margin: 0;
+  padding: 0;
+}
+.flexslider .slides > li {
+  display: inline;
+  width: 37vw;
+}
+.flexslider .slides img {
+  height: 14vh;
+}
+.slides,
+.slides > li{
+   margin: 0;
+  padding: 0;
+  list-style: none;
+
 }
 /* Style lors du passage de la souris*/
 .article-rhizome:hover{  

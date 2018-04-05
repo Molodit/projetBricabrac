@@ -60,6 +60,7 @@ CODEHTML;
             ?>
                 </tr>
             </tfoot>
+
             <tbody>
         <?php
 
@@ -175,4 +176,5 @@ CODEHTML;
 
 
         </section>
-</div>
+    </div>
+

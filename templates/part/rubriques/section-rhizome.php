@@ -1,5 +1,4 @@
 
-
 <section class="rhizome">
 
     <h3>RHIZOME</h3> 
@@ -85,13 +84,15 @@ foreach($tabResultat as $objetArticle)
     <article class="article-rhizome">
     
     <div>
-    
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
         <p>$rubrique<p>
         <p>$contenu</p>
         <p>$datePublication</p>
         <td>$pseudo</td>
-    </div>
+    
+     <div class="flexslider">
+                            <ul class="slides">
+                             <li>
 CODEHTML;
 
                     if ($objetImage)
@@ -119,8 +120,11 @@ CODEHTML;
                         else {
                             $htmlFile = 
                             <<<CODEHTML
-                        
+                           
                             <img src="{$urlAccueil}$cheminImage" alt="$cheminImage">
+                          
+
+
 CODEHTML;
                             }
 
@@ -129,22 +133,30 @@ CODEHTML;
 
                         }
 
+
                     }
                 else {
                     echo 
                 <<<CODEHTML
-                
-                    <img src="{$urlAccueil}assets/img/logo.jpg" title="logo">
+                <a href="$urlArticle">
+                <article style="background-image:url('{$urlAccueil}assets/img/logo.jpg');
+                background-repeat:no-repeat;
+                background-size:cover;
+                border:1px solid #ddd"></a>
+
+         </li>
+                             </ul>
+                            </div>   
+                            </div>          
 CODEHTML;
         }
         
-        echo "</article>";
-    
-
-    
+        echo "</article>";   
 }
-
+//<img src="{$urlAccueil}assets/img/logo.jpg" title="logo">
 ?>
+
+
  <nav>
         <ul>
 <?php        
