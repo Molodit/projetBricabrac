@@ -71,6 +71,7 @@ ul.tabs {
 
 .tabs-content {
     position:relative;
+    width: 113vw;
     z-index: 3;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.48);
 }
@@ -109,15 +110,12 @@ h3.admin {
     text-align:left;
     margin:8% 0 0 15%;
     font-family: "LondonBetween";
-    padding:3% 0;
-    
+    padding:3% 0;   
 }
-
-
 .admin {
     margin-top:0.5%;
     width:70%;
-
+    margin-left: 5%;
 }
 
 /* STYLES POUR LES DATATABLES */
@@ -137,7 +135,7 @@ h3.admin {
 
 /* XXXXXXXXXXX SECTION LISTE ARTICLE READ XXXXXXXXXXXXXX */
 
-.admin table img, .formAdmin img {
+.admin table img, .admin table iframe,.formAdmin img {
     width: 100px;
     height: 100px;
     object-fit: cover;
@@ -154,12 +152,11 @@ h3.admin {
 .admin table td {
     color:#565759;
 }
-.admin table td img{
-    display: inline-table;
+.admin td.html {
+    width: 19vw;
+    display: inline-block;
 }
-
 .admin button {
-   
     color: #437ba6;
     padding: 10%;
 }

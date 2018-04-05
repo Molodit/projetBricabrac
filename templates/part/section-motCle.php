@@ -1,3 +1,7 @@
+<link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/flexslider.css"/>
+
+
+
 <section class="motCle">
 
     <h3>DES ARTICLES DE <?php echo $mot_cle ?></h3>
@@ -89,7 +93,11 @@ foreach($tabResultat as $objetArticle)
         <p>$contenu</p>
         <p> $datePublication</p>
         <td>$pseudo</td>
-    </div>
+    
+    <div class="flexslider">
+  <ul class="slides">
+   <li>
+      
 CODEHTML;
 
                     if ($objetImage)
@@ -117,8 +125,9 @@ CODEHTML;
                         else {
                             $htmlFile = 
                             <<<CODEHTML
-                        
+                         
                             <img src="$urlAccueil$cheminImage" alt="$cheminImage">
+
 CODEHTML;
                             }
 
@@ -133,6 +142,11 @@ CODEHTML;
                 <<<CODEHTML
                 
                     <img src="{$urlAccueil}assets/img/logo.jpg" title="logo">
+                    </li>
+    
+                    </ul>
+                    </div>
+                    </div>
 CODEHTML;
         }
         
@@ -163,4 +177,15 @@ CODEHTML;
   
 
 </section>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript" src="<?php echo $urlAccueil ?>assets/js/jquery.flexslider-min.js"></script>
+
+<script type="text/javascript">
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide"
+  });
+});
+</script>
 

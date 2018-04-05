@@ -139,13 +139,13 @@ CODEHTML;
              <<<CODEHTML
              
              <tr>
-                 <td>$idArticle</td>
+                 <td >$idArticle</td>
                  <td>$pseudo</td>
-                 <td><a href="$urlArticle">$titre</a></td>
+                 <td ><a href="$urlArticle">$titre</a></td>
                  <td>$rubrique</td>
-                 <td>$contenu</td>
-                 <td>$htmlFile</td>
-                <td>$motCle</td>
+                 <td >$contenu</td>
+                 <td class="html">$htmlFile</td>
+                <td >$motCle</td>
                 <td>$datePublication</td>
                 <td>$dateModification</td>
                 <td>$statut</td>
