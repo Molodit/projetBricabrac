@@ -1,6 +1,6 @@
-$(document).ready()
-$(window).load(function() {
+$(document).ready(function() {
   $('.flexslider').flexslider({
-    animation: "slide"
+    animation: "slide",
+    controlNav: "thumbnails"
   });
 });

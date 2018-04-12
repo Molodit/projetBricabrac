@@ -35,6 +35,7 @@
             
             // S'il y a un ou plusieurs fichiers image ou pdf
             $objetImage     = $objetArticle->getImages();
+            
             if ($objetImage)
             {
                 
@@ -44,6 +45,7 @@
                     $cheminImage = $image->getCheminImage();
                     $objetExtension = new SplFileInfo($cheminImage);
                     $extension = $objetExtension->getExtension();
+                    $thumb = str_replace(".".$extension,"-thumb.".$extension, $cheminImage);
                     //     Si le fichier est un pdf
                     if ($extension == "pdf")
                     {
@@ -55,17 +57,15 @@ CODEHTML;
                     }
                     
                     else {
+
                         $htmlFile .= 
                         <<<CODEHTML
-                        <div class="flexslider">
-                          <ul class="slides">
-                          
-                        
-                        <img src="$urlAccueil$cheminImage" alt="photo de l'article">
+                          <li data-thumb="$urlAccueil$cheminImage">
+                            <img src="$urlAccueil$cheminImage" />
+                        </li>
                         
         
-                        </ul>
-                        </div>
+                        
 CODEHTML;
                     }   
                 }
@@ -79,7 +79,12 @@ CODEHTML;
             <<<CODEHTML
             
             <h2>$titre</h2>
-            $htmlFile
+            <div class="flexslider">
+                <ul class="slides">
+                    $htmlFile
+                </ul>
+            </div>
+            
         <article class="articleSeul">
             <span>écrit par $pseudo</span>
             <p>$contenu</p>
