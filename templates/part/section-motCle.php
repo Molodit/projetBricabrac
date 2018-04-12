@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="<?php echo $urlAccueil ?>assets/css/flexslider.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/flexslider.min.css"/>
 
 
 
@@ -34,8 +34,6 @@ $nbPage         = ceil($nbLigne / $nbArticleParPage);
 $indiceDepart   = ($numeroPage -1) * $nbArticleParPage;
 
 ?> 
-
-
 
 <?php
 // ALLER CHERCHER LA LISTE DES ARTICLES DANS LES MOTS CLES $motCle
@@ -93,10 +91,7 @@ foreach($tabResultat as $objetArticle)
         <p>$contenu</p>
         <p> $datePublication</p>
         <td>$pseudo</td>
-    
-    <div class="flexslider">
-  <ul class="slides">
-   <li>
+    </div>
       
 CODEHTML;
 
@@ -115,7 +110,7 @@ CODEHTML;
                             $htmlFile = 
                             <<<CODEHTML
                             <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
-                            <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
+                            <a href="$urlAccueil$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
                             
 
 CODEHTML;
@@ -125,8 +120,16 @@ CODEHTML;
                         else {
                             $htmlFile = 
                             <<<CODEHTML
+                              <div class="flexslider">
+                              <ul class="slides">
+                               <li>
                          
                             <img src="$urlAccueil$cheminImage" alt="$cheminImage">
+                              </li>
+    
+                            </ul>
+                            </div>
+
 
 CODEHTML;
                             }
@@ -142,11 +145,7 @@ CODEHTML;
                 <<<CODEHTML
                 
                     <img src="{$urlAccueil}assets/img/logo.jpg" title="logo">
-                    </li>
-    
-                    </ul>
-                    </div>
-                    </div>
+
 CODEHTML;
         }
         
@@ -157,6 +156,7 @@ CODEHTML;
 }
 
 ?>
+
  <nav>
         <ul>
 <?php        
@@ -177,15 +177,10 @@ CODEHTML;
   
 
 </section>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-<script type="text/javascript" src="<?php echo $urlAccueil ?>assets/js/jquery.flexslider-min.js"></script>
 
-<script type="text/javascript">
-$(window).load(function() {
-  $('.flexslider').flexslider({
-    animation: "slide"
-  });
-});
-</script>
+
+
+
+
 

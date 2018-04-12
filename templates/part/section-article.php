@@ -1,5 +1,8 @@
+
 <div class="illustration">
     <section class="article-commentaire">
+        
+       
         <?php
 
         $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
@@ -54,16 +57,18 @@ CODEHTML;
                     else {
                         $htmlFile .= 
                         <<<CODEHTML
+                        <div class="flexslider">
+                          <ul class="slides">
+                          
                         
                         <img src="$urlAccueil$cheminImage" alt="photo de l'article">
+                        
+        
+                        </ul>
+                        </div>
 CODEHTML;
-                    }
-                    
-                    
-                    
-                    
+                    }   
                 }
-                
             }
             
             // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
@@ -114,9 +119,9 @@ CODEHTML;
         }
     ?>
         </article>
-    
+  </section>  
         
-    </section>
+    
 </div>
 
 
