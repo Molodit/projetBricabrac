@@ -48,9 +48,10 @@ section.admin h2 {
     display: table;
     content: ' ';
     clear:both;
-
 }
-
+table.dataTable, table.dataTable th, table.dataTable td{
+    width: 13vw !important;
+}
 ul.tabs, .tabs li {
     padding: 0;
     list-style:none; 
@@ -71,7 +72,7 @@ ul.tabs {
 
 .tabs-content {
     position:relative;
-    width: 113vw;
+    width: 100vw;
     z-index: 3;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.48);
 }
@@ -136,8 +137,8 @@ h3.admin {
 /* XXXXXXXXXXX SECTION LISTE ARTICLE READ XXXXXXXXXXXXXX */
 
 .admin table img, .admin table iframe,.formAdmin img {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     object-fit: cover;
   }
 

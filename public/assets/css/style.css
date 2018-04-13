@@ -162,7 +162,9 @@ main{
   text-align: center;
   text-transform: uppercase;
 }
-
+a.logo{
+  width: 100%;
+}
 
 
 /*XXXXXXXXXXXXXXXXX SECTION XXXXXXXXXXXXXXXXXXX*/
@@ -211,7 +213,7 @@ footer{
   padding:0;
   opacity:0.9;
   z-index: 3;
-  width: 100%;
+  width: 105%;
   left: 0;
   top: 0;
   margin-top:150px;

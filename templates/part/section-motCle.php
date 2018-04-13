@@ -109,11 +109,7 @@ CODEHTML;
                             <<<CODEHTML
                             <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
                             <a href="$urlAccueil$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
-                            
-
-CODEHTML;
-                           
-                        }
+CODEHTML;}
     
                         else {
                             $htmlFile = 
@@ -121,8 +117,6 @@ CODEHTML;
                               <li>
                                 <img src="{$urlAccueil}$cheminImage" alt="$cheminImage">
                              </li>
-
-
 CODEHTML;
                             }
 
@@ -141,14 +135,10 @@ CODEHTML;
                              </ul>
                             </div>   
                             </div>       
-
 CODEHTML;
         }
         
-        echo "</article>";
-    
-
-    
+        echo "</article>";  
 }
 
 ?>
