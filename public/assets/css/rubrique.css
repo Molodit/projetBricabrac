@@ -70,7 +70,6 @@ margin-right: 12%;
 font-family: "MyriadPro-Regular";
 width: 100%;
 color: rgb(16, 78, 139);
-
 }
 .rhizome{
 background-image: url("../img/bubble.png");
@@ -85,6 +84,13 @@ background-size: contain;
 background-image: url("../img/round.png");
 background-repeat: no-repeat;
 }
+.motCle{
+background: url(../img/back-pattern.png)repeat;
+display: inline-table;
+width: 100%;
+border-radius: 10px;
+border: 1px solid #ddd;
+  }
 
 /*--------ARTICLES -------*/
 .article-rhizome, .article-createxte, .journal .tabs-content .active{
@@ -106,6 +112,7 @@ background-image: url("https://www.transparenttextures.com/patterns/brick-wall.p
 background-color: white;
 display: inline-table;
   }
+
 
 .article-createxte{
 background-color: rgba(214,214,214, .7);
@@ -156,29 +163,20 @@ display: inline-table;
 .article-rhizome .flexslider {
   width: 35vw;
 }
-.article-rhizome  .img{
-display: inline-flex;
-margin: 1%;
+/*.flexslider .slides img{
+  width: 30vw !important;
+  margin-left: 6% !important;
+}*/
+
+.motCle .flexslider .slides img, .article-rhizome .flexslider .slides img{
+ height: 50vh !important;
+}
+.motCle .article-rhizome:hover img{ 
+  border-radius: 0;  /* on arrondit l'image */
+  -webkit-transform: 0; /* rotation de l'image */
+  transform: none;
 }
 
-/* .flexslider1 {
-  margin: 0;
-  padding: 0;
-} */
-.flexslider1 .slides1 > li {
-  display: inline;
-  width: 37vw;
-}
-.flexslider1 .slides1 img {
-  height: 14vh;
-}
-.slides1,
-.slides1 > li{
-   margin: 0;
-  padding: 0;
-  list-style: none;
-
-}
 /* Style lors du passage de la souris*/
 .article-rhizome:hover{  
     z-index:-2;

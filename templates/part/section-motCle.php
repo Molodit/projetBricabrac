@@ -1,6 +1,3 @@
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/flexslider.min.css"/>
-
-
 
 <section class="motCle">
 
@@ -91,7 +88,8 @@ foreach($tabResultat as $objetArticle)
         <p>$contenu</p>
         <p> $datePublication</p>
         <td>$pseudo</td>
-    </div>
+     <div class="flexslider">
+                            <ul class="slides">
       
 CODEHTML;
 
@@ -120,22 +118,16 @@ CODEHTML;
                         else {
                             $htmlFile = 
                             <<<CODEHTML
-                              <div class="flexslider">
-                              <ul class="slides">
-                               <li>
-                         
-                            <img src="$urlAccueil$cheminImage" alt="$cheminImage">
-                              </li>
-    
-                            </ul>
-                            </div>
+                              <li>
+                                <img src="{$urlAccueil}$cheminImage" alt="$cheminImage">
+                             </li>
 
 
 CODEHTML;
                             }
 
                           
-                          echo "<div>$htmlFile</div>";  
+                          echo "$htmlFile";  
 
                         }
 
@@ -143,8 +135,12 @@ CODEHTML;
                 else {
                     echo 
                 <<<CODEHTML
-                
-                    <img src="{$urlAccueil}assets/img/logo.jpg" title="logo">
+                <img src="{$urlAccueil}/assets/img/logo.jpg" title="logo">
+
+         
+                             </ul>
+                            </div>   
+                            </div>       
 
 CODEHTML;
         }

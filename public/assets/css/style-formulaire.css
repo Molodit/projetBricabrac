@@ -456,7 +456,8 @@ section.Login{
 
 .commentaires button {
     background: #4883B0;
-    font-size: 1.2em;
+    font-size: 1em;
+    width: auto;
     text-align: center;
     font-style: normal;
     border-radius: 10px;
