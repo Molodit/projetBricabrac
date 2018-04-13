@@ -90,46 +90,44 @@ foreach($tabResultat as $objetArticle)
         <p>$datePublication</p>
         <td>$pseudo</td>
     
-     <div class="flexslider1">
-                            <ul class="slides1">
-                             <li>
+     <div class="flexslider">
+                            <ul class="slides">
 CODEHTML;
-
-                    if ($objetImage)
-                    {
-                       
-
-                        foreach ($objetImage as $image) {
-                            $idImage = $image->getIdImage();
-                            $cheminImage = $image->getCheminImage();
-                            $objetExtension = new SplFileInfo($cheminImage);
-                            $extension = $objetExtension->getExtension();
-                       //     Si le fichier est un pdf
-                            if ($extension == "pdf")
-                        {
-                            $htmlFile = 
-                            <<<CODEHTML
-                            <iframe src="{$urlAccueil}$cheminImage"></iframe><br><br>
-                            <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
                             
-
+                            if ($objetImage)
+                            {
+                                
+                                
+                                foreach ($objetImage as $image) {
+                                    $idImage = $image->getIdImage();
+                                    $cheminImage = $image->getCheminImage();
+                                    $objetExtension = new SplFileInfo($cheminImage);
+                                    $extension = $objetExtension->getExtension();
+                                    //     Si le fichier est un pdf
+                                    if ($extension == "pdf")
+                                    {
+                                        $htmlFile = 
+                                        <<<CODEHTML
+                                        <iframe src="{$urlAccueil}$cheminImage"></iframe><br><br>
+                                        <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
+                                        
 CODEHTML;
-                           
-                        }
-    
-                        else {
-                            $htmlFile = 
-                            <<<CODEHTML
-                           
-                            <img src="{$urlAccueil}$cheminImage" alt="$cheminImage">
-                          
+                                        
+                                    }
+                                    
+                                    else {
+                                        $htmlFile = 
+                                        <<<CODEHTML
+                                        <li>
+                                            <img src="{$urlAccueil}$cheminImage" alt="$cheminImage">
+                                        </li>
 
 
 CODEHTML;
                             }
 
                           
-                          echo "<div class='img'>$htmlFile</div>";  
+                          echo "$htmlFile";  
 
                         }
 
@@ -140,7 +138,7 @@ CODEHTML;
         <<<CODEHTML
         <img src="{$urlAccueil}/assets/img/logo.jpg" title="logo">
 
-         </li>
+         
                              </ul>
                             </div>   
                             </div>          
