@@ -127,14 +127,10 @@
   
 }
 
-
-.article-commentaire img {
-  max-height: 80vh;
-  width: 50vw;
-  padding-right:5%;
-  vertical-align: top;
-  object-fit: contain;
+.article-commentaire .flexslider {
+  width:50vw;
 }
+
 
 .article-commentaire iframe {
   width:50vw;
