@@ -88,7 +88,6 @@ body, html {
   #menu {
     margin-top:0;
     margin-left:2px;
-
   }
 }
 @media screen and (max-width: 750px)
@@ -133,7 +132,7 @@ header {
   padding:0;
   opacity:0.9;
   z-index: 999;
-  /*width: 95% !important;*/
+  width: 100%;
   left: 0;
   top: 0;
 }
@@ -198,10 +197,13 @@ footer{
   padding:0;
   opacity:0.9;
   z-index: 3;
-  width: 116vw;
+  width: 100vw;
   left: 0;
   top: 0;
   margin-top:150px;
+}
+footer .admin{
+  width: 116vw;
 }
 .logoB{
   width:80px;
