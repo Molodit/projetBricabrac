@@ -50,7 +50,7 @@ section.admin h2 {
     clear:both;
 }
 table.dataTable, table.dataTable th, table.dataTable td{
-    width: 13vw !important;
+    /*width: 13vw !important;*/
 }
 ul.tabs, .tabs li {
     padding: 0;
@@ -72,7 +72,7 @@ ul.tabs {
 
 .tabs-content {
     position:relative;
-    width: 100vw;
+    width: 108vw;
     z-index: 3;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.48);
 }
