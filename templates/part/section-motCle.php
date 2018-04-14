@@ -82,41 +82,45 @@ foreach($tabResultat as $objetArticle)
     <article class="article-rhizome">
     
     <div>
-    
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
         <p>$rubrique<p>
         <p>$contenu</p>
-        <p> $datePublication</p>
+        <p>$datePublication</p>
         <td>$pseudo</td>
+    
      <div class="flexslider">
                             <ul class="slides">
-      
 CODEHTML;
+                            
+                            if ($objetImage)
+                            {
+                                
+                                
+                                foreach ($objetImage as $image) {
+                                    $idImage = $image->getIdImage();
+                                    $cheminImage = $image->getCheminImage();
+                                    $objetExtension = new SplFileInfo($cheminImage);
+                                    $extension = $objetExtension->getExtension();
+                                    //     Si le fichier est un pdf
+                                    if ($extension == "pdf")
+                                    {
+                                        $htmlFile = 
+                                        <<<CODEHTML
+                                        <iframe src="{$urlAccueil}$cheminImage"></iframe><br><br>
+                                        <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
+                                        
+CODEHTML;
+                                        
+                                    }
+                                    
+                                    else {
+                                        $htmlFile = 
+                                        <<<CODEHTML
+                                        <li>
+                                            <img src="{$urlAccueil}$cheminImage" alt="$cheminImage">
+                                        </li>
 
-                    if ($objetImage)
-                    {
-                       
 
-                        foreach ($objetImage as $image) {
-                            $idImage = $image->getIdImage();
-                            $cheminImage = $image->getCheminImage();
-                            $objetExtension = new SplFileInfo($cheminImage);
-                            $extension = $objetExtension->getExtension();
-                       //     Si le fichier est un pdf
-                            if ($extension == "pdf")
-                        {
-                            $htmlFile = 
-                            <<<CODEHTML
-                            <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
-                            <a href="$urlAccueil$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
-CODEHTML;}
-    
-                        else {
-                            $htmlFile = 
-                            <<<CODEHTML
-                              <li>
-                                <img src="{$urlAccueil}$cheminImage" alt="$cheminImage">
-                             </li>
 CODEHTML;
                             }
 
@@ -125,23 +129,25 @@ CODEHTML;
 
                         }
 
+
                     }
-                else {
-                    echo 
-                <<<CODEHTML
-                <img src="{$urlAccueil}/assets/img/logo.jpg" title="logo">
+               else {
+        echo
+        <<<CODEHTML
+        <img src="{$urlAccueil}/assets/img/logo.jpg" title="logo">
 
          
                              </ul>
                             </div>   
-                            </div>       
+                            </div>          
 CODEHTML;
         }
         
-        echo "</article>";  
+        echo "</article>";   
 }
 
 ?>
+
 
  <nav>
         <ul>
@@ -163,10 +169,3 @@ CODEHTML;
   
 
 </section>
-
-
-
-
-
-
-
