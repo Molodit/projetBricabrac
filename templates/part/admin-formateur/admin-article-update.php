@@ -36,12 +36,29 @@ $objetArticleUpdate = $objetRepository->find($idUpdate);
                     foreach ($objetImage as $image) {
                         $idImage = $image->getIdImage();
                         $cheminImage = $image->getCheminImage();
+                        $objetExtension = new SplFileInfo($cheminImage);
+                        $extension = $objetExtension->getExtension();
+
+                    //     Si le fichier est un pdf
+                     if ($extension == "pdf")
+                     {
+                        $htmlFile .= 
+                     <<<CODEHTML
+                     <input type="checkbox" name="image[]" value="$idImage" class="PDFUpdate">
+                     <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
+                     <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF</a>
+CODEHTML;
+                     }
+                     else
+                     {
                         $htmlFile .= 
                         <<<CODEHTML
                         
-                        <input type="checkbox" name="image[]" value="$idImage">
+                        <input type="checkbox" name="image[]" value="$idImage" class="ImageUpdate">
                         <img src="$urlAccueil$cheminImage" alt="photo de l'article">
+                     
 CODEHTML;
+                     }
                     }
                 }
                 
@@ -66,7 +83,7 @@ CODEHTML;
             <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30"><?php echo $contenu ?></textarea>
             <input type="hidden" name="cheminImage">
             <div>
-                <label for="image">Images de l'article. Cochez pour les supprimer de l'article</label>
+                <label for="image">Images et/ou PDF de l'article. Cochez pour les supprimer de l'article</label>
             </div>
             <br>
             <?php echo $htmlFile ?>
