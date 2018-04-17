@@ -71,7 +71,7 @@ body, html {
     /*margin:0.67em auto;*/
   }
 
-  main {
+  main .illustrationAdmin {
     margin-top:250px !important;
   }
 }
@@ -79,9 +79,9 @@ body, html {
 @media screen and (max-width: 476px)
 {
 
-  main {
+  /*main {
     margin-top:350px !important;
-  }
+  }*/
 }
 @media screen and (max-width: 927px)
 {
@@ -191,7 +191,8 @@ section {
 
 /*XXXXXXXXXXX FOOTER  XXXXXXXXXXXXX*/
 footer{
-  display:flex;
+  /*display:flex;*/
+  display: inline-flex;
   flex-direction: row;
   background: #4883B0;
   padding:0;
@@ -216,7 +217,8 @@ width:100%;
 }
 
 ul.footer {
-  margin-left: 35% !important;
+  /*margin-left: 35% !important;*/
+  margin-left: 10% !important;
 }
 li {display:inline;}
 
@@ -225,7 +227,7 @@ footer li a {
   color:#A9D4ED;
   font-family:'Philosopher', sans-serif;
   cursor:pointer;
-  padding:5px 8px;
+  /*padding:5px 8px;*/
   margin-right: 10px;
 }
 
@@ -235,6 +237,9 @@ footer li a {
   .contact iframe{
     width: 100% !important;
     margin: 5% !important;
+  }
+  ul.footer {
+    width: 40%;
   }
 }
 .contact{
