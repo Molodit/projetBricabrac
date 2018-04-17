@@ -44,9 +44,10 @@ $objetArticleUpdate = $objetRepository->find($idUpdate);
                      {
                         $htmlFile .= 
                      <<<CODEHTML
-                     <input type="checkbox" name="image[]" value="$idImage" class="PDFUpdate">
+                     <input type="checkbox" name="image[]" value="$idImage" class="ImageUpdate">
                      <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
                      <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF</a>
+                     <p class="inputHidden">Ce PDF sera supprimé</p>
 CODEHTML;
                      }
                      else
@@ -54,8 +55,11 @@ CODEHTML;
                         $htmlFile .= 
                         <<<CODEHTML
                         
+                        <div>
                         <input type="checkbox" name="image[]" value="$idImage" class="ImageUpdate">
                         <img src="$urlAccueil$cheminImage" alt="photo de l'article">
+                        <p class="inputHidden">Cette image sera supprimée</p>
+                        </div>
                      
 CODEHTML;
                      }

@@ -191,3 +191,14 @@ table.plupload_filelist {
 }
 
 
+.inputHidden {
+    display:none;
+    color:red;
+    font-size:9px;
+}
+
+.text {
+    display:inline;
+}
+
+

@@ -74,4 +74,35 @@
 
     window.addEventListener('hashchange', hashChange)
     hashChange();
+    
+
+    // Afficher un message lorsqu'une image est sélectionnée dans le formulaire d'update d'un article
+    var img = document.querySelectorAll('input.ImageUpdate');
+    
+    
+      for (var i=0; i < img.length ; i++) {
+            img[i].addEventListener("change", function(e){
+                var input= this.parentNode.querySelector('.inputHidden');
+                
+                if (this.checked === true) {
+                    
+                       input.classList.add('text');
+                 }
+
+                else {
+                        input.classList.remove('text');
+                       
+                        
+    
+            }
+            
+        });
+
+    }
 })()
+
+
+
+    
+
+
