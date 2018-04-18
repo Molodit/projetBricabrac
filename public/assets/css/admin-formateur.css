@@ -25,6 +25,8 @@ section.admin h2 {
     font-family:'Philosopher', sans-serif;
 }
 
+
+
 /* XXXXXXXXXXXXXXXXXXXX ONGLETS DU TABLEAU DE BORD XXXXXXXXXXXXXXXXX */
 .tab-content {
     display:none;
@@ -49,16 +51,13 @@ section.admin h2 {
     content: ' ';
     clear:both;
 }
-table.dataTable, table.dataTable th, table.dataTable td{
-    width: 0vw !important;
-}
+
 ul.tabs, .tabs li {
     padding: 0;
     list-style:none; 
 }
 
 ul.tabs {
-    width:100%;
     margin-left: 15%;
 }
 
@@ -72,7 +71,6 @@ ul.tabs {
 
 .tabs-content {
     position:relative;
-    width: 90vw;
     z-index: 3;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.48);
 }
@@ -114,9 +112,7 @@ h3.admin {
     padding:3% 0;   
 }
 .admin {
-    margin-top:0.5%;
-    width:70%;
-    margin-left: 5%;
+    margin-top:0.5% auto 5%;
 }
 
 /* STYLES POUR LES DATATABLES */
@@ -135,8 +131,8 @@ h3.admin {
 /* XXXXXXXXXXX SECTION LISTE ARTICLE READ XXXXXXXXXXXXXX */
 
 .admin table img, .admin table iframe,.formAdmin img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
   }
 
@@ -201,7 +197,6 @@ table.plupload_filelist {
 
 #uploader {
     height:50vh;
-  
 }
 
 #uploader .plupload_filelist_content {

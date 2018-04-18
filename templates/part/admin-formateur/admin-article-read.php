@@ -28,7 +28,7 @@ if ($objetRequest->get("codebarre", "") == "deleteArticle")
         <section class="admin article tab-content active" id="articles">
             <h4>Liste des articles</h4>
             
-                <table id="tableListeArticles" class="display" width="100%">
+                <table id="tableListeArticles" class="display">
                 <thead>
                     <tr>
                 <!--Création de l'entête et pied du tableau avec les balises TH-->
@@ -130,7 +130,7 @@ CODEHTML;
                   }
              }
              // On ne prend que les 100 premiers caractères du texte de $contenu
-             $contenu = mb_strimwidth($contenu, 0, 100, '...');
+             $contenu = mb_strimwidth($contenu, 0, 50, '...');
              
              
              // Génération de l'url de l'article

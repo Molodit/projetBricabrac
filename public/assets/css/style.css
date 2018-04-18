@@ -191,21 +191,19 @@ section {
 
 /*XXXXXXXXXXX FOOTER  XXXXXXXXXXXXX*/
 footer{
-  /*display:flex;*/
+
   display: inline-flex;
   flex-direction: row;
   background: #4883B0;
   padding:0;
   opacity:0.9;
   z-index: 3;
-  width: 100vw;
+  width: 99vw;
   left: 0;
   top: 0;
   margin-top:90px;
 }
-footer .admin{
-  width: 116vw;
-}
+
 .logoB{
   width:80px;
   object-fit: cover;
