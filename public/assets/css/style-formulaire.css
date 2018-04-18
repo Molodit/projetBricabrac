@@ -316,7 +316,7 @@ section.Login{
     text-align: center;
 }
 
-/*XXXXXXXXXXXXXXXXXXX FORMULAIRE RECHERHCE PAR MOT CLES XXXXXXXXXXXX*/
+/*XXXXXXXXXXXXXXXXXXX FORMULAIRE RECHERCHE PAR MOT CLES XXXXXXXXXXXX*/
 
 .recherche{
     cursor:pointer;
@@ -469,17 +469,18 @@ input[type=checkbox]:checked + label:before {
 .formAdmin button {
     position: relative;
     display: inline-block;
-    padding: 18px 35px 18px 35px;
+    padding: 18px 30px 18px 30px;
     color: #FFF;
     background: #4883B0;
-    font-size: 1.2em;
+    font-size: 1.1em;
     text-align: center;
     font-style: normal;
-    border: 1px solid #4883B0;
     border-radius: 10px;
     border-width: 1px 1px 2px;
     margin-bottom: 10px;
-    width:49%;
+    width:33%;
+    transition: all 0.3s;
+    box-shadow: 1px 5px 1px #0f1638;
    
 }
 
@@ -508,9 +509,24 @@ input[type=checkbox]:checked + label:before {
     cursor:pointer;
 }
 
+.formAdmin button[value="publie"]:active {
+    box-shadow: 0px 2px 0px #437ba6;
+    top:2px;
+}
+
+.formAdmin button[value="brouillon"]:active {
+    box-shadow: 0px 2px 0px brown;
+    top:2px;
+}
+
+.formAdmin button[type="reset"]:active {
+    box-shadow: 0px 2px 0px #313233;
+    top:2px;
+}
+
 .formAdmin button[value="brouillon"] {
     background: #9e9c9c;
-    border: 1px solid #ddd;
+ 
 }
 
 .formAdmin button[value="brouillon"]:hover {
@@ -518,3 +534,14 @@ input[type=checkbox]:checked + label:before {
     color: #313233;
     border: 1px solid #ddd;
 }
+
+.formAdmin button[type="reset"] {
+    background: brown;
+    
+}
+
+.formAdmin button[type="reset"]:hover {
+    background: rgb(224, 158, 158);
+}
+
+

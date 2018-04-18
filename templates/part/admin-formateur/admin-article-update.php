@@ -108,6 +108,7 @@ CODEHTML;
         <!-- Deux boutons pour donner la possibilité d'enregistrer en brouillon -->
         <button type="submit" name="statut" value="brouillon">Modifier et enregistrer</button>
         <button type="submit" name="statut" value="publie">Modifier et publier l'article</button>
+        <button type="reset" value="annuler" onclick="window.location.assign('<?php echo $urlAdmin ?>')">Annuler</button>
         <input type="hidden" name="afficher" value="">
         <input type="hidden" name="idUpdate" value="<?php echo $idUpdate ?>">
         <input type="hidden" name="codebarre" value="updateArticle">
@@ -133,8 +134,6 @@ $(function() {
  
         // Maximum file size
         max_file_size : '2mb',
-
-        
         
 
         // Specify what files to browse for
