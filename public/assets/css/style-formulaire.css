@@ -469,7 +469,7 @@ input[type=checkbox]:checked + label:before {
 .formAdmin button {
     position: relative;
     display: inline-block;
-    padding: 18px 30px 18px 30px;
+    padding: 18px 25px 18px 25px;
     color: #FFF;
     background: #4883B0;
     font-size: 1.1em;
@@ -478,9 +478,10 @@ input[type=checkbox]:checked + label:before {
     border-radius: 10px;
     border-width: 1px 1px 2px;
     margin-bottom: 10px;
-    width:33%;
+    width:30%;
     transition: all 0.3s;
-    box-shadow: 1px 5px 1px #0f1638;
+    box-shadow: 1px 4px 1px #3d3f49;
+    margin-left: 3px;
    
 }
 
@@ -504,7 +505,7 @@ input[type=checkbox]:checked + label:before {
     max-width:67vw;
 }
 .formAdmin button:hover, .commentaires button:hover{
-    background: #A9D4ED;
+    background: rgb(209, 229, 240);
     color:#313233;
     cursor:pointer;
 }
@@ -531,7 +532,7 @@ input[type=checkbox]:checked + label:before {
 
 .formAdmin button[value="brouillon"]:hover {
     background: #ede8e8;
-    color: #313233;
+    color: #333131;
     border: 1px solid #ddd;
 }
 
@@ -541,7 +542,8 @@ input[type=checkbox]:checked + label:before {
 }
 
 .formAdmin button[type="reset"]:hover {
-    background: rgb(224, 158, 158);
+    background: rgb(235, 218, 218);
+    color:brown;
 }
 
 

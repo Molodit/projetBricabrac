@@ -197,6 +197,7 @@ table.plupload_filelist {
 
 #uploader {
     height:50vh;
+    margin-top:50px;
 }
 
 #uploader .plupload_filelist_content {

@@ -111,11 +111,13 @@ CODEHTML;
                      $extension = $objetExtension->getExtension();
                 //     Si le fichier est un pdf
                      if ($extension == "pdf")
+                    
                  {
+                    $nomFichier = str_replace( 'assets/upload/','', $cheminImage);
                      $htmlFile .= 
                      <<<CODEHTML
-                     <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
-                     <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF</a>
+                     
+                     <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">$nomFichier</a>
 CODEHTML;
                  }
 

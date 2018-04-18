@@ -34,6 +34,7 @@ $niveau          = $objetMembreUpdate->getNiveau();
                     <option value="0">Désinscrire la personne du site (ne peut plus commenter les articles)</option>
             </select>
             <button type="submit">Modifier</button>
+            <button type="reset" value="annuler" onclick="window.location.assign('<?php echo $urlAdmin ?>')">Annuler</button>
             <input type="hidden" name="afficher" value="">
             <input type="hidden" name="idUpdateMembre" value="<?php echo $idUpdate ?>">
             <input type="hidden" name="codebarre" value="update">
