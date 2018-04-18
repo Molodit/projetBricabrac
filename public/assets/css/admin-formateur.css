@@ -179,10 +179,10 @@ h3.admin {
     border:solid 1px #437ba6;
     background:#437ba6;
     text-align:center;
-    padding:20px 30px;
+    padding:10px 15px;
   
     transition: all 0.1s;
-    box-shadow: 2px 15px 2px #0f1638;
+    box-shadow: 1px 5px 1px #0f1638;
     
 }
 
@@ -201,7 +201,32 @@ table.plupload_filelist {
 
 #uploader {
     height:50vh;
-   
+  
+}
+
+#uploader .plupload_filelist_content {
+    margin-top: 80px;
+}
+
+#uploader .plupload_content {
+    height:50vh;
+}
+
+#uploader .plupload_buttons {
+    margin: 20px 0;
+}
+
+#uploader .plupload_message {
+    position:absolute;
+    top: 45vh;
+}
+
+#uploader .plupload_view_switch {
+    width:130px;
+}
+
+#uploader input[type="radio"] {
+    margin-left:5px;
 }
 
 

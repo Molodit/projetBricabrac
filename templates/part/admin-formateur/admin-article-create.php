@@ -79,7 +79,7 @@ if ($objetRequest->get("codebarre", "") == "article")
          
    
           // Maximum file size
-          max_file_size : '15mb',
+          max_file_size : '2mb',
   
          // buttons: {browse: false, start: false, stop: false},
           
