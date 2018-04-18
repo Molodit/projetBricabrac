@@ -38,16 +38,19 @@ $objetArticleUpdate = $objetRepository->find($idUpdate);
                         $cheminImage = $image->getCheminImage();
                         $objetExtension = new SplFileInfo($cheminImage);
                         $extension = $objetExtension->getExtension();
-
+                        
                     //     Si le fichier est un pdf
                      if ($extension == "pdf")
                      {
                         $htmlFile .= 
                      <<<CODEHTML
-                     <input type="checkbox" name="image[]" value="$idImage" class="ImageUpdate">
+                     <div class="divUpdate">
+                     <input type="checkbox" name="image[]" value="$idImage" class="ImageUpdate" id="id{$idImage}">
+                     <label for="id{$idImage}">
                      <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
                      <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF</a>
                      <p class="inputHidden">Ce PDF sera supprimé</p>
+                     </div>
 CODEHTML;
                      }
                      else
@@ -55,8 +58,9 @@ CODEHTML;
                         $htmlFile .= 
                         <<<CODEHTML
                         
-                        <div>
-                        <input type="checkbox" name="image[]" value="$idImage" class="ImageUpdate">
+                        <div class="divUpdate">
+                        <input type="checkbox" name="image[]" value="$idImage" class="ImageUpdate" id="id{$idImage}">
+                        <label for="id{$idImage}">
                         <img src="$urlAccueil$cheminImage" alt="photo de l'article">
                         <p class="inputHidden">Cette image sera supprimée</p>
                         </div>
@@ -86,9 +90,9 @@ CODEHTML;
             </select>
             <textarea id="editor1" type="text" name="contenu" required placeholder="contenu" rows="30"><?php echo $contenu ?></textarea>
             <input type="hidden" name="cheminImage">
-            <div>
-                <label for="image">Images et/ou PDF de l'article. Cochez pour les supprimer de l'article</label>
-            </div>
+            
+                <p class="plImage">Images et/ou PDF de l'article. Cochez pour les supprimer de l'article</p>
+
             <br>
             <?php echo $htmlFile ?>
             <div id="filelist"></div>

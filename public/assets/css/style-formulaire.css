@@ -435,6 +435,32 @@ section.Login{
     font-family: "MyriadPro-Regular";
 }
 
+
+input.ImageUpdate {
+  display: none;
+}
+input.ImageUpdate + label:before {
+    vertical-align: top;
+    margin-top:17px;
+    margin-left:-5px;
+    position:absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #dddddd;
+    border: 2px solid #437ba6;
+    border-radius: 3px;
+    content: "";
+ 
+}
+
+input[type=checkbox]:checked + label:before {
+    content: "\2713";
+    color: #ffffff;
+    background-color: #437ba6;
+  }
+
+
+
 /*XXXXXXXXXXXXXX BOUTON ADMIN XXXXXXXXXXXXXXX*/
 
 .formAdmin button {
