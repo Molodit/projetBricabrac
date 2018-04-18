@@ -125,6 +125,9 @@ section.Login{
         main{
             margin-top:12%;
         }
+         .article-commentaire{
+            margin-top:20% !important;
+        }
     section.Login {
         margin:0 auto;
        font-size:14px;
