@@ -85,10 +85,10 @@ foreach($tabResultat as $objetArticle)
     
     <div>
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
-        <p>$rubrique<p>
+        <p>Rubrique - $rubrique<p>
         <p>$contenu</p>
-        <p>$datePublication</p>
-        <td>$pseudo</td>
+        <p>publié le - $datePublication</p>
+        <td>écrit par - $pseudo</td>
     
      <div class="flexslider">
                             <ul class="slides">

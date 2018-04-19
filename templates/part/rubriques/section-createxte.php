@@ -82,10 +82,10 @@ foreach($tabResultat as $objetArticle)
      <article class="article-createxte">
      <div>
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
-        <p>$rubrique<p>
+        <p>Rubrique - $rubrique<p>
         <p>$contenu $datePublication</p>
        
-        <td>$pseudo</td>
+        <td>écrit par - $pseudo</td>
       </div>
 
     

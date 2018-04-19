@@ -104,7 +104,7 @@ foreach($tabResultat as $index => $objetArticle)
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
         
     </div>   
-        <td>$pseudo</td>
+        <td>écrit par - $pseudo</td>
       
 CODEHTML;
 

@@ -235,10 +235,15 @@ display: inline-table;
  
 }
 .rhizome h4, .createxte h4, .journal h4,
-.rhizome a, .createxte a, .journal a{
+.rhizome a, .createxte a, .journal a, .motCle h4, .motCle a{
   text-transform: uppercase;
   color: rgb(16, 78, 139);
   text-decoration: underline;
+}
+.motCle span{
+text-transform: lowercase;
+color: #D5804B;
+
 }
 .rhizome ul li, .createxte ul li, .motCle ul li{
   /* float: left; */

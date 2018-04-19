@@ -82,11 +82,11 @@ foreach($tabResultat as $objetArticle)
     <article class="article-rhizome">
     
     <div>
-        <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
-        <p>$rubrique<p>
+        <h4 title="$idArticle"><a href="$urlArticle"><span>Mot cle - </span> $titre</a></h4>
+        <p><span>Rubrique - </span>$rubrique<p>
         <p>$contenu</p>
-        <p>$datePublication</p>
-        <td>$pseudo</td>
+        <p><span>publié le - </span>$datePublication</p>
+        <td><span>écrit par - </span>$pseudo</td>
     
      <div class="flexslider">
                             <ul class="slides">
