@@ -158,7 +158,7 @@ for($p=1; $p <= $nbPage; $p++)
     echo
 <<<CODEHTML
         
-        <li><a href="?numeroPage=$p&nbArticleParPage=$nbArticleParPage"> $p</a></li>
+        <li><a href="?numeroPage=$p&nbArticleParPage=$nbArticleParPage">P $p</a></li>
         
 CODEHTML;
 
