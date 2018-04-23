@@ -45,7 +45,7 @@
                     $cheminImage = $image->getCheminImage();
                     $objetExtension = new SplFileInfo($cheminImage);
                     $extension = $objetExtension->getExtension();
-                    // $thumb = str_replace(".".$extension,"-thumb.".$extension, $cheminImage);
+                  
                     //     Si le fichier est un pdf
                     if ($extension == "pdf")
                     {

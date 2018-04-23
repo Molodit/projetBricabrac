@@ -135,10 +135,23 @@
   
 }
 
+  /* Styles du Flexslider dans la page */
+
 .article-commentaire .flexslider {
-  width:57vw;
+  width:50vw;
+  background:url(../img/back-pattern.png)repeat;
+  border: none;
 }
 
+.article-commentaire .flexslider img {
+  max-width: 50vw;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+.flex-control-thumbs img {
+  height:25%;
+}
 
 .article-commentaire iframe {
   width:78vw;
@@ -191,6 +204,8 @@
 .pdf {
   padding: 1% 0 0 4%;
 }
+
+
 
 
 /*XXXXXXXXXXXXX SECTION MOT-CLE XXXXXXXXXXX*/

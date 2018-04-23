@@ -276,6 +276,7 @@ color: #D5804B;
 
 .motCle .flexslider .slides img, .article-rhizome .flexslider .slides img{
  height: 45vh;
+ object-fit: contain;
 }
 .motCle .article-rhizome:hover img{ 
   border-radius: 0;  /* on arrondit l'image */
