@@ -36,7 +36,7 @@
 
 /* XXXXX MEDIA QUERIES POUR IFRAME */
 
-/*@media screen and (max-width: 1500px)
+@media screen and (max-width: 1500px)
 {
 
   .article-commentaire iframe {
@@ -82,7 +82,7 @@
   .article-commentaire iframe {
     width:96vw !important;
   }
-}*/
+}
 
 @media screen and (max-width: 414px)
 {
@@ -204,9 +204,6 @@
 .pdf {
   padding: 1% 0 0 4%;
 }
-
-
-
 
 /*XXXXXXXXXXXXX SECTION MOT-CLE XXXXXXXXXXX*/
 .article-motCle{
