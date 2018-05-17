@@ -388,13 +388,13 @@ section.Login{
 .formAdmin{
     cursor:pointer;
     max-width: 60%;
-    padding: 10px 20px;
     background: #f4f7f8;
-    margin: 10px auto;
-    padding: 20px;
+    margin: 10vh auto;
+    padding: 40px;
     background: #f4f7f8;
-    border-radius: 8px;
-    font-family: "MyriadPro-Regular"
+    border-radius: 10px;
+    font-family: "MyriadPro-Regular";
+    border: 1px dashed rgba(245, 205, 178, 0.877);
 }
 
 .formAdmin input[type="text"],
@@ -403,18 +403,17 @@ section.Login{
 .formAdmin textarea,
 .formAdmin select {
     font-family: "MyriadPro-Regular";
-    background: rgba(255,255,255,.1);
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     font-size: 1em;
     margin: 0;
     outline: 0;
-    padding: 7px;
+    padding: 10px 7px;
     width: 100%;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    background-color: #e8eeef;
+    background-color: #ffffff;
     color:#313233;
     -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
     box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
@@ -430,7 +429,7 @@ section.Login{
 .formAdmin input[type="file"]:focus,
 .formAdmin textarea:focus,
 .formAdmin select:focus{
-    background: #d2d9dd;
+    background:rgb(255, 238, 226);
 }
 .formAdmin select{
     -webkit-appearance: menulist-button;
@@ -478,10 +477,10 @@ input[type=checkbox]:checked + label:before {
     border-radius: 10px;
     border-width: 1px 1px 2px;
     margin-bottom: 10px;
-    width:30%;
+    width:20%;
     transition: all 0.3s;
-    box-shadow: 1px 4px 1px #3d3f49;
-    margin-left: 3px;
+    box-shadow: 1px 1px 1px #3d3f49;
+    margin-left: 5%;
    
 }
 
@@ -498,15 +497,15 @@ input[type=checkbox]:checked + label:before {
 }
 
 .commentaires textarea {
-    border: 1px solid #4883B0;
+    border: 2px dashed rgba(255, 104, 4, 0.877);
     border-radius: 10px;
     height:10vh;
     padding: 2% 0 0 2%;
     max-width:67vw;
 }
 .formAdmin button:hover, .commentaires button:hover{
-    background: rgb(209, 229, 240);
-    color:#313233;
+    background-color: rgba(255, 104, 4, 0.877);
+    color: #eeeff1;
     cursor:pointer;
 }
 

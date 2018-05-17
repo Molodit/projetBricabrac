@@ -10,7 +10,7 @@ if ($objetRequest->get("codebarre", "") == "deleteMembre")
 }
 ?>
 
-<section class="admin membre tab-content" id="membres">
+<section class="admin membre tabpage" id="tabpage_2">
     <h4>Liste des membres</h4>
     
         <table id="tableListeMembres" class="display" width="100%">

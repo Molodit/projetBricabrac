@@ -15,17 +15,21 @@ if ($objetRequest->get("codebarre", "") == "deleteArticle")
      
    
     <hr>
-        <div class="menuTables">
+        <div id="tabContainer">
         <h3 class="admin">Tableau de bord</h3>
-            <ul class="tabs">
-                <li class="active"><a href="#articles">Articles</a></li>
-                <li><a href="#membres">Membres</a></li>
-                <li><a href="#commentaires">Commentaires</a></li>
+    
+            <div class="tabs adminUl">
+            <ul>
+                <li id="tabHeader_1" class="tabActiveHeader">Articles</li>
+                <li id="tabHeader_2">Membres</li>
+                <li id="tabHeader_3">Commentaires</li>
 
             </ul>
+            </div>
+            <hr>
         
-    <div class="tabs-content">
-        <section class="admin article tab-content active" id="articles">
+    <div id="tabscontent">
+        <section class="admin article tabpage" id="tabpage_1" style="display: block;">
             <h4>Liste des articles</h4>
             
                 <table id="tableListeArticles" class="display">
@@ -178,5 +182,5 @@ CODEHTML;
 
 
         </section>
-    </div>
+    
 

@@ -153,11 +153,17 @@ main{
 
 /*XXXXXXXXXXXXXXXXX SECTION XXXXXXXXXXXXXXXXXXX*/
 
-h2, h3 {
-  letter-spacing: 5px;
-  margin: 5% 0;
-  color:#D5804B;
+h2, h3 {  
+  color:rgba(255, 104, 4, 0.877);
   text-align:center;
+}
+
+h2 {
+  margin: 10vh 0;
+}
+
+h3 {
+  margin-top:5%;
 }
 
 #presentation h2, #accueil-articles h2, #accueil-balles h2 {
@@ -198,7 +204,7 @@ footer{
   padding:0;
   opacity:0.9;
   z-index: 3;
-  width: 99vw;
+  width: 98vw;
   left: 0;
   top: 0;
   margin-top:90px;

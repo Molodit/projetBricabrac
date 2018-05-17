@@ -1,105 +1,69 @@
-// Script d'affichage par onglets des tableaux des articles, membres et commentaires
 
 (function(){
-    var afficherOnglet = function (a, animations) {
-        if (animations === undefined) {
-            animations = true
-        }
-        var li = a.parentNode
-        var div = a.parentNode.parentNode.parentNode;
-        // Contenu actif
-        var activeTab = div.querySelector('.tab-content.active');
-        // Contenu à afficher
-        var aAfficher = div.querySelector(a.getAttribute('href'));
-        if (li.classList.contains('active')) {
-            return false;
-        }
-        // On retire la classe active de l'onglet actif
-        div.querySelector('.tabs .active').classList.remove('active');
-        // J'ajoute la classe active à l'onglet actuel
-        li.classList.add('active');
+  
+  
+  
+  // Afficher un message lorsqu'une image est sélectionnée dans le formulaire d'update d'un article
+  var img = document.querySelectorAll('input.ImageUpdate');
+  
+  for (var i=0; i < img.length ; i++) {
+    img[i].addEventListener("change", function(e){
+      var input= this.parentNode.querySelector('.inputHidden');
+      
+      if (this.checked === true) {
         
-       if (animations) {
-           // On ajoute la classe fade sur l'élément actif
-        // A la fin de l'animation 
-        //          on retire la class fade et active
-        //          on ajoute la classe active et fade à l'élément à afficher
-        //          on ajoute la classe in
-        activeTab.classList.add('fade')
-        activeTab.classList.remove('in')
-        var transitionend = function() {
-            this.classList.remove('fade')
-            this.classList.remove('active')
-            aAfficher.classList.add('active')
-            aAfficher.classList.add('fade')
-            aAfficher.offsetWidth
-            aAfficher.classList.add('in')
-            activeTab.removeEventListener('transitionend', transitionend)
-            activeTab.removeEventListener('webkitTransitionEnd', transitionend)
-            activeTab.removeEventListener('oTransitionEnd', transitionend)
-        }
-        activeTab.addEventListener('transitionend', transitionend)
-        activeTab.addEventListener('webkitTransitionEnd', transitionend)
-        activeTab.addEventListener('oTransitionEnd', transitionend)
-       }
-
-       else {
-           aAfficher.classList.add('active')
-           activeTab.classList.remove('active')
-       }
+        input.classList.add('text');
+      }
+      
+      else {
+        input.classList.remove('text');
         
-    }
+      }
+      
+    });
     
-
+  }
+  // navigation par onglets des tableaux des articles, membres et commentaires
+    // get tab container
+    var container = document.getElementById("tabContainer");
+      // set current tab
+      var navitem = container.querySelector(".tabs ul li");
+      //store which tab we are on
+      var ident = navitem.id.split("_")[1];
+      navitem.parentNode.setAttribute("data-current",ident);
+      //set current tab with class of activetabheader
+      navitem.setAttribute("class","tabActiveHeader");
     
-    var tabs = document.querySelectorAll('.tabs a');
-    for (var i = 0; i < tabs.length; i++) {
-        tabs[i].addEventListener('click', function(e){
-           afficherOnglet(this)
-        })
-    }
+      //hide two tab contents we don't need
+      var pages = container.querySelectorAll(".tabpage");
+      for (var i = 1; i < pages.length; i++) {
+        pages[i].style.display="none";
+      }
     
-    // Je récupère le hash
-    var hash = window.location.hash
-    // Ajouter la classe active sur le lien href="hash"
-    // Retirer la class active sur les autres onglets
-    // Afficher / Masquer les contenus
-
-    var hashChange = function (e) {
-        var a = document.querySelector('a[href="' + hash + '"]')
-        if (a !== null && !a.parentNode.classList.contains('active')) {
-            afficherOnglet(a, e !== undefined)
-        }
-    }
-
-    window.addEventListener('hashchange', hashChange)
-    hashChange();
-    
-
-    // Afficher un message lorsqu'une image est sélectionnée dans le formulaire d'update d'un article
-    var img = document.querySelectorAll('input.ImageUpdate');
+      //this adds click event to tabs
+      var tabs = container.querySelectorAll(".tabs ul li");
+      for (var i = 0; i < tabs.length; i++) {
+        tabs[i].onclick=displayPage;
+      }
     
     
-      for (var i=0; i < img.length ; i++) {
-            img[i].addEventListener("change", function(e){
-                var input= this.parentNode.querySelector('.inputHidden');
-                
-                if (this.checked === true) {
-                    
-                       input.classList.add('text');
-                 }
-
-                else {
-                        input.classList.remove('text');
-                       
-                        
+    // on click of one of tabs
+    function displayPage() {
+    var current = this.parentNode.getAttribute("data-current");
+    //remove class of activetabheader and hide old contents
+    document.getElementById("tabHeader_" + current).removeAttribute("class");
+    document.getElementById("tabpage_" + current).style.display="none";
     
-            }
-            
-        });
-
+    var ident = this.id.split("_")[1];
+    //add class of activetabheader to new active tab and show contents
+    this.setAttribute("class","tabActiveHeader");
+    document.getElementById("tabpage_" + ident).style.display="block";
+    this.parentNode.setAttribute("data-current",ident);
     }
 })()
+
+
+
 
 
 

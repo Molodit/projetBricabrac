@@ -1,7 +1,7 @@
 
 <section class="motCle">
 
-    <h3>DES ARTICLES DE <?php echo $mot_cle ?></h3>
+    <h2>Tous les articles avec le mot-clé « <?php echo $mot_cle ?> »</h2>
 
     <?php
 
@@ -81,15 +81,15 @@ foreach($tabResultat as $objetArticle)
     
     <article class="article-rhizome">
     
-    <div>
-        <h4 title="$idArticle"><a href="$urlArticle"><span>Mot cle - </span> $titre</a></h4>
-        <p><span>Rubrique - </span>$rubrique<p>
-        <p>$contenu</p>
-        <p><span>publié le - </span>$datePublication</p>
-        <td><span>écrit par - </span>$pseudo</td>
+        <div>
+            <h4><a href="$urlArticle">$titre</a></h4>
+            <span>Écrit par $pseudo, publié le $datePublication</span>
+            <p>$contenu</p>
+            <span>Rubrique : $rubrique</span>
+
     
-     <div class="flexslider">
-                            <ul class="slides">
+            <div class="flexslider">
+                <ul class="slides">
 CODEHTML;
                             
                             if ($objetImage)
@@ -138,8 +138,8 @@ CODEHTML;
 
          
                              </ul>
-                            </div>   
-                            </div>          
+                        </div>   
+                    </div>          
 CODEHTML;
         }
         
@@ -149,16 +149,16 @@ CODEHTML;
 ?>
 
 
- <nav>
-        <ul>
-<?php        
+    <nav>
+        <ul class="pages">Pages
+            <?php        
 
-for($p=1; $p <= $nbPage; $p++)
-{
-    echo
-<<<CODEHTML
-        
-        <li><a href="?numeroPage=$p&nbArticleParPage=$nbArticleParPage">P $p</a></li>
+                for($p=1; $p <= $nbPage; $p++)
+                {
+                    echo
+                <<<CODEHTML
+                        
+                        <li><a href="?numeroPage=$p&nbArticleParPage=$nbArticleParPage">$p</a></li>
         
 CODEHTML;
 

@@ -10,7 +10,7 @@ if ($objetRequest->get("codebarre", "") == "deleteCommentaire")
 }
 ?>
 
-<section class="admin commentaire tab-content" id="commentaires">
+<section class="admin commentaire tabpage" id="tabpage_3">
     <h4>Liste des commentaires</h4>
     
         <table id="tableListeCommentaires" class="display" width="100%">

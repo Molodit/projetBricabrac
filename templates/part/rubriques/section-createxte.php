@@ -2,7 +2,7 @@
 
 <section class="createxte">
 
-    <h3>CREATEXTE</h3> 
+    <h2>Les articles de la rubrique « Créatexte »</h2> 
 <?php
 
 $objetRepository     = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
@@ -82,10 +82,10 @@ foreach($tabResultat as $objetArticle)
      <article class="article-createxte">
      <div>
         <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
-        <p>Rubrique - $rubrique<p>
-        <p>$contenu $datePublication</p>
+        <span>écrit par $pseudo, le $datePublication</span>
+        <p>$contenu</p>
+        <span>Mots-clés - $motCle</span>
        
-        <td>écrit par - $pseudo</td>
       </div>
 
     
@@ -107,7 +107,7 @@ CODEHTML;
                             $htmlFile = 
                             <<<CODEHTML
                             <iframe src="$urlAccueil$cheminImage"></iframe><br><br>
-                            <a href="{$urlAccueil}$cheminImage" target="_blank" class="pdf">Ouvrir le PDF dans une nouvelle fenêtre</a>
+                            <a href="{$urlAccueil}$cheminImage" target="_blank">Ouvrir le PDF dans une nouvelle fenêtre</a>
                             
 
 CODEHTML;
@@ -146,7 +146,7 @@ CODEHTML;
 
 ?>
 <nav>
-        <ul>
+        <ul class="pages">Pages
 <?php        
 
 for($p=1; $p <= $nbPage; $p++)
@@ -154,7 +154,7 @@ for($p=1; $p <= $nbPage; $p++)
     echo
 <<<CODEHTML
         
-        <li><a href="?numeroPage=$p&nbArticleParPage=$nbArticleParPage">P $p</a></li>
+        <li><a href="?numeroPage=$p&nbArticleParPage=$nbArticleParPage">$p</a></li>
         
 CODEHTML;
 

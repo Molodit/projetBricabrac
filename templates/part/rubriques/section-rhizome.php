@@ -1,7 +1,7 @@
 
 <section class="rhizome">
 
-    <h3>RHIZOME</h3> 
+    <h2>Les articles de la rubrique « Rhizome »</h2> 
 
 <?php
 
@@ -68,30 +68,30 @@ foreach($tabResultat as $objetArticle)
             {
                 $pseudo = $objetMembre->getMembre();
             }
-    // On ne prend que les 100 premiers caractères du texte de $contenu
-    $contenu = mb_strimwidth($contenu, 0, 100, '...');
+            // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
+            $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
+            // On ne prend que les 100 premiers caractères du texte de $contenu
+            $contenu = mb_strimwidth($contenu, 0, 150, " ... <br><a href='$urlArticle'>lire la suite</a>");
     
-    $htmlFile = "";
+            $htmlFile = "";
 
-    // S'il y a un fichier (image ou pdf)
-    $objetImage     = $objetArticle->getImages();
-    // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
-    $urlArticle = $this->generateUrl("article", [ "id_article" => $idArticle ]);
+            // S'il y a un fichier (image ou pdf)
+            $objetImage     = $objetArticle->getImages();
     
-       echo
-    <<<CODEHTML
+             echo
+            <<<CODEHTML
     
-    <article class="article-rhizome">
-    
-    <div>
-        <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
-        <p>Rubrique - $rubrique<p>
-        <p>$contenu</p>
-        <p>publié le - $datePublication</p>
-        <td>écrit par - $pseudo</td>
-    
-     <div class="flexslider">
-                            <ul class="slides">
+            <article class="article-rhizome">
+            
+            <div>
+                <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
+                <span>Écrit par $pseudo le $datePublication</span>
+                <p>$contenu</p>
+                <span>Rubrique : $rubrique</span>
+                <span>Mots-clés : $motCle</span>
+            
+            <div class="flexslider">
+                                    <ul class="slides">
 CODEHTML;
                             
                             if ($objetImage)
@@ -141,7 +141,7 @@ CODEHTML;
          
                              </ul>
                             </div>   
-                            </div>          
+                    </div>          
 CODEHTML;
         }
         
@@ -152,23 +152,20 @@ CODEHTML;
 
 
  <nav>
-        <ul>
-<?php        
+    <ul class="pages">Pages
+        <?php        
 
-for($p=1; $p <= $nbPage; $p++)
-{
-    echo
-<<<CODEHTML
-
-      
-       <li><a href="?numeroPage=$p&nbArticleParPage=$nbArticleParPage">P $p</a></li>
+            for($p=1; $p <= $nbPage; $p++)
+            {
+                echo
+                <<<CODEHTML
+                    <li><a href="?numeroPage=$p&nbArticleParPage=$nbArticleParPage"> $p</a></li>
         
 CODEHTML;
 
-}
-?>
-        </ul>
-    </nav>
+            }
+        ?>
+    </ul>
+ </nav>
   
-
 </section>

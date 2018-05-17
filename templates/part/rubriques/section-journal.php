@@ -1,7 +1,7 @@
 
 <section class="journal">
 
-           <h3>JOURNAL LA TANIERE</h3>
+           <h2>Les journaux de la tanière</h2>
 
 
 <?php
@@ -14,36 +14,37 @@ $objetRepositoryImages = $this->getDoctrine()->getRepository(App\Entity\Images::
 
 ?>
 
-    <div>
+    <div id="tabContainer">
 
-        <ul class="tabs" >
+        <div class="tabs">
+            <ul class="journalUl">
                     
 <?php
 
 $tabResultat = $objetRepository->findBy([ "rubrique" => "Journal", "statut" => "publie"], [ "datePublication" => "DESC" ]);
-
-foreach($tabResultat as $index =>$objetMenu)
+$compteurLi = 0;
+$compteurArt = 0;
+foreach($tabResultat as $index => $objetMenu)
 {
     // METHODES "GETTER" A RAJOUTER DANS LA CLASSE MonArticle
+    $compteurLi++;
     $idArticle       = $objetMenu->getIdArticle();
     $titre           = $objetMenu->getTitre();
 
 
- if($index == 0){
+    if ($index == 0){
    
-echo
-<<<CODEHTML
-        <li class="active"><a href="#art$idArticle">$titre</a></li>
+        echo
+        <<<CODEHTML
+        <li id="tabHeader_$compteurLi" class="tabActiveHeader">$titre</li>
 CODEHTML;
 
- } 
- else
- {
- 
-    
-    echo
-<<<CODEHTML
-        <li><a href="#art$idArticle">$titre</a></li>
+            } 
+    else
+    {    
+        echo
+        <<<CODEHTML
+        <li id="tabHeader_$compteurLi">$titre</li>
 CODEHTML;
 
 }
@@ -51,23 +52,22 @@ CODEHTML;
 
 }
 ?>
-
         </ul>
+    </div>
 
 
-<div class="tabs-content">
+<div id="tabscontent">
 
 <?php
 
 // ON A UN TABLEAU D'OBJETS DE CLASSE Article
 foreach($tabResultat as $index => $objetArticle)
 {
+    $compteurArt++;
     // METHODES "GETTER" A RAJOUTER DANS LA CLASSE MonArticle
     $idArticle       = $objetArticle->getIdArticle();
     $idMembre         = $objetArticle->getIdMembre();
     $titre           = $objetArticle->getTitre();
-    $contenu         = $objetArticle->getContenu();
-    $rubrique        = $objetArticle->getRubrique();
     $motCle          = $objetArticle->getMotCle();
     $datePublication = $objetArticle->getDatePublication("d/m/Y");
 
@@ -81,11 +81,11 @@ foreach($tabResultat as $index => $objetArticle)
     
     $classActive = "";
     if ($index == 0) {
-        $classActive = 'class="article-journal tab-content active"';
+        $classActive = "class='article-journal tabpage' id='tabpage_$compteurArt' style='display: block;'";
     }
 
     else {
-        $classActive = 'class="article-journal tab-content"';
+        $classActive = "class='article-journal tabpage' id='tabpage_$compteurArt'";
     }
 
 
@@ -98,13 +98,16 @@ foreach($tabResultat as $index => $objetArticle)
        echo
     <<<CODEHTML
     
-    <article $classActive id="art$idArticle">
+    <article $classActive>
     
-   <div>
-        <h4 title="$idArticle"><a href="$urlArticle">$titre</a></h4>
+   
+        <h4 title="$idArticle">
+            <a href="$urlArticle">$titre</a>
+        </h4>
         
-    </div>   
-        <td>écrit par - $pseudo</td>
+    
+        <p>Écrit par $pseudo le $datePublication</p>
+        
       
 CODEHTML;
 
@@ -166,6 +169,7 @@ CODEHTML;
  </div>
 
 </div>
+
 
 </section>
 

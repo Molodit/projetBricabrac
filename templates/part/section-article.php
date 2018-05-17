@@ -74,20 +74,33 @@ CODEHTML;
             // CREER L'URL POUR LA ROUTE DYNAMIQUE (AVEC PARAMETRE)
             $urlMotCle = $this->generateUrl("motCle", [ "mot_cle" => $motCle ]);
             
+            if ($extension == "pdf") {
+                echo
+                <<<CODEHTML
             
-            echo
+                <h2>$titre</h2>
+                <div>$htmlFile</div>
+CODEHTML;
+            }
+                else {
+                echo
+                <<<CODEHTML
+                
+                <h2>$titre</h2>
+                <div class="flexslider">
+                    <ul class="slides">
+                        $htmlFile
+                    </ul>
+                </div>
+CODEHTML;
+            }
+            echo 
             <<<CODEHTML
             
-            <h2>$titre</h2>
-            <div class="flexslider">
-                <ul class="slides">
-                    $htmlFile
-                </ul>
-            </div>
-            
         <article class="articleSeul">
-            <span>écrit par $pseudo</span>
+            <span>Écrit par $pseudo</span>
             <p>$contenu</p>
+            <hr>
             <p class="infos">Cet article a été publié avec le mot-clé <a href="$urlMotCle">$motCle</a>
                 dans la rubrique $rubrique</p>
                 <p class="infos">publié le $datePublication</p>
@@ -127,7 +140,7 @@ CODEHTML;
   </section>  
         
     
-</div>
+
 
 
 <?php

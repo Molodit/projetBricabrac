@@ -94,18 +94,19 @@
 
 /* Classe pour l'affichage du dessin en background */
 .illustration {
-  background-image:url(../img/ballon.png);
-  background-repeat:no-repeat;
-  background-position:60vw;
+  background-image: url("../img/earth-145406_640.png");
+  background-repeat: repeat-y;
+  background-position:right;
 }
+
 
 /* XXXXXXX AFFICHAGE DES COMMENTAIRES XXXXXXXXX */
 .read{
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding:3%;
-    width: 52vw;
-    margin-left:10%;
+    padding:1%;
+    width: 40vw;
+    margin-left:9%;
 }
 
 .read h2, .read h3 {
@@ -128,18 +129,15 @@
 /* XXXXXXX AFFICHAGE DE L'ARTICLE XXXXXXXXX */
 
 .article-commentaire {
- margin-top:12%;
-  background:url(../img/back-pattern.png)repeat;
   border-radius:10px;
-  border: 1px solid #ddd;
-  
+  width:85%; 
 }
 
   /* Styles du Flexslider dans la page */
 
 .article-commentaire .flexslider {
-  width:50vw;
-  background:url(../img/back-pattern.png)repeat;
+  width:45vw;
+ 
   border: none;
 }
 
@@ -154,35 +152,40 @@
 }
 
 .article-commentaire iframe {
-  width:78vw;
+  width:73vw;
   zoom: 73%;
-  height:80vh;
+  height:100vh !important;
   margin-top:3%;
 
 }
 
 .article-commentaire .articleSeul, #commentaire {
   color: #565759;
-  padding:2% 0 5% 4%;
-  width: 50vw;
+  padding:2% 0 5% 2%;
+  width: 45vw;
+}
+
+.articleSeul hr {
+  margin-left:0;
 }
 
 .article-commentaire a {
-  color:#D5804B
+  color:rgba(255, 104, 4, 0.877);
+  padding:1%;
 }
 
 .article-commentaire a:hover {
-  text-decoration: underline;
+  background-color: rgba(255, 104, 4, 0.877);
+  color: #eeeff1;
 }
 
 
 
 .article-commentaire h2 {
+  font-family: "LondonBetween";
   text-transform: uppercase;
-  font-size:30px;
-  color:#4883B0;
-  margin-top:1%;
-  font-family:'Philosopher'
+  font-size: 1.7em;
+  text-align: center;
 
 }
 
@@ -209,7 +212,7 @@
 .article-motCle{
   color: rgb(16, 78, 139);
   font-size: 1em;
-  background:url(../img/back-pattern.png)repeat;
+ 
   display: inline-flex;
   border: 4px solid rgb(169, 212, 237);
   padding: 2%;

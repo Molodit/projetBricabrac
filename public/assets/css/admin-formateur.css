@@ -8,42 +8,44 @@
   src: url("../css/fonts/LondonBetween.ttf");
 }
 
-.illustrationAdmin {
+/* .illustrationAdmin {
     background-image: url("../img/arbre-vert.png");
     background-attachment: fixed;
   background-position:center;
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
 .admin, #article-create, .menuTables, #section-update, #section-membre-update {
     background: rgba(255, 255, 255, 0.9);
 }
 
 section.admin h2 {
-    padding-bottom:15px;
-    font-family:'Philosopher', sans-serif;
+    font-family:'LondonBetween';
+    margin-bottom: 5vh;
+
 }
 
 
 
 /* XXXXXXXXXXXXXXXXXXXX ONGLETS DU TABLEAU DE BORD XXXXXXXXXXXXXXXXX */
-.tab-content {
-    display:none;
-}
 
-.tab-content.active {
-    display: block;
-}
 
-.tabs .active a {
-    color:white;
-    background-color: rgb(72, 131, 176);
+.tabActiveHeader, .tabs li:hover {
+    color:white !important;
+    background-color: rgb(72, 131, 176) !important;
 }
 
 .tabs li {
 
     display: inline-block;    
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding: 20px 30px;
+    margin-left: 10px;
+    color: rgb(72, 131, 176);
+    font-size: 18px;
+    cursor: pointer;
+    background-color: white;
 }
 
 .tabs:after {
@@ -52,24 +54,14 @@ section.admin h2 {
     clear:both;
 }
 
-ul.tabs, .tabs li {
-    padding: 0;
-    list-style:none; 
+
+.adminUl{    
+    margin-left: 10%;
+   
 }
 
-ul.tabs {
-    margin-left: 15%;
-}
 
-.tabs a {
-    display: inline-block;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    padding: 10px 15px;
-    color: rgb(72, 131, 176);
-    font-size: 20px;
-}
-
-.tabs-content {
+.admin #tabscontent {
     position:relative;
     z-index: 3;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.48);
@@ -90,26 +82,27 @@ ul.tabs {
 .formulaireAdmin h3, .admin h3 {
     font-family: "LondonBetween";
     text-transform: uppercase;
-    margin-top:180px;
-    padding-top: 50px;
+    font-size:2em;
   
 }
 
 .formulaireAdmin h4, .admin h4 {
     text-transform: uppercase;
-    font-size:20px;
+    font-size:1.5em;
     text-align: center;
     color:#437ba6;
     font-family: "LondonBetween";
+    padding-top:2vh;
    
 }
 
 h3.admin {
     text-transform: uppercase;
-    text-align:left;
     margin:8% 0 0 15%;
     font-family: "LondonBetween";
-    padding:3% 0;   
+    padding:3% 0;
+    font-size:2em;
+    text-align: left;   
 }
 .admin {
     margin-top:0.5% auto 5%;
@@ -158,27 +151,29 @@ h3.admin {
 }
 
 .admin table a {
-    color:#D5804B;
+    color:rgba(255, 104, 4, 0.877);
+    padding:2%;
 }
 
 .admin table a:hover {
-    text-decoration:underline;
+    background-color:rgba(255, 104, 4, 0.877);
+    color: rgba(255, 255, 255, 0.788);
+    border-radius:5px;
 }
 
 /* STYLES DU WIDGET PLUPLOAD */
 
 #uploader .plupload_add, #uploader .plupload_start {
-    font-size: 13px;
+    font-size: 12px;
     padding: 15px 10px;
-    color:white;
+    color:#2e526e;
     border-radius:5px;
-    border:solid 1px #437ba6;
-    background:#437ba6;
+    background:#c5ced6;
     text-align:center;
     padding:10px 15px;
   
-    transition: all 0.3s;
-    box-shadow: 1px 5px 1px #0f1638;
+    transition: all 0.5s;
+    box-shadow: 1px 1px 1px #0f1638;
     
 }
 

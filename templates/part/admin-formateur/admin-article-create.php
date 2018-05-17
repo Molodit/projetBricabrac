@@ -1,5 +1,5 @@
 <section class="formulaireAdmin" id="article-create">
-    <h3>Ecrire un nouvel article</h3>
+    <h3>Écrire un nouvel article</h3>
     <hr>
 
 
@@ -38,8 +38,8 @@
               </div>
 
         <!-- Trois boutons pour donner la possibilité de publier, d'enregistrer en brouillon ou d'annuler -->
-        <button type="submit" name="statut" value="publie">Publier l'article</button>
-        <button type="submit" name="statut" value="brouillon">Enregistrer comme brouillon</button>
+        <button type="submit" name="statut" value="publie">Publier</button>
+        <button type="submit" name="statut" value="brouillon">Enregistrer</button>
         <button type="reset" value="annuler" onclick="window.location.reload(true)">Annuler</button>
         <input type="hidden" name="codebarre" value="article">
         <div class="response">
