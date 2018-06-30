@@ -17,22 +17,31 @@ a{
 }
 
 /*XXXXXXXXXXX ADMIN ENFANT ET READ ADMIN ENFANT XXXXXXXXXXXXX*/
+
+.illustEnfant {
+  background-image: url("../img/computer-2866134_640.png");
+}
+
+
 #formulaireEnfant{
   margin-top:5%;
 }
 section.enfantRead{
-  margin-top:5%;
   margin-bottom:5%;
-  padding:5%;
-  padding-bottom:10%;
-  width:70%;
+  padding:5% 5% 15% 5%;
+  width:90%;
   overflow:hidden;
-  background-image:url("../img/sectionEnfant.jpg");
-  border-radius:5px;
-  background-size: cover;
- }
+  background-image: url("../img/pencil-147130_640.png");
+  background-repeat: no-repeat;
+  background-position: 35vw 146vh;
+}
+
+.enfantRead h2 {
+  margin: 2vh 0 10vh 0;
+}
+
  #formulaireEnfant h2, #formulaireEnfant h3{
-  margin:2% 0;
+  margin: 0;
   color:#D5804B;
   font-family:"LondonBetween";
   text-align:center;
@@ -47,8 +56,7 @@ hr{
 }
 .enfantRead div{
   margin:0 auto;
-  width: 80%;
-  opacity: 0.8;
+  width: 70%;
 }
 .enfantRead h3{
   margin:2% 0;
@@ -63,13 +71,11 @@ hr{
   text-align:center;
 }
 
-#articleEnfant{
+.articleEnfant{
   float: left;
   font-size:1.4em;
-  background-color:white;
   color:#313233;
   border-radius:10px;
-  border: 1px dashed #313233;
   margin-bottom:5%;
   margin: 20px;
   padding: 5px;
@@ -78,22 +84,29 @@ hr{
   height: 280px;
   transition:all 0.3s ease;
 }
-#articleEnfant img{
-    border-radius:30%;
-    width:35%;
-    margin-left:30%;
+
+.articleEnfant:hover {
+  border-radius:50%;
+  box-shadow:10px 10px 10px rgba(0, 0, 0, 0.7);
+  
+  }
+
+  .articleEnfant p {
+    color:#ddd;
+    font-size: 13px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 4% 2%;
+    border-radius:10px;
 }
-#articleEnfant p{
-  text-align:right;
-  margin-top:8%;
-  margin-right:5%;
+
+.articleEnfant p.images {
+  margin: 25% auto 2% auto;
+  display: block;
 }
-#articleEnfant:hover{
--webkit-transform: scale(1.1);
-      -ms-transform: scale(1.1);
-      transform: scale(1.1);
-}
-#articleEnfant button:hover{
+
+
+
+.articleEnfant button:hover{
   cursor:pointer;
 }
 /************ DIV REPONSE ***************/

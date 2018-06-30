@@ -1,4 +1,12 @@
-<section class="formulaireAdmin" id="article-create">
+<section class="formulaireAdmin" 
+    <?php if($verifNiveau === 7){
+        echo 'id="formulaireEnfant"';
+            }
+            elseif ($verifNiveau === 9) {
+                echo 'id="article-create"';
+            }
+            ?>
+           >
     <h3>Écrire un nouvel article</h3>
     <hr>
 
@@ -12,9 +20,8 @@
       </div>
     </form> -->
 
-        <!-- NE PAS OUBLIER: POUR UPLOADER UN FICHIER -->
-        <!-- method="POST" enctype="multipart/form-data" -->
-          <!-- Formulaire de création d'un l'article -->
+       
+          <!-- Formulaire de création d'un article -->
 
     <form method="POST" enctype="multipart/form-data" class="formAdmin">
         <input type="text" name="titre" required placeholder="Titre">
@@ -38,7 +45,11 @@
               </div>
 
         <!-- Trois boutons pour donner la possibilité de publier, d'enregistrer en brouillon ou d'annuler -->
-        <button type="submit" name="statut" value="publie">Publier</button>
+        <?php 
+        if ($verifNiveau === 9) 
+        { echo "<button type='submit' name='statut' value='publie'>Publier</button>";
+        }
+        ?>
         <button type="submit" name="statut" value="brouillon">Enregistrer</button>
         <button type="reset" value="annuler" onclick="window.location.reload(true)">Annuler</button>
         <input type="hidden" name="codebarre" value="article">

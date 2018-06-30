@@ -4,13 +4,23 @@
         
        
         <?php
+        // VARIABLE GLOBALE POUR VERIFIER LES NIVEAU DE SESSION
+        $verifNiveau = $objetSession->get("niveau");
 
         $objetRepository = $this->getDoctrine()->getRepository(App\Entity\MonArticle::class);
         $objetRepositoryMembre = $this->getDoctrine()->getRepository(App\Entity\Membre::class);
         $objetRepositoryComment = $this->getDoctrine()->getManager()->getRepository(App\Entity\Comments::class);
         
+        // Si le niveau de la session est supérieur ou égal à 7, affichage des articles publiés et des brouillons 
+        if ($verifNiveau >= 7) {
+            $tabResultat = $objetRepository->findBy([ "idArticle" => $id_article]);
+           
+        }
+        // Sinon, affichage des articles publiés seulement
+        else {
 
-        $tabResultat = $objetRepository->findBy([ "idArticle" => $id_article, "statut" => "publie" ], [ "datePublication" => "DESC" ]);
+            $tabResultat = $objetRepository->findBy([ "idArticle" => $id_article, "statut" => "publie" ]);
+        }
 
         // ON A UN TABLEAU D'OBJETS DE CLASSE Article
         foreach($tabResultat as $objetArticle)
@@ -23,13 +33,22 @@
             $contenu         = $objetArticle->getContenu();
             $motCle          = $objetArticle->getMotCle();
             $datePublication = $objetArticle->getDatePublication("d/m/Y");
+            $statut          = $objetArticle->getStatut();
             
             $objetMembre = $objetRepositoryMembre->find($idMembre);
             $pseudo = "";
+
+
+            $Etatbrouillon = "";
+            if ($statut === 'brouillon') {
+                echo '<p>Cet article est un brouillon, il n\'est pas encore publié sur le site</p>';
+            }
             if ($objetMembre)
             {
                 $pseudo = $objetMembre->getMembre();
             }
+
+           
 
             $htmlFile = "";
             
@@ -79,6 +98,7 @@ CODEHTML;
                 <<<CODEHTML
             
                 <h2>$titre</h2>
+                $Etatbrouillon
                 <div>$htmlFile</div>
 CODEHTML;
             }
@@ -87,6 +107,7 @@ CODEHTML;
                 <<<CODEHTML
                 
                 <h2>$titre</h2>
+                $Etatbrouillon
                 <div class="flexslider">
                     <ul class="slides">
                         $htmlFile
@@ -101,28 +122,39 @@ CODEHTML;
             <span>Écrit par $pseudo</span>
             <p>$contenu</p>
             <hr>
+            
+CODEHTML;
+            if ($statut == 'publie') {
+            echo 
+            <<<CODEHTML
             <p class="infos">Cet article a été publié avec le mot-clé <a href="$urlMotCle">$motCle</a>
                 dans la rubrique $rubrique</p>
                 <p class="infos">publié le $datePublication</p>
        </article>
-            
 CODEHTML;
-            
+
+            }
+            else {
+                echo 
+            <<<CODEHTML
+            <p class="infos">Ce brouillon a été écrit avec le mot-clé <a href="$urlMotCle">$motCle</a>
+                dans la rubrique $rubrique, le $datePublication</p>
+       </article>
+CODEHTML;
+            }
         }
 
         ?>
-    <article id="commentaire">
                 
         <?php
-        // VARIABLE GLOBALE POUR VERIFIER LES NIVEAU DE SESSION
-        $verifNiveau = $objetSession->get("niveau");
         //SI LE NIVEAU EST INFERIEUR A 1, ON AFFICHE RIEN
         
-            // SI LES NIVEAUX SONT SUPERIEURS A 1 ON AFFICHE LE FORMULAIRE POUR AJOUTER LES COMMENTAIRES
-            if($verifNiveau >= 1)
-            {
-                echo
-        <<<CODEHTML
+        // SI LES NIVEAUX SONT SUPERIEURS A 1 ON AFFICHE LE FORMULAIRE POUR AJOUTER LES COMMENTAIRES
+        if($verifNiveau >= 1 && $statut == "publie")
+        {
+            echo
+            <<<CODEHTML
+        <article id="commentaire">
         <h3>Laisser un commentaire :</h3>
         <form class="commentaires">
             <textarea type="text" name="contenu" required placeholder="Votre commentaire" rows="10" cols="60"></textarea>
@@ -131,12 +163,12 @@ CODEHTML;
             <input type="hidden" name="codebarre" value="commentaire">
             <input type="hidden" name="id_article" value="$idArticle">
             </form>
+            </article>
                     
 CODEHTML;
                     
         }
     ?>
-        </article>
   </section>  
         
     

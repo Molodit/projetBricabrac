@@ -1,12 +1,15 @@
 <?php
-$objetRepository = $this->getDoctrine()->getManager()->getRepository(App\Entity\Comments::class);
+
+if ($statut === 'publie') 
+{
+    $objetRepository = $this->getDoctrine()->getManager()->getRepository(App\Entity\Comments::class);
 
 
-$tabResultat = $objetRepository->findBy(["idArticle" => $idArticle], [ "datePublication" => "DESC" ]);
+    $tabResultat = $objetRepository->findBy(["idArticle" => $idArticle]);
 
-// $nbComment = count($tabResultat);
+    // $nbComment = count($tabResultat);
 
-// if ($nbComment > 0):
+    // if ($nbComment > 0):
 ?>
 
     <section class="read">
@@ -49,3 +52,4 @@ CODEHTML;
 
     </section>
 </div>
+<?php }

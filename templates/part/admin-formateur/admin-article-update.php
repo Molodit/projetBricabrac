@@ -1,4 +1,9 @@
-<section class="formulaireAdmin" id="section-update">
+<section class="formulaireAdmin" id="
+<?php 
+    if($verifNiveau == 9 )
+    {echo 'section-update';} 
+    else 
+    {echo 'section-update-enfant';} ?>">
 
 <?php
 
@@ -62,9 +67,13 @@ CODEHTML;
             
             ?>
             <!-- Formulaire de modification de l'article prérempli avec les données de la bdd -->
-            <H3>Modifier l'article <?php echo "\"$titre\"" ?></H3>
+            <h2>Modifier l'article <?php echo "\"$titre\"" ?></h2>
             <hr>
-            <form method="POST" enctype="multipart/form-data" class="formAdmin" action="<?php echo $urlAdmin ?>">
+            <form method="POST" enctype="multipart/form-data" class="formAdmin" action="<?php 
+                    if($verifNiveau === 9 )
+                    {echo $urlAdmin;} 
+                    else 
+                    {echo $urlAdminEnfant;} ?>">
             <label for="titre">Titre</label>
             <input type="text" name="titre" required placeholder="Titre" value="<?php echo $titre ?>">
             <label for="mot_cle">Mot-clé</label>
@@ -95,9 +104,16 @@ CODEHTML;
 
         <!-- Trois boutons pour donner la possibilité de publier, d'enregistrer en brouillon ou d'annuler -->
         <button type="submit" name="statut" value="brouillon">Modifier et enregistrer</button>
-        <button type="submit" name="statut" value="publie">Modifier et publier l'article</button>
-        <button type="reset" value="annuler" onclick="window.location.assign('<?php echo $urlAdmin ?>')">Annuler</button>
-        <input type="hidden" name="afficher" value="">
+        <?php if ($verifNiveau === 9) { 
+            echo
+            "<button type='submit' name='statut' value='publie'>Modifier et publier l'article</button>";
+        }
+        ?>
+        <button type="reset" value="annuler" onclick="window.location.assign('<?php 
+                    if($verifNiveau === 9 )
+                    {echo $urlAdmin;} 
+                    else 
+                    {echo $urlAdminEnfant;} ?>')">Annuler</button>
         <input type="hidden" name="idUpdate" value="<?php echo $idUpdate ?>">
         <input type="hidden" name="codebarre" value="updateArticle">
         <div class="response">

@@ -1,6 +1,7 @@
 <?php
 
 $verifMembre = $objetSession->get("membre");
+$verifNiveau = $objetSession->get("niveau");
 
 ?>
 
