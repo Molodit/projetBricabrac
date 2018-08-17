@@ -82,6 +82,10 @@ body, html {
   main {
     margin-top:350px !important;
   }
+  #menu
+  {
+    display:block !important;
+  }
 }
 
 
