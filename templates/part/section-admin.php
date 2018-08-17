@@ -1,6 +1,7 @@
 <?php
 
 $verifMembre = $objetSession->get("membre");
+$verifNiveau = $objetSession->get("niveau");
 
 ?>
 
@@ -41,18 +42,18 @@ $messageUpdate = ob_get_clean();
 
 if ($objetRequest->get("afficher", "") == "update")
 {
-    require_once("$cheminPart/admin-article-update.php");
+    require_once("$cheminPart/admin-formateur/admin-article-update.php");
 }
 
 elseif ($objetRequest->get("afficher", "") == "updateMembre")
 {
-    require_once("$cheminPart/admin-membre-update.php");
+    require_once("$cheminPart/admin-formateur/admin-membre-update.php");
 }
 else
 {
-    require_once("$cheminPart/admin-article-create.php");
+    require_once("$cheminPart/admin-formateur/admin-article-create.php");
 }
 
-    require_once("$cheminPart/admin-read.php");
+    require_once("$cheminPart/admin-formateur/admin-read.php");
 ?>
 </div>

@@ -8,68 +8,60 @@
   src: url("../css/fonts/LondonBetween.ttf");
 }
 
-.illustrationAdmin {
+/* .illustrationAdmin {
     background-image: url("../img/arbre-vert.png");
     background-attachment: fixed;
   background-position:center;
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
 .admin, #article-create, .menuTables, #section-update, #section-membre-update {
     background: rgba(255, 255, 255, 0.9);
 }
 
 section.admin h2 {
-    padding-bottom:15px;
-    font-family:'Philosopher', sans-serif;
+    font-family:'LondonBetween';
+    margin-bottom: 5vh;
+
 }
+
+
 
 /* XXXXXXXXXXXXXXXXXXXX ONGLETS DU TABLEAU DE BORD XXXXXXXXXXXXXXXXX */
-.tab-content {
-    display:none;
-}
 
-.tab-content.active {
-    display: block;
-}
 
-.tabs .active a {
-    color:white;
-    background-color: rgb(72, 131, 176);
+.tabActiveHeader, .tabs li:hover {
+    color:white !important;
+    background-color: rgb(72, 131, 176) !important;
 }
 
 .tabs li {
 
     display: inline-block;    
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding: 20px 30px;
+    margin-left: 10px;
+    color: rgb(72, 131, 176);
+    font-size: 18px;
+    cursor: pointer;
+    background-color: white;
 }
 
 .tabs:after {
     display: table;
     content: ' ';
     clear:both;
-
 }
 
-ul.tabs, .tabs li {
-    padding: 0;
-    list-style:none; 
+
+.adminUl{    
+    margin-left: 10%;
+   
 }
 
-ul.tabs {
-    width:100%;
-    margin-left: 15%;
-}
 
-.tabs a {
-    display: inline-block;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    padding: 10px 15px;
-    color: rgb(72, 131, 176);
-    font-size: 20px;
-}
-
-.tabs-content {
+.admin #tabscontent {
     position:relative;
     z-index: 3;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.48);
@@ -90,34 +82,30 @@ ul.tabs {
 .formulaireAdmin h3, .admin h3 {
     font-family: "LondonBetween";
     text-transform: uppercase;
-    margin-top:180px;
-    padding-top: 50px;
+    font-size:2em;
   
 }
 
 .formulaireAdmin h4, .admin h4 {
     text-transform: uppercase;
-    font-size:20px;
+    font-size:1.5em;
     text-align: center;
     color:#437ba6;
     font-family: "LondonBetween";
+    padding-top:2vh;
    
 }
 
 h3.admin {
     text-transform: uppercase;
-    text-align:left;
     margin:8% 0 0 15%;
     font-family: "LondonBetween";
     padding:3% 0;
-    
+    font-size:2em;
+    text-align: left;   
 }
-
-
 .admin {
-    margin-top:0.5%;
-    width:70%;
-
+    margin-top:0.5% auto 5%;
 }
 
 /* STYLES POUR LES DATATABLES */
@@ -133,15 +121,18 @@ h3.admin {
 .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_paginate {
     padding-top: 4.75em;
 }
-
-
 /* XXXXXXXXXXX SECTION LISTE ARTICLE READ XXXXXXXXXXXXXX */
 
-.admin table img {
-    width: 100px;
-    height: 100px;
+.admin table img, .admin table iframe,.formAdmin img {
+    width: 80px;
+    height: 80px;
     object-fit: cover;
   }
+
+.formAdmin img {
+    margin-top: 25px;
+    margin-right:15px;
+}
 
 .admin table th {
     color:#437ba6;
@@ -150,19 +141,109 @@ h3.admin {
 .admin table td {
     color:#565759;
 }
-
+.admin td.html {
+    width: 19vw;
+    display: inline-block;
+}
 .admin button {
-   
     color: #437ba6;
     padding: 10%;
 }
 
 .admin table a {
-    color:#D5804B;
+    color:rgba(255, 104, 4, 0.877);
+    padding:2%;
 }
 
 .admin table a:hover {
-    text-decoration:underline;
+    background-color:rgba(255, 104, 4, 0.877);
+    color: rgba(255, 255, 255, 0.788);
+    border-radius:5px;
 }
+
+/* STYLES DU WIDGET PLUPLOAD */
+
+#uploader .plupload_add, #uploader .plupload_start {
+    font-size: 12px;
+    padding: 15px 10px;
+    color:#2e526e;
+    border-radius:5px;
+    background:#c5ced6;
+    text-align:center;
+    padding:10px 15px;
+  
+    transition: all 0.5s;
+    box-shadow: 1px 1px 1px #0f1638;
+    
+}
+
+#uploader .plupload_add:active, #uploader .plupload_start:active{
+    -webkit-box-shadow: 0px 2px 0px #437ba6;
+    -moz-box-shadow: 0px 2px 0px #437ba6;
+    box-shadow: 0px 2px 0px #437ba6;
+    position:relative;
+    top:2px;
+}
+
+table.plupload_filelist {
+ 
+    position:relative;
+}
+
+#uploader {
+    height:50vh;
+    margin-top:50px;
+}
+
+#uploader .plupload_filelist_content {
+    margin-top: 80px;
+}
+
+#uploader .plupload_content {
+    height:50vh;
+}
+
+#uploader .plupload_buttons {
+    margin: 20px 0;
+}
+
+#uploader .plupload_message {
+    position:absolute;
+    top: 45vh;
+}
+
+#uploader .plupload_view_switch {
+    width:130px;
+}
+
+#uploader input[type="radio"] {
+    margin-left:5px;
+}
+
+
+/* Styles pour l'affichage des images dans le formulaire de modification d'un article */
+
+.inputHidden {
+    display:none;
+    color:red;
+    position:absolute;
+    font-size:12px;
+    width:80px;
+
+}
+.text {
+    display:block;
+}
+
+.divUpdate {
+    display:inline-block;
+    margin-top:20px;
+}
+
+p.plImage {
+    margin-top:50px;
+}
+
+
 
 
